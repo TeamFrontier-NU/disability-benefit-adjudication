@@ -516,7 +516,7 @@ The claimant reports leukemia, cerebral palsy and tumors; these have not been co
                     fast_track=False, key_pages=[3],
                     note="Self-reported cancers must not be used; MSR is dated before the visit it describes.")
     return dict(category="mental_12.03", eligible=True, basis="meets 12.03 (B criteria; examiner judgment)",
-                fast_track=False, key_pages=[3], note="Mental Listings always go to the human queue (design D5).")
+                fast_track=False, key_pages=[3], note="Mental Listings always go to the human queue.")
 
 
 def combination(b, rng):

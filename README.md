@@ -1,6 +1,6 @@
 # AI-Assisted Fast-Track Screening for Initial SSI/SSDI Disability Claims
 
-Team 06 · Frontier · SEL_POL 425 · Fall 2026
+Team Frontier · Fall 2026
 
 **Research question.** Can record-based AI screening widen the fast track for initial adult SSI/SSDI claims without lowering accuracy, measured against an independent expert standard?
 
@@ -16,11 +16,8 @@ Team 06 · Frontier · SEL_POL 425 · Fall 2026
 
 | Path | What |
 | --- | --- |
-| [`platform/`](platform/) | The prototype: examiner review panel, import connectors, AI reader, rules, routing, metrics, simulated cases. Start with [`platform/README.md`](platform/README.md) |
-| [`platform/BUILD-PLAN.md`](platform/BUILD-PLAN.md) | Step-by-step build plan to the final presentation, with the issue log |
-| [`docs/01-proposal-and-pitch/`](docs/01-proposal-and-pitch/) | Project brief, research proposal, study design, design pitch (slides PDF and script) |
-| [`docs/02-project-revision/`](docs/02-project-revision/) | Instructor-feedback follow-ups, final design, weekly tracking |
-| [`PROGRESS.md`](PROGRESS.md) | Progress log, week by week |
+| [`platform/`](platform/) | The prototype: examiner review panel, import connectors, AI reader, rules, routing, metrics, simulated cases |
+| [`PROGRESS.md`](PROGRESS.md) | What has been built so far |
 
 ## Quick start
 
@@ -40,6 +37,6 @@ Import files ─► AI sorting ────────────────�
                 fast track  or  human queue
 ```
 
-- **Source rule:** only quotes from medical records written by an acceptable medical source can count toward a Listing. That way, writing Listing language into your own forms doesn't help (instructor feedback #2).
+- **Source rule:** only quotes from medical records written by an acceptable medical source can count toward a Listing. That way, writing Listing language into your own forms doesn't help.
 - **Covered rule paths:** Listing 11.08 (spinal cord), 13.14 (lung cancer), 6.03 (dialysis), and the medical-vocational grid. Mental Listings always go to a human.
 - **Safeguards:** quote verification, a provenance check, a consistency check, and an instruction scan against prompt injection. Each one can only move a claim to a human.

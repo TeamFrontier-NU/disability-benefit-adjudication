@@ -162,7 +162,7 @@ def score(case: Case, items: list[Item], k: int = 1) -> list[RuleResult]:
                    [i.page for i in ev.get("past_work_skill")]),
         _criterion("expected to last 12 months", dur, durp)]))
 
-    # Mental disorders: never fast-tracked (design D5), shown for the human queue
+    # Mental disorders: never fast-tracked (by design), shown for the human queue
     mh = ev.get("mental_disorder")
     results.append(RuleResult("12.x", "Mental disorders (12.03 / 12.04)", False,
                               [_criterion("mental disorder diagnosed by an acceptable medical source", bool(mh),
@@ -231,7 +231,7 @@ def route(case: Case, items: list[Item], read: ReadResult, k: int = 1, safeguard
                        rule_results=results)
     mental = next(r for r in results if r.path == "12.x")
     if mental.criteria[0]["met"]:
-        reasons.append("Mental disorder: examiner decides (design D5).")
+        reasons.append("Mental disorder: examiner decides.")
     return Routing("human_queue", path=met[0].path if met else "", reasons=reasons, flags=flags,
                    rule_results=results)
 

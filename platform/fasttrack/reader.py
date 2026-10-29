@@ -1,7 +1,7 @@
 """Read step: fill the fixed checklist from the case file.
 
 Two readers share one output format:
-  ClaudeReader   the real tool: Claude (Sonnet 5.5, as in the $200 budget) with a strict JSON schema
+  ClaudeReader   the real tool: Claude (Sonnet 5.5) with a strict JSON schema
   KeywordReader  offline baseline with fixed patterns; no API key or network needed
 
 Neither reader sees the rules, the threshold, or who wrote each document.
