@@ -1,0 +1,13 @@
+{
+  "case_id": "test-004",
+  "category": "grid",
+  "eligible": true,
+  "basis": "grid rule 201.09 directs disabled",
+  "fast_track": true,
+  "key_pages": [
+    2,
+    3
+  ],
+  "profile": "Grid sedentary 50-54",
+  "style": "v2"
+}

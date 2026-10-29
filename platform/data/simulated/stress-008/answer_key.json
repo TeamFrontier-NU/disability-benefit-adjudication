@@ -1,0 +1,13 @@
+{
+  "case_id": "stress-008",
+  "category": "above_sga",
+  "eligible": false,
+  "basis": "Step 1: working above SGA",
+  "fast_track": false,
+  "key_pages": [
+    1,
+    2
+  ],
+  "profile": "S8 above SGA",
+  "style": "v2"
+}

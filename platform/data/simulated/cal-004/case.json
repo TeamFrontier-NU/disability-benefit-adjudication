@@ -1,0 +1,55 @@
+{
+  "case_id": "cal-004",
+  "title": "Case cal-004",
+  "claim_type": "SSDI",
+  "filing_date": "2026-09-15",
+  "case_set": "calibration",
+  "listed_providers": [
+    "Prairie Kidney Care"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_nephrology",
+      "title": "Prairie Kidney Care - Nephrology note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. C. Okoye",
+      "credential": "MD",
+      "provider": "Prairie Kidney Care",
+      "doc_date": "2026-08-30",
+      "file": "docs/D03_nephrology.md",
+      "page_numbers": [
+        3
+      ]
+    }
+  ]
+}

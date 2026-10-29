@@ -1,0 +1,13 @@
+{
+  "case_id": "demo-003",
+  "category": "above_sga",
+  "eligible": false,
+  "basis": "Step 1: working above SGA",
+  "fast_track": false,
+  "key_pages": [
+    1,
+    2
+  ],
+  "profile": "Joe, still working",
+  "style": "v1"
+}

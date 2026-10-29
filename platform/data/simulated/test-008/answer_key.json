@@ -1,0 +1,13 @@
+{
+  "case_id": "test-008",
+  "category": "grid_not_disabled",
+  "eligible": false,
+  "basis": "grid directs not disabled (younger individual)",
+  "fast_track": false,
+  "key_pages": [
+    2,
+    3
+  ],
+  "profile": "Grid younger sedentary",
+  "style": "v2"
+}

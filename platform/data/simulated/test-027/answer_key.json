@@ -1,0 +1,13 @@
+{
+  "case_id": "test-027",
+  "category": "thin_records",
+  "eligible": false,
+  "basis": "insufficient evidence; needs records or a CE",
+  "fast_track": false,
+  "key_pages": [
+    3
+  ],
+  "note": "Second provider's records never arrived.",
+  "profile": "Thin records",
+  "style": "v2"
+}

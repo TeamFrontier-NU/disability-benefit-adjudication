@@ -1,0 +1,69 @@
+{
+  "case_id": "stress-004",
+  "title": "S4 narrative only",
+  "claim_type": "SSDI",
+  "filing_date": "2026-09-15",
+  "case_set": "stress",
+  "listed_providers": [
+    "Hillcrest Clinic"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_clinic",
+      "title": "Hillcrest Clinic - Primary Care note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. L. Park",
+      "credential": "NP",
+      "provider": "Hillcrest Clinic",
+      "doc_date": "2026-06-07",
+      "file": "docs/D03_clinic.md",
+      "page_numbers": [
+        3
+      ]
+    },
+    {
+      "doc_id": "D04_letter",
+      "title": "Letter from advocate",
+      "source_type": "third_party",
+      "received_via": "claimant",
+      "author": "Housing advocate",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-05",
+      "file": "docs/D04_letter.md",
+      "page_numbers": [
+        4
+      ]
+    }
+  ]
+}
