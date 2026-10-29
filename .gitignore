@@ -5,3 +5,4 @@ __pycache__/
 platform/results/
 platform/data/decisions.jsonl
 .DS_Store
+platform/blind-check/

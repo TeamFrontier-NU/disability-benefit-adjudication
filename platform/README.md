@@ -82,4 +82,5 @@ Results from the Claude reader are not in yet. The offline keyword baseline is a
 | `fasttrack/metrics.py` | Measures with Wilson CIs; decision log; human-only vs. human + AI |
 | `fasttrack/simulate.py` | Simulated case generator |
 | `scripts/run_batch.py` | Batch evaluation |
+| `scripts/blind_check.py` | Blind check of answer keys by two independent reviewers (agreement and Cohen's kappa) |
 | `data/simulated/` | Generated cases with answer keys |
