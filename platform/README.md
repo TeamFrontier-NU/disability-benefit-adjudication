@@ -43,7 +43,7 @@ Each check can only move a claim *to* a human, never to a denial.
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run app.py        # opens http://localhost:8501 on this computer only
 ```
 
 - **Offline keyword baseline:** needs no key. Use it to try the panel on the demo set.

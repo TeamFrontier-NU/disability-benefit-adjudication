@@ -1,0 +1,7 @@
+[server]
+# Only this computer can open the panel. Remove this line to share it on the network.
+address = "localhost"
+port = 8501
+
+[browser]
+gatherUsageStats = false
