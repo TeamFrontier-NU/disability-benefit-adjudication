@@ -1,0 +1,56 @@
+{
+  "case_id": "test-027",
+  "title": "Case test-027",
+  "claim_type": "SSDI",
+  "filing_date": "2026-09-15",
+  "case_set": "test",
+  "listed_providers": [
+    "Hillcrest Clinic",
+    "Unity Mental Health"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_clinic",
+      "title": "Hillcrest Clinic - Primary Care note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. L. Park",
+      "credential": "NP",
+      "provider": "Hillcrest Clinic",
+      "doc_date": "2026-07-10",
+      "file": "docs/D03_clinic.md",
+      "page_numbers": [
+        3
+      ]
+    }
+  ]
+}

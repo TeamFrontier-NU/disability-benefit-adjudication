@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+platform/results/
+platform/data/decisions.jsonl
+.DS_Store

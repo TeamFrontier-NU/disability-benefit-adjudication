@@ -1,0 +1,83 @@
+{
+  "case_id": "stress-006",
+  "title": "S6 Farnsworth-style",
+  "claim_type": "SSI",
+  "filing_date": "2026-09-15",
+  "case_set": "stress",
+  "listed_providers": [
+    "Union Hospital ACT Team"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_psych",
+      "title": "Union Hospital ACT Team - Psychiatry note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. B. Chen",
+      "credential": "MD",
+      "provider": "Union Hospital ACT Team",
+      "doc_date": "2026-08-10",
+      "file": "docs/D03_psych.md",
+      "page_numbers": [
+        3
+      ]
+    },
+    {
+      "doc_id": "D04_ssa3373",
+      "title": "SSA-3373 Function Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D04_ssa3373.md",
+      "page_numbers": [
+        4
+      ]
+    },
+    {
+      "doc_id": "D05_msr",
+      "title": "Medical Summary Report (SOAR case worker)",
+      "source_type": "third_party",
+      "received_via": "claimant",
+      "author": "Case manager",
+      "credential": "MSW",
+      "provider": "Somerset Case Management",
+      "doc_date": "2026-06-11",
+      "file": "docs/D05_msr.md",
+      "page_numbers": [
+        5
+      ]
+    }
+  ]
+}

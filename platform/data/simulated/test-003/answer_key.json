@@ -1,0 +1,12 @@
+{
+  "case_id": "test-003",
+  "category": "listing_6.03",
+  "eligible": true,
+  "basis": "meets 6.03",
+  "fast_track": true,
+  "key_pages": [
+    3
+  ],
+  "profile": "Dialysis",
+  "style": "v2"
+}

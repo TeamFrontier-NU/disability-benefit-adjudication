@@ -1,0 +1,70 @@
+{
+  "case_id": "test-014",
+  "title": "Case test-014",
+  "claim_type": "SSDI",
+  "filing_date": "2026-09-15",
+  "case_set": "test",
+  "listed_providers": [
+    "Northfield Rehab Institute",
+    "County General Hospital"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_hospital",
+      "title": "County General Hospital - Trauma Surgery note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. S. Ward",
+      "credential": "MD",
+      "provider": "County General Hospital",
+      "doc_date": "2025-09-16",
+      "file": "docs/D03_hospital.md",
+      "page_numbers": [
+        3
+      ]
+    },
+    {
+      "doc_id": "D04_rehab",
+      "title": "Northfield Rehab Institute - Physical Medicine & Rehabilitation note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. E. Patel",
+      "credential": "MD",
+      "provider": "Northfield Rehab Institute",
+      "doc_date": "2026-08-28",
+      "file": "docs/D04_rehab.md",
+      "page_numbers": [
+        4
+      ]
+    }
+  ]
+}

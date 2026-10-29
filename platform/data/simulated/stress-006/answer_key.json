@@ -1,0 +1,13 @@
+{
+  "case_id": "stress-006",
+  "category": "stress_farnsworth",
+  "eligible": true,
+  "basis": "likely meets 12.03 (examiner judgment)",
+  "fast_track": false,
+  "key_pages": [
+    3
+  ],
+  "note": "Self-reported cancers must not be used; MSR is dated before the visit it describes.",
+  "profile": "S6 Farnsworth-style",
+  "style": "v2"
+}

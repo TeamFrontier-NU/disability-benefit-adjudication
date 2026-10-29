@@ -1,0 +1,55 @@
+{
+  "case_id": "test-019",
+  "title": "Case test-019",
+  "claim_type": "SSDI",
+  "filing_date": "2026-09-15",
+  "case_set": "test",
+  "listed_providers": [
+    "Lakeside Spine & Rehabilitation"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_rehab",
+      "title": "Lakeside Spine & Rehabilitation - Physical Medicine & Rehabilitation note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. H. Sorensen",
+      "credential": "MD",
+      "provider": "Lakeside Spine & Rehabilitation",
+      "doc_date": "2026-09-10",
+      "file": "docs/D03_rehab.md",
+      "page_numbers": [
+        3
+      ]
+    }
+  ]
+}

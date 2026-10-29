@@ -1,0 +1,84 @@
+{
+  "case_id": "test-034",
+  "title": "Case test-034",
+  "claim_type": "SSDI",
+  "filing_date": "2026-09-15",
+  "case_set": "test",
+  "listed_providers": [
+    "St. Anne Emergency Department",
+    "Maple Family Practice"
+  ],
+  "prior_denial_months": null,
+  "documents": [
+    {
+      "doc_id": "D01_application",
+      "title": "Application extract",
+      "source_type": "application",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D01_application.md",
+      "page_numbers": [
+        1
+      ]
+    },
+    {
+      "doc_id": "D02_ssa3368",
+      "title": "SSA-3368 Disability Report extract",
+      "source_type": "claimant_form",
+      "received_via": "field_office",
+      "author": "",
+      "credential": "",
+      "provider": "",
+      "doc_date": "2026-09-15",
+      "file": "docs/D02_ssa3368.md",
+      "page_numbers": [
+        2
+      ]
+    },
+    {
+      "doc_id": "D03_er",
+      "title": "St. Anne Emergency Department - Emergency Medicine note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. J. Moss",
+      "credential": "DO",
+      "provider": "St. Anne Emergency Department",
+      "doc_date": "2026-06-30",
+      "file": "docs/D03_er.md",
+      "page_numbers": [
+        3
+      ]
+    },
+    {
+      "doc_id": "D04_er2",
+      "title": "St. Anne Emergency Department - Emergency Medicine note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. J. Moss",
+      "credential": "DO",
+      "provider": "St. Anne Emergency Department",
+      "doc_date": "2026-07-09",
+      "file": "docs/D04_er2.md",
+      "page_numbers": [
+        4
+      ]
+    },
+    {
+      "doc_id": "D05_pcp",
+      "title": "Maple Family Practice - Family Medicine note",
+      "source_type": "ams_record",
+      "received_via": "dds_request",
+      "author": "Dr. K. Ito",
+      "credential": "MD",
+      "provider": "Maple Family Practice",
+      "doc_date": "2026-07-28",
+      "file": "docs/D05_pcp.md",
+      "page_numbers": [
+        5
+      ]
+    }
+  ]
+}

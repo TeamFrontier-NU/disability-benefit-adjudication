@@ -1,0 +1,12 @@
+{
+  "case_id": "test-033",
+  "category": "not_severe",
+  "eligible": false,
+  "basis": "Step 2: not severe",
+  "fast_track": false,
+  "key_pages": [
+    3
+  ],
+  "profile": "Not severe",
+  "style": "v2"
+}

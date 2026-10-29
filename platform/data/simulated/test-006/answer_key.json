@@ -1,0 +1,12 @@
+{
+  "case_id": "test-006",
+  "category": "listing_11.08",
+  "eligible": true,
+  "basis": "meets 11.08A",
+  "fast_track": true,
+  "key_pages": [
+    4
+  ],
+  "profile": "SCI complete",
+  "style": "v2"
+}

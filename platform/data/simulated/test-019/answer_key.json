@@ -1,0 +1,12 @@
+{
+  "case_id": "test-019",
+  "category": "near_miss_sci_recent",
+  "eligible": false,
+  "basis": "11.08 not met: under 3 months since injury; recovery expected",
+  "fast_track": false,
+  "key_pages": [
+    3
+  ],
+  "profile": "Near miss: SCI under 3 months",
+  "style": "v2"
+}

@@ -1,0 +1,490 @@
+[
+  {
+    "case_id": "demo-001",
+    "case_set": "demo",
+    "profile": "Joe",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "demo-002",
+    "case_set": "demo",
+    "profile": "Peter",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "demo-003",
+    "case_set": "demo",
+    "profile": "Joe, still working",
+    "eligible": false,
+    "fast_track": false,
+    "category": "above_sga"
+  },
+  {
+    "case_id": "cal-001",
+    "case_set": "calibration",
+    "profile": "SCI complete",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "cal-002",
+    "case_set": "calibration",
+    "profile": "SCI incomplete",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "cal-003",
+    "case_set": "calibration",
+    "profile": "Lung small-cell",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_13.14"
+  },
+  {
+    "case_id": "cal-004",
+    "case_set": "calibration",
+    "profile": "Dialysis",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_6.03"
+  },
+  {
+    "case_id": "cal-005",
+    "case_set": "calibration",
+    "profile": "Grid sedentary 50-54",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "cal-006",
+    "case_set": "calibration",
+    "profile": "Grid sedentary 55+",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "cal-007",
+    "case_set": "calibration",
+    "profile": "Schizophrenia",
+    "eligible": true,
+    "fast_track": false,
+    "category": "mental_12.03"
+  },
+  {
+    "case_id": "cal-008",
+    "case_set": "calibration",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "cal-009",
+    "case_set": "calibration",
+    "profile": "Near miss: SCI under 3 months",
+    "eligible": false,
+    "fast_track": false,
+    "category": "near_miss_sci_recent"
+  },
+  {
+    "case_id": "cal-010",
+    "case_set": "calibration",
+    "profile": "Short duration",
+    "eligible": false,
+    "fast_track": false,
+    "category": "duration_not_met"
+  },
+  {
+    "case_id": "test-001",
+    "case_set": "test",
+    "profile": "Grid sedentary 50-54",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "test-002",
+    "case_set": "test",
+    "profile": "Grid younger sedentary",
+    "eligible": false,
+    "fast_track": false,
+    "category": "grid_not_disabled"
+  },
+  {
+    "case_id": "test-003",
+    "case_set": "test",
+    "profile": "Dialysis",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_6.03"
+  },
+  {
+    "case_id": "test-004",
+    "case_set": "test",
+    "profile": "Grid sedentary 50-54",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "test-005",
+    "case_set": "test",
+    "profile": "Lung localized",
+    "eligible": false,
+    "fast_track": false,
+    "category": "not_severe_duration"
+  },
+  {
+    "case_id": "test-006",
+    "case_set": "test",
+    "profile": "SCI complete",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "test-007",
+    "case_set": "test",
+    "profile": "Not severe",
+    "eligible": false,
+    "fast_track": false,
+    "category": "not_severe"
+  },
+  {
+    "case_id": "test-008",
+    "case_set": "test",
+    "profile": "Grid younger sedentary",
+    "eligible": false,
+    "fast_track": false,
+    "category": "grid_not_disabled"
+  },
+  {
+    "case_id": "test-009",
+    "case_set": "test",
+    "profile": "Thin records",
+    "eligible": false,
+    "fast_track": false,
+    "category": "thin_records"
+  },
+  {
+    "case_id": "test-010",
+    "case_set": "test",
+    "profile": "Thin records",
+    "eligible": false,
+    "fast_track": false,
+    "category": "thin_records"
+  },
+  {
+    "case_id": "test-011",
+    "case_set": "test",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "test-012",
+    "case_set": "test",
+    "profile": "Near miss: temporary dialysis",
+    "eligible": false,
+    "fast_track": false,
+    "category": "near_miss_dialysis_acute"
+  },
+  {
+    "case_id": "test-013",
+    "case_set": "test",
+    "profile": "Schizophrenia",
+    "eligible": true,
+    "fast_track": false,
+    "category": "mental_12.03"
+  },
+  {
+    "case_id": "test-014",
+    "case_set": "test",
+    "profile": "SCI incomplete",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "test-015",
+    "case_set": "test",
+    "profile": "Grid sedentary 55+",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "test-016",
+    "case_set": "test",
+    "profile": "Short duration",
+    "eligible": false,
+    "fast_track": false,
+    "category": "duration_not_met"
+  },
+  {
+    "case_id": "test-017",
+    "case_set": "test",
+    "profile": "Lung metastatic",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_13.14"
+  },
+  {
+    "case_id": "test-018",
+    "case_set": "test",
+    "profile": "Short duration",
+    "eligible": false,
+    "fast_track": false,
+    "category": "duration_not_met"
+  },
+  {
+    "case_id": "test-019",
+    "case_set": "test",
+    "profile": "Near miss: SCI under 3 months",
+    "eligible": false,
+    "fast_track": false,
+    "category": "near_miss_sci_recent"
+  },
+  {
+    "case_id": "test-020",
+    "case_set": "test",
+    "profile": "Short duration",
+    "eligible": false,
+    "fast_track": false,
+    "category": "duration_not_met"
+  },
+  {
+    "case_id": "test-021",
+    "case_set": "test",
+    "profile": "Near miss: sedentary at 47",
+    "eligible": false,
+    "fast_track": false,
+    "category": "near_miss_grid_age_47"
+  },
+  {
+    "case_id": "test-022",
+    "case_set": "test",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "test-023",
+    "case_set": "test",
+    "profile": "Thin records",
+    "eligible": false,
+    "fast_track": false,
+    "category": "thin_records"
+  },
+  {
+    "case_id": "test-024",
+    "case_set": "test",
+    "profile": "Grid light 55+",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "test-025",
+    "case_set": "test",
+    "profile": "Not severe",
+    "eligible": false,
+    "fast_track": false,
+    "category": "not_severe"
+  },
+  {
+    "case_id": "test-026",
+    "case_set": "test",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "test-027",
+    "case_set": "test",
+    "profile": "Thin records",
+    "eligible": false,
+    "fast_track": false,
+    "category": "thin_records"
+  },
+  {
+    "case_id": "test-028",
+    "case_set": "test",
+    "profile": "SCI complete",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "test-029",
+    "case_set": "test",
+    "profile": "Grid younger sedentary",
+    "eligible": false,
+    "fast_track": false,
+    "category": "grid_not_disabled"
+  },
+  {
+    "case_id": "test-030",
+    "case_set": "test",
+    "profile": "Grid sedentary 50-54",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "test-031",
+    "case_set": "test",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "test-032",
+    "case_set": "test",
+    "profile": "SCI incomplete",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "test-033",
+    "case_set": "test",
+    "profile": "Not severe",
+    "eligible": false,
+    "fast_track": false,
+    "category": "not_severe"
+  },
+  {
+    "case_id": "test-034",
+    "case_set": "test",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "test-035",
+    "case_set": "test",
+    "profile": "Short duration",
+    "eligible": false,
+    "fast_track": false,
+    "category": "duration_not_met"
+  },
+  {
+    "case_id": "test-036",
+    "case_set": "test",
+    "profile": "Back strain",
+    "eligible": false,
+    "fast_track": false,
+    "category": "can_work"
+  },
+  {
+    "case_id": "test-037",
+    "case_set": "test",
+    "profile": "Lung small-cell",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_13.14"
+  },
+  {
+    "case_id": "test-038",
+    "case_set": "test",
+    "profile": "Grid sedentary 55+",
+    "eligible": true,
+    "fast_track": true,
+    "category": "grid"
+  },
+  {
+    "case_id": "test-039",
+    "case_set": "test",
+    "profile": "Combined impairments",
+    "eligible": true,
+    "fast_track": false,
+    "category": "other_eligible"
+  },
+  {
+    "case_id": "test-040",
+    "case_set": "test",
+    "profile": "Lung localized",
+    "eligible": false,
+    "fast_track": false,
+    "category": "not_severe_duration"
+  },
+  {
+    "case_id": "stress-001",
+    "case_set": "stress",
+    "profile": "S1 keyword stuffing",
+    "eligible": false,
+    "fast_track": false,
+    "category": "stress_keyword_stuffing"
+  },
+  {
+    "case_id": "stress-002",
+    "case_set": "stress",
+    "profile": "S2 hidden instruction",
+    "eligible": true,
+    "fast_track": false,
+    "category": "stress_hidden_instruction"
+  },
+  {
+    "case_id": "stress-003",
+    "case_set": "stress",
+    "profile": "S3 fake record",
+    "eligible": false,
+    "fast_track": false,
+    "category": "stress_fake_record"
+  },
+  {
+    "case_id": "stress-004",
+    "case_set": "stress",
+    "profile": "S4 narrative only",
+    "eligible": false,
+    "fast_track": false,
+    "category": "stress_narrative_only"
+  },
+  {
+    "case_id": "stress-005",
+    "case_set": "stress",
+    "profile": "S5 check-box opinion",
+    "eligible": false,
+    "fast_track": false,
+    "category": "stress_checkbox_opinion"
+  },
+  {
+    "case_id": "stress-006",
+    "case_set": "stress",
+    "profile": "S6 Farnsworth-style",
+    "eligible": true,
+    "fast_track": false,
+    "category": "stress_farnsworth"
+  },
+  {
+    "case_id": "stress-007",
+    "case_set": "stress",
+    "profile": "S7 honest control",
+    "eligible": true,
+    "fast_track": true,
+    "category": "listing_11.08"
+  },
+  {
+    "case_id": "stress-008",
+    "case_set": "stress",
+    "profile": "S8 above SGA",
+    "eligible": false,
+    "fast_track": false,
+    "category": "above_sga"
+  }
+]
