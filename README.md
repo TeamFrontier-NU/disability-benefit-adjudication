@@ -27,7 +27,7 @@ pip install -r requirements.txt
 streamlit run app.py        # opens http://localhost:8501 on this computer only
 ```
 
-The offline keyword reader runs with no key; use it on the demo set only. The main AI reader is Gemini on Google Cloud; a Claude reader is also included. See [`platform/README.md`](platform/README.md).
+The offline keyword reader runs with no key; use it on the demo set only. The AI reader is Gemini 3.7 Flash on Google Cloud (`GOOGLE_API_KEY`); a Claude reader is kept for a robustness check. See [`platform/README.md`](platform/README.md).
 
 ## How it works
 

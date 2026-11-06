@@ -47,15 +47,13 @@ streamlit run app.py        # opens http://localhost:8501 on this computer only
 ```
 
 - **Offline keyword baseline:** needs no key. Use it to try the panel on the demo set.
-- **Gemini reader (main reader, `gemini-3.8-flash` by default):** runs on Google Cloud (Vertex AI) or the Gemini API.
+- **Gemini reader (the locked reader, Gemini 3.7 Flash):** runs on Google Cloud through Vertex AI express mode.
   ```bash
-  export GOOGLE_GENAI_USE_VERTEXAI=true
-  export GOOGLE_CLOUD_PROJECT=<your-project-id>
-  export GOOGLE_CLOUD_LOCATION=global
-  gcloud auth application-default login     # once per computer
+  export GOOGLE_API_KEY=<your Google Cloud key>   # never commit it
+  python scripts/check_gemini.py                  # one call on the Joe demo case
   ```
-  Or set `GEMINI_API_KEY` instead. Set `GEMINI_MODEL` to try another Gemini model.
-- **Claude reader (Sonnet 5.5):** an alternative; needs `ANTHROPIC_API_KEY`.
+  An AI Studio key (starting `AIza`) uses the Gemini API instead. `scripts/find_gemini_model.py` lists the model names a key can use; set `GEMINI_MODEL` to try another.
+- **Claude reader (Sonnet 5.5):** the reader named in the original plan, kept for a robustness check; needs `ANTHROPIC_API_KEY`.
 - **Batch evaluation:** `python scripts/run_batch.py --set calibration --reader gemini --k 1`.
 - **Regenerate the simulated cases:** `python -m fasttrack.simulate --out data/simulated --seed 425`.
 
@@ -74,9 +72,21 @@ The demo set uses fixed template wording. The other sets use varied wording, rou
 
 ## Status
 
-Results from the Gemini reader are not in yet. The offline keyword baseline is a sanity check only:
-- On the varied-wording test set it routes 27/40 as expected, and fast-tracks nothing.
-- On the stress set it sends all 7 gaming attempts to a human.
+First reader runs, Nov 5, 2026: Gemini 3.7 Flash, k = 1 locked. The test set has not been run yet.
+
+| Run | Correct route | Fast-tracked | Quotes verified | AI denials |
+| --- | --- | --- | --- | --- |
+| Demo (3) | 3/3 | 1 | 44/44 | 0 |
+| Calibration, k = 1 (10) | 10/10 | 6, all correct | 137/137 | 0 |
+| Calibration, k = 2 (10) | 4/10 | 0 | 133/133 | 0 |
+| Stress, gaming attempts (8) | 8/8 | 0 of 7 gaming cases | 116/116 | 0 |
+
+What these numbers don't show yet:
+- **k = 2 can't be tested on this data.** No fast-track case has two medical-source records stating the key finding, so k = 2 sends every case to a human by design.
+- **Calibration covers 8 of the 15 test categories.** Results will be reported per category.
+- **Each setting was run once**, so run-to-run stability is not yet known.
+
+The offline keyword baseline is a sanity check only. On the varied-wording test set it routes 27/40 as expected and fast-tracks nothing.
 
 ## Code
 
@@ -85,6 +95,7 @@ Results from the Gemini reader are not in yet. The offline keyword baseline is a
 | `app.py` | Examiner panel (Streamlit) |
 | `fasttrack/intake.py` | Import connectors |
 | `fasttrack/reader.py` | Gemini reader, Claude reader, and offline keyword baseline |
+| `scripts/check_gemini.py`, `scripts/find_gemini_model.py` | Check the Gemini key and find usable model names |
 | `fasttrack/pipeline.py` | Quote check, source rule, rule table, flags, routing |
 | `fasttrack/fields.py` | The fixed checklist |
 | `fasttrack/metrics.py` | Measures with Wilson CIs; decision log; human-only vs. human + AI |

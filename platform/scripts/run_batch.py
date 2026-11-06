@@ -1,8 +1,8 @@
 """Run the pipeline on a whole set of simulated cases and report the measures.
 
     python scripts/run_batch.py --set calibration --reader keyword --k 1
-    python scripts/run_batch.py --set test --reader gemini --k 1      # needs a Google Cloud project or Gemini API key
-    python scripts/run_batch.py --set test --reader claude --k 1      # needs ANTHROPIC_API_KEY
+    python scripts/run_batch.py --set calibration --reader gemini --k 1   # needs GOOGLE_API_KEY
+    python scripts/run_batch.py --set test --reader claude --k 1      # needs an API key; ~4-6 cents a case
 
 Results are saved to results/<set>_<reader>_k<k>_<time>.json for the AI log.
 Never change prompts or k after looking at test-set results (pre-registration).
@@ -21,12 +21,7 @@ sys.path.insert(0, str(ROOT))
 from fasttrack.intake import LocalFolderConnector  # noqa: E402
 from fasttrack.metrics import routing_metrics, stress_metrics  # noqa: E402
 from fasttrack.pipeline import run_case  # noqa: E402
-from fasttrack.reader import ClaudeReader, GeminiReader, KeywordReader  # noqa: E402
-
-
-# USD per million tokens (input, output). Gemini 3.8 Flash: Google's listed rate through Dec 31, 2026,
-# doubling from Jan 1, 2027. Check the Cloud billing page for the real charge.
-PRICES = {"gemini": (0.75, 3.75), "claude": (2, 10)}
+from fasttrack.reader import PRICES, ClaudeReader, GeminiReader, KeywordReader  # noqa: E402
 
 
 def main():
@@ -38,7 +33,7 @@ def main():
     a = ap.parse_args()
 
     con = LocalFolderConnector(a.data)
-    reader = {"gemini": GeminiReader, "claude": ClaudeReader, "keyword": KeywordReader}[a.reader]()
+    reader = {"claude": ClaudeReader, "gemini": GeminiReader, "keyword": KeywordReader}[a.reader]()
     rows = []
     for c in con.list_cases(a.set):
         case, key = con.load_case(c["case_id"]), con.answer_key(c["case_id"])
@@ -49,9 +44,14 @@ def main():
                          items_total=len(res.read.items), items_verified=sum(i.verified for i in res.read.items),
                          seconds=res.seconds, input_tokens=res.read.input_tokens,
                          output_tokens=res.read.output_tokens))
+        err = next((m for m in res.read.missing_evidence if str(m).startswith("Reader failed")), "")
+        rows[-1]["reader_error"] = err
         mark = "ok" if (res.routing.route == "fast_track") == key["fast_track"] else "MISMATCH"
-        print(f"{case.case_id:11} {key.get('profile', '')[:26]:26} {res.routing.route:11} {mark}")
+        print(f"{case.case_id:11} {key.get('profile', '')[:26]:26} {res.routing.route:11} {mark}" + (f"   <-- {err[:200]}" if err else ""))
 
+    n_err = sum(bool(r["reader_error"]) for r in rows)
+    if n_err:
+        print(f"\nWARNING: the reader failed on {n_err}/{len(rows)} cases; these results are NOT a test of the reader.\n")
     report = {"set": a.set, "reader": reader.name, "k": a.k, "run_at": datetime.now().isoformat(timespec="seconds"),
               "metrics": routing_metrics(rows)}
     if a.set == "stress":
@@ -59,8 +59,9 @@ def main():
     tokens_in = sum(r["input_tokens"] for r in rows)
     tokens_out = sum(r["output_tokens"] for r in rows)
     if tokens_in:
-        p_in, p_out = PRICES.get(a.reader, (0, 0))
-        report["estimated_cost_usd"] = round(tokens_in * p_in / 1e6 + tokens_out * p_out / 1e6, 3)
+        p_in, p_out = PRICES.get(getattr(reader, "model", ""), (0, 0))
+        report["tokens"] = {"input": tokens_in, "output": tokens_out}
+        report["estimated_cost_usd"] = round(tokens_in * p_in / 1e6 + tokens_out * p_out / 1e6, 4)  # list price
     report["rows"] = rows
     out = ROOT / "results" / f"{a.set}_{a.reader}_k{a.k}_{datetime.now():%Y%m%d-%H%M%S}.json"
     out.parent.mkdir(exist_ok=True)

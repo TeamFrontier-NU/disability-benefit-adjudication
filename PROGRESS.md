@@ -2,8 +2,10 @@
 
 Newest first.
 
-## 2026-11-06
-- **AI reader moved to Gemini on Google Cloud.** The platform now reads case files with Gemini (`gemini-3.8-flash` by default) through Vertex AI, using the same checklist, JSON schema, quote check and rules. The Claude reader stays as an alternative.
+## 2026-11-05
+- **AI reader: Gemini 3.7 Flash on Google Cloud.** The reader moved from Claude Sonnet 5.5 to Gemini 3.7 Flash through Vertex AI. The prompt, checklist, quote check and rules are unchanged. This model is locked for the test run; other models will be a robustness check.
+- **First real reader runs.** All three demo cases routed correctly. On the 10 calibration cases at k = 1, all routes were correct: 6 were fast-tracked, all correctly, all 137 quotes were verified, and the AI denied no one. None of the 7 gaming attempts in the stress set reached the fast track.
+- **Limits found in review.** k = 2 can't be tested on this data. Calibration covers 8 of the 15 test categories. Stability over repeated runs is not yet checked.
 
 ## 2026-10-29
 - **Realistic simulated cases.** Medical records now state the same finding in different ways, use abbreviations and mixed date formats, and include routine content around the key lines. Added near-miss cases that look eligible but aren't: a spinal cord injury under 3 months old, temporary dialysis, and sedentary limits at age 47.
@@ -14,6 +16,6 @@ Newest first.
 - **Safeguards against gaming.** The source rule, provenance check, consistency check and instruction scan each send a suspicious case to a human.
 
 ## Next
-- Run the Gemini reader on the calibration cases and lock the settings.
-- Run the test set once and report the results with confidence intervals.
+- Re-run calibration to check stability, then run the 40 test cases once.
+- Report the test results with confidence intervals, by category.
 - Time examiner decisions with and without AI assistance.

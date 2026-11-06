@@ -1,8 +1,9 @@
 """Read step: fill the fixed checklist from the case file.
 
-Three readers share one output format:
-  GeminiReader   the main reader: Gemini on Google Cloud (Vertex AI) or the Gemini API, with a JSON schema
-  ClaudeReader   alternative: Claude (Sonnet 5.5) with a strict JSON schema
+Two readers share one output format:
+  ClaudeReader   Claude (Sonnet 5.5) with a strict JSON schema (planned in the pitch)
+  GeminiReader   Gemini on Google Cloud, same prompt and schema (used from 2026-11-05 for the
+                 halfway preliminary run, because no Anthropic API account was ready in time)
   KeywordReader  offline baseline with fixed patterns; no API key or network needed
 
 Neither reader sees the rules, the threshold, or who wrote each document.
@@ -19,7 +20,10 @@ from .fields import FIELDS, FIELD_NAMES
 from .models import Case, Item, ReadResult
 
 MODEL = "claude-sonnet-5-5"
-GEMINI_MODEL = "gemini-3.8-flash"  # override with the GEMINI_MODEL environment variable
+GEMINI_MODEL = "gemini-3.7-flash"   # chosen 2026-11-05 (2.5 not available in our project); override with the GEMINI_MODEL environment variable
+# USD per million tokens (input, output) for the cost estimate in run_batch.py; check the
+# Google Cloud billing page for the real figure before putting it on a slide.
+PRICES = {"claude-sonnet-5-5": (2.0, 10.0), "gemini-2.5-flash": (0.30, 2.50), "gemini-2.5-pro": (1.25, 10.0)}
 
 
 def case_as_text(case: Case) -> str:
@@ -114,7 +118,7 @@ class ClaudeReader:
 # ----------------------------------------------------------------------------- Gemini reader
 
 def _gemini_schema(node):
-    """Copy of SCHEMA without additionalProperties, which Gemini's schema subset may reject."""
+    """Gemini's schema support is narrower than Claude's: drop additionalProperties."""
     if isinstance(node, dict):
         return {k: _gemini_schema(v) for k, v in node.items() if k != "additionalProperties"}
     if isinstance(node, list):
@@ -122,62 +126,60 @@ def _gemini_schema(node):
     return node
 
 
-GEMINI_SCHEMA = _gemini_schema(SCHEMA)
-GEMINI_STOP_OK = {"STOP"}
-
-
 class GeminiReader:
-    """Gemini through the Google Gen AI SDK.
+    """Same prompt, checklist and output format as ClaudeReader, run on Gemini.
 
-    Google Cloud (Vertex AI): set GOOGLE_GENAI_USE_VERTEXAI=true, GOOGLE_CLOUD_PROJECT and
-    GOOGLE_CLOUD_LOCATION (for example "global"), and sign in once with
-    `gcloud auth application-default login`. Billing goes to that Cloud project.
-    Gemini API instead: set GEMINI_API_KEY.
+    Key: GOOGLE_API_KEY (or GEMINI_API_KEY). A Google Cloud key (starts with "AQ.") is used
+    with Vertex AI express mode; an AI Studio key (starts with "AIza") with the Gemini API.
+    Force one with GEMINI_BACKEND=vertex or GEMINI_BACKEND=aistudio.
     """
 
-    def __init__(self, model: str | None = None, thinking: str = "medium"):
+    def __init__(self, model: str | None = None):
         import os
-
         from google import genai
 
-        self.client = genai.Client()  # reads the environment variables above
+        key = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
+        if not key:
+            raise RuntimeError("set GOOGLE_API_KEY in this terminal first")
+        backend = os.environ.get("GEMINI_BACKEND") or ("aistudio" if key.startswith("AIza") else "vertex")
+        self.client = genai.Client(api_key=key, vertexai=(backend == "vertex"))
         self.model = model or os.environ.get("GEMINI_MODEL", GEMINI_MODEL)
-        self.thinking = thinking
+        self.backend = backend
         self.name = f"Gemini ({self.model})"
 
     def read(self, case: Case) -> ReadResult:
         from google.genai import types
 
         t0 = time.time()
-        resp = self.client.models.generate_content(
-            model=self.model,
-            contents="Claim file:\n\n" + case_as_text(case),
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM,
-                temperature=0,
-                max_output_tokens=16000,
-                response_mime_type="application/json",
-                response_json_schema=GEMINI_SCHEMA,
-                thinking_config=types.ThinkingConfig(thinking_level=self.thinking.upper()),
-            ),
-        )
-        cand = resp.candidates[0] if resp.candidates else None
-        reason = cand.finish_reason.name if cand and cand.finish_reason else "NO_CANDIDATE"
-        if reason == "MAX_TOKENS":
+        prompt = "Claim file:\n\n" + case_as_text(case)
+        base = dict(system_instruction=SYSTEM, max_output_tokens=16000, response_mime_type="application/json")
+        if self.model.startswith("gemini-2"):
+            base["temperature"] = 0  # Gemini 3.x: Google advises keeping the default temperature
+        try:
+            cfg = types.GenerateContentConfig(response_json_schema=_gemini_schema(SCHEMA), **base)
+        except Exception:  # older google-genai without response_json_schema: put the schema in the prompt
+            cfg = types.GenerateContentConfig(**base)
+            prompt = "Answer with JSON matching this schema:\n" + json.dumps(SCHEMA) + "\n\n" + prompt
+        resp = self.client.models.generate_content(model=self.model, contents=prompt, config=cfg)
+        cand = (resp.candidates or [None])[0]
+        reason = str(getattr(cand, "finish_reason", "") or "")
+        if "SAFETY" in reason or "PROHIBITED" in reason or "BLOCK" in reason:
+            raise RuntimeError("The model declined this file; send the case to the human queue.")
+        if "MAX_TOKENS" in reason:
             raise RuntimeError("Reader output was cut off; send the case to the human queue.")
-        if reason not in GEMINI_STOP_OK:
-            raise RuntimeError(f"The model did not finish this file ({reason}); send the case to the human queue.")
-        data = json.loads(resp.text)
-        for f in ("items", "instruction_flags", "evidence_for_approval", "missing_evidence"):
-            data.setdefault(f, [])
+        text = (resp.text or "").strip()
+        if text.startswith("```"):
+            text = text.strip("`").removeprefix("json").strip()
+        data = json.loads(text)
         u = resp.usage_metadata
+        out_tok = (getattr(u, "candidates_token_count", 0) or 0) + (getattr(u, "thoughts_token_count", 0) or 0)
         return ReadResult(
-            items=[Item(field=i["field"], value=i["value"], quote=i["quote"], page=i["page"]) for i in data["items"]
-                   if i.get("field") in FIELD_NAMES],
-            instruction_flags=data["instruction_flags"], evidence_for_approval=data["evidence_for_approval"],
-            missing_evidence=data["missing_evidence"], reader=self.name, seconds=time.time() - t0,
-            input_tokens=(u.prompt_token_count or 0) if u else 0,
-            output_tokens=((u.candidates_token_count or 0) + (u.thoughts_token_count or 0)) if u else 0)
+            items=[Item(field=i["field"], value=str(i["value"]), quote=i["quote"], page=int(i["page"]))
+                   for i in data.get("items", []) if i.get("field") in FIELD_NAMES],
+            instruction_flags=data.get("instruction_flags", []),
+            evidence_for_approval=data.get("evidence_for_approval", []),
+            missing_evidence=data.get("missing_evidence", []), reader=self.name, seconds=time.time() - t0,
+            input_tokens=getattr(u, "prompt_token_count", 0) or 0, output_tokens=out_tok)
 
 
 # ----------------------------------------------------------------------------- keyword baseline

@@ -1,4 +1,4 @@
-google-genai>=2.34
 anthropic>=2.3
 streamlit>=1.40
 pypdf>=5
+google-genai>=1.30

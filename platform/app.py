@@ -42,9 +42,8 @@ with st.sidebar:
     sets = sorted({c["case_set"] for c in con.list_cases()}) or ["(none)"]
     order = ["demo", "calibration", "test", "stress", "imported"]
     case_set = st.selectbox("Case set", sorted(sets, key=lambda s: order.index(s) if s in order else 9))
-    reader_name = st.radio("Reader", ["Offline keyword baseline", "Gemini (Google Cloud)", "Claude API (Sonnet 5.5)"],
-                           help="Gemini needs a Google Cloud project (GOOGLE_CLOUD_PROJECT, signed in with "
-                                "`gcloud auth application-default login`) or GEMINI_API_KEY. "
+    reader_name = st.radio("Reader", ["Gemini (Google Cloud)", "Offline keyword baseline", "Claude API (Sonnet 5.5)"],
+                           help="Gemini needs GOOGLE_API_KEY set in the terminal that started the panel. "
                                 "Claude needs ANTHROPIC_API_KEY.")
     k = st.select_slider("AMS documents required per criterion", options=[1, 2], value=1,
                          help="The one setting tuned on the calibration cases, then locked.")
