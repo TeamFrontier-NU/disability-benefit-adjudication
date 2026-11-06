@@ -55,6 +55,7 @@ def page(live: bool) -> AppTest:
     if live:
         at.session_state["live_ok"] = True
     at.run()
+    at.radio(key="nc_mode").set_value("Fill in by type").run()  # the boxes; the page opens on "Drop files"
     return at
 
 
@@ -150,7 +151,7 @@ if not (btn.disabled and locked):
     problems.append("6 Run button not locked in Replay mode")
 
 pages = []
-for p in ("overview", "case_explorer", "new_case", "safeguards", "results", "about"):
+for p in sorted(f.stem for f in (ROOT / "views").glob("*.py")):
     t = AppTest.from_file(str(ROOT / "views" / f"{p}.py"), default_timeout=120)
     t.run()
     errs = [str(e.value) for e in t.exception]
