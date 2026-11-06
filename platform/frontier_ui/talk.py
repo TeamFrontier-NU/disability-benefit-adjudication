@@ -12,28 +12,28 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 
-# The 8-minute plan. Presenters not decided yet: fill in `speaker` when they are; times add up to 8:00.
+# The 8-minute plan: one presenter per part, who also drives the laptop. Fill in `speaker` when decided;
+# times add up to 8:00.
 AGENDA = [
     dict(key="fits", page="1 · Where it fits", speaker="", minutes="1:00",
-         cue="The applicant’s path today vs. with our tool. QDD/CAL stays; we add a second screen on the "
-             "medical records. Never denies."),
+         cue="Before you start: open 4b, drop in the prepared case, tick the check, press Run, then come back to "
+             "page 1. Say: “We’ve started a live run on a new case; we’ll come back to it.” Then: today vs. with "
+             "our tool; QDD/CAL stays; a second screen on the records; never denies."),
     dict(key="standing", page="2 · Where we stand", speaker="", minutes="1:30",
          cue="Works / not yet / changed since the pitch and what we dropped. Spend so far (61 cases, kept small "
-             "while the budget isn’t approved; largest line Claude Pro), then the projected cost of 500–1,000 "
-             "cases and what switching to Claude would add."),
-    dict(key="demo", page="3 · Demo: Joe and Peter", speaker="", minutes="1:15",
-         cue="Replay mode, and say so: “the reader’s output for these two was recorded tonight; the checks, rules "
-             "and routing run now.” Joe → fast track (11.08), show the quotes; Peter → human queue: “not picked "
-             "means normal review, not a denial.”"),
-    dict(key="attacks", page="4 · Demo: attacks and a new case", speaker="", minutes="2:00",
-         cue="This part must run live (the rubric gives 0 for a recorded demo). One recorded attack on the "
-             "Safeguards page first, then the discussant’s or instructor’s input in Live mode: added to Peter on "
-             "the Safeguards page, or as a whole new case. A live run takes about 90 seconds: press Run, then walk "
-             "through the steps while it works. If it does something unexpected, say so."),
-    dict(key="evaluation", page="5 · Evaluation plan", speaker="", minutes="1:30",
+             "while the budget isn’t approved; largest line Claude Pro), then the 500–1,000 case projection and what "
+             "switching to Claude would add."),
+    dict(key="demo", page="3 · Demo: Joe and Peter", speaker="", minutes="1:00",
+         cue="Say it’s Replay: “the reading was recorded; the checks, rules and routing run now.” Joe → fast track "
+             "(11.08), click a quote; Peter → human queue: “not picked means normal review, not a denial.”"),
+    dict(key="attacks", page="4 · Demo: attacks and a new case", speaker="", minutes="1:30",
+         cue="4a: one recorded attack (hidden instruction), point at the decision, not the faded what-if. Then 4b: "
+             "the live run started at the beginning is ready; read the result and the blue safeguards note. If the "
+             "discussants hand over a case, run it here (about 90 seconds) and talk through the steps while it works."),
+    dict(key="evaluation", page="5 · Evaluation plan", speaker="", minutes="1:45",
          cue="Claim, threshold, counterfactual, assignment. How and on whom. Read the power table out loud."),
-    dict(key="next", page="6 · Decisions and next steps", speaker="", minutes="0:45",
-         cue="Two decisions, asked as questions to the room. Then next steps in one breath."),
+    dict(key="next", page="6 · Decisions and next steps", speaker="", minutes="1:15",
+         cue="Two decisions, asked as questions to the room. Then next steps, and invite questions."),
 ]
 BY_KEY = {a["key"]: a for a in AGENDA}
 
