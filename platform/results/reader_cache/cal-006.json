@@ -1,0 +1,218 @@
+{
+  "case_id": "cal-006",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "62",
+        "quote": "Age at filing: 62",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2025-10-07",
+        "quote": "8. Date the condition became severe enough to keep me from working: 10/07/2025",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Bad back and knees",
+        "quote": "1. Bad back and knees",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Heart problems",
+        "quote": "2. Heart problems",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Warehouse loader (job required no training; learned in under 30 days; lifting up to 75 lb)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-09",
+        "quote": "Date of visit: 2026-08-09",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "severe degenerative disc disease L3-S1 with foraminal stenosis",
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "bilateral knee osteoarthritis",
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "heart failure with EF 40%",
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "GERD",
+        "quote": "PMH: GERD, hypertension.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "hypertension",
+        "quote": "PMH: GERD, hypertension.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "rfc_exertional_level",
+        "value": "sedentary",
+        "quote": "In my opinion the most this patient can do is sedentary work.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "permanent",
+        "quote": "Not expected to improve; lifelong.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "In my opinion the most this patient can do is sedentary work.",
+        "page": 3,
+        "why": "Treating physician limits claimant to sedentary exertional level."
+      },
+      {
+        "quote": "Imaging: MRI lumbar spine shows severe multilevel stenosis.",
+        "page": 3,
+        "why": "Objective imaging establishes severe lumbar spinal impairment."
+      },
+      {
+        "quote": "Exam: antalgic gait, positive straight-leg raise bilaterally, crepitus both knees.",
+        "page": 3,
+        "why": "Clinical exam shows objective physical and neurological abnormalities."
+      },
+      {
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "why": "Documented multiple severe physical and cardiac conditions."
+      }
+    ],
+    "missing_evidence": [
+      "Complete longitudinal treatment records and office visit notes from Eastside Orthopedics (Dr. H. Sorensen) from initial visit 10/2025 through 08/2026.",
+      "Echocardiogram and formal cardiology records regarding heart failure with EF 40%."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 13.255752563476562,
+    "input_tokens": 2172,
+    "output_tokens": 2046
+  }
+}

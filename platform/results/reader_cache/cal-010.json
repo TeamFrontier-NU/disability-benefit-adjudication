@@ -1,0 +1,158 @@
+{
+  "case_id": "cal-010",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "38",
+        "quote": "Age at filing: 38",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-07-07",
+        "quote": "8. Date the condition became severe enough to keep me from working: 07/07/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Broken leg",
+        "quote": "1. Broken leg",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Dishwasher (job required no training; learned in a day)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-06",
+        "quote": "Date of visit: 8/6/26",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-07-07",
+        "quote": "Injury date: 2026-07-07.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "Closed tibial shaft fracture",
+        "quote": "Closed tibial shaft fracture, treated with intramedullary nail.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "6",
+        "quote": "Expected duration: full recovery expected within 6 months; return to work anticipated.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Closed tibial shaft fracture, treated with intramedullary nail.",
+        "page": 3,
+        "why": "Confirms an objective severe orthopedic injury requiring surgical intervention."
+      },
+      {
+        "quote": "Non-weight-bearing for now.",
+        "page": 3,
+        "why": "Establishes substantial restriction on standing and ambulating during the recovery period."
+      },
+      {
+        "quote": "17. Still unable to work: Yes",
+        "page": 1,
+        "why": "Claimant asserts ongoing inability to engage in work activity."
+      }
+    ],
+    "missing_evidence": [
+      "Operative/surgical notes and hospital discharge summary for the intramedullary nail fixation of the tibial fracture.",
+      "Follow-up treatment notes and X-ray reports from Eastside Orthopedics after the August 6, 2026 visit."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 9.658873796463013,
+    "input_tokens": 2066,
+    "output_tokens": 1506
+  }
+}

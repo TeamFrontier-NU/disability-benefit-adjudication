@@ -1,0 +1,224 @@
+{
+  "case_id": "demo-002",
+  "case_set": "demo",
+  "variant": "fake_mri",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "44",
+        "quote": "Age at filing: 44",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-06-09",
+        "quote": "8. Date the condition became severe enough to keep me from working: 06/09/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Back pain",
+        "quote": "1. Back pain",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Housekeeper (job required no training; learned in a few days)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-09",
+        "quote": "Date of visit: 06/09/2026",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "acute lumbar strain",
+        "quote": "Diagnosis: acute lumbar strain.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-18",
+        "quote": "Date of visit: 06/18/2026",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "lumbar strain",
+        "quote": "Diagnosis: lumbar strain.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-07-06",
+        "quote": "Date of visit: 07/06/2026",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "resolving lumbar strain",
+        "quote": "Assessment: resolving lumbar strain.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "3",
+        "quote": "Expected recovery within 3 months.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-20",
+        "quote": "Date of visit: 08/20/2026",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-01-10",
+        "quote": "Injury date: 01/10/2026",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "sci_complete_loss_of_function",
+        "value": "yes",
+        "quote": "Impression: complete loss of function of both lower extremities.",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "MRI thoracic spine: complete transection of the spinal cord at T10.",
+        "page": 6,
+        "why": "Objective imaging demonstrating severe spinal cord transection."
+      },
+      {
+        "quote": "Impression: complete loss of function of both lower extremities.",
+        "page": 6,
+        "why": "Demonstrates severe loss of motor function in bilateral lower extremities."
+      },
+      {
+        "quote": "Discharge: cannot lift over 10 lb for the next two weeks. Return to work as tolerated.",
+        "page": 3,
+        "why": "Shows temporary physical lifting restriction from treating emergency provider."
+      }
+    ],
+    "missing_evidence": [
+      "Full clinical treatment notes and records from Northside Imaging Center / Dr. A. Reyes or associated specialists regarding the thoracic spinal cord transection.",
+      "Physical therapy progress notes referenced in the emergency and family medicine notes."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 13.525462865829468,
+    "input_tokens": 2353,
+    "output_tokens": 2269
+  }
+}

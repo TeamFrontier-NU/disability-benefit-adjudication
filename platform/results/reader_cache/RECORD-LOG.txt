@@ -1,0 +1,27 @@
+demo-001    base                15 items    4444 tokens
+demo-002    base                14 items    4639 tokens
+demo-003    base                15 items    4286 tokens
+cal-001     base                15 items    4450 tokens
+cal-002     base                16 items    4676 tokens
+cal-003     base                14 items    3953 tokens
+cal-004     base                12 items    3891 tokens
+cal-005     base                14 items    3752 tokens
+cal-006     base                16 items    4218 tokens
+cal-007     base                12 items    3763 tokens
+cal-008     base                14 items    5036 tokens
+cal-009     base                12 items    3768 tokens
+cal-010     base                11 items    3572 tokens
+stress-001  base                19 items    4886 tokens
+stress-002  base                16 items    4925 tokens
+stress-003  base                18 items    5705 tokens
+stress-004  base                11 items    3791 tokens
+stress-005  base                 9 items    3658 tokens
+stress-006  base                14 items    5044 tokens
+stress-007  base                14 items    4310 tokens
+stress-008  base                16 items    5212 tokens
+demo-002    hidden_instruction  15 items    4360 tokens
+demo-002    fake_mri            17 items    4622 tokens
+demo-002    keyword_stuffing    15 items    6307 tokens
+
+Done. 54531 input + 52737 output tokens, about $0.239 at list price.
+Log this in the weekly AI log. Then commit results/reader_cache/ so the web app can replay it.

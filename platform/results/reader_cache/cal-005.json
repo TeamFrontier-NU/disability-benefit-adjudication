@@ -1,0 +1,205 @@
+{
+  "case_id": "cal-005",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "53",
+        "quote": "Age at filing: 53",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2025-06-02",
+        "quote": "8. Date the condition became severe enough to keep me from working: 06/02/2025",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Bad back and knees",
+        "quote": "1. Bad back and knees",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Heart problems",
+        "quote": "2. Heart problems",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "limited",
+        "quote": "Section 5. Highest grade completed: 11th grade",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Housekeeper (job required no training; learned in a few days)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-12",
+        "quote": "Date of visit: 8/12/26",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "severe degenerative disc disease L3-S1 with foraminal stenosis",
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "bilateral knee osteoarthritis",
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "heart failure with EF 40%",
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "rfc_exertional_level",
+        "value": "sedentary",
+        "quote": "Patient is restricted to sedentary exertion at most.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "permanent",
+        "quote": "Expected duration: permanent.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Diagnoses: severe degenerative disc disease L3-S1 with foraminal stenosis; bilateral knee osteoarthritis; heart failure with EF 40%.",
+        "page": 3,
+        "why": "Physician diagnoses multiple severe spine, joint, and cardiac impairments."
+      },
+      {
+        "quote": "Exam: antalgic gait, positive straight-leg raise bilaterally, crepitus both knees.",
+        "page": 3,
+        "why": "Objective physical exam findings support physical limitations."
+      },
+      {
+        "quote": "Imaging: MRI lumbar spine shows severe multilevel stenosis.",
+        "page": 3,
+        "why": "Objective imaging confirms severe spinal pathology."
+      },
+      {
+        "quote": "Functional assessment: the patient can lift and carry no more than 10 pounds occasionally, and can stand and walk for a total of less than 2 hours in an 8-hour day.",
+        "page": 3,
+        "why": "Treating physician restricts standing and walking below full range of sedentary work."
+      },
+      {
+        "quote": "Patient is restricted to sedentary exertion at most.",
+        "page": 3,
+        "why": "Treating provider limits claimant to no more than sedentary work."
+      },
+      {
+        "quote": "Expected duration: permanent.",
+        "page": 3,
+        "why": "Treating physician establishes the condition meets the 12-month duration requirement."
+      }
+    ],
+    "missing_evidence": [
+      "Full longitudinal treatment records from Valley Internal Medicine (Dr. D. Halvorsen) spanning first visit in 06/2025 through 08/2026, including formal lumbar spine MRI and echocardiogram reports."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 8.265469312667847,
+    "input_tokens": 2120,
+    "output_tokens": 1632
+  }
+}

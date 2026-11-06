@@ -1,0 +1,204 @@
+{
+  "case_id": "demo-003",
+  "case_set": "demo",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "52",
+        "quote": "Age at filing: 52",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-03-23",
+        "quote": "8. Date the condition became severe enough to keep me from working: 03/23/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Spinal cord injury",
+        "quote": "1. Spinal cord injury, uses a wheelchair",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "yes",
+        "quote": "4.A. Are you currently working? YES, I am currently working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "yes",
+        "quote": "4.G. Earnings greater than $1,550 in any month since the condition started? YES",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "skilled",
+        "quote": "1. Police officer (required academy training and 1 year field training)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-04-12",
+        "quote": "Date of visit: 04/12/2026",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-03-23",
+        "quote": "Injury date: 03/23/2026.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "cord contusion and transection at T11",
+        "quote": "MRI: cord contusion and transection at T11.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-08",
+        "quote": "Date of visit: 08/08/2026",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "sci_complete_loss_of_function",
+        "value": "yes",
+        "quote": "Assessment: complete loss of function of both lower extremities due to spinal cord injury, persisting 4 months after the injury.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "extreme_limitation_standing_balance_or_arms",
+        "value": "yes",
+        "quote": "The patient is unable to stand or walk and uses a manual wheelchair full time.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "spinal cord injury",
+        "quote": "Assessment: complete loss of function of both lower extremities due to spinal cord injury, persisting 4 months after the injury.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "permanent",
+        "quote": "Expected duration: permanent.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Assessment: complete loss of function of both lower extremities due to spinal cord injury, persisting 4 months after the injury.",
+        "page": 4,
+        "why": "Provider assessment documenting complete loss of function of both lower extremities."
+      },
+      {
+        "quote": "Exam: 0/5 strength in both lower extremities; sensation absent below the level of injury. ASIA A.",
+        "page": 4,
+        "why": "Physical examination findings confirming complete paraplegia."
+      },
+      {
+        "quote": "MRI: cord contusion and transection at T11.",
+        "page": 3,
+        "why": "Objective imaging demonstrating anatomical cord contusion and transection."
+      },
+      {
+        "quote": "Expected duration: permanent.",
+        "page": 4,
+        "why": "Medical source statement confirming impairment is permanent."
+      }
+    ],
+    "missing_evidence": [],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 12.848519086837769,
+    "input_tokens": 2215,
+    "output_tokens": 2071
+  }
+}

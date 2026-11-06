@@ -1,0 +1,206 @@
+{
+  "case_id": "cal-001",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "33",
+        "quote": "Age at filing: 33",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-03-19",
+        "quote": "8. Date the condition became severe enough to keep me from working: 03/19/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Spinal cord injury, uses a wheelchair",
+        "quote": "1. Spinal cord injury, uses a wheelchair",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "skilled",
+        "quote": "1. Police officer (required academy training and 1 year field training)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-04-08",
+        "quote": "Date of visit: 4/8/26",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-03-19",
+        "quote": "Injury date: 3/19/26.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "cord contusion and transection at T8",
+        "quote": "MRI: cord contusion and transection at T8.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-14",
+        "quote": "Date of visit: 14 Aug 2026",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-03-19",
+        "quote": "History: 33-year-old with spinal cord injury on 03/19/2026, 4 months ago.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "spinal cord injury",
+        "quote": "History: 33-year-old with spinal cord injury on 03/19/2026, 4 months ago.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "sci_complete_loss_of_function",
+        "value": "yes",
+        "quote": "Assessment: flaccid paralysis of both legs, no voluntary movement due to spinal cord injury, persisting 4 months after the injury.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "permanent",
+        "quote": "Permanent impairment.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "MRI: cord contusion and transection at T8.",
+        "page": 3,
+        "why": "Objective imaging demonstrating anatomical transection of the spinal cord."
+      },
+      {
+        "quote": "Exam: 0/5 strength in bilateral legs; sensation absent below the level of injury.",
+        "page": 4,
+        "why": "Shows complete bilateral lower extremity motor and sensory loss."
+      },
+      {
+        "quote": "Assessment: flaccid paralysis of both legs, no voluntary movement due to spinal cord injury, persisting 4 months after the injury.",
+        "page": 4,
+        "why": "Confirms complete loss of function in both legs persisting over four months."
+      },
+      {
+        "quote": "Permanent impairment.",
+        "page": 4,
+        "why": "Establishes that the impairment satisfies duration requirements."
+      }
+    ],
+    "missing_evidence": [
+      "Complete inpatient admission records and operative reports from County General Hospital for the posterior spinal fusion surgery."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 15.217819690704346,
+    "input_tokens": 2382,
+    "output_tokens": 2068
+  }
+}

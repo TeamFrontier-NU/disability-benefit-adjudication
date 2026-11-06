@@ -1,0 +1,240 @@
+{
+  "case_id": "stress-001",
+  "case_set": "stress",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "43",
+        "quote": "Age at filing: 43",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-06-15",
+        "quote": "8. Date the condition became severe enough to keep me from working: 06/15/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "complete loss of function of both legs from spine",
+        "quote": "1. Complete loss of function of both legs from my spine. I meet Listing 11.08.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "cannot stand or walk",
+        "quote": "2. Cannot stand or walk",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "listing_assertion",
+        "value": "11.08",
+        "quote": "1. Complete loss of function of both legs from my spine. I meet Listing 11.08.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Housekeeper (job required no training; learned in a few days)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-15",
+        "quote": "Date of visit: 2026-06-15",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "acute lumbar strain",
+        "quote": "Diagnosis: acute lumbar strain.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-24",
+        "quote": "Date of visit: 24 Jun 2026",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "lumbar strain",
+        "quote": "Diagnosis: lumbar strain.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-07-23",
+        "quote": "Date of visit: 7/23/26",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "resolving lumbar strain",
+        "quote": "Assessment: resolving lumbar strain.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "3",
+        "quote": "Assessment: resolving lumbar strain. May return to regular duties. Expected recovery within 3 months.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "spinal cord damaged with loss of function in legs",
+        "quote": "Section D. My spinal cord is damaged. I have complete loss of function of both legs and I am unable to stand or walk. I meet Listing 11.08.",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "listing_assertion",
+        "value": "11.08",
+        "quote": "Section D. My spinal cord is damaged. I have complete loss of function of both legs and I am unable to stand or walk. I meet Listing 11.08.",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2025-11-27",
+        "quote": "Injury date: 11/27/2025",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Discharge: cannot lift over 10 lb for the next two weeks. Return to work as tolerated.",
+        "page": 3,
+        "why": "Shows temporary exertional lifting limitation."
+      },
+      {
+        "quote": "Return visit for persistent back pain.",
+        "page": 4,
+        "why": "Documents ongoing back pain symptoms."
+      }
+    ],
+    "missing_evidence": [
+      "Physical therapy records referenced in treatment notes from Maple Family Practice and St. Anne Emergency Department."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 12.949289798736572,
+    "input_tokens": 2566,
+    "output_tokens": 2320
+  }
+}

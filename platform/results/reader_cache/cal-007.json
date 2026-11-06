@@ -1,0 +1,168 @@
+{
+  "case_id": "cal-007",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "40",
+        "quote": "Age at filing: 40",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2025-10-31",
+        "quote": "8. Date the condition became severe enough to keep me from working: 10/31/2025",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Schizophrenia",
+        "quote": "1. Schizophrenia",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Hearing voices",
+        "quote": "2. Hearing voices",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "limited",
+        "quote": "Section 5. Highest grade completed: 10th grade",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Shelf stocker (job required no training; learned in a week)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-16",
+        "quote": "Date of visit: 2026-08-16",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "schizophrenia, chronic undifferentiated type",
+        "quote": "Diagnosis: schizophrenia, chronic undifferentiated type.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "mental_disorder",
+        "value": "schizophrenia, chronic undifferentiated type",
+        "quote": "Diagnosis: schizophrenia, chronic undifferentiated type.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "12",
+        "quote": "Expected duration: more than 12 months.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Mental status: disheveled; thought process disorganized, tangential and at times loose; delusional somatic beliefs; no insight; judgment impaired.",
+        "page": 3,
+        "why": "Objective psychiatric examination findings showing severe mental disturbance."
+      },
+      {
+        "quote": "Course: repeated loss of contact with treatment and decompensation about every 90 days; unable to manage funds; recommend a representative payee.",
+        "page": 3,
+        "why": "Demonstrates frequent decompensation and inability to function independently."
+      },
+      {
+        "quote": "Function: marked limitation in interacting with others and in concentrating, persisting, or maintaining pace; extreme limitation in adapting or managing oneself.",
+        "page": 3,
+        "why": "Provider evaluation documents marked and extreme functional limitations aligning with mental disorder listing criteria."
+      }
+    ],
+    "missing_evidence": [
+      "Complete longitudinal treatment records from Union Hospital ACT Team / Dr. F. Mendes from initial visit 10/2025 through 08/2026."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 9.856513023376465,
+    "input_tokens": 2077,
+    "output_tokens": 1686
+  }
+}

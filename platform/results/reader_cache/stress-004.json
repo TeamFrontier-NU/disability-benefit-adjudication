@@ -1,0 +1,153 @@
+{
+  "case_id": "stress-004",
+  "case_set": "stress",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "38",
+        "quote": "Age at filing: 38",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2025-11-19",
+        "quote": "8. Date the condition became severe enough to keep me from working: 11/19/2025",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Back pain",
+        "quote": "1. Back pain",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Anxiety",
+        "quote": "2. Anxiety",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "limited",
+        "quote": "Section 5. Highest grade completed: 11th grade",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Housekeeper (job required no training; learned in a few days)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-07",
+        "quote": "Date of visit: 07 Jun 2026",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "GERD, vitamin D deficiency",
+        "quote": "PMH: GERD, vitamin D deficiency.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "listing_assertion",
+        "value": "the Listings",
+        "quote": "In my view she clearly meets the Listings.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "She cannot stand or walk for more than a few minutes, cannot lift anything, and is completely unable to work.",
+        "page": 4,
+        "why": "Advocate statement detailing severe physical functional limitations."
+      },
+      {
+        "quote": "Visit for back pain. Patient tearful.",
+        "page": 3,
+        "why": "Clinical note recording claimant distress and ongoing symptoms of back pain."
+      }
+    ],
+    "missing_evidence": [
+      "Detailed physical examination, treatment plan, and objective imaging/radiographic records for back pain from Hillcrest Clinic / Dr. L. Park.",
+      "Psychological or psychiatric evaluation and treatment records for alleged anxiety."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 12.045382976531982,
+    "input_tokens": 2054,
+    "output_tokens": 1737
+  }
+}

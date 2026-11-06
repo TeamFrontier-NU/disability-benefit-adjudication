@@ -1,0 +1,168 @@
+{
+  "case_id": "cal-004",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "56",
+        "quote": "Age at filing: 56",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-03-29",
+        "quote": "8. Date the condition became severe enough to keep me from working: 03/29/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Kidney failure, on dialysis",
+        "quote": "1. Kidney failure, on dialysis",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Diabetes",
+        "quote": "2. Diabetes",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Housekeeper (job required no training; learned in a few days)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-30",
+        "quote": "Date of visit: 08/30/2026",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "end-stage renal disease due to diabetic nephropathy",
+        "quote": "Diagnosis: end-stage renal disease due to diabetic nephropathy.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "chronic_dialysis",
+        "value": "yes",
+        "quote": "In-center chronic hemodialysis three times weekly since 29 Mar 2026, expected to continue indefinitely.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "permanent",
+        "quote": "Not expected to improve; lifelong.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "In-center chronic hemodialysis three times weekly since 29 Mar 2026, expected to continue indefinitely.",
+        "page": 3,
+        "why": "Establishes ongoing requirement for chronic hemodialysis for end-stage renal disease."
+      },
+      {
+        "quote": "Diagnosis: end-stage renal disease due to diabetic nephropathy.",
+        "page": 3,
+        "why": "Confirms provider diagnosis of end-stage renal disease."
+      },
+      {
+        "quote": "Not expected to improve; lifelong.",
+        "page": 3,
+        "why": "Demonstrates the medical condition is permanent and will satisfy the statutory duration requirement."
+      }
+    ],
+    "missing_evidence": [
+      "Complete dialysis logs and longitudinal treatment notes from Prairie Kidney Care / Dr. C. Okoye from March 2026 to August 2026."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 9.369472980499268,
+    "input_tokens": 2117,
+    "output_tokens": 1774
+  }
+}

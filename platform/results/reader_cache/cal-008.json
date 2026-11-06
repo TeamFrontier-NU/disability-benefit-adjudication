@@ -1,0 +1,193 @@
+{
+  "case_id": "cal-008",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "37",
+        "quote": "Age at filing: 37",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-07-11",
+        "quote": "8. Date the condition became severe enough to keep me from working: 07/11/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Back pain",
+        "quote": "1. Back pain",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Dishwasher (job required no training; learned in a day)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-07-11",
+        "quote": "Date of visit: 2026-07-11",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "acute lumbar strain",
+        "quote": "Diagnosis: acute lumbar strain.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-07-20",
+        "quote": "Date of visit: 07/20/2026",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "lumbar strain",
+        "quote": "Diagnosis: lumbar strain.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-06",
+        "quote": "Date of visit: 8/6/26",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "resolving lumbar strain",
+        "quote": "Assessment: resolving lumbar strain.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "3",
+        "quote": "Expected recovery within 3 months.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Chief complaint: low back pain after lifting a couch.",
+        "page": 3,
+        "why": "Documents the initial injury and onset of back pain symptoms."
+      },
+      {
+        "quote": "Exam: paraspinal muscle tenderness; strength 5/5; normal reflexes; negative straight-leg raise.",
+        "page": 3,
+        "why": "Provides clinical exam findings confirming paraspinal muscle tenderness."
+      },
+      {
+        "quote": "Discharge: cannot lift over 10 lb for the next two weeks.",
+        "page": 3,
+        "why": "Shows medical provider-ordered lifting restriction immediately following the injury."
+      },
+      {
+        "quote": "Return visit for persistent back pain.",
+        "page": 4,
+        "why": "Demonstrates persistent back pain requiring repeated emergency department evaluation."
+      }
+    ],
+    "missing_evidence": [],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 16.09900975227356,
+    "input_tokens": 2449,
+    "output_tokens": 2587
+  }
+}

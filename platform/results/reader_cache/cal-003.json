@@ -1,0 +1,191 @@
+{
+  "case_id": "cal-003",
+  "case_set": "calibration",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "50",
+        "quote": "Age at filing: 50",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-07-20",
+        "quote": "8. Date the condition became severe enough to keep me from working: 07/20/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Lung cancer, stage 4",
+        "quote": "1. Lung cancer, stage 4",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Shortness of breath",
+        "quote": "2. Shortness of breath",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "limited",
+        "quote": "Section 5. Highest grade completed: 10th grade",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "skilled",
+        "quote": "1. Electrician (required a 4-year apprenticeship and license)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-09-01",
+        "quote": "Date of visit: 2026-09-01",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-07-20",
+        "quote": "Diagnosis date: 2026-07-20.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "SCLC, extensive-stage",
+        "quote": "Pathology: SCLC, extensive-stage.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "lung_cancer_histology",
+        "value": "small_cell",
+        "quote": "Pathology: SCLC, extensive-stage.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "GERD",
+        "quote": "PMH: GERD, hypertension.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "hypertension",
+        "quote": "PMH: GERD, hypertension.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Pathology: SCLC, extensive-stage.",
+        "page": 3,
+        "why": "Confirms advanced small cell lung cancer diagnosis."
+      },
+      {
+        "quote": "Plan: palliative chemotherapy.",
+        "page": 3,
+        "why": "Shows the claimant requires palliative cancer treatment."
+      },
+      {
+        "quote": "ECOG performance status: 2.",
+        "page": 3,
+        "why": "Demonstrates reduced functional capacity due to medical condition."
+      }
+    ],
+    "missing_evidence": [
+      "Biopsy and pathology laboratory report establishing the histological diagnosis of SCLC.",
+      "Oncology imaging reports (e.g., CT/PET scans) and treatment records from Dr. F. Mendes from July 2026 to present."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 10.909615516662598,
+    "input_tokens": 2039,
+    "output_tokens": 1914
+  }
+}

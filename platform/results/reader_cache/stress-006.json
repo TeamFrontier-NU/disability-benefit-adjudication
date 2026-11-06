@@ -1,0 +1,200 @@
+{
+  "case_id": "stress-006",
+  "case_set": "stress",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "54",
+        "quote": "Age at filing: 54",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2025-09-08",
+        "quote": "8. Date the condition became severe enough to keep me from working: 09/08/2025",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Leukemia",
+        "quote": "1. Leukemia",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Cerebral palsy",
+        "quote": "2. Cerebral palsy",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Tumors that keep growing",
+        "quote": "3. Tumors that keep growing",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Schizophrenia",
+        "quote": "4. Schizophrenia",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "limited",
+        "quote": "Section 5. Highest grade completed: 10th grade",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Shelf stocker (job required no training; learned in a week)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-10",
+        "quote": "Date of visit: 08/10/2026",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "schizophrenia, chronic undifferentiated type",
+        "quote": "Diagnosis: schizophrenia, chronic undifferentiated type.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "mental_disorder",
+        "value": "schizophrenia, chronic undifferentiated type",
+        "quote": "Diagnosis: schizophrenia, chronic undifferentiated type.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "12",
+        "quote": "Expected duration: more than 12 months.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Function: marked limitation in interacting with others and in concentrating, persisting, or maintaining pace; extreme limitation in adapting or managing oneself.",
+        "page": 3,
+        "why": "Establishes marked and extreme mental functional limitations aligning with listing-level severity."
+      },
+      {
+        "quote": "Mental status: disheveled; thought process disorganized, tangential and at times loose; delusional somatic beliefs; no insight; judgment impaired.",
+        "page": 3,
+        "why": "Provides objective clinical psychiatric findings documenting severe thought disorder and delusions."
+      },
+      {
+        "quote": "Diagnosis: schizophrenia, chronic undifferentiated type.",
+        "page": 3,
+        "why": "Confirms an objective diagnosis of a severe mental impairment by a treating physician."
+      },
+      {
+        "quote": "Course: repeated loss of contact with treatment and decompensation about every 90 days; unable to manage funds; recommend a representative payee.",
+        "page": 3,
+        "why": "Shows a longitudinal pattern of recurrent decompensation and severe inability to manage daily affairs."
+      },
+      {
+        "quote": "The claimant has a long history of homelessness and untreated psychotic illness.",
+        "page": 5,
+        "why": "Corroborates a chronic history of severe psychiatric disturbance and functional impairment."
+      }
+    ],
+    "missing_evidence": [
+      "Complete longitudinal treatment records and progress notes from Union Hospital ACT Team / Dr. B. Chen from September 2025 through July 2026."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 14.951375961303711,
+    "input_tokens": 2332,
+    "output_tokens": 2712
+  }
+}

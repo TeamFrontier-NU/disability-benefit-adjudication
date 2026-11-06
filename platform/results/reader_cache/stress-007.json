@@ -1,0 +1,198 @@
+{
+  "case_id": "stress-007",
+  "case_set": "stress",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "52",
+        "quote": "Age at filing: 52",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-02-06",
+        "quote": "8. Date the condition became severe enough to keep me from working: 02/06/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Complete spinal cord injury",
+        "quote": "1. Complete spinal cord injury - I cannot stand or walk at all",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Constant nerve pain",
+        "quote": "2. Constant nerve pain",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "skilled",
+        "quote": "1. Bookkeeper (required 2 years of accounting training)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-02-26",
+        "quote": "Date of visit: 26 Feb 2026",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2026-02-06",
+        "quote": "Injury date: 2026-02-06.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "cord contusion and transection at T6",
+        "quote": "MRI: cord contusion and transection at T6.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-11",
+        "quote": "Date of visit: 8/11/26",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "sci_complete_loss_of_function",
+        "value": "yes",
+        "quote": "Assessment: flaccid paralysis of both legs, no voluntary movement due to SCI, persisting 6 months after the injury.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "permanent",
+        "quote": "Expected duration: permanent.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "MRI: cord contusion and transection at T6.",
+        "page": 3,
+        "why": "Confirms anatomical spinal cord transection at T6 level."
+      },
+      {
+        "quote": "Exam: 0/5 strength in BLE; sensation absent below the level of injury. ASIA A.",
+        "page": 4,
+        "why": "Demonstrates complete loss of motor and sensory function in both lower extremities."
+      },
+      {
+        "quote": "Assessment: flaccid paralysis of both legs, no voluntary movement due to SCI, persisting 6 months after the injury.",
+        "page": 4,
+        "why": "Establishes persistent complete paralysis of both lower extremities."
+      },
+      {
+        "quote": "Expected duration: permanent.",
+        "page": 4,
+        "why": "Physician documents that the impairment and functional limitations are permanent."
+      },
+      {
+        "quote": "Non-ambulatory; wheelchair for all mobility.",
+        "page": 4,
+        "why": "Confirms total inability to ambulate effectively."
+      }
+    ],
+    "missing_evidence": [],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 10.433788299560547,
+    "input_tokens": 2424,
+    "output_tokens": 1886
+  }
+}

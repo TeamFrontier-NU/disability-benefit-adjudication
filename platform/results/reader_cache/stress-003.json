@@ -1,0 +1,235 @@
+{
+  "case_id": "stress-003",
+  "case_set": "stress",
+  "variant": "base",
+  "model": "gemini-3.7-flash",
+  "recorded_at": "2026-11-05T21:16:37",
+  "read": {
+    "items": [
+      {
+        "field": "age_at_filing",
+        "value": "35",
+        "quote": "Age at filing: 35",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_onset_date",
+        "value": "2026-05-31",
+        "quote": "8. Date the condition became severe enough to keep me from working: 05/31/2026",
+        "page": 1,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "currently_working",
+        "value": "no",
+        "quote": "4.A. Are you currently working? NO, I have stopped working.",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "earnings_above_sga",
+        "value": "no",
+        "quote": "4.E. Earnings greater than $1,550 in any month since then? NO",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "education_level",
+        "value": "high_school",
+        "quote": "Section 5. Highest grade completed: 12th grade (high school diploma)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "past_work_skill",
+        "value": "unskilled",
+        "quote": "1. Shelf stocker (job required no training; learned in a week)",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "alleged_condition",
+        "value": "Back pain",
+        "quote": "1. Back pain",
+        "page": 2,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-05-31",
+        "quote": "Date of visit: 5/31/26",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "acute lumbar strain",
+        "quote": "Diagnosis: acute lumbar strain.",
+        "page": 3,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-09",
+        "quote": "Date of visit: 2026-06-09",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "lumbar strain",
+        "quote": "Diagnosis: lumbar strain.",
+        "page": 4,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-06-25",
+        "quote": "Date of visit: 2026-06-25",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "resolving lumbar strain",
+        "quote": "Assessment: resolving lumbar strain.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "expected_duration_months",
+        "value": "3",
+        "quote": "Expected recovery within 3 months.",
+        "page": 5,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "visit_date",
+        "value": "2026-08-16",
+        "quote": "Date of visit: August 16, 2026",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "injury_or_onset_date",
+        "value": "2025-11-12",
+        "quote": "Injury date: 12 Nov 2025",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "diagnosis",
+        "value": "complete paraplegia",
+        "quote": "Impression: complete paraplegia with no motor or sensory function in either leg due to SCI.",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      },
+      {
+        "field": "sci_complete_loss_of_function",
+        "value": "yes",
+        "quote": "Impression: complete paraplegia with no motor or sensory function in either leg due to SCI.",
+        "page": 6,
+        "verified": false,
+        "source_type": "",
+        "doc_id": "",
+        "counts_for_rules": false,
+        "drop_reason": ""
+      }
+    ],
+    "instruction_flags": [],
+    "evidence_for_approval": [
+      {
+        "quote": "Impression: complete paraplegia with no motor or sensory function in either leg due to SCI.",
+        "page": 6,
+        "why": "Demonstrates severe spinal cord injury with loss of motor and sensory function in both lower extremities."
+      },
+      {
+        "quote": "MRI thoracic spine: complete transection of the spinal cord at T9.",
+        "page": 6,
+        "why": "Objective radiological evidence of complete spinal cord transection."
+      },
+      {
+        "quote": "Discharge: cannot lift over 10 lb for the next two weeks.",
+        "page": 3,
+        "why": "Shows an acute exertional restriction on lifting."
+      }
+    ],
+    "missing_evidence": [
+      "Physical therapy treatment notes referenced in the emergency department and primary care notes.",
+      "Treating neurologist or neurosurgeon records corroborating the spinal cord injury and imaging report from Crestview Imaging Partners."
+    ],
+    "reader": "Gemini (gemini-3.7-flash)",
+    "seconds": 19.11026167869568,
+    "input_tokens": 2653,
+    "output_tokens": 3052
+  }
+}
