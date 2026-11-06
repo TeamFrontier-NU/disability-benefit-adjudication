@@ -6,11 +6,13 @@ import streamlit as st
 
 from fasttrack.metrics import DecisionLog, decision_metrics
 from frontier_ui import replay
+from frontier_ui.talk import speaker
 from frontier_ui.common import (ROOT, SET_LABEL, case_list, checklist_table, connector, document_viewer, flags_block,
                                 is_live, load_case, page_header, pipeline_steps, route_banner, rule_cards, run_live,
                                 run_replay)
 
 page_header("Case explorer", "Pick a case, then press **Run AI sorting**.")
+speaker("demo")
 LOG = DecisionLog(ROOT / "data" / "decisions.jsonl")
 cases = case_list()
 by_id = {c["case_id"]: c for c in cases}

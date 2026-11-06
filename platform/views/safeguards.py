@@ -7,12 +7,14 @@ import streamlit as st
 from fasttrack.intake import _pdf_pages
 from fasttrack.models import RECEIVED_VIA, SOURCE_TYPES, Document
 from frontier_ui import replay
+from frontier_ui.talk import speaker
 from frontier_ui.common import (case_list, document_viewer, expected_fast_track, flags_block, is_live, load_case,
                                 page_header, route_banner, run_live, run_replay)
 
 page_header("Safeguards and adversarial tests",
             "What happens when someone tries to game the tool? Each safeguard can only move a claim **to a person**, "
             "never onto the fast track.")
+speaker("attacks")
 
 st.subheader("Stress set: safeguards ON vs OFF")
 st.caption("Same recorded reader output for each case, run through the locked rules twice: once as built, and once "

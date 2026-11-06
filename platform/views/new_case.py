@@ -11,12 +11,14 @@ import streamlit as st
 from fasttrack.models import RECEIVED_VIA, RULE_SOURCES, SOURCE_TYPES
 from fasttrack.pipeline import route, verify
 from frontier_ui import new_case as nc
+from frontier_ui.talk import speaker
 from frontier_ui.common import (K_LOCKED, checklist_table, document_viewer, flags_block, is_live, page_header,
                                 pipeline_steps, route_banner, rule_cards, run_live)
 
 page_header("New case (live)",
             "Paste or upload a case you have never seen, then run it through the same locked reader, checklist and "
             "rules. **Live mode only**: each run is one real Gemini 3.7 Flash call (a few cents).")
+speaker("attacks")
 
 ss = st.session_state
 ss.setdefault("nc_extra", 0)

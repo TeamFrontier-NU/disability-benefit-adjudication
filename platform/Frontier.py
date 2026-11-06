@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from frontier_ui import replay
+from frontier_ui import replay, talk
 
 st.set_page_config(page_title="Frontier Fast-Track Screening", page_icon="⚖️", layout="wide")
 
@@ -40,12 +40,22 @@ with st.sidebar:
         else:
             st.caption("Live mode is off here (no passcode or key set up).")
 
-pages = [
-    st.Page("views/overview.py", title="Overview", icon="🏠", default=True),
-    st.Page("views/case_explorer.py", title="Case explorer", icon="🗂️"),
-    st.Page("views/new_case.py", title="New case (live)", icon="🆕"),
-    st.Page("views/safeguards.py", title="Safeguards", icon="🛡️"),
-    st.Page("views/results.py", title="Results", icon="📊"),
-    st.Page("views/about.py", title="About and method", icon="ℹ️"),
-]
+pages = {
+    "Presentation": [
+        st.Page("views/overview.py", title="1 · Where it fits", icon="🏠", default=True),
+        st.Page("views/standing.py", title="2 · Where we stand", icon="📍"),
+        st.Page("views/case_explorer.py", title="3 · Demo: Joe and Peter", icon="🗂️"),
+        st.Page("views/safeguards.py", title="4a · Demo: attacks", icon="🛡️"),
+        st.Page("views/new_case.py", title="4b · Demo: a new case (live)", icon="🆕"),
+        st.Page("views/evaluation.py", title="5 · Evaluation plan", icon="🧪"),
+        st.Page("views/next_steps.py", title="6 · Decisions and next steps", icon="🧭"),
+    ],
+    "Backup": [
+        st.Page("views/qa.py", title="Questions", icon="❓"),
+        st.Page("views/results.py", title="Results", icon="📊"),
+        st.Page("views/about.py", title="About and method", icon="ℹ️"),
+    ],
+}
+with st.sidebar:
+    talk.run_of_show()
 st.navigation(pages).run()
