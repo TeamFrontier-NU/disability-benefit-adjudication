@@ -29,6 +29,10 @@ QA = {
          "For the fast-track rate they give a usable but wide interval (about 7–29% around 15%). For precision they "
          "are too few: a perfect 13 of 13 only shows about 77%. We plan a larger set enriched with fast-track "
          "cases to estimate precision; the rate is still measured on the representative mix."),
+        ("Your repository is public. Can’t people see the test answers?",
+         "The 40 test answer keys are in old commits of our public repository. The AI never sees them, but a person "
+         "could. Before we freeze the plan we will draw a fresh test set (part of growing to ~200 cases) and keep its "
+         "keys out of the repository, so the reported test is on cases nobody has looked at."),
         ("How do you know the answer keys are right?",
          "Each key comes from the case’s fixed profile, not from an AI reading. Two teammates who didn’t write a "
          "case decide it blind; we report agreement and label disagreements as borderline."),

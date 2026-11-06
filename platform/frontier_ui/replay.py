@@ -152,3 +152,12 @@ def live_reader():
         os.environ["GOOGLE_API_KEY"] = key
     from fasttrack.reader import GeminiReader
     return GeminiReader()
+
+
+def recorded_at(case_id: str, variant: str = "base") -> str:
+    """When this case's reader output was recorded (YYYY-MM-DD HH:MM), or "" if unknown."""
+    f = cache_file(case_id, variant)
+    try:
+        return json.loads(f.read_text(encoding="utf-8")).get("recorded_at", "")[:16].replace("T", " ")
+    except Exception:
+        return ""

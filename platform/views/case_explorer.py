@@ -75,6 +75,13 @@ with tab_ai:
         err = next((m for m in res.read.missing_evidence if str(m).startswith("Reader failed")), "")
         if err:
             st.error(f"The reader failed, so the case goes to a person: {err}")
+        if mode == "replay":
+            when = replay.recorded_at(cid) if hasattr(replay, "recorded_at") else ""
+            st.caption(f"🔁 **Replay:** the reader’s output was recorded earlier{f' ({when})' if when else ''} "
+                       "with Gemini 3.7 Flash. The quote check, the source rule, the rules and the routing just ran now. "
+                       "Switch on Live mode to have Gemini read the file again.")
+        else:
+            st.caption("🟢 **Live:** Gemini 3.7 Flash read this file just now; everything after it ran now too.")
         route_banner(res)
         cost = ""
         if res.read.input_tokens:
