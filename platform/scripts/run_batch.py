@@ -1,7 +1,8 @@
 """Run the pipeline on a whole set of simulated cases and report the measures.
 
     python scripts/run_batch.py --set calibration --reader keyword --k 1
-    python scripts/run_batch.py --set test --reader claude --k 1      # needs an API key; ~4-6 cents a case
+    python scripts/run_batch.py --set test --reader gemini --k 1      # needs a Google Cloud project or Gemini API key
+    python scripts/run_batch.py --set test --reader claude --k 1      # needs ANTHROPIC_API_KEY
 
 Results are saved to results/<set>_<reader>_k<k>_<time>.json for the AI log.
 Never change prompts or k after looking at test-set results (pre-registration).
@@ -20,19 +21,24 @@ sys.path.insert(0, str(ROOT))
 from fasttrack.intake import LocalFolderConnector  # noqa: E402
 from fasttrack.metrics import routing_metrics, stress_metrics  # noqa: E402
 from fasttrack.pipeline import run_case  # noqa: E402
-from fasttrack.reader import ClaudeReader, KeywordReader  # noqa: E402
+from fasttrack.reader import ClaudeReader, GeminiReader, KeywordReader  # noqa: E402
+
+
+# USD per million tokens (input, output). Gemini 3.8 Flash: Google's listed rate through Dec 31, 2026,
+# doubling from Jan 1, 2027. Check the Cloud billing page for the real charge.
+PRICES = {"gemini": (0.75, 3.75), "claude": (2, 10)}
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=str(ROOT / "data" / "simulated"))
     ap.add_argument("--set", default="calibration", choices=["demo", "calibration", "test", "stress"])
-    ap.add_argument("--reader", default="keyword", choices=["keyword", "claude"])
+    ap.add_argument("--reader", default="keyword", choices=["keyword", "gemini", "claude"])
     ap.add_argument("--k", type=int, default=1, help="AMS documents required per criterion (the one tuned setting)")
     a = ap.parse_args()
 
     con = LocalFolderConnector(a.data)
-    reader = ClaudeReader() if a.reader == "claude" else KeywordReader()
+    reader = {"gemini": GeminiReader, "claude": ClaudeReader, "keyword": KeywordReader}[a.reader]()
     rows = []
     for c in con.list_cases(a.set):
         case, key = con.load_case(c["case_id"]), con.answer_key(c["case_id"])
@@ -53,7 +59,8 @@ def main():
     tokens_in = sum(r["input_tokens"] for r in rows)
     tokens_out = sum(r["output_tokens"] for r in rows)
     if tokens_in:
-        report["estimated_cost_usd"] = round(tokens_in * 2 / 1e6 + tokens_out * 10 / 1e6, 3)  # Sonnet 5.5 list price
+        p_in, p_out = PRICES.get(a.reader, (0, 0))
+        report["estimated_cost_usd"] = round(tokens_in * p_in / 1e6 + tokens_out * p_out / 1e6, 3)
     report["rows"] = rows
     out = ROOT / "results" / f"{a.set}_{a.reader}_k{a.k}_{datetime.now():%Y%m%d-%H%M%S}.json"
     out.parent.mkdir(exist_ok=True)

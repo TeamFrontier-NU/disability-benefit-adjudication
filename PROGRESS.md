@@ -2,6 +2,9 @@
 
 Newest first.
 
+## 2026-11-06
+- **AI reader moved to Gemini on Google Cloud.** The platform now reads case files with Gemini (`gemini-3.8-flash` by default) through Vertex AI, using the same checklist, JSON schema, quote check and rules. The Claude reader stays as an alternative.
+
 ## 2026-10-29
 - **Realistic simulated cases.** Medical records now state the same finding in different ways, use abbreviations and mixed date formats, and include routine content around the key lines. Added near-miss cases that look eligible but aren't: a spinal cord injury under 3 months old, temporary dialysis, and sedentary limits at age 47.
 
@@ -11,6 +14,6 @@ Newest first.
 - **Safeguards against gaming.** The source rule, provenance check, consistency check and instruction scan each send a suspicious case to a human.
 
 ## Next
-- Run the Claude reader on the calibration cases and lock the settings.
+- Run the Gemini reader on the calibration cases and lock the settings.
 - Run the test set once and report the results with confidence intervals.
 - Time examiner decisions with and without AI assistance.

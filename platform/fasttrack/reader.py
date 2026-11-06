@@ -1,7 +1,8 @@
 """Read step: fill the fixed checklist from the case file.
 
-Two readers share one output format:
-  ClaudeReader   the real tool: Claude (Sonnet 5.5) with a strict JSON schema
+Three readers share one output format:
+  GeminiReader   the main reader: Gemini on Google Cloud (Vertex AI) or the Gemini API, with a JSON schema
+  ClaudeReader   alternative: Claude (Sonnet 5.5) with a strict JSON schema
   KeywordReader  offline baseline with fixed patterns; no API key or network needed
 
 Neither reader sees the rules, the threshold, or who wrote each document.
@@ -18,6 +19,7 @@ from .fields import FIELDS, FIELD_NAMES
 from .models import Case, Item, ReadResult
 
 MODEL = "claude-sonnet-5-5"
+GEMINI_MODEL = "gemini-3.8-flash"  # override with the GEMINI_MODEL environment variable
 
 
 def case_as_text(case: Case) -> str:
@@ -107,6 +109,75 @@ class ClaudeReader:
             instruction_flags=data["instruction_flags"], evidence_for_approval=data["evidence_for_approval"],
             missing_evidence=data["missing_evidence"], reader=self.name, seconds=time.time() - t0,
             input_tokens=resp.usage.input_tokens, output_tokens=resp.usage.output_tokens)
+
+
+# ----------------------------------------------------------------------------- Gemini reader
+
+def _gemini_schema(node):
+    """Copy of SCHEMA without additionalProperties, which Gemini's schema subset may reject."""
+    if isinstance(node, dict):
+        return {k: _gemini_schema(v) for k, v in node.items() if k != "additionalProperties"}
+    if isinstance(node, list):
+        return [_gemini_schema(v) for v in node]
+    return node
+
+
+GEMINI_SCHEMA = _gemini_schema(SCHEMA)
+GEMINI_STOP_OK = {"STOP"}
+
+
+class GeminiReader:
+    """Gemini through the Google Gen AI SDK.
+
+    Google Cloud (Vertex AI): set GOOGLE_GENAI_USE_VERTEXAI=true, GOOGLE_CLOUD_PROJECT and
+    GOOGLE_CLOUD_LOCATION (for example "global"), and sign in once with
+    `gcloud auth application-default login`. Billing goes to that Cloud project.
+    Gemini API instead: set GEMINI_API_KEY.
+    """
+
+    def __init__(self, model: str | None = None, thinking: str = "medium"):
+        import os
+
+        from google import genai
+
+        self.client = genai.Client()  # reads the environment variables above
+        self.model = model or os.environ.get("GEMINI_MODEL", GEMINI_MODEL)
+        self.thinking = thinking
+        self.name = f"Gemini ({self.model})"
+
+    def read(self, case: Case) -> ReadResult:
+        from google.genai import types
+
+        t0 = time.time()
+        resp = self.client.models.generate_content(
+            model=self.model,
+            contents="Claim file:\n\n" + case_as_text(case),
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM,
+                temperature=0,
+                max_output_tokens=16000,
+                response_mime_type="application/json",
+                response_json_schema=GEMINI_SCHEMA,
+                thinking_config=types.ThinkingConfig(thinking_level=self.thinking.upper()),
+            ),
+        )
+        cand = resp.candidates[0] if resp.candidates else None
+        reason = cand.finish_reason.name if cand and cand.finish_reason else "NO_CANDIDATE"
+        if reason == "MAX_TOKENS":
+            raise RuntimeError("Reader output was cut off; send the case to the human queue.")
+        if reason not in GEMINI_STOP_OK:
+            raise RuntimeError(f"The model did not finish this file ({reason}); send the case to the human queue.")
+        data = json.loads(resp.text)
+        for f in ("items", "instruction_flags", "evidence_for_approval", "missing_evidence"):
+            data.setdefault(f, [])
+        u = resp.usage_metadata
+        return ReadResult(
+            items=[Item(field=i["field"], value=i["value"], quote=i["quote"], page=i["page"]) for i in data["items"]
+                   if i.get("field") in FIELD_NAMES],
+            instruction_flags=data["instruction_flags"], evidence_for_approval=data["evidence_for_approval"],
+            missing_evidence=data["missing_evidence"], reader=self.name, seconds=time.time() - t0,
+            input_tokens=(u.prompt_token_count or 0) if u else 0,
+            output_tokens=((u.candidates_token_count or 0) + (u.thoughts_token_count or 0)) if u else 0)
 
 
 # ----------------------------------------------------------------------------- keyword baseline

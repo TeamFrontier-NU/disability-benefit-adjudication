@@ -19,7 +19,7 @@ from fasttrack.intake import FileImport, LocalFolderConnector
 from fasttrack.metrics import DecisionLog, decision_metrics, routing_metrics, stress_metrics
 from fasttrack.models import Document, RECEIVED_VIA, SOURCE_TYPES, RULE_SOURCES
 from fasttrack.pipeline import run_case
-from fasttrack.reader import ClaudeReader, KeywordReader
+from fasttrack.reader import ClaudeReader, GeminiReader, KeywordReader
 
 ROOT = Path(__file__).parent
 SIM, IMP = ROOT / "data" / "simulated", ROOT / "data" / "imported"
@@ -42,8 +42,10 @@ with st.sidebar:
     sets = sorted({c["case_set"] for c in con.list_cases()}) or ["(none)"]
     order = ["demo", "calibration", "test", "stress", "imported"]
     case_set = st.selectbox("Case set", sorted(sets, key=lambda s: order.index(s) if s in order else 9))
-    reader_name = st.radio("Reader", ["Offline keyword baseline", "Claude API (Sonnet 5.5)"],
-                           help="The Claude reader needs ANTHROPIC_API_KEY or `ant auth login` on this computer.")
+    reader_name = st.radio("Reader", ["Offline keyword baseline", "Gemini (Google Cloud)", "Claude API (Sonnet 5.5)"],
+                           help="Gemini needs a Google Cloud project (GOOGLE_CLOUD_PROJECT, signed in with "
+                                "`gcloud auth application-default login`) or GEMINI_API_KEY. "
+                                "Claude needs ANTHROPIC_API_KEY.")
     k = st.select_slider("AMS documents required per criterion", options=[1, 2], value=1,
                          help="The one setting tuned on the calibration cases, then locked.")
     safeguards = st.toggle("Safeguards on", value=True,
@@ -57,6 +59,8 @@ with st.sidebar:
 
 @st.cache_resource
 def get_reader(name):
+    if name.startswith("Gemini"):
+        return GeminiReader()
     return ClaudeReader() if name.startswith("Claude") else KeywordReader()
 
 
@@ -64,7 +68,7 @@ def reader():
     try:
         return get_reader(reader_name)
     except Exception as e:
-        st.error(f"Claude reader unavailable ({e}); using the offline baseline.")
+        st.error(f"{reader_name} unavailable ({e}); using the offline baseline.")
         return get_reader("Offline")
 
 

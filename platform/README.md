@@ -47,8 +47,16 @@ streamlit run app.py        # opens http://localhost:8501 on this computer only
 ```
 
 - **Offline keyword baseline:** needs no key. Use it to try the panel on the demo set.
-- **Claude reader (Sonnet 5.5):** needs `ANTHROPIC_API_KEY`. It costs about 4–6¢ per simulated case.
-- **Batch evaluation:** `python scripts/run_batch.py --set calibration --reader claude --k 1`.
+- **Gemini reader (main reader, `gemini-3.8-flash` by default):** runs on Google Cloud (Vertex AI) or the Gemini API.
+  ```bash
+  export GOOGLE_GENAI_USE_VERTEXAI=true
+  export GOOGLE_CLOUD_PROJECT=<your-project-id>
+  export GOOGLE_CLOUD_LOCATION=global
+  gcloud auth application-default login     # once per computer
+  ```
+  Or set `GEMINI_API_KEY` instead. Set `GEMINI_MODEL` to try another Gemini model.
+- **Claude reader (Sonnet 5.5):** an alternative; needs `ANTHROPIC_API_KEY`.
+- **Batch evaluation:** `python scripts/run_batch.py --set calibration --reader gemini --k 1`.
 - **Regenerate the simulated cases:** `python -m fasttrack.simulate --out data/simulated --seed 425`.
 
 ## Simulated data
@@ -66,7 +74,7 @@ The demo set uses fixed template wording. The other sets use varied wording, rou
 
 ## Status
 
-Results from the Claude reader are not in yet. The offline keyword baseline is a sanity check only:
+Results from the Gemini reader are not in yet. The offline keyword baseline is a sanity check only:
 - On the varied-wording test set it routes 27/40 as expected, and fast-tracks nothing.
 - On the stress set it sends all 7 gaming attempts to a human.
 
@@ -76,7 +84,7 @@ Results from the Claude reader are not in yet. The offline keyword baseline is a
 | --- | --- |
 | `app.py` | Examiner panel (Streamlit) |
 | `fasttrack/intake.py` | Import connectors |
-| `fasttrack/reader.py` | Claude reader and offline keyword baseline |
+| `fasttrack/reader.py` | Gemini reader, Claude reader, and offline keyword baseline |
 | `fasttrack/pipeline.py` | Quote check, source rule, rule table, flags, routing |
 | `fasttrack/fields.py` | The fixed checklist |
 | `fasttrack/metrics.py` | Measures with Wilson CIs; decision log; human-only vs. human + AI |
