@@ -68,9 +68,12 @@ with c3:
                 unsafe_allow_html=True)
 
 l1, l2, l3 = st.columns(3)
-l1.page_link("views/results.py", label="Calibration details", icon="📊")
-l2.page_link("views/safeguards.py", label="Stress set details", icon="🛡️")
-l3.page_link("views/case_explorer.py", label="Try a case", icon="🗂️")
+try:
+    l1.page_link("views/results.py", label="Calibration details", icon="📊")
+    l2.page_link("views/safeguards.py", label="Stress set details", icon="🛡️")
+    l3.page_link("views/case_explorer.py", label="Try a case", icon="🗂️")
+except Exception:  # page opened on its own (headless check): links need the full app
+    st.caption("Details: Results, Safeguards and Case explorer pages.")
 
 st.info("These are calibration and stress results on simulated cases. They are **not evidence for the claim yet**. "
         "The claim (at least 15% fast-tracked, at least 95% of those eligible, 0 AI denials) is tested once on 40 "
