@@ -3,7 +3,8 @@ from __future__ import annotations
 import streamlit as st
 
 from frontier_ui.common import page_header
-from frontier_ui.talk import CAP_USD, CLAUDE_PRO_USD, api_spend, speaker
+from frontier_ui.talk import (CAP_USD, CASES_SO_FAR, CLAUDE_PRO_USD, PROJECTION_PRICES, api_spend,
+                              avg_tokens_per_read, projected_cost, speaker)
 
 page_header("Where the product stands",
             "What works, what doesn’t yet, what changed since the pitch and what we dropped, and what we have spent.")
@@ -32,7 +33,9 @@ with c3:
 <li><b>Dropped:</b> our first keyword baseline as evidence; it only matched our own templates</li></ul></div>""",
                 unsafe_allow_html=True)
 
-st.subheader("Spend against the $200 course cap")
+st.subheader("Spend so far, against the $200 course cap")
+st.caption(f"While the budget is not yet approved we have kept runs small: {CASES_SO_FAR} simulated cases, "
+           "run only as often as calibration, stress tests and the demo needed.")
 api, tokens = api_spend()
 live = sum(x.get("cost_usd", 0) for x in st.session_state.get("live_log", []))
 total = CLAUDE_PRO_USD + api + live
@@ -51,5 +54,45 @@ m1.metric("Spent so far", f"${total:.2f}", help="Subscription plus API estimate.
 m2.metric("Left under the cap", f"${CAP_USD - total:.2f}")
 m3.metric("Largest single line", "Claude Pro", f"${CLAUDE_PRO_USD:.0f}", delta_color="off")
 st.caption("API figures are estimates from token counts at Gemini 3.7 Flash list price ($0.75 / $3.75 per million "
-           "tokens); the Google Cloud billing page is the real figure. Most of the cap is kept for the test run, "
-           "a robustness check on other models and the larger case set.")
+           "tokens); the Google Cloud billing page is the real figure.")
+
+# ----------------------------------------------------------------------------- projection
+st.subheader("Projected budget for the full evaluation (if approved)")
+t_in, t_out = avg_tokens_per_read()
+per_read = (t_in * PROJECTION_PRICES["Gemini 3.7 Flash (now)"][0] + t_out * PROJECTION_PRICES["Gemini 3.7 Flash (now)"][1]) / 1e6
+st.markdown(f"Plan: **500–1,000 simulated cases**. Today one read of one case uses about **{t_in + t_out:,.0f} "
+            f"tokens** (about **{per_read * 100:.1f}¢** on Gemini 3.7 Flash). The new cases will be longer, so we "
+            "assume **2× the tokens**. Each case is read twice on the main model (the locked run plus a repeat), "
+            "and moving to a Claude model costs more per read.")
+GEM, GEM27, SON, OPUS = list(PROJECTION_PRICES)
+scen = [
+    ("A · Gemini 3.7 Flash only", [(GEM, 2)]),
+    ("B · Gemini + one Claude Sonnet robustness read", [(GEM, 2), (SON, 1)]),
+    ("C · Switch the main reader to Claude Sonnet", [(SON, 2)]),
+    ("D · Gemini + Sonnet, after Gemini’s 2027 price rise", [(GEM27, 2), (SON, 1)]),
+    ("E · Switch the main reader to Claude Opus", [(OPUS, 2)]),
+]
+left = CAP_USD - total
+rows = []
+for name, reads in scen:
+    c5, c10 = projected_cost(500, reads), projected_cost(1000, reads)
+    rows.append({"Scenario": name, "500 cases": f"${c5:,.0f}", "1,000 cases": f"${c10:,.0f}",
+                 "Fits what’s left of the cap?": "yes" if c10 <= left else ("only at 500" if c5 <= left else "no")})
+st.dataframe(rows, width="stretch", hide_index=True)
+st.caption(f"‘What’s left’ is ${left:,.0f} after spend so far. Gemini prices are its list prices (introductory "
+           "until Dec 31, 2026); Claude prices are from our pitch’s price table. Case generation by another AI "
+           "and real files (often 50–500 pages) would add more; a real-file study needs its own budget.")
+
+with st.expander("Try other numbers"):
+    a, b, c = st.columns(3)
+    n = a.slider("Cases", 100, 2000, 1000, step=100)
+    length = b.select_slider("File length vs. today", [1.0, 2.0, 3.0, 5.0], value=2.0, format_func=lambda x: f"{x:g}×")
+    main = c.selectbox("Main reader", list(PROJECTION_PRICES))
+    d, e, f = st.columns(3)
+    main_reads = d.number_input("Reads per case (main)", 1, 5, 2)
+    check = e.selectbox("Robustness model", ["None"] + list(PROJECTION_PRICES), index=3)
+    check_reads = f.number_input("Reads per case (robustness)", 0, 3, 1)
+    reads = [(main, int(main_reads))] + ([(check, int(check_reads))] if check != "None" and check_reads else [])
+    est = projected_cost(n, reads, length)
+    st.metric("Estimated API cost", f"${est:,.0f}",
+              f"{'within' if est <= left else 'over'} the ${left:,.0f} left under the cap", delta_color="off")

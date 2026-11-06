@@ -18,8 +18,9 @@ AGENDA = [
          cue="The applicant’s path today vs. with our tool. QDD/CAL stays; we add a second screen on the "
              "medical records. Never denies."),
     dict(key="standing", page="2 · Where we stand", speaker="Yiling Long", minutes="1:30",
-         cue="Works / not yet / changed since the pitch and what we dropped. Spend against the $200 cap and the "
-             "largest line."),
+         cue="Works / not yet / changed since the pitch and what we dropped. Spend so far (61 cases, kept small "
+             "while the budget isn’t approved; largest line Claude Pro), then the projected cost of 500–1,000 "
+             "cases and what switching to Claude would add."),
     dict(key="demo", page="3 · Demo: Joe and Peter", speaker="Yanqi Wu", minutes="1:15",
          cue="Replay mode. Joe → fast track (11.08), show the quotes; Peter → human queue: “not picked means "
              "normal review, not a denial.”"),
@@ -85,3 +86,41 @@ def api_spend() -> tuple[float, int]:
         t_in += r.get("input_tokens", 0) or 0
         t_out += r.get("output_tokens", 0) or 0
     return (t_in * p_in + t_out * p_out) / 1e6, t_in + t_out
+
+
+# ----------------------------------------------------------------------------- projected budget
+# USD per million tokens (input, output). Gemini: list price we use in reader.py (introductory until Dec 31, 2026,
+# then doubling). Claude: the price table in our design pitch (Sonnet 5.5 $0.021 and Opus 5.5 $0.042 per
+# 3k-in / 1.5k-out call). Confirm all of them before the final budget request.
+PROJECTION_PRICES = {
+    "Gemini 3.7 Flash (now)": (0.75, 3.75),
+    "Gemini 3.7 Flash (from 2027)": (1.50, 7.50),
+    "Claude Sonnet 5.5": (2.0, 10.0),
+    "Claude Opus 5.5": (4.0, 20.0),
+}
+CASES_SO_FAR = 61          # simulated cases built so far (demo 3, calibration 10, test 40, stress 8)
+
+
+def avg_tokens_per_read() -> tuple[float, float]:
+    """Average input and output tokens per reader call, measured on the Replay recording (Gemini 3.7 Flash)."""
+    t_in = t_out = n = 0
+    for f in sorted((RESULTS / "reader_cache").glob("*.json")):
+        try:
+            r = json.loads(f.read_text(encoding="utf-8"))["read"]
+        except Exception:
+            continue
+        if r.get("input_tokens"):
+            t_in += r["input_tokens"]
+            t_out += r.get("output_tokens", 0) or 0
+            n += 1
+    return (t_in / n, t_out / n) if n else (2300.0, 2200.0)
+
+
+def projected_cost(cases: int, reads: list[tuple[str, int]], length: float = 2.0) -> float:
+    """Dollars for `cases` cases, each read `reads` times per model, with files `length` times our current ones."""
+    t_in, t_out = avg_tokens_per_read()
+    total = 0.0
+    for model, n in reads:
+        p_in, p_out = PROJECTION_PRICES[model]
+        total += cases * n * length * (t_in * p_in + t_out * p_out) / 1e6
+    return total
