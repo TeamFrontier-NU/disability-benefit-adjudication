@@ -123,12 +123,12 @@ with tab_q:
         rows.append({"Case": c["case_id"], "Title": c["title"], "Claim": c["claim_type"],
                      "AI route": ROUTE_LABEL[r.routing.route] if r else "not run",
                      "Path": r.routing.path if r else "",
-                     "Flags": len([f for f in r.routing.flags if f["type"] != "label_only"]) if r else "",
+                     "Flags": str(len([f for f in r.routing.flags if f["type"] != "label_only"])) if r else "",
                      "Decided": "yes" if any(d["case_id"] == c["case_id"] for d in LOG.all()) else ""})
     if mode_key == "human_only":
         for row in rows:
             row["AI route"], row["Path"], row["Flags"] = "hidden", "", ""
-    st.dataframe(rows, use_container_width=True, hide_index=True)
+    st.dataframe(rows, width="stretch", hide_index=True)
 
 # ----------------------------------------------------------------------------- case review
 with tab_c:
@@ -199,7 +199,7 @@ with tab_c:
                                "Quote found": "✔" if i.verified else "✘",
                                "Counts for rules": "✔" if i.counts_for_rules else "",
                                "Why not": i.drop_reason, "Quote": i.quote} for i in res.read.items],
-                             use_container_width=True, hide_index=True, height=260)
+                             width="stretch", hide_index=True, height=260)
                 if res.read.evidence_for_approval:
                     st.subheader("Evidence for approval")
                     for ev in res.read.evidence_for_approval:

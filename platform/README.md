@@ -4,6 +4,8 @@ A working prototype of an examiner-facing tool for initial adult SSI/SSDI disabi
 
 ![Case review screen](screenshot_case-review.png)
 
+> **New (Nov 5): presentation app.** Double-click `Start-Frontier.command` (Mac) or `Start-Frontier.bat` (Windows), or run `streamlit run Frontier.py`. It opens in Replay mode (recorded Gemini output, no key). See the top-level README and `CHANGELOG.md`. The original panel below (`app.py`) still works.
+
 ## What it does
 
 ```
@@ -55,6 +57,7 @@ streamlit run app.py        # opens http://localhost:8501 on this computer only
   An AI Studio key (starting `AIza`) uses the Gemini API instead. `scripts/find_gemini_model.py` lists the model names a key can use; set `GEMINI_MODEL` to try another.
 - **Claude reader (Sonnet 5.5):** the reader named in the original plan, kept for a robustness check; needs `ANTHROPIC_API_KEY`.
 - **Batch evaluation:** `python scripts/run_batch.py --set calibration --reader gemini --k 1`.
+- **Spend and stability:** `python scripts/cost_to_date.py` adds up reader cost over every saved run; `python scripts/compare_runs.py results/calibration_gemini_k1_*.json` shows which cases changed route between repeated runs.
 - **Regenerate the simulated cases:** `python -m fasttrack.simulate --out data/simulated --seed 425`.
 
 ## Simulated data
@@ -101,5 +104,8 @@ The offline keyword baseline is a sanity check only. On the varied-wording test 
 | `fasttrack/metrics.py` | Measures with Wilson CIs; decision log; human-only vs. human + AI |
 | `fasttrack/simulate.py` | Simulated case generator |
 | `scripts/run_batch.py` | Batch evaluation |
+| `scripts/cost_to_date.py` | Reader spend across all saved runs, priced from `PRICES` in `reader.py` |
+| `scripts/compare_runs.py` | Route changes between repeated runs (run-to-run stability) |
 | `scripts/blind_check.py` | Blind check of answer keys by two independent reviewers (agreement and Cohen's kappa) |
+| `BLIND-CHECK-GUIDE.md` | How checkers decide and record each case in the blind check |
 | `data/simulated/` | Generated cases with answer keys |

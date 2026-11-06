@@ -1,0 +1,215 @@
+{
+  "set": "calibration",
+  "reader": "Gemini (gemini-3.7-flash)",
+  "k": 1,
+  "run_at": "2026-11-05T19:55:42",
+  "metrics": {
+    "cases": 10,
+    "fast_track_rate": "6/10 = 60% (95% CI 31%-83%)",
+    "fast_track_precision": "6/6 = 100% (95% CI 61%-100%)",
+    "fast_track_recall_of_eligible": "6/7 = 86% (95% CI 49%-97%)",
+    "route_matches_design": "10/10 = 100% (95% CI 72%-100%)",
+    "ai_denials": 0,
+    "quote_verification_rate": "137/137 = 100% (95% CI 97%-100%)",
+    "mean_seconds_per_case": 16.75,
+    "targets": {
+      "fast_track_rate": "at least 15%",
+      "fast_track_precision": "at least 95%",
+      "ai_denials": "0"
+    },
+    "_raw": {
+      "n": 10,
+      "ft": 6,
+      "ft_correct": 6,
+      "eligible": 7
+    }
+  },
+  "tokens": {
+    "input": 21906,
+    "output": 18952
+  },
+  "estimated_cost_usd": 0.0875,
+  "rows": [
+    {
+      "case_id": "cal-001",
+      "case_set": "calibration",
+      "profile": "SCI complete",
+      "route": "fast_track",
+      "path": "11.08",
+      "reasons": [
+        "Meets Listing 11.08 spinal cord disorders"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 15,
+      "items_verified": 15,
+      "seconds": 56.90495204925537,
+      "input_tokens": 2382,
+      "output_tokens": 2129,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-002",
+      "case_set": "calibration",
+      "profile": "SCI incomplete",
+      "route": "fast_track",
+      "path": "11.08",
+      "reasons": [
+        "Meets Listing 11.08 spinal cord disorders"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 17,
+      "items_verified": 17,
+      "seconds": 11.87529730796814,
+      "input_tokens": 2410,
+      "output_tokens": 2240,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-003",
+      "case_set": "calibration",
+      "profile": "Lung small-cell",
+      "route": "fast_track",
+      "path": "13.14",
+      "reasons": [
+        "Meets Listing 13.14 lung cancer"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 14,
+      "items_verified": 14,
+      "seconds": 8.696546077728271,
+      "input_tokens": 2039,
+      "output_tokens": 1396,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-004",
+      "case_set": "calibration",
+      "profile": "Dialysis",
+      "route": "fast_track",
+      "path": "6.03",
+      "reasons": [
+        "Meets Listing 6.03 kidney disease on chronic dialysis"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 13,
+      "items_verified": 13,
+      "seconds": 12.210519075393677,
+      "input_tokens": 2117,
+      "output_tokens": 2176,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-005",
+      "case_set": "calibration",
+      "profile": "Grid sedentary 50-54",
+      "route": "fast_track",
+      "path": "grid",
+      "reasons": [
+        "Meets Medical-vocational grid rule 201.09"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 14,
+      "items_verified": 14,
+      "seconds": 16.245684385299683,
+      "input_tokens": 2120,
+      "output_tokens": 2069,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-006",
+      "case_set": "calibration",
+      "profile": "Grid sedentary 55+",
+      "route": "fast_track",
+      "path": "grid",
+      "reasons": [
+        "Meets Medical-vocational grid rule 201.04"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 14,
+      "items_verified": 14,
+      "seconds": 17.552005767822266,
+      "input_tokens": 2172,
+      "output_tokens": 2402,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-007",
+      "case_set": "calibration",
+      "profile": "Schizophrenia",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence.",
+        "Mental disorder: examiner decides."
+      ],
+      "key_eligible": true,
+      "key_fast_track": false,
+      "items_total": 12,
+      "items_verified": 12,
+      "seconds": 9.869342803955078,
+      "input_tokens": 2077,
+      "output_tokens": 1531,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-008",
+      "case_set": "calibration",
+      "profile": "Back strain",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 14,
+      "items_verified": 14,
+      "seconds": 12.985644817352295,
+      "input_tokens": 2449,
+      "output_tokens": 1809,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-009",
+      "case_set": "calibration",
+      "profile": "Near miss: SCI under 3 months",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 13,
+      "items_verified": 13,
+      "seconds": 10.451106548309326,
+      "input_tokens": 2074,
+      "output_tokens": 1654,
+      "reader_error": ""
+    },
+    {
+      "case_id": "cal-010",
+      "case_set": "calibration",
+      "profile": "Short duration",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 11,
+      "items_verified": 11,
+      "seconds": 10.706424236297607,
+      "input_tokens": 2066,
+      "output_tokens": 1546,
+      "reader_error": ""
+    }
+  ]
+}

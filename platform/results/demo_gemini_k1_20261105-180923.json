@@ -1,0 +1,80 @@
+{
+  "set": "demo",
+  "reader": "Gemini (gemini-2.5-flash)",
+  "k": 1,
+  "run_at": "2026-11-05T18:09:23",
+  "metrics": {
+    "cases": 3,
+    "fast_track_rate": "0/3 = 0% (95% CI 0%-56%)",
+    "fast_track_precision": "n/a",
+    "fast_track_recall_of_eligible": "0/1 = 0% (95% CI 0%-79%)",
+    "route_matches_design": "2/3 = 67% (95% CI 21%-94%)",
+    "ai_denials": 0,
+    "quote_verification_rate": "n/a",
+    "mean_seconds_per_case": 3.48,
+    "targets": {
+      "fast_track_rate": "at least 15%",
+      "fast_track_precision": "at least 95%",
+      "ai_denials": "0"
+    },
+    "_raw": {
+      "n": 3,
+      "ft": 0,
+      "ft_correct": 0,
+      "eligible": 1
+    }
+  },
+  "rows": [
+    {
+      "case_id": "demo-001",
+      "case_set": "demo",
+      "profile": "Joe",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 10.239495992660522,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "demo-002",
+      "case_set": "demo",
+      "profile": "Peter",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.10082030296325684,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "demo-003",
+      "case_set": "demo",
+      "profile": "Joe, still working",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.10190391540527344,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  ]
+}

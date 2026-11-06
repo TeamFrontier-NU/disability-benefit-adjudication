@@ -1,4 +1,6 @@
-anthropic>=2.3
-streamlit>=1.40
+streamlit>=1.50
 pypdf>=5
 google-genai>=1.30
+anthropic>=2.3
+pandas
+altair
