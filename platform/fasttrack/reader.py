@@ -23,7 +23,11 @@ MODEL = "claude-sonnet-5-5"
 GEMINI_MODEL = "gemini-3.7-flash"   # chosen 2026-11-05 (2.5 not available in our project); override with the GEMINI_MODEL environment variable
 # USD per million tokens (input, output) for the cost estimate in run_batch.py; check the
 # Google Cloud billing page for the real figure before putting it on a slide.
-PRICES = {"claude-sonnet-5-5": (2.0, 10.0), "gemini-2.5-flash": (0.30, 2.50), "gemini-2.5-pro": (1.25, 10.0)}
+# gemini-3.7-flash: introductory rate $0.75 / $3.75 until 2026-12-31, then $1.50 / $7.50 (DataCamp and
+# CloudZero price tables, checked 2026-11-06; not yet confirmed on Google's own page). Thinking tokens are
+# billed as output, and GeminiReader already counts them in output_tokens.
+PRICES = {"claude-sonnet-5-5": (2.0, 10.0), "gemini-3.7-flash": (0.75, 3.75),
+          "gemini-2.5-flash": (0.30, 2.50), "gemini-2.5-pro": (1.25, 10.0)}
 
 
 def case_as_text(case: Case) -> str:
