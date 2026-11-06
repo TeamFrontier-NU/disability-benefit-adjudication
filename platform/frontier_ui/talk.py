@@ -12,25 +12,27 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 
-# Proposed split for the 8-minute presentation. Swap names freely; keep the times adding up to 8:00.
+# The 8-minute plan. Presenters not decided yet: fill in `speaker` when they are; times add up to 8:00.
 AGENDA = [
-    dict(key="fits", page="1 · Where it fits", speaker="Zhiying Cui", minutes="1:00",
+    dict(key="fits", page="1 · Where it fits", speaker="", minutes="1:00",
          cue="The applicant’s path today vs. with our tool. QDD/CAL stays; we add a second screen on the "
              "medical records. Never denies."),
-    dict(key="standing", page="2 · Where we stand", speaker="Yiling Long", minutes="1:30",
+    dict(key="standing", page="2 · Where we stand", speaker="", minutes="1:30",
          cue="Works / not yet / changed since the pitch and what we dropped. Spend so far (61 cases, kept small "
              "while the budget isn’t approved; largest line Claude Pro), then the projected cost of 500–1,000 "
              "cases and what switching to Claude would add."),
-    dict(key="demo", page="3 · Demo: Joe and Peter", speaker="Yanqi Wu", minutes="1:15",
-         cue="Replay mode. Joe → fast track (11.08), show the quotes; Peter → human queue: “not picked means "
-             "normal review, not a denial.”"),
-    dict(key="attacks", page="4 · Demo: attacks and a new case", speaker="Yihang Ye", minutes="2:00",
-         cue="Safeguards page: one recorded attack (instant). Then New case (live) with the discussant’s or "
-             "instructor’s input. A live run takes about 90 seconds: press Run, then explain the steps while it "
-             "works."),
-    dict(key="evaluation", page="5 · Evaluation plan", speaker="Xinhui Zong", minutes="1:30",
+    dict(key="demo", page="3 · Demo: Joe and Peter", speaker="", minutes="1:15",
+         cue="Replay mode, and say so: “the reader’s output for these two was recorded tonight; the checks, rules "
+             "and routing run now.” Joe → fast track (11.08), show the quotes; Peter → human queue: “not picked "
+             "means normal review, not a denial.”"),
+    dict(key="attacks", page="4 · Demo: attacks and a new case", speaker="", minutes="2:00",
+         cue="This part must run live (the rubric gives 0 for a recorded demo). One recorded attack on the "
+             "Safeguards page first, then the discussant’s or instructor’s input in Live mode: added to Peter on "
+             "the Safeguards page, or as a whole new case. A live run takes about 90 seconds: press Run, then walk "
+             "through the steps while it works. If it does something unexpected, say so."),
+    dict(key="evaluation", page="5 · Evaluation plan", speaker="", minutes="1:30",
          cue="Claim, threshold, counterfactual, assignment. How and on whom. Read the power table out loud."),
-    dict(key="next", page="6 · Decisions and next steps", speaker="Yixuan Wen", minutes="0:45",
+    dict(key="next", page="6 · Decisions and next steps", speaker="", minutes="0:45",
          cue="Two decisions, asked as questions to the room. Then next steps in one breath."),
 ]
 BY_KEY = {a["key"]: a for a in AGENDA}
@@ -45,16 +47,16 @@ def speaker(key: str):
     """A small line under the page title: who presents this part and roughly how long."""
     a = BY_KEY.get(key)
     if a:
+        who = f' · presented by <b>{a["speaker"]}</b>' if a["speaker"] else ""
         st.markdown(f'<div style="color:#4A5568;font-size:0.95rem;margin:-6px 0 8px 0">'
-                    f'<b>{a["page"]}</b> · presented by <b>{a["speaker"]}</b> · about {a["minutes"]}</div>',
-                    unsafe_allow_html=True)
+                    f'<b>{a["page"]}</b>{who} · about {a["minutes"]}</div>', unsafe_allow_html=True)
 
 
 def run_of_show():
     """Sidebar table for the team (collapsed by default)."""
     with st.expander("Run of show (8 min)"):
         for a in AGENDA:
-            st.markdown(f"**{a['minutes']} · {a['page']}**  \n{a['speaker']}  \n"
+            st.markdown(f"**{a['minutes']} · {a['page']}**  \n" + (f"{a['speaker']}  \n" if a["speaker"] else "") +
                         f"<span style='font-size:0.85rem;color:#4A5568'>{a['cue']}</span>",
                         unsafe_allow_html=True)
 
