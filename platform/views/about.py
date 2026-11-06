@@ -26,12 +26,11 @@ st.markdown("""
 
 st.header("The claim we will test")
 st.markdown("""
-- At least **15%** of claims fast-tracked, at least **95%** of fast-tracked claims eligible, and **0** denials made
-  by the AI.
+- Of the claims the tool screens (those QDD/CAL did not pick), at least **15%** recommended for expedited review,
+  precision of at least **95%**, and **0** automated denials.
 - Tested **once** on 40 locked simulated test cases, after the plan is posted on OSF. The ±11-point confidence
   interval at n = 40 is said out loud.
-- Compared with today's form-based fast tracks (QDD and CAL, about 8.3% of claims) and with examiners working without
-  the tool.
+- Compared with QDD/CAL alone (about 8.3% of claims picked early) and with examiners working without the tool.
 """)
 
 st.header("Out of scope")

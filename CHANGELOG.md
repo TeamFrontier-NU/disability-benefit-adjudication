@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-05 (late): the app becomes the presentation
+
+UI only. The locked reader, prompt, checklist, rules, k and model are unchanged; the test set is still never listed, run or shown.
+
+- Navigation regrouped into **Presentation** (1 · Where it fits → 6 · Decisions and next steps, in the halfway rubric's order) and **Backup** (Questions, Results, About).
+- New pages: `views/standing.py` (works / not yet / changed since the pitch, and spend against the $200 cap with the largest line), `views/evaluation.py` (claim, threshold, counterfactual, assignment, how and on whom, sample size and power), `views/next_steps.py` (two open decisions, next steps, where it could go), `views/qa.py` (expected questions).
+- `frontier_ui/talk.py`: the 8-minute run of show (six presenters, times, cues; shown under each page title and in a collapsed sidebar box), the Claude Pro budget line, and the API spend estimate from saved runs plus the Replay recording.
+- Overview corrected: QDD/CAL stays as the early screen; the tool is a second screen on the medical records of claims not yet picked; the 15% target is among claims the tool screens.
+
 ## 2026-11-06: "New case (live)" page
 
 UI only. **Not changed:** the reader prompt and schema, the checklist, the rules and routing, k = 1 and the model. The test set was not run or shown.
