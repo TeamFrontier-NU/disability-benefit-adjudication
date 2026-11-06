@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-05 (night): drop all the files at once on "New case (live)"
+
+UI only; the locked reader, prompt, checklist, rules, k and model are unchanged.
+
+- New default mode **Drop files (labels suggested)**: several PDF/TXT/MD files in one go. `frontier_ui/autolabel.py` suggests, with plain text patterns (no AI), what each file is, how it arrived, the provider, doctor and date, plus the claim type, filing date, claimant name and the SSA-3368 provider list from the forms.
+- The suggestions appear in an editable table; **Run stays locked until the presenter ticks that they checked each file's source**. Who wrote a record and how it arrived still come from a person, never the AI.
+- Safe by default: a medical-looking record from a provider not found on the SSA-3368 list is suggested as "handed in by the claimant", which can't support a fast track. No fallback list is invented when the forms don't name providers.
+- The old box-by-box entry is kept as **Fill in by type**.
+- Checked on the 7 practice cases: forms, records and letters labelled correctly; Case G's fake MRI is caught as a claimant-supplied record from an unlisted clinic.
+
 ## 2026-11-05 (late): the app becomes the presentation
 
 UI only. The locked reader, prompt, checklist, rules, k and model are unchanged; the test set is still never listed, run or shown.
