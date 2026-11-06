@@ -1,0 +1,199 @@
+{
+  "set": "calibration",
+  "reader": "Gemini (gemini-2.5-flash)",
+  "k": 1,
+  "run_at": "2026-11-05T18:10:16",
+  "metrics": {
+    "cases": 10,
+    "fast_track_rate": "0/10 = 0% (95% CI 0%-28%)",
+    "fast_track_precision": "n/a",
+    "fast_track_recall_of_eligible": "0/7 = 0% (95% CI 0%-35%)",
+    "route_matches_design": "4/10 = 40% (95% CI 17%-69%)",
+    "ai_denials": 0,
+    "quote_verification_rate": "n/a",
+    "mean_seconds_per_case": 1.14,
+    "targets": {
+      "fast_track_rate": "at least 15%",
+      "fast_track_precision": "at least 95%",
+      "ai_denials": "0"
+    },
+    "_raw": {
+      "n": 10,
+      "ft": 0,
+      "ft_correct": 0,
+      "eligible": 7
+    }
+  },
+  "rows": [
+    {
+      "case_id": "cal-001",
+      "case_set": "calibration",
+      "profile": "SCI complete",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 10.43479585647583,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-002",
+      "case_set": "calibration",
+      "profile": "SCI incomplete",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.1723618507385254,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-003",
+      "case_set": "calibration",
+      "profile": "Lung small-cell",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.09605598449707031,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-004",
+      "case_set": "calibration",
+      "profile": "Dialysis",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.0691680908203125,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-005",
+      "case_set": "calibration",
+      "profile": "Grid sedentary 50-54",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.0763850212097168,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-006",
+      "case_set": "calibration",
+      "profile": "Grid sedentary 55+",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.09801101684570312,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-007",
+      "case_set": "calibration",
+      "profile": "Schizophrenia",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": true,
+      "key_fast_track": false,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.16257095336914062,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-008",
+      "case_set": "calibration",
+      "profile": "Back strain",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.10288500785827637,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-009",
+      "case_set": "calibration",
+      "profile": "Near miss: SCI under 3 months",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.09639191627502441,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "case_id": "cal-010",
+      "case_set": "calibration",
+      "profile": "Short duration",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 0,
+      "items_verified": 0,
+      "seconds": 0.1020500659942627,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  ]
+}

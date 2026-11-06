@@ -1,0 +1,11 @@
+# Used by Streamlit Community Cloud (it reads the config at the repository root).
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#2F6FB3"
+backgroundColor = "#FBFBF8"
+secondaryBackgroundColor = "#EEF2F8"
+textColor = "#14213D"
+baseFontSize = 18

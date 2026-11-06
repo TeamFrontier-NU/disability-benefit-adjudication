@@ -4,6 +4,8 @@ A working prototype of an examiner-facing tool for initial adult SSI/SSDI disabi
 
 ![Case review screen](screenshot_case-review.png)
 
+> **New (Nov 5): presentation app.** Double-click `Start-Frontier.command` (Mac) or `Start-Frontier.bat` (Windows), or run `streamlit run Frontier.py`. It opens in Replay mode (recorded Gemini output, no key). See the top-level README and `CHANGELOG.md`. The original panel below (`app.py`) still works.
+
 ## What it does
 
 ```

@@ -1,8 +1,21 @@
 __pycache__/
 *.pyc
 .env
-.venv/
-platform/results/
-platform/data/decisions.jsonl
 .DS_Store
+*.zip
+.venv/
+.venv-mac/
+.venv-app/
+_backup_*/
+00 AI Log/
+archive-ai-logs-*/
+*.mp4
+.streamlit/secrets.toml
+platform/.streamlit/secrets.toml
+platform/data/decisions.jsonl
+platform/data/imported/*
+!platform/data/imported/.gitkeep
 platform/blind-check/
+# Test set: case files are committed, answer keys and results are not (pre-registered test, run once after OSF).
+platform/data/simulated/test-*/answer_key.json
+platform/results/test_*

@@ -1,0 +1,88 @@
+{
+  "set": "demo",
+  "reader": "Gemini (gemini-3.7-flash)",
+  "k": 1,
+  "run_at": "2026-11-05T18:42:00",
+  "metrics": {
+    "cases": 3,
+    "fast_track_rate": "1/3 = 33% (95% CI 6%-79%)",
+    "fast_track_precision": "1/1 = 100% (95% CI 21%-100%)",
+    "fast_track_recall_of_eligible": "1/1 = 100% (95% CI 21%-100%)",
+    "route_matches_design": "3/3 = 100% (95% CI 44%-100%)",
+    "ai_denials": 0,
+    "quote_verification_rate": "44/44 = 100% (95% CI 92%-100%)",
+    "mean_seconds_per_case": 10.8,
+    "targets": {
+      "fast_track_rate": "at least 15%",
+      "fast_track_precision": "at least 95%",
+      "ai_denials": "0"
+    },
+    "_raw": {
+      "n": 3,
+      "ft": 1,
+      "ft_correct": 1,
+      "eligible": 1
+    }
+  },
+  "tokens": {
+    "input": 6691,
+    "output": 6253
+  },
+  "estimated_cost_usd": 0.0,
+  "rows": [
+    {
+      "case_id": "demo-001",
+      "case_set": "demo",
+      "profile": "Joe",
+      "route": "fast_track",
+      "path": "11.08",
+      "reasons": [
+        "Meets Listing 11.08 spinal cord disorders"
+      ],
+      "key_eligible": true,
+      "key_fast_track": true,
+      "items_total": 15,
+      "items_verified": 15,
+      "seconds": 11.543608903884888,
+      "input_tokens": 2231,
+      "output_tokens": 2135,
+      "reader_error": ""
+    },
+    {
+      "case_id": "demo-002",
+      "case_set": "demo",
+      "profile": "Peter",
+      "route": "human_queue",
+      "path": "",
+      "reasons": [
+        "No covered rule path is fully met by verified medical-source evidence."
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 14,
+      "items_verified": 14,
+      "seconds": 9.207517862319946,
+      "input_tokens": 2245,
+      "output_tokens": 1898,
+      "reader_error": ""
+    },
+    {
+      "case_id": "demo-003",
+      "case_set": "demo",
+      "profile": "Joe, still working",
+      "route": "human_queue",
+      "path": "11.08",
+      "reasons": [
+        "step1: Claimant reports current work above SGA"
+      ],
+      "key_eligible": false,
+      "key_fast_track": false,
+      "items_total": 15,
+      "items_verified": 15,
+      "seconds": 11.639487028121948,
+      "input_tokens": 2215,
+      "output_tokens": 2220,
+      "reader_error": ""
+    }
+  ]
+}
