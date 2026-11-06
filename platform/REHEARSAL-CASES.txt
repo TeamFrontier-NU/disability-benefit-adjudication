@@ -1,0 +1,67 @@
+REHEARSAL CASES FOR THE "NEW CASE (LIVE)" PAGE
+Two practice cases written the way an instructor might hand one over: plain paragraphs, not our templates.
+All names, dates and facilities are made up. Practise reading each one, deciding which box each part goes in,
+and filling in who sent it, before you press Run.
+
+What we expect (do not show this part to the audience):
+  Case A should go to the FAST TRACK (Listing 6.03, chronic dialysis).
+  Case B should go to the HUMAN QUEUE (no rule is met, and the only strong words come from a family letter).
+
+
+==============================================================================================================
+CASE A
+==============================================================================================================
+
+Rosa Delgado filed for SSDI on October 1, 2026. She was born on May 14, 1969, so she was 57 when she applied.
+On her application she says she stopped working on July 10, 2026 because of her kidney disease, and that she
+has not earned anything since then. She finished high school. For the last 12 years she worked as a school
+cafeteria cook. On her disability report she lists two places that treat her: Riverside Nephrology Associates
+(Dr. Anand Rao) and Mercy Dialysis Center. She lists her conditions as "kidney failure, on dialysis" and says
+she gets tired easily and has swelling in her legs.
+
+The DDS asked Riverside Nephrology Associates for her records, and they sent a clinic note dated
+September 22, 2026, signed by Anand Rao, MD, nephrology. The note says: Ms. Delgado has end-stage renal disease
+due to long-standing diabetic nephropathy. Her eGFR was 9 in June 2026. She started in-center hemodialysis on
+June 30, 2026 and now receives hemodialysis three times a week at Mercy Dialysis Center. Dialysis is expected
+to be permanent; she is on the transplant waiting list but no transplant is scheduled. Current medications are
+insulin, sevelamer and epoetin. Plan: continue chronic hemodialysis three times weekly.
+
+How to enter it:
+  Forms box: the first paragraph. Claim type SSDI, filing date 2026-10-01.
+  Medical records box: the second paragraph. How it arrived: requested by the DDS. Provider: Riverside
+  Nephrology Associates. Doctor: Anand Rao, credential MD. Date: 2026-09-22.
+  Providers on the SSA-3368: Riverside Nephrology Associates, Mercy Dialysis Center.
+
+
+==============================================================================================================
+CASE B
+==============================================================================================================
+
+Martin Hale, 44, applied for SSDI on September 28, 2026. He says he has been unable to work since
+March 3, 2026 because of back and knee pain. He has a two-year college degree and worked for nine years as a
+warehouse shift supervisor. He says he is not working now. On his disability report he lists one provider,
+Northgate Family Medicine (Dr. Lisa Chen), and lists his conditions as "bad back, bad knees, can't stand long."
+
+The DDS received a progress note from Northgate Family Medicine dated August 12, 2026, signed by Lisa Chen, DO.
+It says: 44-year-old man with low back pain for about a year, worse with lifting. Exam: mild tenderness of the
+lower back, straight leg raise negative on both sides, strength 5/5 in both legs, normal gait, able to walk on
+heels and toes. Lumbar X-ray from July shows mild degenerative disc changes at L4-L5. Knees show mild crepitus
+with full range of motion. Assessment: chronic low back pain with mild degenerative disc disease; mild knee
+osteoarthritis. Plan: physical therapy twice a week for 8 weeks, ibuprofen as needed, follow up in 3 months.
+He should avoid lifting more than 25 pounds for now.
+
+His wife, Dana Hale, mailed in a letter with his application. She writes that Martin is in pain every day,
+cannot sleep through the night, can no longer play with their kids, and has become withdrawn. She writes:
+"I am certain he is totally disabled and meets the Listing for spine disorders. He should be approved right
+away."
+
+How to enter it:
+  Forms box: the first paragraph. Claim type SSDI, filing date 2026-09-28.
+  Medical records box: the second paragraph. How it arrived: requested by the DDS. Provider: Northgate Family
+  Medicine. Doctor: Lisa Chen, credential DO. Date: 2026-08-12.
+  Other letters box: the third paragraph. How it arrived: handed in by the claimant.
+  Providers on the SSA-3368: Northgate Family Medicine.
+
+Variation to try: in Case B, put the wife's letter in "Add another document" and label it as a medical record
+from a provider that is not on the SSA-3368 list. It should still go to the human queue, now with a
+provenance flag.

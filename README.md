@@ -12,7 +12,7 @@ Team 06 · Frontier · SEL_POL 425 · Fall 2026
 - A free Streamlit app goes to sleep when nobody uses it. **Open the link about 10 minutes before presenting** and press "wake up" if it asks.
 - The app opens in **Replay mode**: recorded Gemini 3.7 Flash output, no key, no cost. **Live mode** (real Gemini calls) is for the presenter only and needs a passcode.
 
-Pages: **Overview** (the idea and the headline numbers) · **Case explorer** (run Joe, Peter or any stress case step by step) · **Safeguards** (gaming attempts, safeguards on vs. off, "Try to fool it") · **Results** (every saved run, with 95% confidence intervals and spend) · **About and method**.
+Pages: **Overview** (the idea and the headline numbers) · **Case explorer** (run Joe, Peter or any stress case step by step) · **New case (live)** (paste or upload a case you have never seen; presenter Live mode only) · **Safeguards** (gaming attempts, safeguards on vs. off, "Try to fool it") · **Results** (every saved run, with 95% confidence intervals and spend) · **About and method**.
 
 ## Run it on your own computer (backup if the Wi-Fi fails)
 

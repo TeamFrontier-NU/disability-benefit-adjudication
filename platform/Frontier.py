@@ -2,7 +2,7 @@
 
     streamlit run Frontier.py
 
-Five pages: Overview, Case explorer, Safeguards, Results, About. Default is Replay mode:
+Six pages: Overview, Case explorer, New case (live), Safeguards, Results, About. Default is Replay mode:
 recorded Gemini 3.7 Flash output, no key, no cost. Live mode is presenter-only (passcode).
 The original examiner panel is still `app.py`; nothing in `fasttrack/` was changed for this.
 """
@@ -43,6 +43,7 @@ with st.sidebar:
 pages = [
     st.Page("views/overview.py", title="Overview", icon="🏠", default=True),
     st.Page("views/case_explorer.py", title="Case explorer", icon="🗂️"),
+    st.Page("views/new_case.py", title="New case (live)", icon="🆕"),
     st.Page("views/safeguards.py", title="Safeguards", icon="🛡️"),
     st.Page("views/results.py", title="Results", icon="📊"),
     st.Page("views/about.py", title="About and method", icon="ℹ️"),

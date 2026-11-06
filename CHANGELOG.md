@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-06: "New case (live)" page
+
+UI only. **Not changed:** the reader prompt and schema, the checklist, the rules and routing, k = 1 and the model. The test set was not run or shown.
+
+Added
+- `platform/views/new_case.py` (in the navigation as **New case (live)**): enter a brand-new case in three boxes (application and claimant forms; medical records with how it arrived, provider, doctor, credential and date; other letters or statements), each also taking a PDF/TXT upload, plus up to 6 extra documents with their own source type, arrival, provider and date. Claim type, filing date, title, and the SSA-3368 provider list (prefilled from the medical-record providers, editable). The Run button works only in Live mode. Shows the same steps, route banner, rule cards, flags and document viewer as the Case explorer, plus seconds, tokens and estimated cost, and a safeguards-off comparison from the same reader output (no second call).
+- `platform/frontier_ui/new_case.py`: builds the case with the existing `FileImport` in a session-only temp folder (`case_set = "imported"`, never in `data/simulated`). Caps a case at 30 pages and 150,000 characters. If there are no pages or the reader cannot start, the case goes to the human queue through `run_case`'s own fail-safe.
+- `platform/scripts/check_new_case.py`: tests the page through Streamlit AppTest (Joe pasted into the boxes, family letter only, fake key, nothing entered, size cap, Replay lock, every page loads with no key). `--offline` skips the two paid calls.
+- `platform/REHEARSAL-CASES.txt`: two practice cases in plain paragraphs (one should fast-track, one should not).
+
 ## 2026-11-05 (evening): presentation app for the halfway demo
 
 UI, packaging and deployment only. **Not changed:** the reader prompt and schema (`SYSTEM`, `SCHEMA` in `fasttrack/reader.py`), the checklist (`fasttrack/fields.py`), the rules and routing (`fasttrack/pipeline.py`), k = 1 and the model (Gemini 3.7 Flash). The test set was not run, recorded or shown.
