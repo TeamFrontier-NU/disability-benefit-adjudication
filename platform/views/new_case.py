@@ -256,17 +256,20 @@ if run:
                f"{res.seconds:.1f} seconds · {tok:,} tokens · about ${run['cost']:.3f} · k = {res.k} · "
                "same locked prompt, checklist and rules")
 
-    if run["off"] is not None:
-        o1, o2 = st.columns(2)
-        with o1:
-            st.markdown("**Safeguards ON** (as built)")
-            route_banner(res)
-        with o2:
-            st.markdown("**Safeguards OFF** (demo only: no source rule, provenance or instruction check)")
-            r = run["off"]
-            cls, word = ("ft-fast", "FAST TRACK") if r.route == "fast_track" else ("ft-human", "HUMAN QUEUE")
-            st.markdown(f'<div class="ft-banner {cls}">{word}: {html.escape((r.reasons or [""])[0])}</div>',
-                        unsafe_allow_html=True)
+    off = run["off"]
+    if off is not None and off.route == "fast_track" and res.routing.route != "fast_track":
+        # One decision only. Say in one line what the safeguards stopped (same reading, no second AI call).
+        blocked = {}
+        for it in res.read.items:
+            if it.verified and not it.counts_for_rules and it.drop_reason and it.source_type in RULE_SOURCES:
+                d = case.doc_for_page(it.page)
+                blocked.setdefault(d.title if d else f"page {it.page}", it.drop_reason)
+        items = "".join(f"<li><b>{html.escape(t)}</b>: {html.escape(r)}</li>" for t, r in blocked.items())
+        why = html.escape((off.reasons or [""])[0])
+        st.markdown(f'<div class="ft-banner ft-note">🛡️ <b>Stopped by the safeguards.</b> Without them, this file '
+                    f'would have reached the fast track ({why}), relying on evidence that can’t count:'
+                    f'<ul style="margin:6px 0 0 0">{items or "<li>see the flags below</li>"}</ul></div>',
+                    unsafe_allow_html=True)
 
     left, right = st.columns([3, 2])
     with right:
