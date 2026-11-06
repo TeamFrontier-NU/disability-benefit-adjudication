@@ -118,14 +118,8 @@ else:
 
 if (not is_live() and results.get("replay") and results["replay"][0] == choice) or \
         (is_live() and results.get("live") and results["live"][0] == cid):
-    c1, c2, c3 = st.columns(3)
+    c1, c2 = st.columns(2)
     with c1:
-        st.markdown("**Before** (original file)")
-        route_banner(before)
-    with c2:
-        st.markdown("**After the attack: the decision**")
-        route_banner(after)
-    with c3:
         st.markdown("**What-if only:** the same reading with the safeguards switched off. "
                     "<span style='color:#4A5568'>Not a decision; shown to explain what they stop.</span>",
                     unsafe_allow_html=True)
@@ -134,6 +128,11 @@ if (not is_live() and results.get("replay") and results["replay"][0] == choice) 
         word = "would be FAST TRACK" if r.route == "fast_track" else "would be HUMAN QUEUE"
         st.markdown(f'<div style="opacity:0.55"><div class="ft-banner {cls}" style="border:2px dashed #14213D">'
                     f'{word}: {html.escape((r.reasons or [""])[0])}</div></div>', unsafe_allow_html=True)
+    with c2:
+        st.markdown("**With the safeguards: the decision**")
+        route_banner(after)
+    b = before.routing
+    st.caption(f"Before the attack (original file): {'fast track' if b.route == 'fast_track' else 'human queue'}.")
     st.subheader("What the safeguards caught")
     flags_block(after)
     with st.expander("Attacked case file, with highlights"):
