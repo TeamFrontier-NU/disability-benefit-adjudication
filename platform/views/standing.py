@@ -13,29 +13,34 @@ speaker("standing")
 c1, c2, c3 = st.columns(3)
 with c1:
     st.markdown("""<div class="ft-card"><h3 style="margin-top:0">✅ Works</h3><ul>
-<li>The full pipeline runs live on the Gemini 3.7 Flash API, chosen because it was accessible to us; we plan to compare more models later</li>
-<li>Each cited quote is checked against its page (that the words are there, not that they prove the point)</li>
-<li>None of the 7 tested gaming cases reached the fast track</li>
-<li>Same routing on 3 calibration runs</li>
-<li>A case we have never seen can be entered and run live</li></ul></div>""", unsafe_allow_html=True)
+<li>The full screening pipeline runs live with Gemini 3.7 Flash</li>
+<li>10 simulated calibration cases: routing matched our provisional answer key in 3 separate runs</li>
+<li>137 cited quotes checked: every one appears on the page cited</li>
+<li>All 7 crafted gaming scenarios went to human review, not the fast track</li>
+<li>A case we have never seen can be entered and run live</li></ul>
+<p style="color:#4A5568;margin-bottom:0">A quote check shows the words are on the page. It does not show that the quote
+supports the conclusion, or that the document is authentic: an examiner still reviews and decides.</p></div>""",
+                unsafe_allow_html=True)
 with c2:
     st.markdown("""<div class="ft-card"><h3 style="margin-top:0">⏳ Not yet</h3><ul>
-<li>No test-set result, so no evidence for the main claim</li>
-<li>Answer keys not yet checked blind by people</li>
-<li>Our cases are simpler than real files: short, and text only</li>
-<li>Two supporting records per finding (k = 2) can’t be tested on our cases</li>
-<li>A live run takes about 90 seconds</li></ul></div>""", unsafe_allow_html=True)
+<li>No test-set result yet, so no evidence for the main claim</li>
+<li>Answer keys are provisional: not yet blind-reviewed by people</li>
+<li>Our files are short and text only: not tested on full DDS electronic folders or scanned documents</li>
+<li>Two supporting records per finding (k = 2) can’t be tested on our cases</li></ul></div>""",
+                unsafe_allow_html=True)
 with c3:
     st.markdown("""<div class="ft-card"><h3 style="margin-top:0">🔁 Changed since the pitch, and why</h3><ul>
-<li><b>Source rule:</b> only records from verified providers can support a fast-track recommendation (instructor feedback on gaming)</li>
-<li><b>Mental-health claims</b> always go to a person: the criteria need judgment</li>
-<li><b>Working-above-SGA cases</b> moved out of the test set: the field office screens them first</li>
-<li><b>Dropped:</b> our first keyword baseline as evidence; it only matched our own templates</li></ul></div>""",
+<li><b>Source and provenance check</b> (instructor’s concern about gaming): medical findings can support a fast track
+only if the record is marked as received through a DDS request from a provider named on the application.
+<i>Limitation:</i> this does not independently verify who the provider is</li>
+<li><b>Mental-health Listing criteria</b> no longer trigger a fast track: they need an examiner’s judgment</li>
+<li><b>Keyword reader</b> no longer used as evidence that the platform works: good on wording close to our
+templates, weaker on varied wording. Kept only as a comparison baseline</li></ul></div>""",
                 unsafe_allow_html=True)
 
 st.subheader("Spend so far, against the $200 course cap")
-st.caption(f"While the budget is not yet approved we have kept runs small: {CASES_SO_FAR} simulated cases, "
-           "run only as often as calibration, stress tests and the demo needed.")
+st.caption(f"While the budget was pending we kept API use small. Our simulated dataset has {CASES_SO_FAR} distinct "
+           "cases: that is the dataset size, not the number of API calls.")
 api, tokens = api_spend()
 live = sum(x.get("cost_usd", 0) for x in st.session_state.get("live_log", []))
 total = CLAUDE_PRO_USD + api + live
@@ -70,7 +75,6 @@ scen = [
     ("B · Gemini + one Claude Sonnet robustness read", [(GEM, 2), (SON, 1)]),
     ("C · Switch the main reader to Claude Sonnet", [(SON, 2)]),
     ("D · Gemini + Sonnet, after Gemini’s 2027 price rise", [(GEM27, 2), (SON, 1)]),
-    ("E · Switch the main reader to Claude Opus", [(OPUS, 2)]),
 ]
 left = CAP_USD - total
 rows = []
@@ -81,7 +85,9 @@ for name, reads in scen:
 st.dataframe(rows, width="stretch", hide_index=True)
 st.caption(f"‘What’s left’ is ${left:,.0f} after spend so far. Gemini prices are its list prices (introductory "
            "until Dec 31, 2026); Claude prices are from our pitch’s price table. Case generation by another AI "
-           "and real files (often 50–500 pages) would add more; a real-file study needs its own budget.")
+           "and real files (often 50–500 pages) would add more; a real-file study needs its own budget. These are "
+           "projections from short text files: longer records, scanned files or a different model change the cost, "
+           "so we will update the budget with measured token counts before the full evaluation.")
 
 with st.expander("Try other numbers"):
     a, b, c = st.columns(3)

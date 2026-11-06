@@ -2,6 +2,8 @@
 
 - 4a: what-if (safeguards off, blue) on the left, the decision (orange) on the right; "before" shown as a caption.
 
+- Where we stand: wording aligned with the Part 2 script (quote-check limits, provenance limitation, dataset size vs API calls); Opus scenario removed from the projection table.
+
 ## 2026-11-05 (night): drop all the files at once on "New case (live)"
 
 UI only; the locked reader, prompt, checklist, rules, k and model are unchanged.
