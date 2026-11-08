@@ -45,7 +45,7 @@ api, tokens = api_spend()
 live = sum(x.get("cost_usd", 0) for x in st.session_state.get("live_log", []))
 total = CLAUDE_PRO_USD + api + live
 rows = [
-    {"Line": "Claude Pro subscription (2 months, building and writing)", "Amount": f"${CLAUDE_PRO_USD:.2f}",
+    {"Line": "Claude Pro subscription (paid by the course, Oct 13 – Nov 10)", "Amount": f"${CLAUDE_PRO_USD:.2f}",
      "Note": "Largest single line"},
     {"Line": "Gemini 3.7 Flash API: all batch runs and the Replay recording",
      "Amount": f"${api:.2f}", "Note": f"{tokens:,} tokens at list price"},
@@ -62,7 +62,15 @@ st.caption("API figures are estimates from token counts at Gemini 3.7 Flash list
            "tokens); the Google Cloud billing page is the real figure.")
 
 # ----------------------------------------------------------------------------- projection
-st.subheader("Projected budget for the full evaluation (if approved)")
+st.subheader("Budget request")
+st.markdown("""<div class="ft-card"><b>Requested in one Payment Request Form: $120</b><ul>
+<li><b>Claude Pro renewal: $20</b> — building and maintaining the platform, and preparing the evaluation</li>
+<li><b>Claude API, prepaid credits: $100</b> — Claude becomes the reader for the full evaluation: about 500–1,000
+simulated cases, each read twice (the locked run plus a repeat), estimated at about $50–$100 from measured token
+counts (scenario C below). Prepaid credits mean spending cannot go above the approved amount.</li></ul>
+<span style="color:#4A5568">If approved, about $60 of the $200 cap would remain.</span></div>""", unsafe_allow_html=True)
+
+st.subheader("Projected budget for the full evaluation")
 t_in, t_out = avg_tokens_per_read()
 per_read = (t_in * PROJECTION_PRICES["Gemini 3.7 Flash (now)"][0] + t_out * PROJECTION_PRICES["Gemini 3.7 Flash (now)"][1]) / 1e6
 st.markdown(f"Plan: **500–1,000 simulated cases**. Today one read of one case uses about **{t_in + t_out:,.0f} "

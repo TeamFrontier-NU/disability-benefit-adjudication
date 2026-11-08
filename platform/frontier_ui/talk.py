@@ -39,7 +39,7 @@ BY_KEY = {a["key"]: a for a in AGENDA}
 
 # Course budget lines (USD). Claude Pro is the plan figure from the design pitch (2 months, $20 + tax);
 # confirm it against the billing page before presenting.
-CLAUDE_PRO_USD = 46.0
+CLAUDE_PRO_USD = 20.0  # paid by the course, Oct 13, 2026 (course budget statement)
 CAP_USD = 200.0
 
 
