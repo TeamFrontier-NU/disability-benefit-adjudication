@@ -63,12 +63,14 @@ st.caption("API figures are estimates from token counts at Gemini 3.7 Flash list
 
 # ----------------------------------------------------------------------------- projection
 st.subheader("Budget request")
-st.markdown("""<div class="ft-card"><b>Requested in one Payment Request Form: $120</b><ul>
-<li><b>Claude Pro renewal: $20</b> — building and maintaining the platform, and preparing the evaluation</li>
-<li><b>Claude API, prepaid credits: $100</b> — Claude becomes the reader for the full evaluation: about 500–1,000
-simulated cases, each read twice (the locked run plus a repeat), estimated at about $50–$100 from measured token
-counts (scenario C below). Prepaid credits mean spending cannot go above the approved amount.</li></ul>
-<span style="color:#4A5568">If approved, about $60 of the $200 cap would remain.</span></div>""", unsafe_allow_html=True)
+st.markdown("""<div class="ft-card"><b>Requested: Claude Max subscription, $100</b>
+<p style="margin:0.4em 0 0">Claude Max replaces our Claude Pro subscription and includes <b>$100 in Claude API credits</b>,
+so one request covers both:</p><ul>
+<li><b>Building:</b> maintaining the platform and preparing the evaluation</li>
+<li><b>Evaluation:</b> Claude becomes the reader for about 500–1,000 simulated cases, each read twice (the locked run plus
+a repeat), estimated at about $50–$100 from measured token counts (scenario C below). The included credits cover it, and
+spending cannot go above the approved amount.</li></ul>
+<span style="color:#4A5568">If approved, $80 of the $200 cap remains.</span></div>""", unsafe_allow_html=True)
 
 st.subheader("Projected budget for the full evaluation")
 t_in, t_out = avg_tokens_per_read()
