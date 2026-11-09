@@ -6,6 +6,8 @@
 
 - Where we stand: Claude Pro at its actual $20 (course statement); new "Budget request" card ($20 renewal + $100 Claude API prepaid credits).
 
+- Where we stand: budget request is now one Claude Max subscription ($100, includes $100 API credits).
+
 ## 2026-11-05 (night): drop all the files at once on "New case (live)"
 
 UI only; the locked reader, prompt, checklist, rules, k and model are unchanged.
