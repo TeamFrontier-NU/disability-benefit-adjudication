@@ -1,0 +1,32 @@
+# Short interface labels (buttons, field names). PROPOSED new key for group B:
+# copy to study/content/texts/ui.yaml and edit there; the app then uses B's version.
+# Keep {i}, {n} placeholders as they are. No-AI pages never show the ai_* labels.
+name:                {en: "Name",  zh: "姓名"}
+email:               {en: "Email (only used for the gift-card lottery)", zh: "邮箱（仅用于礼品卡抽奖）"}
+major:               {en: "Major / field of study", zh: "专业"}
+experience:          {en: "Have you worked in healthcare or social security / disability benefits?", zh: "你是否有医疗或社保 / 残障福利方面的工作经验？"}
+experience_options:  {en: ["No", "Healthcare", "Social security / disability benefits", "Both"], zh: ["没有", "医疗", "社保 / 残障福利", "两者都有"]}
+heard_about_study:   {en: "How did you hear about this study? (optional)", zh: "你是怎么知道这个研究的？（选填）"}
+consent_checkbox:    {en: "I have read the information above and agree to take part.", zh: "我已阅读以上内容，同意参加。"}
+need_consent:        {en: "Please tick the consent box to continue.", zh: "请勾选同意后继续。"}
+need_fields:         {en: "Please fill in name, a valid email, major and experience.", zh: "请填写姓名、有效邮箱、专业和工作经验。"}
+start:               {en: "Start", zh: "开始"}
+continue:            {en: "Continue", zh: "继续"}
+submit:              {en: "Submit", zh: "提交"}
+finish:              {en: "Finish", zh: "完成"}
+"yes":               {en: "Yes", zh: "是"}
+"no":                {en: "No", zh: "否"}
+fast_track_question: {en: "Should this claim enter the fast track?", zh: "这份申请是否应进入快速通道？"}
+confidence_question: {en: "How sure are you?", zh: "你有多大把握？"}
+conf_low:            {en: "not sure", zh: "没把握"}
+conf_high:           {en: "very sure", zh: "非常有把握"}
+no_going_back:       {en: "You cannot go back after submitting.", zh: "提交后不能返回修改。"}
+correct:             {en: "Correct.", zh: "回答正确。"}
+incorrect:           {en: "Not correct.", zh: "回答错误。"}
+rule_card_title:     {en: "Rule card", zh: "规则卡"}
+case_progress:       {en: "Case {i} of {n}", zh: "第 {i} / {n} 个案例"}
+page_of:             {en: "Page {i} of {n}", zh: "第 {i} / {n} 页"}
+page_n:              {en: "page {n}", zh: "第 {n} 页"}
+ai_recommendation:   {en: "AI suggestion", zh: "AI 建议"}
+ai_findings:         {en: "Evidence found", zh: "找到的依据"}
+ai_flags:            {en: "Issues flagged", zh: "标记的问题"}

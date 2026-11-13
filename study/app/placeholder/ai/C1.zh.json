@@ -1,0 +1,13 @@
+{
+  "recommendation": "yes",
+  "summary": "占位 AI 摘要（正式内容由 A 组写）。",
+  "findings": [
+    {
+      "quote": "第 2 页供引用核对的原句。",
+      "page": 2
+    }
+  ],
+  "flags": [
+    "占位标记。"
+  ]
+}

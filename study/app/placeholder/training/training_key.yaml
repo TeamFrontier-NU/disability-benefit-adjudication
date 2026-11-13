@@ -1,0 +1,16 @@
+# PLACEHOLDER (CZY). Proposed format: answer yes|no (quoted), explanation per language.
+T1:
+  answer: "yes"
+  explanation:
+    en: "PLACEHOLDER explanation for T1."
+    zh: "占位：T1 讲解。"
+Q1:
+  answer: "yes"
+  explanation:
+    en: "PLACEHOLDER explanation for Q1."
+    zh: "占位：Q1 讲解。"
+Q2:
+  answer: "no"
+  explanation:
+    en: "PLACEHOLDER explanation for Q2."
+    zh: "占位：Q2 讲解。"

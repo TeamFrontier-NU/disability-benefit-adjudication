@@ -1,0 +1,13 @@
+{
+  "recommendation": "yes",
+  "summary": "PLACEHOLDER AI summary (group A writes the real one).",
+  "findings": [
+    {
+      "quote": "Exact sentence used by the quote check on page 2.",
+      "page": 2
+    }
+  ],
+  "flags": [
+    "PLACEHOLDER flag."
+  ]
+}
