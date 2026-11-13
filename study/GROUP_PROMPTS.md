@@ -43,10 +43,12 @@ Group A's private material (blueprint, draft answers) stays in the shared drive.
 
 ## API credits ($100): what they are for
 
+> **Update Fri 11/13: no Claude API use this week.** The API credits are not available until about seven days after the Max subscription started, so the API is skipped for the study build. The AI panel uses the pre-recorded files group A writes in `content/ai/` (HANDOFF 3.4), which was always the plan. The optional API job below is postponed. The full evaluation runs later, once the credits are active. (The Google Sheet used for study data is a free Google service, not this API, and is still needed.)
+
 The study itself needs almost no API spending: the AI panel is pre-recorded, and Claude Max covers the Projects and Claude Code. The credits are mainly for the **full evaluation** later (about 500–1,000 simulated cases read by Claude, estimated at $50–$100 from measured token counts, as in the budget request). So:
 
 - **Keep at least $85 for the full evaluation.** Set a monthly spend limit in the Anthropic Console before anyone uses the key.
-- **Use up to about $15 now, for one job:** running our real reader on the 6 study cases, so the AI panel shows genuine tool output (group C builds this, group A uses it; see C's prompt). That costs a few cents per case, so a handful of reruns is fine.
+- **Postponed (credits not active yet):** ~~Use up to about $15 now, for one job:~~ running our real reader on the 6 study cases, so the AI panel shows genuine tool output (group C builds this, group A uses it; see C's prompt). That costs a few cents per case, so a handful of reruns is fine.
 - The API key goes only in the environment variable `ANTHROPIC_API_KEY` on the remote machine or in Streamlit Secrets. **Never paste it into a chat, a Project, a prompt or a file in the repository.**
 
 ---
@@ -123,7 +125,7 @@ Before each commit run study/app/check_content.py and a full click-through of bo
 Start with `git pull` and read study/STATUS.md. At the end: update my rows in study/STATUS.md, commit, `git pull --rebase`, push, and give me the handoff message for the group chat.
 ```
 
-### Optional API job (LYL, after the core app works)
+### Optional API job (LYL) · POSTPONED until the API credits are active
 ```text
 Add a small script study/app/make_ai_outputs.py that runs our real reader on the 6 study cases with the Claude API
 (key from the ANTHROPIC_API_KEY environment variable, model claude-sonnet-5-5, temperature 0, at most 2 runs per case)
