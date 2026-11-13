@@ -6,6 +6,7 @@ Everything for the participant study lives here. The existing Frontier platform 
 
 | File | What it is | Who needs it |
 |---|---|---|
+| `GROUP_PROMPTS.md` | Per-group setup for Claude Projects + Claude Code on the remote machine, and how to use the $100 API credits | Everyone |
 | `LAB_PROMPT.md` | The prompt to paste into Claude on a lab computer, with setup steps | Everyone, at the start of each lab session |
 | `HANDOFF.md` | Master handoff checklist: who owns what, folder layout, file formats, lab schedule, 16 handoff points, final checklist | Everyone |
 | `DESIGN.md` | Short English spec of the study design (cases, randomization, flow, analysis) | Everyone; the full Chinese design is linked inside |
