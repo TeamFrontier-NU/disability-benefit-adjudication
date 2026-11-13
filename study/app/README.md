@@ -8,9 +8,25 @@ streamlit run study/app/app.py           # http://localhost:8501  (PREVIEW witho
 python study/app/check_content.py        # check A/B content against HANDOFF section 3
 ```
 
-Flow: language → Welcome (consent, name/email, background) → rule card → T1 → Q1 → [Q2] →
+Flow: language → Welcome (consent, name/email, healthcare/benefits experience) → rule card → T1 → Q1 → [Q2] →
 assignment → 6 cases in random order → wrap-up (by group) → thanks. Failing Q1 and Q2 ends at
 the thanks page (still in the lottery).
+
+`responses.heard_about_study` stays in the columns (HANDOFF 3.5) but is now always empty: the
+Welcome form no longer asks it, nor the major (team decision, Fri 11/13).
+
+## Original document view (both groups)
+
+Under each case (and training case) there is a closed **"View the original document (scanned
+PDF)"** panel with an inline viewer and a download button. It is shown to both groups whenever
+`content/cases/<id>.<lang>.pdf` exists (so the pages stay identical except the AI panel). Make the
+PDFs from the .md files after each content change; `check_content.py` warns when a PDF is older
+than its .md:
+
+```bash
+pip install playwright markdown && playwright install chromium   # once
+python study/app/make_doc_pdfs.py            # study/content/cases + training
+```
 
 ## Two modes
 
@@ -52,8 +68,8 @@ the thanks page (still in the lottery).
 | `responses` | submitted case, written at once | HANDOFF 3.5, exactly (no `correct`) |
 | `contacts` | participant | `participant_id, name, email, written_at`: lottery only |
 | `allocation` | slot (200) | `slot, block, arm`: pre-drawn, never edited |
-| `assignments` | person who passed training | `participant_id, arm, case_order, lang, training_attempts, heard_about_study, assigned_at`; row n = slot n |
-| `participants` | participant | `participant_id, lang, major, experience, heard_about_study, written_at` (experience stored in English) |
+| `assignments` | person who passed training | `participant_id, arm, case_order, lang, training_attempts, assigned_at`; row n = slot n |
+| `participants` | participant | `participant_id, lang, experience, written_at` (experience stored in English) |
 | `training` | person who finished the test | `participant_id, attempts, passed` |
 | `survey` | wrap-up | `participant_id, arm, lang, answers_json` (`q1`, `q2` … in the order of the `?` lines) |
 | `test_assignments` | team test run | as `assignments`; uses no slot |
@@ -113,6 +129,7 @@ Extra files the pages need, beyond the HANDOFF list (proposed, examples in `plac
 | `assign.py` | Group assignment, case order, timer, resume (ZXH) |
 | `backend_stub.py` | PREVIEW backend, same interface, saves nothing to the Sheet |
 | `sheet_admin.py` | Sheet setup, allocation draw, status, clean-up |
+| `make_doc_pdfs.py` | Builds the scanned-style original PDFs from the case/training .md files |
 | `local_sheet.py` | Offline stand-in for the Sheet (tests only) |
 | `check_content.py` | Content checks for groups A and B |
 | `../analysis/fake_data.py` | 30 × 6 fake `responses` rows + a random fake key, for WYX |

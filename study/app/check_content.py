@@ -42,6 +42,14 @@ for lang in ("en", "zh"):
         if any(re.search(r"\bAI\b|人工智能", t + b) for t, b in pages):
             problems += 1
             print(f"NO-AI PAGE cases/{cid}.{lang}.md mentions AI")
+# original-layout PDFs must be rebuilt after a case changes (make_doc_pdfs.py)
+for folder in ("cases", "training"):
+    for md in sorted((C.CONTENT_DIR / folder).glob("*.md")):
+        pdf = md.with_suffix(".pdf")
+        if pdf.exists() and pdf.stat().st_mtime < md.stat().st_mtime:
+            problems += 1
+            print(f"PDF {folder}/{pdf.name} is older than its .md: run make_doc_pdfs.py")
+
 # ui.yaml from group B must keep every label the pages use
 ph_ui = C.yaml.safe_load((C.PLACEHOLDER_DIR / "texts/ui.yaml").read_text(encoding="utf-8"))
 real_ui = C.CONTENT_DIR / "texts/ui.yaml"

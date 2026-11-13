@@ -39,13 +39,12 @@ TABS: dict[str, list[str]] = {
     "contacts": ["participant_id", "name", "email", "written_at"],
     "allocation": ["slot", "block", "arm"],
     "assignments": ["participant_id", "arm", "case_order", "lang", "training_attempts",
-                    "heard_about_study", "assigned_at"],
-    "participants": ["participant_id", "lang", "major", "experience", "heard_about_study",
-                     "written_at"],
+                    "assigned_at"],
+    "participants": ["participant_id", "lang", "experience", "written_at"],
     "training": ["participant_id", "attempts", "passed", "written_at"],
     "survey": ["participant_id", "arm", "lang", "answers_json", "written_at"],
     "test_assignments": ["participant_id", "arm", "case_order", "lang", "training_attempts",
-                         "heard_about_study", "assigned_at"],
+                         "assigned_at"],
 }
 
 

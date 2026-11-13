@@ -40,7 +40,7 @@ def assign(participant_id: str, lang: str, training_attempts: int, heard: str,
     order = case_order(participant_id)
     row = {"participant_id": participant_id, "arm": forced_arm or "",
            "case_order": ",".join(order), "lang": lang,
-           "training_attempts": training_attempts, "heard_about_study": heard,
+           "training_attempts": training_attempts,
            "assigned_at": D.now()}
     if forced_arm:  # team test run
         D.claim_slot(row, test=True)
@@ -59,7 +59,7 @@ def restore(participant_id: str) -> dict | None:
     if not who:
         return None
     p = who[0]
-    out = {"lang": p.get("lang") or "en", "heard": p.get("heard_about_study", ""),
+    out = {"lang": p.get("lang") or "en", "heard": "",
            "arm": None, "order": None, "attempts": None, "done": 0,
            "failed": False, "passed": False, "survey_done": False}
     tr = D.find_rows("training", participant_id)

@@ -126,6 +126,15 @@ def case_pages(cid: str, lang: str) -> tuple[list[tuple[str, str]], bool]:
     return split_pages(body), ph
 
 
+def case_pdf(cid: str, lang: str) -> tuple[Path | None, bool]:
+    """Optional original-layout PDF next to the case file: cases/<cid>.<lang>.pdf."""
+    return _find(f"cases/{cid}.{lang}.pdf")
+
+
+def training_pdf(cid: str, lang: str) -> tuple[Path | None, bool]:
+    return _find(f"training/{cid}.{lang}.pdf")
+
+
 def split_pages(body: str) -> list[tuple[str, str]]:
     pages = []
     for chunk in re.split(rf"^\s*{re.escape(PAGE_BREAK)}\s*$", body, flags=re.M):
