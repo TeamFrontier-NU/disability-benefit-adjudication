@@ -1,0 +1,7 @@
+# Never commit answers, expert judgments, participant data, allocation or secrets (public repo)
+*.csv
+*answer_key*
+*expert*
+*allocation*
+*seed*
+.streamlit/secrets.toml
