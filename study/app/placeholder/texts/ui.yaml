@@ -2,7 +2,9 @@
 # copy to study/content/texts/ui.yaml and edit there; the app then uses B's version.
 # Keep {i}, {n} placeholders as they are. No-AI pages never show the ai_* labels.
 study_title:         {en: "Claim Review Study", zh: "申请审核研究"}
-choose_language:     {en: "Choose your language", zh: "请选择语言"}
+lang_page_title:     {en: "Welcome", zh: "欢迎"}
+choose_language:     {en: "Select your language", zh: "请选择语言"}
+lang_coming_soon:    {en: "coming soon", zh: "即将推出"}
 steps:               {en: ["Welcome", "Training", "Cases", "Finish"], zh: ["欢迎", "培训", "案例", "结束"]}
 training_eyebrow:    {en: "Training", zh: "培训"}
 example_case:        {en: "Practice case", zh: "练习案例"}

@@ -85,8 +85,9 @@ p, li {color: var(--ink); line-height: 1.6;}
 
 /* language page */
 .hero {text-align:center; padding: 48px 12px 12px;}
-.hero .t1 {font-size:1.7rem; font-weight:700; color:var(--ink);}
-.hero .t2 {font-size:1.25rem; color:var(--muted); margin-top:4px;}
+.hero .t1 {font-size:2.1rem; font-weight:700; color:var(--ink);}
+.hero .t2 {font-size:1.05rem; color:var(--muted); margin-top:6px;}
+.langq {text-align:center; font-weight:600; color:var(--ink); margin:6px 0 14px;}
 
 /* case documents: typed, document-style pages */
 .doc {background: var(--paper); color:#1d1d1d; border:1px solid #d9d6cf; border-radius:3px;
@@ -246,22 +247,33 @@ def banners() -> None:
 
 # ---------------- pages ----------------
 
+# English names first (the page is in English), native name second. Ordered by number of
+# speakers in the US. A language is offered only once its page text exists.
+LANGUAGES = [("en", "English", ""), ("es", "Spanish", "Español"), ("zh", "Chinese", "中文")]
+
+
+def lang_available(code: str) -> bool:
+    return C._find(f"texts/welcome.{code}.md")[0] is not None
+
+
 def page_language() -> None:
-    st.markdown(f'<div class="hero"><div class="t1">{html.escape(C.ui("study_title", "en"))}</div>'
-                f'<div class="t2">{html.escape(C.ui("study_title", "zh"))}</div></div>',
+    st.markdown(f'<div class="hero"><div class="t1">{html.escape(C.ui("lang_page_title", "en"))}</div>'
+                f'<div class="t2">{html.escape(C.ui("study_title", "en"))}</div></div>',
                 unsafe_allow_html=True)
-    _, mid, _ = st.columns([1, 1.3, 1])
+    _, mid, _ = st.columns([1, 1.15, 1])
     with mid, st.container(border=True):
-        st.markdown(f'<p style="text-align:center;margin:4px 0 12px">'
-                    f'{html.escape(C.ui("choose_language", "en"))} · '
-                    f'{html.escape(C.ui("choose_language", "zh"))}</p>', unsafe_allow_html=True)
-        c1, c2 = st.columns(2)
-        if c1.button("English", use_container_width=True, type="primary"):
-            S.lang = "en"
-            go("welcome")
-        if c2.button("中文", use_container_width=True, type="primary"):
-            S.lang = "zh"
-            go("welcome")
+        st.markdown(f'<div class="langq">{html.escape(C.ui("choose_language", "en"))}</div>',
+                    unsafe_allow_html=True)
+        soon = C.ui("lang_coming_soon", "en")
+        for code, name, native in LANGUAGES:
+            ok = lang_available(code)
+            label = f"{name}  ·  {native}" if native else name
+            if not ok:
+                label = f"{label}  ({soon})"
+            if st.button(label, key=f"lang_{code}", use_container_width=True,
+                         type="primary" if ok else "secondary", disabled=not ok):
+                S.lang = code
+                go("welcome")
 
 
 def page_welcome() -> None:
