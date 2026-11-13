@@ -61,7 +61,7 @@ study/
 
 ### 3.1 文字文件（B；规则卡和词汇表由 A）
 
-- 路径：`study/content/texts/<key>.<lang>.md`，`lang` 为 `en` 或 `zh`
+- 路径：`study/content/texts/<key>.<lang>.md`，`lang` 为 `en`、`zh` 或 `es`（西班牙语，11/13 新增：所有文字、培训、案例、AI 输出和 `glossary.yaml` 都需要 `es` 版本，三种语言内容必须完全一致；负责人待 A、B 组确认）
 - 需要的 key：
 
 | key | 内容 | 负责人 |

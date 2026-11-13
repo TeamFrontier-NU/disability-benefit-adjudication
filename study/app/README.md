@@ -99,6 +99,13 @@ python study/app/sheet_admin.py clear-all --yes   # Sun 18:00, before real parti
 
 Run the clear commands only while nobody is taking the study.
 
+## Languages
+
+English, Spanish and Chinese (`en`, `es`, `zh`). The first page is in English and lists them by
+English name with the native name. A language can be chosen once `texts/welcome.<lang>.md`
+exists (real or placeholder). Spanish placeholders are in `placeholder/`; `check_content.py`
+checks all three languages, including "IA"/"inteligencia artificial" on No-AI pages.
+
 ## Where the page text comes from
 
 Only from `study/content/` (formats: `HANDOFF.md` section 3). While a file is missing, the copy in
