@@ -4,7 +4,7 @@ Each group uses two Claude tools, for different jobs:
 
 | Tool | Use it for | Where |
 |---|---|---|
-| **Claude Project** (claude.ai, one per group) | Thinking and writing: drafting cases, page text, survey wording, reviewing each other's work | Browser on the remote machine, team Claude Max account |
+| **Claude Project** (one shared Project, one thread per group) | Thinking and writing: drafting cases, page text, survey wording, reviewing each other's work | Browser on the remote machine, team Claude Max account |
 | **Claude Code** | Anything that touches files or the repository: writing content files in the right format, code, checks, git commits | Terminal on the remote machine, in the repository folder, logged in with the same Max account |
 
 Rule of thumb: **draft in the Project, save to the repo with Claude Code.** Both are covered by the Max subscription and do not spend API credits.
@@ -13,19 +13,31 @@ Rule of thumb: **draft in the Project, save to the repo with Claude Code.** Both
 
 ## One-time setup (any member, about 10 minutes)
 
+We use **one shared Claude Project** ("Disability Benefit Adjudication") with **one thread per group**, plus Claude Code on the remote machine. Threads move at different speeds, so **GitHub is the single source of truth** and `study/STATUS.md` is the shared progress board.
+
 1. **Repository on the remote machine**
    ```bash
    git clone https://github.com/TeamFrontier-NU/disability-benefit-adjudication.git   # first time only
    cd disability-benefit-adjudication && git pull
    claude          # log in with the team Max account when asked
    ```
-2. **Three claude.ai Projects** (Projects → New project), one per group: `Frontier · Study · A content`, `Frontier · Study · B text & checks`, `Frontier · Study · C web & data`.
-3. **Project knowledge** (upload these files to each Project):
-   - All groups: `study/README.md`, `study/DESIGN.md`, `study/HANDOFF.md`
-   - Group A: `study/tasks/A_CZY.md`, `study/tasks/A_YYH.md`, and the **private** `case_blueprint.md` from the shared drive. **Only group A's Project gets the blueprint.**
-   - Group B: `study/tasks/B_WYQ.md`, `study/tasks/B_WYX.md`. **Do not upload the blueprint, answers or AI outputs** (B are experts).
-   - Group C: `study/tasks/C_LYL.md`, `study/tasks/C_ZXH.md`, `study/app/README.md`. ZXH is an expert: do not upload the blueprint here either.
-4. **Project instructions**: paste the group's "Project instructions" block below into the Project's custom instructions.
+2. **Link GitHub to the Project**: in the Project, add the repository `TeamFrontier-NU/disability-benefit-adjudication` as a source (GitHub connector), so every thread can read the latest `study/` files. Re-sync it at the start of each session, because the Project's copy does not update by itself.
+3. **Project knowledge**: only public files: `study/README.md`, `study/DESIGN.md`, `study/HANDOFF.md`, `study/STATUS.md`, `study/tasks/*`. **Never add the case blueprint, answers, AI outputs or expert judgments to the Project**: every member can open every thread and file in it, and three members are the expert group.
+4. **Threads**: create three threads, named `A · content`, `B · text & checks`, `C · web & data`. Paste the group's "Thread instructions" below as the first message.
+5. **Experts (WYQ, WYX, ZXH)**: do not open the `A · content` thread until your expert judgment is submitted.
+
+## How threads stay in sync
+
+Every session, in every thread:
+
+1. **Start**: `git pull`, then read `study/STATUS.md` to see what the other groups have delivered.
+2. **Work** only in your own folders (they do not overlap, so pushes rarely conflict).
+3. **End**: update your rows in `study/STATUS.md` (status, who, time, one-line note), then `git add study/ && git commit && git pull --rebase && git push`.
+4. **Post** the handoff message in the group chat, so the next group knows to `git pull`.
+
+If `git pull --rebase` reports a conflict in `STATUS.md`, keep both groups' rows and push again. A conflict anywhere else means someone edited another group's folder: stop and ask in the chat.
+
+Group A's private material (blueprint, draft answers) stays in the shared drive. Group A uploads it into its own thread only when needed, never into Project knowledge.
 
 ---
 
@@ -41,7 +53,7 @@ The study itself needs almost no API spending: the AI panel is pre-recorded, and
 
 ## Group A · Content (CZY, YYH)
 
-### Project instructions
+### Thread instructions (first message of the group's thread)
 ```text
 You are helping group A of Team Frontier (SEL_POL 425) write the content for a participant study.
 Participants decide one thing per case: should this simulated disability claim enter the fast track (yes/no).
@@ -60,14 +72,14 @@ I am <CZY or YYH>, group A. Read study/README.md, study/HANDOFF.md and study/tas
 Then help me save content into study/content/ (training/, cases/, ai/, texts/rule_card.*, texts/glossary.yaml)
 in exactly the HANDOFF section 3 formats. After each file, run study/app/check_content.py and fix what it reports.
 Never write answers, the blueprint or expert judgments into the repository (it is public).
-Work only in study/content/. At the end: commit, push, and give me the handoff message for the group chat.
+Work only in study/content/. Start with `git pull` and read study/STATUS.md. At the end: update my rows in study/STATUS.md, commit, `git pull --rebase`, push, and give me the handoff message for the group chat.
 ```
 
 ---
 
 ## Group B · Text, approvals and checks (WYQ, WYX)
 
-### Project instructions
+### Thread instructions (first message of the group's thread)
 ```text
 You are helping group B of Team Frontier (SEL_POL 425): page text, consent, lottery rules, wrap-up survey,
 debrief, pre-registration and analysis for a participant study (AI-assisted vs unassisted fast-track decisions).
@@ -85,14 +97,14 @@ Help me save page text into study/content/texts/<key>.<en|zh>.md, and the analys
 I am on the expert group: do not open or show study/content/cases/ answers, study/content/ai/, or anything
 answer-related until I tell you my expert judgment is submitted.
 Work only in study/content/texts/ (except rule_card and glossary) and study/analysis/.
-At the end: commit, push, and give me the handoff message for the group chat.
+Start with `git pull` and read study/STATUS.md. At the end: update my rows in study/STATUS.md, commit, `git pull --rebase`, push, and give me the handoff message for the group chat.
 ```
 
 ---
 
 ## Group C · Web and data (LYL, ZXH)
 
-### Project instructions
+### Thread instructions (first message of the group's thread)
 ```text
 You are helping group C of Team Frontier (SEL_POL 425) build the participant-study web app (Streamlit, study/app/)
 and its data layer (Google Sheet), separate from the existing Frontier platform in platform/.
@@ -108,7 +120,7 @@ I am <LYL or ZXH>, group C. Read study/README.md, study/HANDOFF.md, study/tasks/
 Tell me in 5 lines what is due this session, then help me build it in study/app/ (and study/analysis/fake_data.py for ZXH).
 Do not change platform/. Never commit keys, the allocation table, seeds, answers or participant data.
 Before each commit run study/app/check_content.py and a full click-through of both arms (?arm=treat and ?arm=control).
-At the end: commit, push, and give me the handoff message for the group chat.
+Start with `git pull` and read study/STATUS.md. At the end: update my rows in study/STATUS.md, commit, `git pull --rebase`, push, and give me the handoff message for the group chat.
 ```
 
 ### Optional API job (LYL, after the core app works)
