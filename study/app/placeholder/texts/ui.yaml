@@ -30,3 +30,4 @@ page_n:              {en: "page {n}", zh: "第 {n} 页"}
 ai_recommendation:   {en: "AI suggestion", zh: "AI 建议"}
 ai_findings:         {en: "Evidence found", zh: "找到的依据"}
 ai_flags:            {en: "Issues flagged", zh: "标记的问题"}
+save_failed:         {en: "Your answer could not be saved just now. Please check your connection and click again.", zh: "刚才没能保存你的回答。请检查网络后再点一次。"}

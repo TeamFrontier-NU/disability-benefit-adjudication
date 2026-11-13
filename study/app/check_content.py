@@ -42,5 +42,15 @@ for lang in ("en", "zh"):
         if any(re.search(r"\bAI\b|人工智能", t + b) for t, b in pages):
             problems += 1
             print(f"NO-AI PAGE cases/{cid}.{lang}.md mentions AI")
+# ui.yaml from group B must keep every label the pages use
+ph_ui = C.yaml.safe_load((C.PLACEHOLDER_DIR / "texts/ui.yaml").read_text(encoding="utf-8"))
+real_ui = C.CONTENT_DIR / "texts/ui.yaml"
+if real_ui.exists():
+    got = C.yaml.safe_load(real_ui.read_text(encoding="utf-8")) or {}
+    for k in ph_ui:
+        for lang in ("en", "zh"):
+            if not isinstance(got.get(k), dict) or not got[k].get(lang):
+                problems += 1
+                print(f"UI texts/ui.yaml: label {k!r} missing for {lang}")
 print(f"\n{problems} problem(s)")
 sys.exit(1 if problems else 0)

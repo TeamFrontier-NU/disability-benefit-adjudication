@@ -1,25 +1,22 @@
-"""PLACEHOLDER backend, used only until ZXH's data.py and assign.py exist.
+"""PREVIEW backend: used when no Google Sheet is configured (no Secrets).
 
-app.py calls exactly these functions. ZXH: implement the same names and
-signatures in study/app/data.py and study/app/assign.py and the app will use
-them automatically (it imports those first and falls back to this file).
-
-Nothing here is the real allocation: arms are drawn with an unseeded RNG and
-rows go to a local temp file that is never committed.
+Same interface as assign.py + data.py. Arms are drawn at random (not the real
+allocation) and rows go to a temp folder on the server, never to the Sheet. In preview
+anyone may add ?arm=ai or ?arm=noai to the URL to see a group.
 """
 from __future__ import annotations
 
 import json
 import random
+import secrets
 import tempfile
-import time
-import uuid
-from datetime import datetime, timezone
 from pathlib import Path
 
+from assign import CASE_IDS, TEST_PREFIX, is_test, start_timer, stop_timer  # noqa: F401
+from data import RESPONSE_COLUMNS, SaveError, now  # noqa: F401
+
 IS_STUB = True
-CASE_IDS = ["C1", "C2", "C3", "C4", "C5", "C6"]
-_OUT = Path(tempfile.gettempdir()) / "frontier_study_stub"
+_OUT = Path(tempfile.gettempdir()) / "frontier_study_preview"
 _OUT.mkdir(exist_ok=True)
 
 
@@ -28,60 +25,47 @@ def _append(table: str, row: dict) -> None:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
-# ---------------- assign.py interface ----------------
-
-def new_participant_id() -> str:
-    """Short random id; the only identifier written to `responses`."""
-    return "P" + uuid.uuid4().hex[:8]
+def configured() -> bool:
+    return False
 
 
-def assign_arm(participant_id: str) -> str:
-    """Return 'ai' or 'noai'. Real version: next unused row of the allocation sheet, locked."""
-    return random.choice(["ai", "noai"])
+def test_key() -> str | None:
+    return None
+
+
+def new_participant_id(test: bool = False) -> str:
+    return (TEST_PREFIX if test else "P") + secrets.token_hex(4)
 
 
 def case_order(participant_id: str) -> list[str]:
-    """Random order of C1..C6 for this participant."""
     order = CASE_IDS[:]
     random.shuffle(order)
     return order
 
 
-def start_timer() -> dict:
-    """Called when a case is first shown."""
-    return {"t0": time.monotonic(), "started_at": datetime.now(timezone.utc).isoformat()}
+def assign(participant_id, lang, training_attempts, heard, forced_arm=None):
+    return forced_arm or random.choice(["ai", "noai"]), case_order(participant_id)
 
 
-def stop_timer(token: dict) -> tuple[float, str, str]:
-    """Called on submit. Returns (seconds, started_at, submitted_at)."""
-    secs = round(time.monotonic() - token["t0"], 2)
-    return secs, token["started_at"], datetime.now(timezone.utc).isoformat()
-
-
-# ---------------- data.py interface ----------------
-
-RESPONSE_COLUMNS = [
-    "participant_id", "lang", "arm", "case_id", "case_order", "answer", "confidence",
-    "seconds", "started_at", "submitted_at", "training_attempts", "heard_about_study",
-]
+def restore(participant_id: str) -> None:
+    return None  # preview keeps no progress across refreshes
 
 
 def write_response(row: dict) -> None:
-    """One row per submitted case, written immediately. Keys = HANDOFF 3.5 columns."""
     _append("responses", {k: row.get(k) for k in RESPONSE_COLUMNS})
 
 
 def write_contact(participant_id: str, name: str, email: str) -> None:
-    """Lottery only. Never joined into `responses`."""
     _append("contacts", {"participant_id": participant_id, "name": name, "email": email})
 
 
 def write_participant(participant_id: str, lang: str, background: dict) -> None:
-    """Welcome-page background answers (major, medical/SSA experience).
-    OPEN QUESTION for ZXH: HANDOFF 3.5 has no table for these yet."""
     _append("participants", {"participant_id": participant_id, "lang": lang, **background})
 
 
-def write_survey(participant_id: str, arm: str, answers: dict) -> None:
-    """Wrap-up survey answers. OPEN QUESTION for ZXH: no table in HANDOFF 3.5 yet."""
-    _append("survey", {"participant_id": participant_id, "arm": arm, **answers})
+def write_training(participant_id: str, attempts: int, passed: bool) -> None:
+    _append("training", {"participant_id": participant_id, "attempts": attempts, "passed": passed})
+
+
+def write_survey(participant_id: str, arm: str, answers: dict, lang: str = "") -> None:
+    _append("survey", {"participant_id": participant_id, "arm": arm, "lang": lang, **answers})

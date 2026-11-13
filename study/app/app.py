@@ -4,8 +4,9 @@ Flow: language -> welcome -> training (rule card, T1, Q1, [Q2]) -> random
 assignment -> 6 cases -> wrap-up survey -> thanks.
 
 All page text comes from study/content/ (see HANDOFF.md section 3). Data,
-assignment and timing come from ZXH's data.py / assign.py; until those exist
-backend_stub.py is used and the page says PREVIEW.
+assignment and timing come from ZXH's data.py / assign.py once a Google Sheet is
+set in Streamlit Secrets; without Secrets backend_stub.py is used and the page
+says PREVIEW (nothing saved to the Sheet).
 
 Run locally:  streamlit run study/app/app.py
 """
@@ -17,11 +18,13 @@ import streamlit as st
 
 import content as C
 
-try:  # ZXH's real modules win; the stub is only a stand-in.
+import data as _data
+
+if _data.configured():  # Google Sheet in Streamlit Secrets: the real study
     import assign as A  # noqa: N812
-    import data as D  # noqa: N812
+    D = _data  # noqa: N816
     IS_STUB = False
-except ImportError:
+else:  # no Secrets: PREVIEW, nothing reaches the Sheet
     import backend_stub as A  # noqa: N812
     D = A
     IS_STUB = True
@@ -32,7 +35,7 @@ st.set_page_config(page_title="Study", page_icon=None, layout="wide",
 CSS = """
 <style>
 #MainMenu, footer, [data-testid="stSidebarNav"], [data-testid="stToolbar"] {visibility: hidden;}
-.block-container {max-width: 1250px; padding-top: 1.5rem;}
+.block-container {max-width: 1250px; padding-top: 3rem;}
 .doc {background: #fff; color: #1d1d1d; border: 1px solid #d0d0d0; border-radius: 4px;
       padding: 22px 28px; margin: 0 0 16px 0; font-family: Georgia, 'Times New Roman', serif;
       box-shadow: 0 1px 3px rgba(0,0,0,.08); line-height: 1.5;}
@@ -99,10 +102,39 @@ def go(stage: str) -> None:
     st.rerun()
 
 
-def preview_banner() -> None:
+def save_once(tag: str, fn, *args, **kw) -> bool:
+    """Write one row unless already written this session. On failure, say so and stay put."""
+    done = S.setdefault("saved", set())
+    if tag in done:
+        return True
+    try:
+        fn(*args, **kw)
+    except Exception:  # SaveError after retries, or anything unexpected
+        st.error(C.ui("save_failed", S.lang))
+        return False
+    done.add(tag)
+    return True
+
+
+def forced_arm() -> str | None:
+    """Team-only test switch: ?arm=ai|noai (also treat|control). Needs &k=<test_key> once a
+    Sheet is configured; in PREVIEW it works without a key. Banners never name the group."""
+    arm = {"treat": "ai", "ai": "ai", "control": "noai", "noai": "noai"}.get(
+        st.query_params.get("arm", ""))
+    if not arm:
+        return None
     if IS_STUB:
-        st.markdown('<span class="ph">PREVIEW · placeholder backend (no data is saved to the '
-                    'Sheet). Add ?arm=treat or ?arm=control to the URL to preview a group.</span>',
+        return arm
+    key = D.test_key()
+    return arm if key and st.query_params.get("k") == key else None
+
+
+def banners() -> None:
+    if IS_STUB:
+        st.markdown('<span class="ph">PREVIEW · nothing is saved to the study Sheet</span>',
+                    unsafe_allow_html=True)
+    elif S.get("pid", "").startswith("TEST-") or (S.stage in ("lang", "welcome") and S.test_arm):
+        st.markdown('<span class="ph">TEST RUN · team only · rows are marked TEST-</span>',
                     unsafe_allow_html=True)
 
 
@@ -131,7 +163,9 @@ def page_welcome() -> None:
         email = st.text_input(C.ui("email", S.lang))
         major = st.text_input(C.ui("major", S.lang))
         exp_opts = C.ui_list("experience_options", S.lang)
-        exp = st.radio(C.ui("experience", S.lang), exp_opts, index=None)
+        exp_en = C.ui_list("experience_options", "en")
+        exp_i = st.radio(C.ui("experience", S.lang), list(range(len(exp_opts))), index=None,
+                         format_func=lambda i: exp_opts[i])
         heard = st.text_input(C.ui("heard_about_study", S.lang))
         agree = st.checkbox(C.ui("consent_checkbox", S.lang))
         sent = st.form_submit_button(C.ui("start", S.lang), type="primary")
@@ -140,14 +174,20 @@ def page_welcome() -> None:
             st.error(C.ui("need_consent", S.lang))
             return
         if not (name.strip() and re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email.strip())
-                and major.strip() and exp is not None):
+                and major.strip() and exp_i is not None):
             st.error(C.ui("need_fields", S.lang))
             return
-        S.pid = A.new_participant_id()
+        if "pid" not in S:
+            S.pid = A.new_participant_id(test=bool(S.test_arm))
         S.heard = heard.strip()
-        D.write_contact(S.pid, name.strip(), email.strip())
-        D.write_participant(S.pid, S.lang, {"major": major.strip(), "experience": exp})
-        go("rule")
+        exp = exp_en[exp_i] if exp_i < len(exp_en) else exp_opts[exp_i]  # stored in English
+        ok = save_once("contact", D.write_contact, S.pid, name.strip(), email.strip())
+        ok = ok and save_once("participant", D.write_participant, S.pid, S.lang,
+                              {"major": major.strip(), "experience": exp,
+                               "heard_about_study": S.heard})
+        if ok:
+            st.query_params["p"] = S.pid  # lets a refreshed page resume
+            go("rule")
 
 
 def page_rule() -> None:
@@ -179,15 +219,30 @@ def training_item(cid: str, next_ok: str, next_wrong: str) -> None:
         if cid == "T1":
             go(next_ok)
         S.training_attempts = 1 if cid == "Q1" else 2
-        go(next_ok if correct else next_wrong)
+        nxt = next_ok if correct else next_wrong
+        if nxt in ("assign", "failed") and not save_once(
+                "training", D.write_training, S.pid, S.training_attempts, nxt == "assign"):
+            return
+        go(nxt)
 
 
 def page_assign() -> None:
     """Runs once, at the moment the participant passes the test."""
     if "arm" not in S:
-        forced = {"treat": "ai", "control": "noai"}.get(st.query_params.get("arm", ""))
-        S.arm = forced if IS_STUB and forced else A.assign_arm(S.pid)
-        S.order = A.case_order(S.pid)
+        if S.get("assign_tried"):  # an earlier try may have reached the Sheet: reuse it
+            r = _safe_restore(S.pid)
+            if r and r.get("arm"):
+                S.arm, S.order = r["arm"], r["order"]
+        if "arm" not in S:
+            S.assign_tried = True
+            try:
+                S.arm, S.order = A.assign(S.pid, S.lang, S.training_attempts, S.heard,
+                                          forced_arm=S.test_arm)
+            except Exception:
+                st.error(C.ui("save_failed", S.lang))
+                if st.button(C.ui("continue", S.lang), type="primary"):
+                    st.rerun()
+                return
         S.idx = 0
         S.timers = {}
     go("case")
@@ -247,16 +302,20 @@ def page_case() -> None:
                     horizontal=True, key=f"case_conf_{cid}",
                     format_func=lambda v: conf_lbl.get(v, str(v)))
     st.caption(C.ui("no_going_back", S.lang))
-    if st.button(C.ui("submit", S.lang), type="primary", disabled=ans is None or conf is None):
-        secs, started, submitted = A.stop_timer(S.timers[cid])
-        D.write_response({
-            "participant_id": S.pid, "lang": S.lang, "arm": S.arm, "case_id": cid,
-            "case_order": S.idx + 1, "answer": ans, "confidence": conf, "seconds": secs,
-            "started_at": started, "submitted_at": submitted,
-            "training_attempts": S.training_attempts, "heard_about_study": S.heard,
-        })
-        S.idx += 1
-        st.rerun()
+    if st.button(C.ui("submit", S.lang), type="primary", key=f"submit_{cid}",
+                 disabled=ans is None or conf is None) and ans and conf:
+        pending = S.setdefault("pending", {})
+        if cid not in pending:  # time is fixed at the first click, even if saving is retried
+            secs, started, submitted = A.stop_timer(S.timers[cid])
+            pending[cid] = {
+                "participant_id": S.pid, "lang": S.lang, "arm": S.arm, "case_id": cid,
+                "case_order": S.idx + 1, "answer": ans, "confidence": conf, "seconds": secs,
+                "started_at": started, "submitted_at": submitted,
+                "training_attempts": S.training_attempts, "heard_about_study": S.heard,
+            }
+        if save_once(f"resp_{cid}", D.write_response, pending[cid]):
+            S.idx += 1
+            st.rerun()
 
 
 SURVEY_RE = re.compile(r"^\?(scale|text|choice):\s*(.+)$")
@@ -292,8 +351,7 @@ def page_wrapup() -> None:
         if "".join(buf).strip():
             st.markdown(C.render_terms("\n".join(buf), S.lang), unsafe_allow_html=True)
         sent = st.form_submit_button(C.ui("finish", S.lang), type="primary")
-    if sent:
-        D.write_survey(S.pid, S.arm, answers)
+    if sent and save_once("survey", D.write_survey, S.pid, S.arm, answers, lang=S.lang):
         go("thanks")
 
 
@@ -320,7 +378,40 @@ PAGES = {
     "failed": page_failed,
 }
 
-S.setdefault("stage", "lang")
-S.setdefault("lang", "en")
-preview_banner()
+def _safe_restore(pid: str) -> dict | None:
+    try:
+        return A.restore(pid)
+    except Exception:
+        return None
+
+
+def boot() -> None:
+    """First run of a browser session. With ?p=<id> in the URL (set after Welcome), a
+    refreshed page continues where it was: same id, same group, same case order, and
+    cases already submitted are not shown again."""
+    if "stage" in S:
+        return
+    S.stage, S.lang, S.test_arm = "lang", "en", forced_arm()
+    pid = st.query_params.get("p")
+    r = _safe_restore(pid) if pid else None
+    if not r:
+        return
+    S.pid, S.lang, S.heard = pid, r["lang"], r["heard"]
+    S.saved = {"contact", "participant"}
+    if r["failed"]:
+        S.stage = "failed"
+    elif r["arm"]:
+        S.arm, S.order, S.training_attempts = r["arm"], r["order"], r["attempts"]
+        S.idx, S.timers = r["done"], {}
+        S.saved |= {"training"} | {f"resp_{c}" for c in S.order[:S.idx]}
+        S.stage = ("thanks" if r["survey_done"] else "wrapup") if S.idx >= len(S.order) else "case"
+    elif r["passed"]:
+        S.training_attempts, S.stage = r["attempts"], "assign"
+        S.saved.add("training")
+    else:
+        S.stage = "rule"
+
+
+boot()
+banners()
 PAGES[S.stage]()
