@@ -6,7 +6,7 @@ Keep notes short; put details in the group chat. Never write answers, blueprint 
 
 | # | Due | From → To | Deliverable | Status | Updated (who, when) | Note |
 |---|---|---|---|---|---|---|
-| 1 | Fri 18:00 | C → all | Web skeleton preview link | doing | LYL, Fri 14:40 | Skeleton pushed (a3f02df); Streamlit app not deployed yet |
+| 1 | Fri 18:00 | C → all | Web skeleton preview link | doing | LYL, Fri 17:20 | Full app + Sheet data layer in PR (preview mode until Secrets added); deploy from the PR branch for the preview link |
 | 2 | Fri 21:00 | A → C | `content/training/` + `rule_card` + `glossary.yaml` | todo | | |
 | 3 | Fri 21:00 | B → C | `welcome`, `why_fast_track`, `consent`, `lottery` (en/zh) | todo | | |
 | 4 | Fri 21:00 | WYQ → all | Email to Diego about gift cards and IRB | todo | | |

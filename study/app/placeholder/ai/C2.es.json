@@ -1,0 +1,13 @@
+{
+  "recommendation": "yes",
+  "summary": "MARCADOR: resumen de la IA (el grupo A escribe el real).",
+  "findings": [
+    {
+      "quote": "Frase exacta usada por la verificación de citas en la página 2.",
+      "page": 2
+    }
+  ],
+  "flags": [
+    "MARCADOR: problema señalado."
+  ]
+}

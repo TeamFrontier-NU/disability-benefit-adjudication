@@ -4,13 +4,16 @@ T1:
   explanation:
     en: "PLACEHOLDER explanation for T1."
     zh: "占位：T1 讲解。"
+    es: "MARCADOR: explicación de T1."
 Q1:
   answer: "yes"
   explanation:
     en: "PLACEHOLDER explanation for Q1."
     zh: "占位：Q1 讲解。"
+    es: "MARCADOR: explicación de Q1."
 Q2:
   answer: "no"
   explanation:
     en: "PLACEHOLDER explanation for Q2."
     zh: "占位：Q2 讲解。"
+    es: "MARCADOR: explicación de Q2."

@@ -1,32 +1,43 @@
 # Short interface labels (buttons, field names). PROPOSED new key for group B:
 # copy to study/content/texts/ui.yaml and edit there; the app then uses B's version.
 # Keep {i}, {n} placeholders as they are. No-AI pages never show the ai_* labels.
-name:                {en: "Name",  zh: "姓名"}
-email:               {en: "Email (only used for the gift-card lottery)", zh: "邮箱（仅用于礼品卡抽奖）"}
-major:               {en: "Major / field of study", zh: "专业"}
-experience:          {en: "Have you worked in healthcare or social security / disability benefits?", zh: "你是否有医疗或社保 / 残障福利方面的工作经验？"}
-experience_options:  {en: ["No", "Healthcare", "Social security / disability benefits", "Both"], zh: ["没有", "医疗", "社保 / 残障福利", "两者都有"]}
-heard_about_study:   {en: "How did you hear about this study? (optional)", zh: "你是怎么知道这个研究的？（选填）"}
-consent_checkbox:    {en: "I have read the information above and agree to take part.", zh: "我已阅读以上内容，同意参加。"}
-need_consent:        {en: "Please tick the consent box to continue.", zh: "请勾选同意后继续。"}
-need_fields:         {en: "Please fill in name, a valid email, major and experience.", zh: "请填写姓名、有效邮箱、专业和工作经验。"}
-start:               {en: "Start", zh: "开始"}
-continue:            {en: "Continue", zh: "继续"}
-submit:              {en: "Submit", zh: "提交"}
-finish:              {en: "Finish", zh: "完成"}
-"yes":               {en: "Yes", zh: "是"}
-"no":                {en: "No", zh: "否"}
-fast_track_question: {en: "Should this claim enter the fast track?", zh: "这份申请是否应进入快速通道？"}
-confidence_question: {en: "How sure are you?", zh: "你有多大把握？"}
-conf_low:            {en: "not sure", zh: "没把握"}
-conf_high:           {en: "very sure", zh: "非常有把握"}
-no_going_back:       {en: "You cannot go back after submitting.", zh: "提交后不能返回修改。"}
-correct:             {en: "Correct.", zh: "回答正确。"}
-incorrect:           {en: "Not correct.", zh: "回答错误。"}
-rule_card_title:     {en: "Rule card", zh: "规则卡"}
-case_progress:       {en: "Case {i} of {n}", zh: "第 {i} / {n} 个案例"}
-page_of:             {en: "Page {i} of {n}", zh: "第 {i} / {n} 页"}
-page_n:              {en: "page {n}", zh: "第 {n} 页"}
-ai_recommendation:   {en: "AI suggestion", zh: "AI 建议"}
-ai_findings:         {en: "Evidence found", zh: "找到的依据"}
-ai_flags:            {en: "Issues flagged", zh: "标记的问题"}
+study_title:         {en: "Claim Review Study", zh: "申请审核研究", es: "Estudio de revisión de solicitudes"}
+lang_page_title:     {en: "Welcome", zh: "欢迎", es: "Bienvenido/a"}
+choose_language:     {en: "Select your language", zh: "请选择语言", es: "Seleccione su idioma"}
+lang_coming_soon:    {en: "coming soon", zh: "即将推出", es: "próximamente"}
+steps:               {en: ["Welcome", "Training", "Cases", "Finish"], zh: ["欢迎", "培训", "案例", "结束"], es: ["Bienvenida", "Capacitación", "Casos", "Fin"]}
+training_eyebrow:    {en: "Training", zh: "培训", es: "Capacitación"}
+example_case:        {en: "Practice case", zh: "练习案例", es: "Caso de práctica"}
+check_case:          {en: "Check question", zh: "测试案例", es: "Pregunta de comprobación"}
+original_doc:        {en: "View the original document (scanned PDF)", zh: "查看原始文件（扫描版 PDF）", es: "Ver el documento original (PDF escaneado)"}
+original_doc_note:   {en: "Same content as the pages above, in its original layout.", zh: "内容与上方页面相同，为原始版式。", es: "El mismo contenido que las páginas de arriba, en su formato original."}
+download_pdf:        {en: "Download PDF", zh: "下载 PDF", es: "Descargar PDF"}
+name:                {en: "Name",  zh: "姓名", es: "Nombre"}
+email:               {en: "Email (only used for the gift-card lottery)", zh: "邮箱（仅用于礼品卡抽奖）", es: "Correo electrónico (solo para el sorteo de tarjetas de regalo)"}
+experience:          {en: "Have you worked in healthcare or social security / disability benefits?", zh: "你是否有医疗或社保 / 残障福利方面的工作经验？", es: "¿Ha trabajado en salud o en seguridad social / beneficios por discapacidad?"}
+experience_options:  {en: ["No", "Healthcare", "Social security / disability benefits", "Both"], zh: ["没有", "医疗", "社保 / 残障福利", "两者都有"], es: ["No", "Salud", "Seguridad social / beneficios por discapacidad", "Ambos"]}
+consent_checkbox:    {en: "I have read the information above and agree to take part.", zh: "我已阅读以上内容，同意参加。", es: "He leído la información anterior y acepto participar."}
+need_consent:        {en: "Please tick the consent box to continue.", zh: "请勾选同意后继续。", es: "Marque la casilla de consentimiento para continuar."}
+need_fields:         {en: "Please fill in your name, a valid email and your experience.", zh: "请填写姓名、有效邮箱和工作经验。", es: "Escriba su nombre, un correo válido y su experiencia."}
+start:               {en: "Start", zh: "开始", es: "Comenzar"}
+continue:            {en: "Continue", zh: "继续", es: "Continuar"}
+submit:              {en: "Submit", zh: "提交", es: "Enviar"}
+finish:              {en: "Finish", zh: "完成", es: "Terminar"}
+"yes":               {en: "Yes", zh: "是", es: "Sí"}
+"no":                {en: "No", zh: "否", es: "No"}
+fast_track_question: {en: "Should this claim enter the fast track?", zh: "这份申请是否应进入快速通道？", es: "¿Debe esta solicitud pasar a la vía rápida?"}
+confidence_question: {en: "How sure are you?", zh: "你有多大把握？", es: "¿Qué tan seguro/a está?"}
+conf_low:            {en: "not sure", zh: "没把握", es: "nada seguro/a"}
+conf_high:           {en: "very sure", zh: "非常有把握", es: "muy seguro/a"}
+no_going_back:       {en: "You cannot go back after submitting.", zh: "提交后不能返回修改。", es: "No podrá volver atrás después de enviar."}
+correct:             {en: "Correct.", zh: "回答正确。", es: "Correcto."}
+incorrect:           {en: "Not correct.", zh: "回答错误。", es: "No es correcto."}
+rule_card_title:     {en: "Rule card", zh: "规则卡", es: "Tarjeta de reglas"}
+case_progress:       {en: "Case {i} of {n}", zh: "第 {i} / {n} 个案例", es: "Caso {i} de {n}"}
+page_of:             {en: "Page {i} of {n}", zh: "第 {i} / {n} 页", es: "Página {i} de {n}"}
+page_n:              {en: "page {n}", zh: "第 {n} 页", es: "página {n}"}
+ai_panel_title:      {en: "AI review", zh: "AI 审阅", es: "Revisión de la IA"}
+ai_recommendation:   {en: "AI suggestion", zh: "AI 建议", es: "Sugerencia de la IA"}
+ai_findings:         {en: "Evidence found", zh: "找到的依据", es: "Evidencia encontrada"}
+ai_flags:            {en: "Issues flagged", zh: "标记的问题", es: "Problemas señalados"}
+save_failed:         {en: "Your answer could not be saved just now. Please check your connection and click again.", zh: "刚才没能保存你的回答。请检查网络后再点一次。", es: "No se pudo guardar su respuesta. Revise su conexión y haga clic de nuevo."}
