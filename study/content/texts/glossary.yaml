@@ -1,0 +1,62 @@
+SSDI:
+  en: "Social Security Disability Insurance, a U.S. disability benefits program."
+  zh: "社会保障残疾保险，美国的一项残疾福利计划。"
+  es: "Seguro por Incapacidad del Seguro Social, un programa de beneficios de EE. UU."
+SSA:
+  en: "Social Security Administration, the federal agency that administers SSDI."
+  zh: "美国社会保障署，负责管理 SSDI 的联邦机构。"
+  es: "Administración del Seguro Social, agencia federal que administra el SSDI."
+DDS:
+  en: "Disability Determination Services, the state agency that reviews medical evidence for disability claims."
+  zh: "州残疾认定机构，负责审核残疾福利申请的医疗证据。"
+  es: "Servicios de Determinación de Incapacidad, agencia estatal que revisa las pruebas médicas de las solicitudes."
+SSA-16:
+  en: "Application for disability insurance benefits."
+  zh: "残疾保险福利申请表。"
+  es: "Solicitud de beneficios del seguro por incapacidad."
+SSA-3368:
+  en: "Adult Disability Report: the applicant describes health conditions, medical care, and work history."
+  zh: "成人残疾报告，申请人填写病情、就医情况和工作经历。"
+  es: "Informe de incapacidad para adultos: la persona describe sus afecciones, atención médica e historial laboral."
+SSA-827:
+  en: "Permission to share records with SSA and the state agency handling the claim. It does not confirm a diagnosis."
+  zh: "授权将记录提供给 SSA 和办理申请的州机构。授权本身不能证明诊断。"
+  es: "Autorización para compartir registros con la SSA y la agencia estatal que tramita la solicitud. No confirma un diagnóstico."
+MRI:
+  en: "A scan that shows detailed images of the inside of the body."
+  zh: "磁共振检查，可以显示身体内部的详细图像。"
+  es: "Resonancia magnética, estudio que muestra imágenes detalladas del interior del cuerpo."
+CT:
+  en: "A scan that uses X-rays to produce detailed images of the inside of the body."
+  zh: "CT 检查，利用 X 射线生成身体内部的详细图像。"
+  es: "Tomografía computarizada, estudio que usa rayos X para obtener imágenes detalladas del interior del cuerpo."
+EMR:
+  en: "Electronic medical record: a digital record kept by a healthcare provider."
+  zh: "电子病历，由医疗机构保存的电子版就医记录。"
+  es: "Historia clínica electrónica: registro digital que conserva un centro médico."
+"pathology report":
+  en: "A lab report describing what was found in a sample of tissue or cells."
+  zh: "病理报告：说明组织或细胞样本检验结果的报告。"
+  es: "Informe de patología: describe lo que se encontró en una muestra de tejido o células."
+"biopsy":
+  en: "Taking a small tissue sample so a lab can examine it."
+  zh: "活检：取少量组织样本送到实验室检查。"
+  es: "Biopsia: extracción de una pequeña muestra de tejido para examinarla en el laboratorio."
+"discharge summary":
+  en: "A hospital record that summarizes a stay, care received, and next steps."
+  zh: "出院小结：概述住院经过、所接受的治疗和后续安排。"
+  es: "Resumen de alta: registro hospitalario que resume la estancia, la atención recibida y los siguientes pasos."
+"progress note":
+  en: "A provider's note about a visit, including findings and the care plan."
+  zh: "诊疗记录：医疗人员记录一次就诊的发现和治疗计划。"
+  es: "Nota de evolución: registro de una consulta que describe los hallazgos y el plan de atención."
+"onset date":
+  en: "The date a condition or limitation began. This can differ from the date it was diagnosed."
+  zh: "起始日期：病情或功能受限开始的日期，可能与确诊日期不同。"
+  es: "Fecha de inicio: día en que comenzó una afección o limitación. Puede ser distinta de la fecha de diagnóstico."
+
+# Compatibility for the app’s built-in sample cases until C1–C6 are added.
+placeholder term:
+  en: PLACEHOLDER glossary entry (CZY writes glossary.yaml).
+  zh: 占位词汇解释（CZY 写 glossary.yaml）。
+  es: 'MARCADOR: entrada del glosario (CZY escribe glossary.yaml).'
