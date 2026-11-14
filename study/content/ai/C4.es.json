@@ -1,0 +1,14 @@
+{
+  "recommendation": "no",
+  "summary": "No recomendar la vía rápida porque el hallazgo grave aparece solo en un informe presentado por el solicitante y el registro solicitado por la agencia no lo respalda.",
+  "findings": [
+    {
+      "quote": "Daniel Reed tiene fuerza normal en ambas piernas.",
+      "page": 2
+    },
+    {
+      "quote": "El examen no muestra una lesión de la médula espinal.",
+      "page": 2
+    }
+  ]
+}

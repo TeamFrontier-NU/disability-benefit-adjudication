@@ -1,0 +1,14 @@
+{
+  "recommendation": "no",
+  "summary": "No recomendar la vía rápida. El registro verificado describe un esguince leve de la pierna que se espera que mejore pronto.",
+  "findings": [
+    {
+      "quote": "Maria Lopez tiene un esguince leve en la pierna derecha.",
+      "page": 2
+    },
+    {
+      "quote": "El médico espera que el dolor y la hinchazón mejoren durante las próximas dos a cuatro semanas.",
+      "page": 2
+    }
+  ]
+}
