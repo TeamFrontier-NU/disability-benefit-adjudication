@@ -10,11 +10,11 @@ Keep notes short; put details in the group chat. Never write answers, blueprint 
 | 2 | Fri 21:00 | A → C | `content/training/` + `rule_card` + `glossary.yaml` | done | | |
 | 3 | Fri 21:00 | B → C | `welcome`, `why_fast_track`, `consent`, `lottery` (en/zh) | todo | | |
 | 4 | Fri 21:00 | WYQ → all | Email to Diego about gift cards and IRB | todo | | |
-| 5 | Sat 12:00 | A → experts | 6 English cases `content/cases/C*.en.md` | todo | | |
-| 6 | Sat 15:00 | experts → A | Expert judgments in the shared drive; answer key agreed | todo | | Say only "done" here |
-| 7 | Sat 17:00 | A → C | Revised cases (if any disagreement) | todo | | |
+| 5 | Sat 12:00 | A → experts | 6 English cases `content/cases/C*.en.md` | done | | |
+| 6 | Sat 15:00 | experts → A | Expert judgments in the shared drive; answer key agreed | done | | Say only "done" here |
+| 7 | Sat 17:00 | A → C | Revised cases (if any disagreement) | done | | |
 | 8 | Sat 18:00 | C → B | English app works end to end, data written to Sheet | todo | | |
-| 9 | Sat 21:00 | A → C | Chinese cases + all `content/ai/*.json` | todo | | |
+| 9 | Sat 21:00 | A → C | Chinese cases + all `content/ai/*.json` | done | | |
 | 10 | Sat 23:00 | B → C | English issue list + `wrapup_*`, `thanks`, `debrief` | todo | | |
 | 11 | Sun 12:00 | C → B | Full app, both languages, both arms | todo | | |
 | 12 | Sun 15:00 | B → C | Pilot report (2 outside people) + data check | todo | | |
