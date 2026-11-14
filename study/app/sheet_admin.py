@@ -1,5 +1,6 @@
 """Set up, check and clear the study Google Sheet (Group C, ZXH). Run on your own computer.
 
+    python study/app/sheet_admin.py make-secrets --key ~/Downloads/key.json --sheet <id> --test-word <word>
     python study/app/sheet_admin.py setup        # create tabs + headers, fill allocation (once)
     python study/app/sheet_admin.py status       # row counts per tab
     python study/app/sheet_admin.py clear-test   # delete TEST- rows (team test runs)
@@ -119,11 +120,40 @@ def clear_all() -> None:
     print("allocation kept; the next participant gets slot 1 again.")
 
 
+def make_secrets(key_json: str, sheet_id: str, test_word: str) -> None:
+    """Write .streamlit/secrets.toml (gitignored) from the downloaded service-account JSON.
+    Prints only where it went, never the key itself."""
+    import json
+    info = json.loads(Path(key_json).expanduser().read_text(encoding="utf-8"))
+    if info.get("type") != "service_account":
+        sys.exit("That file is not a service-account key (type must be service_account).")
+
+    def q(v) -> str:
+        return json.dumps(str(v))  # a JSON string is a valid TOML basic string
+
+    lines = [f"sheet_id = {q(sheet_id)}", f"test_key = {q(test_word)}", "",
+             "[gcp_service_account]"] + [f"{k} = {q(v)}" for k, v in info.items()]
+    out = HERE.parents[1] / ".streamlit" / "secrets.toml"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    tomllib.loads(out.read_text(encoding="utf-8"))  # check it parses
+    print(f"Wrote {out}\n(gitignored). Open it, copy everything, paste into Streamlit:"
+          f" Manage app -> Settings -> Secrets.\nShare the Sheet with: {info.get('client_email')}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["setup", "status", "clear-test", "clear-all"])
+    ap.add_argument("cmd", choices=["make-secrets", "setup", "status", "clear-test", "clear-all"])
     ap.add_argument("--yes", action="store_true", help="confirm clear-all")
+    ap.add_argument("--key", help="make-secrets: path to the downloaded service-account .json")
+    ap.add_argument("--sheet", help="make-secrets: the Sheet id from its URL")
+    ap.add_argument("--test-word", help="make-secrets: a word only the team knows")
     a = ap.parse_args()
+    if a.cmd == "make-secrets":
+        if not (a.key and a.sheet and a.test_word):
+            sys.exit("make-secrets needs --key, --sheet and --test-word")
+        make_secrets(a.key, a.sheet, a.test_word)
+        return
     _load_secrets()
     if a.cmd == "setup":
         setup()
