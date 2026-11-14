@@ -15,9 +15,9 @@ Keep notes short; put details in the group chat. Never write answers, blueprint 
 | 7 | Sat 17:00 | A → C | Revised cases (if any disagreement) | done | | |
 | 8 | Sat 18:00 | C → B | English app works end to end, data written to Sheet | todo | | |
 | 9 | Sat 21:00 | A → C | Chinese cases + all `content/ai/*.json` | done | | |
-| 10 | Sat 23:00 | B → C | English issue list + `wrapup_*`, `thanks`, `debrief` | todo | | |
+| 10 | Sat 23:00 | B → C | English issue list + `wrapup_*`, `thanks`, `debrief` | doing | WYX, Sat 15:10 | Texts done (en/zh/es, check 0 problems); issue list after English test |
 | 11 | Sun 12:00 | C → B | Full app, both languages, both arms | todo | | |
 | 12 | Sun 15:00 | B → C | Pilot report (2 outside people) + data check | todo | | |
 | 13 | Sun 18:00 | C → LYL | Final link, pilot data cleared | todo | | |
-| 14 | Sun 18:00 | B → LYL | Pre-registration draft final (shared drive) | todo | | |
+| 14 | Sun 18:00 | B → LYL | Pre-registration draft final (shared drive) | doing | WYX, Sat 15:10 | Draft v1 in `07_prereg/`; analysis script in `study/analysis/` |
 | 15 | Sun 21:00 | LYL → instructor | Email: app link + design + pre-registration | todo | | |
