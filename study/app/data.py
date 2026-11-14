@@ -1,4 +1,8 @@
-"""Data layer for the participant study (Group C, ZXH): one Google Sheet.
+"""Data layer for the participant study (Group C, ZXH).
+
+Storage: Supabase Postgres (`database_url` in Secrets, see pg_sheet.py) — the team's choice,
+since a Google account is not available. Google Sheets still works if `sheet_id` +
+`gcp_service_account` are given instead. Either way the data is organised as "tabs":
 
 Tabs (created with headers by `sheet_admin.py setup`):
 
@@ -13,11 +17,8 @@ Tabs (created with headers by `sheet_admin.py setup`):
 
 Credentials live only in Streamlit Secrets (or .streamlit/secrets.toml, which is gitignored):
 
-    sheet_id = "<the id in the Sheet URL>"
+    database_url = "postgresql://postgres.<ref>:<password>@<host>.pooler.supabase.com:5432/postgres"
     test_key = "<a word only the team knows>"      # unlocks the forced-group test switch
-    [gcp_service_account]
-    type = "service_account"
-    ...                                            # the whole JSON key, as TOML
 
 Every write is retried with backoff. A write that still fails raises SaveError and the
 page keeps the participant where they are, so nothing is silently lost.
@@ -65,11 +66,11 @@ def _secrets():
 
 def configured() -> bool:
     """True when a Sheet is set up (Secrets) or a local test sheet is in use."""
-    if os.environ.get("STUDY_LOCAL_SHEET"):
+    if os.environ.get("STUDY_LOCAL_SHEET") or os.environ.get("STUDY_DATABASE_URL"):
         return True
     try:
         s = _secrets()
-        return "sheet_id" in s and "gcp_service_account" in s
+        return "database_url" in s or ("sheet_id" in s and "gcp_service_account" in s)
     except Exception:  # no secrets file at all
         return False
 
@@ -89,9 +90,18 @@ def _book():
     global _BOOK
     if _BOOK is None:
         local = os.environ.get("STUDY_LOCAL_SHEET")
+        db = os.environ.get("STUDY_DATABASE_URL")
+        if not (local or db):
+            try:
+                db = str(_secrets().get("database_url") or "") or None
+            except Exception:
+                db = None
         if local:  # offline development and automated tests only
             import local_sheet
             _BOOK = local_sheet.open_book(local)
+        elif db:  # Supabase / any Postgres
+            import pg_sheet
+            _BOOK = pg_sheet.open_book(db)
         else:
             import gspread
             s = _secrets()
