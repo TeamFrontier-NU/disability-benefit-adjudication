@@ -1,0 +1,25 @@
+# Analysis (Group B · WYX)
+
+Pre-registered analysis for the participant study. Code only: data and answer keys stay in the shared drive.
+
+```bash
+pip install -r study/analysis/requirements.txt
+
+# test on fake data (any case id can stand in for the stress case)
+python study/analysis/fake_data.py
+python study/analysis/analyze.py --responses fake_responses.csv --key fake_key.csv --stress-cases C1
+
+# real run, files from the shared drive
+python study/analysis/analyze.py --responses <06_data>/responses.csv \
+    --key <03_answer_key>/final.csv --min-seconds <pilot threshold> --out results.md
+```
+
+`final.csv` columns: `case_id,answer` plus optional `ai_wrong` (1 = deliberately wrong AI suggestion).
+The stress-test case IDs come from that file (or `--stress-cases`), never from this repository.
+
+Report sections: sample and exclusions · main models on cases with a correct AI suggestion
+(`Correct` and `log(Time)` on `Treat` + case FE, SEs clustered by person) · H2 missed fast tracks ·
+H3 wrong fast tracks with the 10-point non-inferiority check (90% CI) · stress-test cases separately ·
+all six cases together · descriptives. All sections are always printed.
+
+`*.csv` is gitignored. Do not commit outputs or `results.md` from real data.
