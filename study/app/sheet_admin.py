@@ -1,6 +1,8 @@
-"""Set up, check and clear the study Google Sheet (Group C, ZXH). Run on your own computer.
+"""Set up, check, export and clear the study data store (Supabase or Google Sheet). Run locally.
 
-    python study/app/sheet_admin.py make-secrets --key ~/Downloads/key.json --sheet <id> --test-word <word>
+    python study/app/sheet_admin.py make-secrets --database-url "<Supabase URI>" --test-word <word>
+    python study/app/sheet_admin.py make-secrets --key ~/Downloads/key.json --sheet <id> --test-word <word>   # Google
+    python study/app/sheet_admin.py export --out ~/Frontier_Study/06_data/export   # CSV per tab
     python study/app/sheet_admin.py setup        # create tabs + headers, fill allocation (once)
     python study/app/sheet_admin.py status       # row counts per tab
     python study/app/sheet_admin.py clear-test   # delete TEST- rows (team test runs)
@@ -36,7 +38,7 @@ DATA_TABS = ["responses", "contacts", "assignments", "participants", "training",
 
 
 def _load_secrets() -> None:
-    if os.environ.get("STUDY_LOCAL_SHEET"):
+    if os.environ.get("STUDY_LOCAL_SHEET") or os.environ.get("STUDY_DATABASE_URL"):
         return
     tries = [HERE.parents[1] / ".streamlit" / "secrets.toml", HERE / ".streamlit" / "secrets.toml"]
     path = next((p for p in tries if p.exists()), None)
@@ -120,6 +122,32 @@ def clear_all() -> None:
     print("allocation kept; the next participant gets slot 1 again.")
 
 
+def export(out_dir: str) -> None:
+    """One CSV per tab, for analysis. Save them in the shared drive 06_data/, never in git."""
+    import csv
+    out = Path(out_dir).expanduser()
+    out.mkdir(parents=True, exist_ok=True)
+    for tab in D.TABS:
+        rows = D.ws(tab).get_all_values()
+        with open(out / f"{tab}.csv", "w", newline="", encoding="utf-8-sig") as f:
+            csv.writer(f).writerows(rows)
+        print(f"{tab:18} {max(len(rows) - 1, 0)} rows -> {out / (tab + '.csv')}")
+
+
+def make_db_secrets(database_url: str, test_word: str) -> None:
+    """Supabase: write .streamlit/secrets.toml with the connection string. Prints no secret."""
+    import json
+    if not database_url.startswith(("postgresql://", "postgres://")):
+        sys.exit("The connection string must start with postgresql://")
+    out = HERE.parents[1] / ".streamlit" / "secrets.toml"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(f"database_url = {json.dumps(database_url)}\ntest_key = {json.dumps(test_word)}\n",
+                   encoding="utf-8")
+    tomllib.loads(out.read_text(encoding="utf-8"))
+    print(f"Wrote {out}\n(gitignored). Open it, copy both lines, paste into Streamlit:"
+          " Manage app -> Settings -> Secrets.")
+
+
 def make_secrets(key_json: str, sheet_id: str, test_word: str) -> None:
     """Write .streamlit/secrets.toml (gitignored) from the downloaded service-account JSON.
     Prints only where it went, never the key itself."""
@@ -143,22 +171,31 @@ def make_secrets(key_json: str, sheet_id: str, test_word: str) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["make-secrets", "setup", "status", "clear-test", "clear-all"])
+    ap.add_argument("cmd", choices=["make-secrets", "setup", "status", "export", "clear-test",
+                                    "clear-all"])
+    ap.add_argument("--database-url", help="make-secrets (Supabase): the Session pooler URI")
+    ap.add_argument("--out", default="study_data_export", help="export: folder for the CSVs")
     ap.add_argument("--yes", action="store_true", help="confirm clear-all")
     ap.add_argument("--key", help="make-secrets: path to the downloaded service-account .json")
     ap.add_argument("--sheet", help="make-secrets: the Sheet id from its URL")
     ap.add_argument("--test-word", help="make-secrets: a word only the team knows")
     a = ap.parse_args()
     if a.cmd == "make-secrets":
-        if not (a.key and a.sheet and a.test_word):
-            sys.exit("make-secrets needs --key, --sheet and --test-word")
-        make_secrets(a.key, a.sheet, a.test_word)
+        if a.database_url and a.test_word:
+            make_db_secrets(a.database_url, a.test_word)
+        elif a.key and a.sheet and a.test_word:
+            make_secrets(a.key, a.sheet, a.test_word)
+        else:
+            sys.exit("make-secrets needs --database-url and --test-word (Supabase),"
+                     " or --key, --sheet and --test-word (Google)")
         return
     _load_secrets()
     if a.cmd == "setup":
         setup()
     elif a.cmd == "status":
         status()
+    elif a.cmd == "export":
+        export(a.out)
     elif a.cmd == "clear-test":
         clear_test()
     elif a.cmd == "clear-all":

@@ -35,33 +35,29 @@ python study/app/make_doc_pdfs.py            # study/content/cases + training
 | **PREVIEW** | No Secrets (local run, or before ZXH adds the Sheet) | Nothing reaches the Sheet. Random group; add `?arm=ai` or `?arm=noai` to see a group. Badge: "PREVIEW". |
 | **Study** | `sheet_id` + `gcp_service_account` in Secrets | Every row goes to the Google Sheet as it happens. Group comes from the allocation table. |
 
-## Deploy (Streamlit Community Cloud)
+## Deploy (Streamlit Community Cloud + Supabase)
 
-1. ZXH: create an empty Google Sheet and a Google Cloud service account (Sheets API + Drive API
-   enabled); share the Sheet with the service account's email as **Editor**.
-2. Put the Secrets in **two places only**: the app's *Settings → Secrets* on Streamlit Cloud, and,
-   for running `sheet_admin.py`, `.streamlit/secrets.toml` at the repository root on your own
-   computer (gitignored). Never in a chat, a Project or any other file.
+Data is stored in **Supabase** (free Postgres, sign in with GitHub), because the team has no Google
+account. Google Sheets still works if `sheet_id` + `gcp_service_account` are in Secrets instead.
+
+1. ZXH: create a Supabase project and copy its **Session pooler** connection string
+   (step-by-step: `Frontier_Study` project files, `XINHUI-supabase-setup.md`).
+2. `python study/app/sheet_admin.py make-secrets --database-url "<URI>" --test-word <word>` writes
+   `.streamlit/secrets.toml` at the repository root (gitignored). Its two lines are the Secrets:
    ```toml
-   sheet_id = "<the long id in the Sheet URL>"
+   database_url = "postgresql://postgres.<ref>:<password>@<host>.pooler.supabase.com:5432/postgres"
    test_key = "<a word only the team knows>"
-   [gcp_service_account]
-   type = "service_account"
-   project_id = "..."
-   private_key_id = "..."
-   private_key = "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-   client_email = "...@....iam.gserviceaccount.com"
-   client_id = "..."
-   token_uri = "https://oauth2.googleapis.com/token"
    ```
-3. ZXH, once: `python study/app/sheet_admin.py setup`. This creates the tabs and draws the
-   200-row allocation (blocks of 2). It prints the random seed **once**: save it to
-   `Frontier_Study/06_data/seed.txt`. Do not commit it.
-4. LYL: *New app* → repo `TeamFrontier-NU/disability-benefit-adjudication`, branch `main`,
-   main file `study/app/app.py`. Paste the Secrets. Any push to `main` redeploys; the Sheet keeps
-   its data across redeploys.
+3. ZXH, once: `python study/app/sheet_admin.py setup` creates the table and draws the 200-row
+   allocation (blocks of 2). It prints the seed **once**: save it to `Frontier_Study/06_data/seed.txt`.
+4. LYL: Streamlit Cloud app from branch `main`, main file `study/app/app.py`; paste the Secrets in
+   *Settings → Secrets*. Any push to `main` redeploys; the data stays in Supabase.
+5. Export: `python study/app/sheet_admin.py export --out <shared drive>/06_data/export` (CSV per tab).
 
-## Sheet tabs (`data.py`)
+All data sits in one table `study_rows (tab, id, vals)`; "tab" names below are kept from the
+Sheet design. Row-level security is on, so Supabase's public API cannot read it.
+
+## Data tabs (`data.py`)
 
 | Tab | One row per | Columns |
 |---|---|---|
