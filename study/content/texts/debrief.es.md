@@ -14,7 +14,7 @@ Gracias por participar en nuestro proyecto del curso SEL_POL 425 sobre la revisi
 
 **Tus datos.** Todos los expedientes eran inventados; no se usaron personas ni registros reales. Tus respuestas se usan solo para este proyecto del curso y se analizan sin tu nombre. Tu nombre y tu correo se guardaron por separado de tus respuestas y se usan solo para el sorteo; se eliminarán después del sorteo. Si quieres que eliminemos tus respuestas, responde a este correo y las borraremos.
 
-**Sorteo.** El sorteo de las cuatro tarjetas de regalo de $20 se realizará el [fecha por confirmar]. Nos pondremos en contacto con las personas ganadoras en el correo que indicaron.
+**Sorteo.** Sujeto a la aprobación de los fondos del curso, el equipo planea sortear tres tarjetas de regalo de $20 cada una el [fecha por confirmar]. Nos pondremos en contacto con las personas ganadoras en el correo que indicaron.
 
 Si tienes alguna pregunta, responde a este correo.
 

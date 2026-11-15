@@ -37,4 +37,4 @@ Today, QDD/CAL scores only the application form; an examiner then reads the medi
 
 ## Incentive
 
-4 × $20 gift-card lottery (remaining $80 after Claude Max). Entry does not depend on accuracy. Pending Diego's OK to use course funds.
+3 × $20 gift-card lottery ($60 total), subject to approval of course funds. Entry does not depend on accuracy.

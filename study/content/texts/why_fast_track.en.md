@@ -1,0 +1,1 @@
+You are **not** deciding whether a claim is approved or denied. For each simulated case, decide only whether it should enter fast-track review. Fast track means an examiner reviews the case sooner and checks the evidence. A case that does not enter fast track continues through regular human review. Use the case documents and rule card to make your decision.

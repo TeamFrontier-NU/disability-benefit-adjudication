@@ -8,7 +8,7 @@ Keep notes short; put details in the group chat. Never write answers, blueprint 
 |---|---|---|---|---|---|---|
 | 1 | Fri 18:00 | C → all | Web skeleton preview link | doing | LYL, Fri 17:20 | Full app + Sheet data layer in PR (preview mode until Secrets added); deploy from the PR branch for the preview link |
 | 2 | Fri 21:00 | A → C | `content/training/` + `rule_card` + `glossary.yaml` | done | | |
-| 3 | Fri 21:00 | B → C | `welcome`, `why_fast_track`, `consent`, `lottery` (en/zh) | todo | | |
+| 3 | Fri 21:00 | B → C | `welcome`, `why_fast_track`, `consent`, `lottery` (en/zh) | doing | Codex, Sat 11/14 | en/zh/es files prepared; `why_fast_track` still needs exact check against full design |
 | 4 | Fri 21:00 | WYQ → all | Email to Diego about gift cards and IRB | todo | | |
 | 5 | Sat 12:00 | A → experts | 6 English cases `content/cases/C*.en.md` | done | | |
 | 6 | Sat 15:00 | experts → A | Expert judgments in the shared drive; answer key agreed | done | | Say only "done" here |

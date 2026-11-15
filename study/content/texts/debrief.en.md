@@ -14,7 +14,7 @@ Thank you for taking part in our SEL_POL 425 course project on early screening o
 
 **Your data.** All the case files were made up; no real people or real records were used. Your answers are used only for this course project and are analyzed without your name. Your name and email were stored separately from your answers and are used only for the lottery; they will be deleted after the draw. If you would like your answers removed, reply to this email and we will delete them.
 
-**Lottery.** The draw for the four $20 gift cards will take place on [date to be confirmed]. Winners will be contacted at the email address they gave.
+**Lottery.** Subject to approval of the course funds, the team plans to draw three $20 gift cards on [date to be confirmed]. Winners will be contacted at the email address they gave.
 
 If you have any questions, reply to this email.
 
