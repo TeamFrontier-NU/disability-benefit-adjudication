@@ -1,9 +1,13 @@
 {
-  "recommendation": "no",
-  "summary": "No se recomienda la revisión acelerada. La nota de seguimiento indica que la movilidad ha mejorado desde mayo, y los registros disponibles no establecen claramente tres meses seguidos de pérdida total de la función de ambas piernas.",
+  "recommendation": "yes",
+  "summary": "Se recomienda la revisión acelerada. Los registros del hospital muestran una pérdida total de la función de ambas piernas durante más de tres meses. Desplazarse con más independencia en silla de ruedas no significa que las piernas hayan recuperado su función.",
   "findings": [
     {
-      "quote": "Desde mayo, Jordan se desplaza por su casa con más independencia usando una silla de ruedas.",
+      "quote": "El accidente del 8 de enero causó una lesión completa de la médula espinal y la pérdida total de la función de ambas piernas.",
+      "page": 2
+    },
+    {
+      "quote": "Ninguna de las dos piernas ha recuperado función desde la lesión del 8 de enero.",
       "page": 2
     }
   ]

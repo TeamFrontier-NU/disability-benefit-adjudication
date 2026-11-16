@@ -1,9 +1,13 @@
 {
-  "recommendation": "no",
-  "summary": "Do not recommend fast track. The follow-up notes improved mobility since May, and the available notes do not clearly establish three continuous months of complete loss of function in both legs.",
+  "recommendation": "yes",
+  "summary": "Recommend fast track. The hospital records show complete loss of function in both legs for more than three months. Improved mobility with a wheelchair does not mean leg function returned.",
   "findings": [
     {
-      "quote": "Since May, Jordan has been moving around the home more independently using a wheelchair.",
+      "quote": "A complete spinal cord injury from the January 8 crash caused complete loss of function in both legs.",
+      "page": 2
+    },
+    {
+      "quote": "Neither leg has regained any function since the January 8 injury.",
       "page": 2
     }
   ]
