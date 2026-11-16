@@ -8,9 +8,9 @@ Thank you for taking part in our SEL_POL 425 course project on early screening o
 
 **There were two groups.** Each person was randomly placed in one of two groups. Both groups saw the same six simulated cases and the same rule card. One group also saw an AI suggestion on each case; the other group did not. Which group you were in was decided by chance, not by anything you did.
 
-**One AI suggestion was wrong on purpose.** In the AI group, the AI suggestion on one of the six cases was deliberately set to be wrong; the others were correct. Real AI tools make mistakes, and we wanted to see how often people notice an error and decide for themselves instead of following the AI. This is why the page reminded you that the AI's suggestion may be wrong and that the decision was yours. If you followed a wrong suggestion, that is exactly the kind of result the study was built to measure; it says nothing about you personally.
+**About the AI suggestions.** The suggestions shown in the AI group were prepared in advance. For all six cases, they matched the decisions of the expert reviewers for this study. Real AI tools can still make mistakes.
 
-**Why we did not tell you earlier.** If people had known about the two groups or the wrong suggestions in advance, they might have worked differently, and the comparison would no longer be fair.
+**Why we did not tell you earlier.** Knowing about the two groups or how the suggestions were prepared could have changed how people made their decisions.
 
 **Your data.** All the case files were made up; no real people or real records were used. Your answers are used only for this course project and are analyzed without your name. Your name and email were stored separately from your answers and are used only for the lottery; they will be deleted after the draw. If you would like your answers removed, reply to this email and we will delete them.
 
