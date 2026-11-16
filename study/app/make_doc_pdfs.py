@@ -62,7 +62,7 @@ def build_html(pages: list[tuple[str, str]], seed: str) -> str:
         out.append(
             f'<div class="sheet"><div class="inner" style="--rot:{rng.uniform(-0.35, 0.35):.2f}deg">'
             f'<div class="lh"><div class="t">{html.escape(title)}</div><div class="n">{lbl}</div></div>'
-            f'{markdown.markdown(plain, extensions=["tables"])}</div>'
+            f'{markdown.markdown(C.hard_breaks(plain), extensions=["tables"])}</div>'
             f'<div class="foot">{lbl}</div><div class="edge"></div></div>')
     return f"<!doctype html><meta charset='utf-8'><style>{CSS}</style>{''.join(out)}"
 
