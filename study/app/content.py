@@ -128,11 +128,20 @@ def case_pages(cid: str, lang: str) -> tuple[list[tuple[str, str]], bool]:
 
 def case_pdf(cid: str, lang: str) -> tuple[Path | None, bool]:
     """Optional original-layout PDF next to the case file: cases/<cid>.<lang>.pdf."""
-    return _find(f"cases/{cid}.{lang}.pdf")
+    return _pdf("cases", cid, lang)
 
 
 def training_pdf(cid: str, lang: str) -> tuple[Path | None, bool]:
-    return _find(f"training/{cid}.{lang}.pdf")
+    return _pdf("training", cid, lang)
+
+
+def _pdf(folder: str, cid: str, lang: str) -> tuple[Path | None, bool]:
+    """The PDF must come from the same place as the .md (a placeholder PDF never stands in
+    for a real case)."""
+    md, md_ph = _find(f"{folder}/{cid}.{lang}.md")
+    root = PLACEHOLDER_DIR if md_ph else CONTENT_DIR
+    path = root / f"{folder}/{cid}.{lang}.pdf"
+    return (path if md and path.exists() else None), md_ph
 
 
 def split_pages(body: str) -> list[tuple[str, str]]:
@@ -145,6 +154,17 @@ def split_pages(body: str) -> list[tuple[str, str]]:
         title = lines[0].lstrip("#").strip()
         pages.append((title, "\n".join(lines[1:]).strip()))
     return pages
+
+
+def hard_breaks(md: str) -> str:
+    """Keep the line breaks the case writers typed (label on one line, text on the next)."""
+    out = []
+    lines = md.split("\n")
+    for i, ln in enumerate(lines):
+        nxt = lines[i + 1] if i + 1 < len(lines) else ""
+        plain = ln.strip() and nxt.strip() and not ln.lstrip().startswith(("|", "#", "-", "*  ", ">"))
+        out.append(ln.rstrip() + "  " if plain and not nxt.lstrip().startswith("|") else ln)
+    return "\n".join(out)
 
 
 def render_terms(md: str, lang: str) -> str:

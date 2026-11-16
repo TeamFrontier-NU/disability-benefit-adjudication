@@ -95,6 +95,7 @@ p, li {color: var(--ink); line-height: 1.6;}
       box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.06);}
 .doc, .doc * {font-family: 'Source Serif 4', Georgia, 'Songti SC', 'SimSun', serif !important;}
 .doc p, .doc li {font-size: 1rem; line-height: 1.65; color:#1d1d1d;}
+.doc h1, .doc h2, .doc h3, .doc h4 {font-size: 1.08rem !important; font-weight: 600; margin: 14px 0 4px; padding: 0;}
 .doc .lh {display:flex; justify-content:space-between; align-items:flex-end; gap:12px;
           border-bottom: 2px solid #2b2b2b; padding-bottom:8px; margin-bottom:16px;}
 .doc .lh .dt {font-weight:600; font-size:1.05rem; color:#111;}
@@ -148,7 +149,7 @@ def show_document(pages: list[tuple[str, str]], ph: bool, src: str,
     n = len(pages)
     for i, (title, body) in enumerate(pages, 1):
         page_lbl = C.ui("page_of", S.lang).format(i=i, n=n)
-        inner = C.render_terms(body, S.lang)
+        inner = C.render_terms(C.hard_breaks(body), S.lang)
         # markdown inside the HTML block: blank lines let Streamlit parse it
         st.markdown(f'<div class="doc"><div class="lh"><div class="dt">{html.escape(title)}</div>'
                     f'<div class="dn">{page_lbl}</div></div>\n\n{inner}\n\n'
