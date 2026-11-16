@@ -19,5 +19,5 @@ Keep notes short; put details in the group chat. Never write answers, blueprint 
 | 11 | Sun 12:00 | C → B | Full app, both languages, both arms | done | C, Sun 20:55 | en/zh/es, both arms, original-document PDFs; browser run of all 6 paths passed |
 | 12 | Sun 15:00 | B → C | Pilot report (2 outside people) + data check | todo | | |
 | 13 | Sun 18:00 | C → LYL | Final link, pilot data cleared | todo | | |
-| 14 | Sun 18:00 | B → LYL | Pre-registration draft final (shared drive) | doing | WYX, Sat 15:10 | Draft v1 in `07_prereg/`; analysis script in `study/analysis/` |
+| 14 | Sun 18:00 | B → LYL | Pre-registration draft final (shared drive) | doing | WYX, Sun 22:15 | Draft v2 in `07_prereg/` (Nov 15 protocol: all AI suggestions match key); analysis script in `study/analysis/` |
 | 15 | Sun 21:00 | LYL → instructor | Email: app link + design + pre-registration | todo | | |
