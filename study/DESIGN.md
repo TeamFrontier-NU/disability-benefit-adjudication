@@ -12,8 +12,8 @@ Today, QDD/CAL scores only the application form; an examiner then reads the medi
 ## Design
 
 - **Between-subjects.** After passing training, each participant is randomly assigned 1:1 (blocked in pairs) to **AI** or **No-AI** and stays there for all 6 cases. Neither group is told the other exists.
-- **Same 6 cases for everyone**, shown in random order: a mix of "yes" and "no" cases, plus some cases where the AI panel is deliberately wrong (to measure over-reliance). Each case changes one setting from training: the condition, where the record came from, or how long it has lasted.
-- **The case blueprint (which case has which settings, the intended answers and which AI suggestions are wrong) is private**: it lives in the shared drive `03_answer_key/case_blueprint.md`, visible only to group A and LYL until the expert judgment is done. Group A assigns the final case IDs C1–C6 there, so earlier public versions of this file do not reveal the real mapping.
+- **Same 6 cases for everyone**, shown in random order: a mix of "yes" and "no" cases. **Protocol of Nov 15:** the pre-recorded AI panel agrees with the answer key on all 6 cases; there are no deliberately wrong AI suggestions. Each case changes one setting from training: the condition, where the record came from, or how long it has lasted.
+- **The case blueprint (which case has which settings and the intended answers) is private**: it lives in the shared drive `03_answer_key/case_blueprint.md`, visible only to group A and LYL until the expert judgment is done. Group A assigns the final case IDs C1–C6 there, so earlier public versions of this file do not reveal the real mapping.
 - **Both groups see identical case files** (typed, document-style PDFs, ≤ 2 pages each), the same rule card and the same hover glossary. The AI group additionally sees an AI panel. The No-AI page shows nothing about AI.
 - **Language:** participant picks English, Spanish or Chinese at the start (Spanish added Fri 11/13, team decision); not stratified, not controlled (recorded only). All three versions must match exactly.
 - **Answer key:** set by an expert group of 3 team members who did not write the cases, judging independently; unanimous = key.
@@ -30,7 +30,7 @@ Today, QDD/CAL scores only the application form; an examiner then reads the medi
 ## Analysis (pre-register on OSF before data collection)
 
 - `Correct_ij = β·Treat_i + λ_App_j + ε_ij` and `log(Time_ij) = β·Treat_i + λ_App_j + ε_ij`; SEs clustered by person.
-- Main models exclude the cases with a deliberately wrong AI suggestion (IDs in the private blueprint); report them separately (how many people the wrong AI misled).
+- All 6 cases enter the main models (Nov 15 protocol: no deliberately wrong AI suggestions). Limitation to state in the write-up: the study shows the effect of a correct AI aid; it does not measure over-reliance on a wrong one (future work).
 - H1 faster with AI; H2 fewer missed fast tracks with AI; H3 wrong fast tracks not higher with AI (margin 10 points).
 - Exclusions: failed training twice; incomplete; implausibly fast case (threshold set after pilot).
 - Target 30+ participants (~15 per group). Feasibility pilot: report directions and intervals, not strong claims.
