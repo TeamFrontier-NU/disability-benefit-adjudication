@@ -90,6 +90,14 @@ class _Book:
     def add_worksheet(self, title: str, rows: int = 0, cols: int = 0) -> _Sheet:
         return _Sheet(self, title)
 
+    def read_tabs(self, names: list[str]) -> dict[str, list[list[str]]]:
+        """Several tabs over ONE connection (the export): each new connection to the pooler
+        costs about a second from Streamlit Cloud."""
+        with self.connect() as c:
+            return {n: [list(r[0]) for r in c.execute(
+                "select vals from study_rows where tab = %s order by id", (n,)).fetchall()]
+                for n in names}
+
     def worksheets(self):
         with self.connect() as c:
             names = [r[0] for r in c.execute("select distinct tab from study_rows").fetchall()]

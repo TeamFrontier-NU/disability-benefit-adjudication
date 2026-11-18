@@ -131,7 +131,7 @@ p, li {color: var(--ink); line-height: 1.6;}
 st.markdown(CSS, unsafe_allow_html=True)
 
 S = st.session_state
-BUILD = "2026-11-18b"  # shown on the team TEST RUN badge: tells which code the live app runs
+BUILD = "2026-11-18c"  # shown on the team TEST RUN badge: tells which code the live app runs
 
 
 # ---------------- helpers ----------------
@@ -689,10 +689,12 @@ def page_export() -> None:
     contacts = st.checkbox("Also include names and emails (`contacts`, lottery only)")
     if st.button("Read the data now", type="primary"):
         try:
-            S.export = D.export_tables(include_contacts=contacts)
+            with st.spinner("Reading the database… this can take up to a minute."):
+                S.export = D.export_tables(include_contacts=contacts)
             S.export_at = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%SZ")
         except Exception as e:  # noqa: BLE001
-            st.error(f"Could not read the database: {type(e).__name__}: {e}")
+            st.error(f"Could not read the database: {type(e).__name__}: "
+                     f"{re.sub(r'postgres(ql)?://[^ ]+', '<connection string>', str(e))}")
             return
     tables = S.get("export")
     if not tables:
