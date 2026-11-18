@@ -38,9 +38,8 @@ def new_participant_id(test: bool = False) -> str:
 
 
 def case_order(participant_id: str) -> list[str]:
-    order = CASE_IDS[:]
-    random.shuffle(order)
-    return order
+    import assign  # same draw as the real backend: four of the six cases
+    return assign.case_order(participant_id)
 
 
 def assign(participant_id, lang, training_attempts, heard, forced_arm=None):

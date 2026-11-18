@@ -9,7 +9,7 @@ python study/app/check_content.py        # check A/B content against HANDOFF sec
 ```
 
 Flow: language → Welcome (consent, name/email, healthcare/benefits experience) → rule card → T1 → Q1 → [Q2] →
-assignment → 6 cases in random order → wrap-up (by group) → thanks. Failing Q1 and Q2 ends at
+assignment → 4 of the 6 cases in random order → wrap-up (by group) → thanks. Failing Q1 and Q2 ends at
 the thanks page (still in the lottery).
 
 `responses.heard_about_study` stays in the columns (HANDOFF 3.5) but is now always empty: the

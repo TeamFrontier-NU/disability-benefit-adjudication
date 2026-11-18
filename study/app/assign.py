@@ -27,10 +27,21 @@ def is_test(participant_id: str) -> bool:
     return participant_id.startswith(TEST_PREFIX)
 
 
+CASES_PER_PERSON = 4
+YES_CASES = ["C3", "C6"]  # fast-track cases; the other four are regular-review cases
+
+
 def case_order(participant_id: str) -> list[str]:
-    """C1..C6 shuffled independently for each participant."""
-    order = CASE_IDS[:]
-    random.SystemRandom().shuffle(order)
+    """Four of the six cases, in random order, drawn independently for each participant.
+
+    With probability 1/3 the draw is both fast-track cases plus two of the four others;
+    otherwise one fast-track case plus three of the others. Every case is then shown to
+    2/3 of participants, and everyone sees at least one case of each kind."""
+    rng = random.SystemRandom()
+    no_cases = [c for c in CASE_IDS if c not in YES_CASES]
+    n_yes = 2 if rng.random() < 1 / 3 else 1
+    order = rng.sample(YES_CASES, n_yes) + rng.sample(no_cases, CASES_PER_PERSON - n_yes)
+    rng.shuffle(order)
     return order
 
 
