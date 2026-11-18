@@ -36,7 +36,7 @@ A CAL or QDD flag is based on the claimant's allegation only. It is not a findin
 ## 2. MEDICAL EVIDENCE OF RECORD IN FILE (Section F)
 | Exhibit | Source | Dates of service | Pages | Received | How received |
 |---|---|---|---|---|---|
-| 1F | Green Valley Medical Center (ED and Orthopedics) | 10/20/2026 - 11/03/2026 | 3 | 11/10/2026 | Electronic Records Express (DDS request) |
+| 1F | Green Valley Medical Center (ED and Orthopedics) | 10/20/2026 - 11/03/2026 | 2 | 11/10/2026 | Electronic Records Express (DDS request) |
 
 ## 3. REQUESTS NOT ANSWERED
 | Source | Requested | Follow-up | Status |

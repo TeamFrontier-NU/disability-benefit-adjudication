@@ -28,7 +28,7 @@ from pypdf import PdfReader, PdfWriter
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "forms"))
-from render_records import render  # noqa: E402
+from render_records import parse, render  # noqa: E402
 from fill_forms import fill_one  # noqa: E402
 from claimant_profile import forms_from_profile  # noqa: E402
 
@@ -45,6 +45,7 @@ def build(cid: str, out: Path | None = None) -> Path:
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*.pdf"):
         old.unlink()
+    pages: dict[str, int] = {}  # exhibit -> rendered pages, checked against the evidence list
     with tempfile.TemporaryDirectory() as tmp:
         for d in case["documents"]:
             target = out / d["file"]
@@ -56,13 +57,30 @@ def build(cid: str, out: Path | None = None) -> Path:
                 for rec in d["records"]:
                     pdf = Path(tmp) / (Path(rec).stem + ".pdf")
                     render(src / "records" / rec, pdf)
+                    n = len(PdfReader(pdf).pages)
+                    ex = parse(src / "records" / rec)[0].get("exhibit")
+                    if ex:
+                        pages[str(ex)] = pages.get(str(ex), 0) + n
                     for page in PdfReader(pdf).pages:
                         writer.add_page(page)
                 writer.add_metadata({"/Title": target.stem, "/Subject": "Synthetic record for research"})
                 with open(target, "wb") as fh:
                     writer.write(fh)
             print("  wrote", target.relative_to(HERE.parent.parent) if target.is_relative_to(HERE.parent.parent) else target)
+    check_screen(src, pages)
     return out
+
+
+def check_screen(src: Path, pages: dict[str, int]) -> None:
+    """Warn when the evidence list (00_screen) gives a page count the records do not have."""
+    screen = src / "records" / "00_screen.rec.md"
+    if not screen.exists():
+        return
+    for line in screen.read_text(encoding="utf-8").splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) == 6 and cells[0] in pages and cells[3] != str(pages[cells[0]]):
+            print(f"  WARNING evidence list says exhibit {cells[0]} has {cells[3]} page(s), "
+                  f"records render {pages[cells[0]]}")
 
 
 def main(argv=None):

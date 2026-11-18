@@ -35,8 +35,8 @@ A CAL or QDD flag is based on the claimant's allegation only. It is not a findin
 ## 2. MEDICAL EVIDENCE OF RECORD IN FILE (Section F)
 | Exhibit | Source | Dates of service | Pages | Received | How received |
 |---|---|---|---|---|---|
-| 1F | East County Medical Center (trauma) | 10/05/2026 - 10/16/2026 | 2 | 11/09/2026 | Health IT (DDS request) |
-| 2F | East County Medical Center (rehabilitation unit) | 11/13/2026 | 2 | 11/16/2026 | Health IT (DDS request, update) |
+| 1F | East County Medical Center (trauma) | 10/05/2026 - 10/16/2026 | 1 | 11/09/2026 | Health IT (DDS request) |
+| 2F | East County Medical Center (rehabilitation unit) | 11/13/2026 | 1 | 11/16/2026 | Health IT (DDS request, update) |
 
 ## 3. REQUESTS NOT ANSWERED
 | Source | Requested | Follow-up | Status |

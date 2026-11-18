@@ -37,7 +37,7 @@ A CAL or QDD flag is based on the claimant's allegation only. It is not a findin
 ## 2. MEDICAL EVIDENCE OF RECORD IN FILE (Section F)
 | Exhibit | Source | Dates of service | Pages | Received | How received |
 |---|---|---|---|---|---|
-| 1F | Lakeport Memorial Hospital | 01/08/2026 - 01/12/2026 | 2 | 10/14/2026 | Health IT (DDS request) |
+| 1F | Lakeport Memorial Hospital | 01/08/2026 - 01/12/2026 | 3 | 10/14/2026 | Health IT (DDS request) |
 | 2F | Lakeshore Rehabilitation Hospital | 01/12/2026 - 06/18/2026 | 6 | 10/21/2026 | Electronic Records Express (DDS request) |
 
 ## 3. REQUESTS NOT ANSWERED
