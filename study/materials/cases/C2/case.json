@@ -219,5 +219,77 @@
       }
     },
     "remarks": "I brought a copy of my MRI report. The urgent care also did X-rays.\nPhysical therapy starts in November."
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Lesión de columna - hernia de disco / disco desplazado en la zona lumbar",
+        "Ciática - pierna derecha",
+        "Reflujo ácido"
+      ],
+      "cal": "COINCIDENCIA - alegación 1 'Lesión de columna' (lista de vía rápida del estudio: lesión completa de la médula espinal)",
+      "qdd": "No seleccionado",
+      "exhibits": [
+        [
+          "1F",
+          "Westside Family Clinic",
+          "10/02/2026 - 10/14/2026",
+          "2",
+          "11/05/2026",
+          "Fax (solicitud de DDS)"
+        ],
+        [
+          "2F",
+          "ClearView Open MRI & Imaging",
+          "10/09/2026",
+          "1",
+          "10/22/2026",
+          "Presentado por el solicitante en la oficina local"
+        ]
+      ],
+      "pending": [
+        [
+          "QuickCare Urgent Care",
+          "10/28/2026",
+          "11/09/2026",
+          "Sin respuesta"
+        ]
+      ]
+    },
+    "zh": {
+      "allegations": [
+        "脊柱损伤——腰椎间盘突出/滑脱",
+        "坐骨神经痛——右腿",
+        "胃酸反流"
+      ],
+      "cal": "匹配——申报病情 1“脊柱损伤”（本研究快速通道清单：完全性脊髓损伤）",
+      "qdd": "未选中",
+      "exhibits": [
+        [
+          "1F",
+          "Westside Family Clinic",
+          "10/02/2026 - 10/14/2026",
+          "2",
+          "11/05/2026",
+          "传真（DDS 调取）"
+        ],
+        [
+          "2F",
+          "ClearView Open MRI & Imaging",
+          "10/09/2026",
+          "1",
+          "10/22/2026",
+          "申请人在受理办公室提交"
+        ]
+      ],
+      "pending": [
+        [
+          "QuickCare Urgent Care",
+          "10/28/2026",
+          "11/09/2026",
+          "无回复"
+        ]
+      ]
+    }
   }
 }

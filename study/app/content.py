@@ -284,7 +284,9 @@ def quote_problems(cid: str, lang: str) -> list[str]:
             if got is None:
                 return ["pypdf not installed: quotes in PDF cases were not checked"]
             texts[d] = got
-        norm = lambda t: re.sub(r"\s+", " ", t).strip()  # noqa: E731  PDF text breaks lines
+        cjk = r"[\u2e80-\u9fff\uff00-\uffef\u3000-\u303f]"
+        # PDF text breaks lines; a Chinese line break leaves a space where the text has none
+        norm = lambda t: re.sub(rf"(?<={cjk}) | (?={cjk})", "", re.sub(r"\s+", " ", t).strip())  # noqa: E731
         probs = []
         for f in ai.get("findings", []):
             q, p = f.get("quote", ""), f.get("page")

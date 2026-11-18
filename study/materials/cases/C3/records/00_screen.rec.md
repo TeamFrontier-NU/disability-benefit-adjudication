@@ -1,5 +1,6 @@
 ---
 style: ehr
+lang: en
 facility: Illinois Disability Determination Services
 dept: Case development worksheet - initial claim (Title II)
 address: SSA / State DDS electronic folder

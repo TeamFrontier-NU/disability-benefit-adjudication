@@ -201,5 +201,63 @@
     },
     "employer_pay": "2,320.00",
     "ssa16_remarks": "Item 22(a): Vacation pay for 09/26-10/09/2026, $2,320.00.\nApplication taken by telephone with claimant's wife; claimant hospitalized."
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Paralizado del pecho para abajo - lesión de la médula espinal por accidente de moto",
+        "Muñeca derecha rota (placa)",
+        "Costillas rotas, pulmones contusionados"
+      ],
+      "cal": "COINCIDENCIA - alegación 1 'Lesión de la médula espinal' (lista de vía rápida del estudio: lesión completa de la médula espinal)",
+      "qdd": "Seleccionado (puntuación por encima del umbral)",
+      "exhibits": [
+        [
+          "1F",
+          "East County Medical Center (trauma)",
+          "10/05/2026 - 10/16/2026",
+          "1",
+          "11/09/2026",
+          "Health IT (solicitud de DDS)"
+        ],
+        [
+          "2F",
+          "East County Medical Center (unidad de rehabilitación)",
+          "11/13/2026",
+          "2",
+          "11/16/2026",
+          "Health IT (solicitud de DDS, actualización)"
+        ]
+      ],
+      "pending": []
+    },
+    "zh": {
+      "allegations": [
+        "胸部以下瘫痪——摩托车事故致脊髓损伤",
+        "右手腕骨折（钢板）",
+        "肋骨骨折，肺挫伤"
+      ],
+      "cal": "匹配——申报病情 1“脊髓损伤”（本研究快速通道清单：完全性脊髓损伤）",
+      "qdd": "已选中（评分高于阈值）",
+      "exhibits": [
+        [
+          "1F",
+          "East County Medical Center（创伤科）",
+          "10/05/2026 - 10/16/2026",
+          "1",
+          "11/09/2026",
+          "Health IT（DDS 调取）"
+        ],
+        [
+          "2F",
+          "East County Medical Center（康复病区）",
+          "11/13/2026",
+          "1",
+          "11/16/2026",
+          "Health IT（DDS 调取，补充）"
+        ]
+      ],
+      "pending": []
+    }
   }
 }

@@ -7,7 +7,8 @@ labs, letters), each stamped with how it reached the agency. No summaries.
 
 ```
 study/materials/
-  build_case.py            case.json + records -> study/content/cases/<ID>/*.pdf (one English set shown in every language)
+  build_case.py            case.json + records -> study/content/cases/<ID>/ (English) and <ID>.es/, <ID>.zh/
+  make_screen.py           writes the fast-track screen sheet (00_screen) in en/es/zh from case.json
   render_records.py        one .rec.md record -> PDF in the provider's own layout
   forms/
     templates/             blank SSA-16 (11-2022), SSA-3368-BK (06-2024), SSA-827 (06-2024), SSA-3373-BK (10-2026) from ssa.gov
@@ -17,6 +18,7 @@ study/materials/
   cases/<ID>/
     case.json              claimant, claim dates, document order, form field values
     records/*.rec.md       medical records (YAML header + light markup, see render_records.py)
+    records.es/, records.zh/  the same records translated (same file names, `lang:` in the header)
 ```
 
 ```bash
@@ -34,5 +36,19 @@ python study/app/check_content.py              # checks AI quotes against the PD
    and a body. Received line says whether the DDS requested it (`Health IT`, `Electronic Records
    Express`, `Fax`) or the claimant submitted it. Do not bold key findings: the reviewer has to find them.
 4. Build, open the PDFs, then write the AI panel JSON (`content/ai/<ID>.en.json`) with `doc` + `page`.
+
+## Spanish and Chinese versions
+Participants read the case in their language (team decision 2026-11-18). For each case:
+- translate every record into `records.es/` and `records.zh/` (same file names; keep names of people
+  and facilities, dates, doses, codes and scores exactly as in English; translate everything else);
+- add `screen_i18n.es` / `screen_i18n.zh` to case.json (allegations, CAL/QDD result, exhibits, pending)
+  and run `python make_screen.py <ID>`;
+- build: the official SSA forms stay in English (SSA has no Chinese edition of these forms and the
+  study shows the exact templates); their file names say "(inglés)" / "（英文）";
+- write `content/ai/<ID>.es.json` and `.zh.json` with quotes copied from the translated PDFs and the
+  translated `doc` names. `build_case.py` warns if a translated evidence list's page counts are off.
+
+Chinese needs a CJK font: render_records.py embeds WenQuanYi Zen Hei, Noto Sans CJK, PingFang or
+Microsoft YaHei if one is installed, otherwise uses the built-in STSong-Light (not embedded).
 
 Every record page carries a "SYNTHETIC RECORD" footer and all SSNs are in the invalid 000- range.

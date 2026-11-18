@@ -3,18 +3,18 @@
   "summary": "不建议进入快车道。机构调取的医院病历显示为右踝扭伤，无骨折，恢复情况符合预期，预计约六周后可完全复工。按本研究规则，腿部扭伤不符合快车道标准。",
   "findings": [
     {
-      "quote": "No acute fracture or dislocation.",
-      "doc": "02_Green_Valley_Medical_Center_records.pdf",
+      "quote": "无急性骨折或脱位。",
+      "doc": "02_Green_Valley_Medical_Center_病历.pdf",
       "page": 1
     },
     {
-      "quote": "Right lateral ankle sprain, grade II, improving as expected.",
-      "doc": "02_Green_Valley_Medical_Center_records.pdf",
+      "quote": "右侧外侧踝关节扭伤，II 度，恢复情况符合预期。",
+      "doc": "02_Green_Valley_Medical_Center_病历.pdf",
       "page": 2
     },
     {
-      "quote": "full duty expected by about 12/01/2026",
-      "doc": "02_Green_Valley_Medical_Center_records.pdf",
+      "quote": "预计约 12/01/2026 前完全复工",
+      "doc": "02_Green_Valley_Medical_Center_病历.pdf",
       "page": 2
     }
   ]

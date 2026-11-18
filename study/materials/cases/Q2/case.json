@@ -137,5 +137,45 @@
         "date": "10/2026"
       }
     }
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Cáncer de pulmón - de células pequeñas",
+        "Falta de aire"
+      ],
+      "cal": "COINCIDENCIA - alegación 1",
+      "qdd": "No seleccionado",
+      "exhibits": [
+        [
+          "1F",
+          "Cedar Hospital (patología)",
+          "10/06/2026 - 10/08/2026",
+          "1",
+          "10/19/2026",
+          "Electronic Records Express (solicitud de DDS)"
+        ]
+      ],
+      "pending": []
+    },
+    "zh": {
+      "allegations": [
+        "肺癌——小细胞",
+        "气短"
+      ],
+      "cal": "匹配——申报病情 1",
+      "qdd": "未选中",
+      "exhibits": [
+        [
+          "1F",
+          "Cedar Hospital（病理科）",
+          "10/06/2026 - 10/08/2026",
+          "1",
+          "10/19/2026",
+          "Electronic Records Express（DDS 调取）"
+        ]
+      ],
+      "pending": []
+    }
   }
 }

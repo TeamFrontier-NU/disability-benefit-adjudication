@@ -3,18 +3,18 @@
   "summary": "Todavía no se recomienda la revisión acelerada. Los registros del hospital confirman una lesión completa de la médula espinal sin función en ninguna pierna, pero la pérdida comenzó el 10/05/2026 y el registro más reciente es del 11/13/2026, menos de los 3 meses continuos requeridos.",
   "findings": [
     {
-      "quote": "AIS A, unchanged since 10/08/2026.",
-      "doc": "02_East_County_Medical_Center_records.pdf",
+      "quote": "AIS A, sin cambios desde el 10/08/2026.",
+      "doc": "02_Registros_de_East_County_Medical_Center.pdf",
       "page": 2
     },
     {
-      "quote": "injury date 10/05/2026",
-      "doc": "02_East_County_Medical_Center_records.pdf",
+      "quote": "fecha de la lesión 10/05/2026",
+      "doc": "02_Registros_de_East_County_Medical_Center.pdf",
       "page": 2
     },
     {
-      "quote": "Date: 11/13/2026",
-      "doc": "02_East_County_Medical_Center_records.pdf",
+      "quote": "Fecha: 11/13/2026",
+      "doc": "02_Registros_de_East_County_Medical_Center.pdf",
       "page": 2
     }
   ]

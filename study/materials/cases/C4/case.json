@@ -264,5 +264,119 @@
       "Page1.P1_State_FLD": "IL",
       "Page1.P1_Zip_FLD": "60985"
     }
+  },
+  "screen": {
+    "printed": "11/16/2026",
+    "allegations": [
+      "Spinal cord injury - can't move my legs",
+      "Back problems - bulging disc, arthritis",
+      "Depression",
+      "High blood pressure"
+    ],
+    "cal": "MATCH - allegation 1 'Spinal cord injury' (study fast-track list: spinal cord injury, complete)",
+    "qdd": "Not selected",
+    "exhibits": [
+      [
+        "1F",
+        "North Point Neurology Associates (letter)",
+        "08/12/2026",
+        "1",
+        "08/20/2026",
+        "Submitted by claimant at FO"
+      ],
+      [
+        "2F",
+        "Riverbend Hospital / Riverbend Primary Care",
+        "05/07/2026 - 08/16/2026",
+        "3",
+        "09/29/2026",
+        "Electronic Records Express (DDS request)"
+      ],
+      [
+        "3F",
+        "North Point Neurology Associates (records response)",
+        "10/06/2026",
+        "1",
+        "10/06/2026",
+        "Fax (DDS request, 2nd request)"
+      ]
+    ],
+    "pending": []
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Lesión de la médula espinal - no puedo mover las piernas",
+        "Problemas de espalda - disco abultado, artritis",
+        "Depresión",
+        "Presión arterial alta"
+      ],
+      "cal": "COINCIDENCIA - alegación 1 'Lesión de la médula espinal' (lista de vía rápida del estudio: lesión completa de la médula espinal)",
+      "qdd": "No seleccionado",
+      "exhibits": [
+        [
+          "1F",
+          "North Point Neurology Associates (carta)",
+          "08/12/2026",
+          "1",
+          "08/20/2026",
+          "Presentado por el solicitante en la oficina local"
+        ],
+        [
+          "2F",
+          "Riverbend Hospital / Riverbend Primary Care",
+          "05/07/2026 - 08/16/2026",
+          "3",
+          "09/29/2026",
+          "Electronic Records Express (solicitud de DDS)"
+        ],
+        [
+          "3F",
+          "North Point Neurology Associates (respuesta a la solicitud)",
+          "10/06/2026",
+          "1",
+          "10/06/2026",
+          "Fax (solicitud de DDS, 2.ª solicitud)"
+        ]
+      ],
+      "pending": []
+    },
+    "zh": {
+      "allegations": [
+        "脊髓损伤——双腿不能动",
+        "背部问题——椎间盘膨出，关节炎",
+        "抑郁",
+        "高血压"
+      ],
+      "cal": "匹配——申报病情 1“脊髓损伤”（本研究快速通道清单：完全性脊髓损伤）",
+      "qdd": "未选中",
+      "exhibits": [
+        [
+          "1F",
+          "North Point Neurology Associates（信函）",
+          "08/12/2026",
+          "1",
+          "08/20/2026",
+          "申请人在受理办公室提交"
+        ],
+        [
+          "2F",
+          "Riverbend Hospital / Riverbend Primary Care",
+          "05/07/2026 - 08/16/2026",
+          "3",
+          "09/29/2026",
+          "Electronic Records Express（DDS 调取）"
+        ],
+        [
+          "3F",
+          "North Point Neurology Associates（调取回复）",
+          "10/06/2026",
+          "1",
+          "10/06/2026",
+          "传真（DDS 调取，第 2 次请求）"
+        ]
+      ],
+      "pending": []
+    }
   }
 }

@@ -3,18 +3,18 @@
   "summary": "暂不建议进入快车道。医院病历确认为完全性脊髓损伤，双腿均无功能，但功能丧失始于 2026-10-05，最新病历日期为 2026-11-13，不足要求的连续 3 个月。",
   "findings": [
     {
-      "quote": "AIS A, unchanged since 10/08/2026.",
-      "doc": "02_East_County_Medical_Center_records.pdf",
+      "quote": "AIS A 级，自 10/08/2026 起无变化。",
+      "doc": "02_East_County_Medical_Center_病历.pdf",
       "page": 2
     },
     {
-      "quote": "injury date 10/05/2026",
-      "doc": "02_East_County_Medical_Center_records.pdf",
+      "quote": "受伤日期 10/05/2026",
+      "doc": "02_East_County_Medical_Center_病历.pdf",
       "page": 2
     },
     {
-      "quote": "Date: 11/13/2026",
-      "doc": "02_East_County_Medical_Center_records.pdf",
+      "quote": "日期: 11/13/2026",
+      "doc": "02_East_County_Medical_Center_病历.pdf",
       "page": 2
     }
   ]

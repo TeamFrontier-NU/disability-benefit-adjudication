@@ -3,18 +3,18 @@
   "summary": "不建议进入快车道。唯一提到完全性脊髓损伤的是申请人自己提交的一封信。机构从 Riverbend Hospital 调取的病历显示双腿肌力正常、可独立行走，North Point Neurology 也回复未找到该申请人的记录。",
   "findings": [
     {
-      "quote": "Strength 5/5 bilateral hip flexion, knee ext/flex, ankle DF/PF, EHL.",
-      "doc": "03_Riverbend_Hospital_records.pdf",
+      "quote": "双侧屈髋、伸/屈膝、踝背屈/跖屈、拇长伸肌肌力 5/5。",
+      "doc": "03_Riverbend_Hospital_病历.pdf",
       "page": 1
     },
     {
-      "quote": "ambulates independently in department without assistive device",
-      "doc": "03_Riverbend_Hospital_records.pdf",
+      "quote": "在科室内无需辅助器具独立行走",
+      "doc": "03_Riverbend_Hospital_病历.pdf",
       "page": 1
     },
     {
-      "quote": "No records found for the dates of service requested.",
-      "doc": "04_North_Point_Neurology_records_response.pdf",
+      "quote": "在所请求的就诊日期内未找到任何记录。",
+      "doc": "04_North_Point_Neurology_病历调取回复.pdf",
       "page": 1
     }
   ]

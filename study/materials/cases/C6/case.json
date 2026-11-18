@@ -281,5 +281,140 @@
       "Page1.P1_State_FLD": "IL",
       "Page1.P1_Zip_FLD": "60982"
     }
+  },
+  "screen": {
+    "printed": "11/16/2026",
+    "allegations": [
+      "Lung cancer - stage 4, spread to liver",
+      "Chemotherapy side effects - very tired, nausea, low blood count",
+      "Thyroid problem from immunotherapy",
+      "Weight loss"
+    ],
+    "cal": "MATCH - allegation 1 'Lung cancer' (type not stated in 3.A; study fast-track list: small cell lung cancer)",
+    "qdd": "Selected (score above threshold)",
+    "exhibits": [
+      [
+        "1F",
+        "Mercy Valley Hospital",
+        "01/28/2026 - 02/05/2026",
+        "2",
+        "10/02/2026",
+        "Health IT (DDS request)"
+      ],
+      [
+        "2F",
+        "Central Oncology Center",
+        "09/09/2026",
+        "2",
+        "10/09/2026",
+        "Electronic Records Express (DDS request)"
+      ],
+      [
+        "3F",
+        "Patient portal after-visit summary (Westgate Urgent Care)",
+        "01/09/2026",
+        "1",
+        "08/31/2026",
+        "Submitted by claimant at FO"
+      ]
+    ],
+    "pending": [
+      [
+        "Westgate Urgent Care",
+        "09/08/2026",
+        "09/15/2026",
+        "No response"
+      ]
+    ]
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Cáncer de pulmón - etapa 4, se extendió al hígado",
+        "Efectos secundarios de la quimioterapia - mucho cansancio, náuseas, defensas bajas",
+        "Problema de tiroides por la inmunoterapia",
+        "Pérdida de peso"
+      ],
+      "cal": "COINCIDENCIA - alegación 1 'Cáncer de pulmón' (tipo no indicado en 3.A; lista de vía rápida del estudio: cáncer de pulmón de células pequeñas)",
+      "qdd": "Seleccionado (puntuación por encima del umbral)",
+      "exhibits": [
+        [
+          "1F",
+          "Mercy Valley Hospital",
+          "01/28/2026 - 02/05/2026",
+          "2",
+          "10/02/2026",
+          "Health IT (solicitud de DDS)"
+        ],
+        [
+          "2F",
+          "Central Oncology Center",
+          "09/09/2026",
+          "2",
+          "10/09/2026",
+          "Electronic Records Express (solicitud de DDS)"
+        ],
+        [
+          "3F",
+          "Resumen de consulta del portal del paciente (Westgate Urgent Care)",
+          "01/09/2026",
+          "1",
+          "08/31/2026",
+          "Presentado por la solicitante en la oficina local"
+        ]
+      ],
+      "pending": [
+        [
+          "Westgate Urgent Care",
+          "09/08/2026",
+          "09/15/2026",
+          "Sin respuesta"
+        ]
+      ]
+    },
+    "zh": {
+      "allegations": [
+        "肺癌——4 期，已扩散到肝脏",
+        "化疗副作用——非常疲劳、恶心、血细胞低",
+        "免疫治疗引起的甲状腺问题",
+        "体重下降"
+      ],
+      "cal": "匹配——申报病情 1“肺癌”（3.A 未注明类型；本研究快速通道清单：小细胞肺癌）",
+      "qdd": "已选中（评分高于阈值）",
+      "exhibits": [
+        [
+          "1F",
+          "Mercy Valley Hospital",
+          "01/28/2026 - 02/05/2026",
+          "2",
+          "10/02/2026",
+          "Health IT（DDS 调取）"
+        ],
+        [
+          "2F",
+          "Central Oncology Center",
+          "09/09/2026",
+          "2",
+          "10/09/2026",
+          "Electronic Records Express（DDS 调取）"
+        ],
+        [
+          "3F",
+          "患者门户就诊小结（Westgate Urgent Care）",
+          "01/09/2026",
+          "1",
+          "08/31/2026",
+          "申请人在受理办公室提交"
+        ]
+      ],
+      "pending": [
+        [
+          "Westgate Urgent Care",
+          "09/08/2026",
+          "09/15/2026",
+          "无回复"
+        ]
+      ]
+    }
   }
 }

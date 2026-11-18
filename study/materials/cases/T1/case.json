@@ -131,5 +131,45 @@
       }
     ],
     "tests": {}
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Lesión de la médula espinal - no puedo usar las piernas",
+        "Fractura de espalda (barras)"
+      ],
+      "cal": "COINCIDENCIA - alegación 1",
+      "qdd": "No seleccionado",
+      "exhibits": [
+        [
+          "1F",
+          "Riverview Hospital",
+          "08/19/2026",
+          "1",
+          "08/21/2026",
+          "Health IT (solicitud de DDS)"
+        ]
+      ],
+      "pending": []
+    },
+    "zh": {
+      "allegations": [
+        "脊髓损伤——双腿不能用",
+        "背部骨折（钢棒）"
+      ],
+      "cal": "匹配——申报病情 1",
+      "qdd": "未选中",
+      "exhibits": [
+        [
+          "1F",
+          "Riverview Hospital",
+          "08/19/2026",
+          "1",
+          "08/21/2026",
+          "Health IT（DDS 调取）"
+        ]
+      ],
+      "pending": []
+    }
   }
 }
