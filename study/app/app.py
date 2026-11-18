@@ -425,6 +425,9 @@ def page_rule() -> None:
     with mid:
         with st.container(border=True):
             show_text("rule_card")
+        with st.container(border=True):
+            st.markdown(f"### {C.ui('guide_title', S.lang)}")
+            show_text("reading_guide")
         _continue_to_T1()
 
 
@@ -539,12 +542,27 @@ def page_case() -> None:
     if S.idx >= len(S.order):
         go("wrapup")
     cid = S.order[S.idx]
-    if cid not in S.timers:  # start once; reruns do not reset the clock
-        S.timers[cid] = A.start_timer()
-
     progress = C.ui("case_progress", S.lang).format(i=S.idx + 1, n=len(S.order))
     st.markdown(f'<div class="eyebrow">{html.escape(progress)}</div>', unsafe_allow_html=True)
     st.progress((S.idx + 1) / len(S.order))
+    if cid not in S.timers:
+        # Terms and criteria first, the same page before every case and for both groups.
+        # The case clock starts only when the participant clicks through to the documents.
+        if S.get("briefed") != cid:
+            step = f"brief_{cid}"
+            page_timer(step)
+            _, mid, _ = st.columns([1, 6, 1])
+            with mid:
+                heading(None, C.ui("guide_title", S.lang))
+                st.info(C.ui("brief_note", S.lang))
+                with st.container(border=True):
+                    show_text("reading_guide")
+                if st.button(C.ui("brief_start", S.lang), type="primary", key=f"brief_{cid}"):
+                    log_page(step)
+                    S.briefed = cid
+                    st.rerun()
+            return
+        S.timers[cid] = A.start_timer()  # start once; reruns do not reset the clock
     rule_card(expanded=False)
     docs, docs_ph = C.case_docs(cid, S.lang)
 
