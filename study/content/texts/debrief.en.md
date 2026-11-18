@@ -6,7 +6,7 @@ Thank you for taking part in our SEL_POL 425 course project on early screening o
 
 **What we were studying.** We wanted to know whether an AI assistant helps people screen claims faster without letting more claims into the fast track that should not be there.
 
-**There were two groups.** Each person was randomly placed in one of two groups. Each person saw four cases drawn at random from the same set of six simulated cases, with the same rule card. One group also saw an AI suggestion on each case; the other group did not. Which group you were in was decided by chance, not by anything you did.
+**There were two groups.** Each person was randomly placed in one of two groups. Each person saw three cases drawn at random from the same set of six simulated cases, with the same rule card. One group also saw an AI suggestion on each case; the other group did not. Which group you were in was decided by chance, not by anything you did.
 
 **About the AI suggestions.** The suggestions shown in the AI group were prepared in advance. For all six cases, they matched the decisions of the expert reviewers for this study. Real AI tools can still make mistakes.
 

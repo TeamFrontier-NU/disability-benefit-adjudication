@@ -6,7 +6,7 @@ Gracias por participar en nuestro proyecto del curso SEL_POL 425 sobre la revisi
 
 **Qué estudiamos.** Queríamos saber si un asistente de IA ayuda a revisar las solicitudes más rápido sin dejar pasar a la vía rápida más solicitudes que no deberían estar ahí.
 
-**Había dos grupos.** Cada persona fue asignada al azar a uno de dos grupos. Cada persona vio cuatro casos elegidos al azar del mismo conjunto de seis casos simulados, con la misma guía rápida. Un grupo vio además una sugerencia de la IA en cada caso; el otro grupo no. El grupo en el que estuviste se decidió al azar, no por nada que hicieras.
+**Había dos grupos.** Cada persona fue asignada al azar a uno de dos grupos. Cada persona vio tres casos elegidos al azar del mismo conjunto de seis casos simulados, con la misma guía rápida. Un grupo vio además una sugerencia de la IA en cada caso; el otro grupo no. El grupo en el que estuviste se decidió al azar, no por nada que hicieras.
 
 **Sobre las sugerencias de la IA.** Las sugerencias que vio el grupo con IA se prepararon de antemano. En los seis casos coincidían con las decisiones del equipo de revisión experto del estudio. Las herramientas de IA reales pueden cometer errores.
 

@@ -38,7 +38,7 @@ def new_participant_id(test: bool = False) -> str:
 
 
 def case_order(participant_id: str) -> list[str]:
-    import assign  # same draw as the real backend: four of the six cases
+    import assign  # same draw as the real backend: three of the six cases
     return assign.case_order(participant_id)
 
 
