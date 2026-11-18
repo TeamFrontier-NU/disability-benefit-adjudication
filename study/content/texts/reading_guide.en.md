@@ -1,3 +1,5 @@
+**Your task.** The application forms (SSA-16, SSA-3368, SSA-827) were already screened by SSA's automated QDD/CAL step, and every case here was flagged by it. A flag reflects only what the applicant wrote. Your task is the next step: reviewing the medical records. The forms are at the end of the case file as optional reference; you are not required to read them.
+
 **Criteria (from the rule card).** Fast track only if all three are met: 1) the records confirm complete loss of function in both legs from a spinal cord injury, or small cell lung cancer; 2) that finding is in records the agency obtained from a hospital or clinic; 3) for the spinal cord injury, the loss has lasted at least 3 continuous months.
 
 | Term | Meaning |
@@ -17,4 +19,5 @@
 | Suspicious for, R/O, likely | Words for a possibility that is not yet confirmed. |
 | HPI, Assessment / Impression | Patient's own account / the clinician's conclusion. |
 | bilat, LE, ED, PCP | Both sides, legs, emergency department, primary care provider. |
+| QDD, CAL | SSA's automated screens of the application forms (Quick Disability Determination, Compassionate Allowances). |
 | HIT, ERE | Electronic routes by which the agency receives records. |
