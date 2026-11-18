@@ -18,7 +18,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 COLUMNS = ["participant_id", "lang", "arm", "case_id", "case_order", "answer", "confidence",
-           "seconds", "started_at", "submitted_at", "training_attempts", "heard_about_study"]
+           "seconds", "started_at", "submitted_at", "training_attempts", "heard_about_study",
+           "seconds_to_answer", "seconds_to_confidence", "answer_changes", "docs_json"]
 CASES = ["C1", "C2", "C3", "C4", "C5", "C6"]
 
 
@@ -69,6 +70,9 @@ def main() -> None:
                 "seconds": secs, "started_at": start.isoformat(timespec="seconds"),
                 "submitted_at": end.isoformat(timespec="seconds"),
                 "training_attempts": attempts, "heard_about_study": heard,
+                "seconds_to_answer": round(secs * rng.uniform(0.7, 0.95), 1),
+                "seconds_to_confidence": round(secs * rng.uniform(0.95, 0.99), 1),
+                "answer_changes": 1 if rng.random() < 0.1 else 0, "docs_json": "",
             })
     with open(a.out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)

@@ -144,6 +144,72 @@ def _pdf(folder: str, cid: str, lang: str) -> tuple[Path | None, bool]:
     return (path if md and path.exists() else None), md_ph
 
 
+# ---------- 3.3b cases as separate PDF documents (real SSA forms + medical records) ----------
+#
+# Put the documents of a case in a folder named like the case file, without extension:
+#
+#     content/cases/C1.en/01_SSA-16.pdf
+#     content/cases/C1.en/02_SSA-3368-BK.pdf
+#     content/cases/C1.en/03_SSA-827.pdf
+#     content/cases/C1.en/04_Northgate-Hospital-records.pdf
+#
+# (or content/cases/C1/ for one set shared by every language). When such a folder exists, the
+# case page shows these PDFs as the case file, one at a time with a document list, IN PLACE OF
+# the typed pages from C1.<lang>.md. The leading number sets the order and is not shown; the
+# rest of the file name is the document's title ("_" and "-" become spaces).
+
+def _doc_dir(folder: str, cid: str, lang: str) -> tuple[Path | None, bool]:
+    for root, ph in ((CONTENT_DIR, False), (PLACEHOLDER_DIR, True)):
+        for name in (f"{cid}.{lang}", cid):
+            d = root / folder / name
+            if d.is_dir() and any(d.glob("*.pdf")):
+                return d, ph
+    return None, True
+
+
+def doc_title(path: Path) -> str:
+    stem = re.sub(r"^\d+[\s_.-]*", "", path.stem)
+    return re.sub(r"[_]+", " ", stem).strip() or path.stem
+
+
+def case_docs(cid: str, lang: str, folder: str = "cases") -> tuple[list[Path], bool]:
+    """The case's PDF documents in display order ([] if the case has no document folder)."""
+    d, ph = _doc_dir(folder, cid, lang)
+    if d is None:
+        return [], True
+    return sorted(d.glob("*.pdf"), key=lambda p: p.name.lower()), ph
+
+
+def training_docs(cid: str, lang: str) -> tuple[list[Path], bool]:
+    return case_docs(cid, lang, folder="training")
+
+
+@lru_cache(maxsize=64)
+def pdf_bytes(path: str) -> bytes:
+    """Read each PDF once per server process (the page re-runs on every click)."""
+    return Path(path).read_bytes()
+
+
+def find_doc(docs: list[Path], name: str | None) -> Path | None:
+    """A finding's optional "doc" (file name, with or without .pdf, or its title)."""
+    if not name:
+        return None
+    key = str(name).strip().lower()
+    for d in docs:
+        if key in (d.name.lower(), d.stem.lower(), doc_title(d).lower()):
+            return d
+    return None
+
+
+def pdf_text_pages(path: Path) -> list[str] | None:
+    """Text of each page, for the quote check. None if pypdf is not installed."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        return None
+    return [(pg.extract_text() or "") for pg in PdfReader(str(path)).pages]
+
+
 def split_pages(body: str) -> list[tuple[str, str]]:
     pages = []
     for chunk in re.split(rf"^\s*{re.escape(PAGE_BREAK)}\s*$", body, flags=re.M):
@@ -210,6 +276,29 @@ def quote_problems(cid: str, lang: str) -> list[str]:
     ai, _ = ai_output(cid, lang)
     if not ai:
         return []
+    docs, _ = case_docs(cid, lang)
+    if docs:  # PDF documents: page n = page n of the whole case file, documents in order
+        texts = {}
+        for d in docs:
+            got = pdf_text_pages(d)
+            if got is None:
+                return ["pypdf not installed: quotes in PDF cases were not checked"]
+            texts[d] = got
+        norm = lambda t: re.sub(r"\s+", " ", t).strip()  # noqa: E731  PDF text breaks lines
+        probs = []
+        for f in ai.get("findings", []):
+            q, p = f.get("quote", ""), f.get("page")
+            d = find_doc(docs, f.get("doc"))
+            if f.get("doc") and d is None:
+                probs.append(f"document {f.get('doc')!r} not found: {q!r}")
+                continue
+            plain = texts[d] if d else [t for dd in docs for t in texts[dd]]
+            where = f"{d.name} " if d else "the case file "
+            if not isinstance(p, int) or not 1 <= p <= len(plain):
+                probs.append(f"page {p} does not exist ({where}has {len(plain)} pages): {q!r}")
+            elif norm(q) not in norm(plain[p - 1]):
+                probs.append(f"not on page {p} of {where.strip()}: {q!r}")
+        return probs
     pages, _ = case_pages(cid, lang)
     plain = [TERM_RE.sub(lambda m: m.group(1), t + "\n" + b) for t, b in pages]
     probs = []

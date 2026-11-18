@@ -2,6 +2,15 @@
 [browser]
 gatherUsageStats = false
 
+[server]
+# Faster, steadier start on Community Cloud: no file watcher over the whole repository
+# (the cloud redeploys on every push anyway) and no rerun on file save.
+fileWatcherType = "none"
+runOnSave = false
+
+[client]
+toolbarMode = "minimal"
+
 [theme]
 base = "light"
 primaryColor = "#2F6FB3"

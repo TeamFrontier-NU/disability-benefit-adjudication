@@ -12,8 +12,14 @@ Run locally:  streamlit run study/app/app.py
 """
 from __future__ import annotations
 
+import csv
 import html
+import io
+import json
 import re
+import time
+import zipfile
+from datetime import datetime, timezone
 
 import streamlit as st
 
@@ -35,7 +41,8 @@ st.set_page_config(page_title="Study", page_icon=None, layout="wide",
 
 CSS = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap');
+/* No web fonts: a blocked or slow fonts.googleapis.com (school networks, mainland China)
+   delayed the first paint. System fonts look the same on every computer that has them. */
 :root {--ink:#1b2430; --muted:#5d6b7a; --line:#dfe4ea; --bg:#f4f6f9; --card:#ffffff;
        --brand:#1f3a5f; --brand-2:#2c5282; --tint:#eef3f9; --paper:#fffefb;}
 html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {background: var(--bg) !important;}
@@ -164,9 +171,56 @@ def show_document(pages: list[tuple[str, str]], ph: bool, src: str,
                 st.pdf(str(path), height=720)
             except Exception:  # viewer component missing: the download still works
                 pass
-            st.download_button(C.ui("download_pdf", S.lang), data=path.read_bytes(),
+            st.download_button(C.ui("download_pdf", S.lang), data=C.pdf_bytes(str(path)),
                                file_name=path.name, mime="application/pdf",
                                key=f"dl_{path.name}")
+
+
+def _doc_clock(cid: str, picked: str | None) -> None:
+    """Seconds each document of a case is open: each switch is a rerun, so the server sees
+    it. Stored per case as {document: seconds} in `docs_json`."""
+    v = S.setdefault("docv", {}).setdefault(cid, {"cur": None, "t": time.time(), "acc": {},
+                                                  "opens": []})
+    if picked != v["cur"]:
+        t = time.time()
+        if v["cur"] is not None:
+            v["acc"][v["cur"]] = round(v["acc"].get(v["cur"], 0) + t - v["t"], 1)
+        v["cur"], v["t"] = picked, t
+        if picked is not None:
+            v["opens"].append(picked)
+
+
+def doc_seconds(cid: str, final: bool = False) -> dict:
+    v = S.get("docv", {}).get(cid)
+    if not v:
+        return {}
+    acc = dict(v["acc"])
+    if final and v["cur"] is not None:
+        acc[v["cur"]] = round(acc.get(v["cur"], 0) + time.time() - v["t"], 1)
+    return {"seconds": acc, "order_opened": v["opens"]}
+
+
+def show_case_file(cid: str, docs: list, ph: bool) -> None:
+    """A case made of separate PDF documents (SSA forms, medical records): a list of the
+    documents and the one picked, shown full size. Same for both groups."""
+    if ph:
+        ph_badge(f"content/cases/{cid}.{S.lang}/")
+    titles = {d.name: C.doc_title(d) for d in docs}
+    with st.container(border=True):
+        st.markdown(f"**{html.escape(C.ui('case_file', S.lang))}** · "
+                    f"{html.escape(C.ui('case_file_note', S.lang).format(n=len(docs)))}")
+        picked = st.radio(C.ui("case_file", S.lang), list(titles), index=0, horizontal=True,
+                          format_func=titles.get, key=f"doc_{cid}",
+                          label_visibility="collapsed")
+    _doc_clock(cid, picked)
+    path = next(d for d in docs if d.name == picked)
+    data = C.pdf_bytes(str(path))
+    try:
+        st.pdf(data, height=900, key=f"pdf_{cid}_{picked}")
+    except Exception:  # viewer component missing: the download below still works
+        st.info(C.ui("pdf_viewer_failed", S.lang))
+    st.download_button(C.ui("download_pdf", S.lang), data=data, file_name=path.name,
+                       mime="application/pdf", key=f"dl_{cid}_{picked}")
 
 
 def rule_card(expanded: bool) -> None:
@@ -224,6 +278,29 @@ def save_once(tag: str, fn, *args, **kw) -> bool:
     return True
 
 
+def page_timer(step: str) -> None:
+    """Start the clock for a page the first time it is shown (reruns do not reset it)."""
+    S.setdefault("page_t", {}).setdefault(step, A.start_timer())
+
+
+def log_page(step: str, extra: dict | None = None) -> None:
+    """Save the seconds spent on a page to `timings`. Best effort: a failed timing write
+    never stops the participant (the case answers and their seconds are what matter)."""
+    tok = S.get("page_t", {}).get(step)
+    if not tok or "pid" not in S or f"time_{step}" in S.setdefault("saved", set()):
+        return
+    secs, started, ended = A.stop_timer(tok)
+    try:
+        D.write_timing(S.pid, step, secs, started, ended, extra)
+        S.saved.add(f"time_{step}")
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def since(tok: dict) -> float:
+    return round(time.time() - tok["t0"], 1)
+
+
 def forced_arm() -> str | None:
     """Team-only test switch: ?arm=ai|noai (also treat|control). Needs &k=<test_key> once a
     Sheet is configured; in PREVIEW it works without a key. Banners never name the group."""
@@ -278,6 +355,7 @@ def page_language() -> None:
 
 
 def page_welcome() -> None:
+    page_timer("welcome")
     _, mid, _ = st.columns([1, 6, 1])
     with mid:
         with st.container(border=True):
@@ -317,11 +395,13 @@ def _welcome_form() -> None:
         ok = ok and save_once("participant", D.write_participant, S.pid, S.lang,
                               {"experience": exp})
         if ok:
+            log_page("welcome")
             st.query_params["p"] = S.pid  # lets a refreshed page resume
             go("rule")
 
 
 def page_rule() -> None:
+    page_timer("rule")
     _, mid, _ = st.columns([1, 6, 1])
     with mid:
         with st.container(border=True):
@@ -331,22 +411,29 @@ def page_rule() -> None:
 
 def _continue_to_T1() -> None:
     if st.button(C.ui("continue", S.lang), type="primary"):
+        log_page("rule")
         go("T1")
 
 
 def training_item(cid: str, next_ok: str, next_wrong: str) -> None:
     """Answer first, then show whether it was right and the explanation."""
+    page_timer(cid)
     heading("training_eyebrow", C.ui("example_case" if cid == "T1" else "check_case", S.lang))
     rule_card(expanded=False)
-    body, ph = C.training_case(cid, S.lang)
-    show_document(C.split_pages(body), ph, f"content/training/{cid}.{S.lang}.md",
-                  pdf=C.training_pdf(cid, S.lang))
+    docs, docs_ph = C.training_docs(cid, S.lang)
+    if docs:
+        show_case_file(cid, docs, docs_ph)
+    else:
+        body, ph = C.training_case(cid, S.lang)
+        show_document(C.split_pages(body), ph, f"content/training/{cid}.{S.lang}.md",
+                      pdf=C.training_pdf(cid, S.lang))
     done_key = f"done_{cid}"
     if not S.get(done_key):
         with st.container(border=True):
             ans = yes_no(f"ans_{cid}")
             if st.button(C.ui("submit", S.lang), type="primary", disabled=ans is None):
                 S[done_key] = ans
+                S[f"submit_s_{cid}"] = since(S.page_t[cid])
                 st.rerun()
         return
     key_ans = C.training_answer(cid)
@@ -358,6 +445,9 @@ def training_item(cid: str, next_ok: str, next_wrong: str) -> None:
         st.markdown(C.render_terms(C.training_explanation(cid, S.lang), S.lang),
                     unsafe_allow_html=True)
     if st.button(C.ui("continue", S.lang), type="primary"):
+        log_page(cid, {"answer": S[done_key], "correct": correct,
+                       "seconds_to_submit": S.get(f"submit_s_{cid}"),
+                       "docs": doc_seconds(cid, final=True)})
         if cid == "T1":
             go(next_ok)
         S.training_attempts = 1 if cid == "Q1" else 2
@@ -411,8 +501,12 @@ def _ai_panel_body(cid: str, ai: dict | None, ph: bool) -> None:
             st.markdown(ai["summary"])
         if ai.get("findings"):
             st.markdown(f"**{C.ui('ai_findings', S.lang)}**")
+            docs = C.case_docs(cid, S.lang)[0]
             for f in ai["findings"]:
                 pg = C.ui("page_n", S.lang).format(n=f.get("page"))
+                d = C.find_doc(docs, f.get("doc"))
+                if d is not None:  # cases shown as PDFs: name the document too
+                    pg = f"{C.doc_title(d)} · {pg}"
                 st.markdown(f'<div class="quote">“{html.escape(str(f.get("quote", "")))}”'
                             f'<span class="pg">{html.escape(pg)}</span></div>',
                             unsafe_allow_html=True)
@@ -433,17 +527,24 @@ def page_case() -> None:
     st.markdown(f'<div class="eyebrow">{html.escape(progress)}</div>', unsafe_allow_html=True)
     st.progress((S.idx + 1) / len(S.order))
     rule_card(expanded=False)
-    pages, ph = C.case_pages(cid, S.lang)
-    src = f"content/cases/{cid}.{S.lang}.md"
-    pdf = C.case_pdf(cid, S.lang)
+    docs, docs_ph = C.case_docs(cid, S.lang)
+
+    def case_file() -> None:
+        if docs:  # real forms and medical records as PDFs, in place of the typed pages
+            show_case_file(cid, docs, docs_ph)
+        else:
+            pages, ph = C.case_pages(cid, S.lang)
+            show_document(pages, ph, f"content/cases/{cid}.{S.lang}.md",
+                          pdf=C.case_pdf(cid, S.lang))
+
     if S.arm == "ai":
         left, right = st.columns([3, 2], gap="large")
         with left:
-            show_document(pages, ph, src, pdf=pdf)
+            case_file()
         with right:
             ai_panel(cid)
     else:  # no-AI page: full width, nothing about AI anywhere
-        show_document(pages, ph, src, pdf=pdf)
+        case_file()
 
     with st.container(border=True):
         c1, c2 = st.columns([1, 1.4], gap="large")
@@ -457,6 +558,17 @@ def page_case() -> None:
         st.caption(C.ui("no_going_back", S.lang))
         clicked = st.button(C.ui("submit", S.lang), type="primary", key=f"submit_{cid}",
                             disabled=ans is None or conf is None)
+    # per-question timing: every click reruns the page, so the server sees each answer
+    q = S.setdefault("qtime", {}).setdefault(cid, {"answer": None, "confidence": None,
+                                                   "last": None, "changes": 0})
+    if ans and q["answer"] is None:
+        q["answer"] = since(S.timers[cid])
+    if conf and q["confidence"] is None:
+        q["confidence"] = since(S.timers[cid])
+    if ans and q["last"] and ans != q["last"]:
+        q["changes"] += 1
+    if ans:
+        q["last"] = ans
     if clicked and ans and conf:
         pending = S.setdefault("pending", {})
         if cid not in pending:  # time is fixed at the first click, even if saving is retried
@@ -466,6 +578,10 @@ def page_case() -> None:
                 "case_order": S.idx + 1, "answer": ans, "confidence": conf, "seconds": secs,
                 "started_at": started, "submitted_at": submitted,
                 "training_attempts": S.training_attempts, "heard_about_study": S.heard,
+                "seconds_to_answer": q["answer"], "seconds_to_confidence": q["confidence"],
+                "answer_changes": q["changes"],
+                "docs_json": json.dumps(doc_seconds(cid, final=True), ensure_ascii=False)
+                if docs else "",
             }
         if save_once(f"resp_{cid}", D.write_response, pending[cid]):
             S.idx += 1
@@ -476,6 +592,7 @@ SURVEY_RE = re.compile(r"^\?(scale|text|choice):\s*(.+)$")
 
 
 def page_wrapup() -> None:
+    page_timer("wrapup")
     _, mid, _ = st.columns([1, 6, 1])
     with mid:
         _wrapup_form()
@@ -512,6 +629,7 @@ def _wrapup_form() -> None:
             st.markdown(C.render_terms("\n".join(buf), S.lang), unsafe_allow_html=True)
         sent = st.form_submit_button(C.ui("finish", S.lang), type="primary")
     if sent and save_once("survey", D.write_survey, S.pid, S.arm, answers, lang=S.lang):
+        log_page("wrapup")
         go("thanks")
 
 
@@ -539,6 +657,61 @@ PAGES = {
     "thanks": page_thanks,
     "failed": page_failed,
 }
+
+# ---------------- team-only data download ----------------
+
+def export_requested() -> bool:
+    """`<app URL>/?export=1&k=<test_key>`: the team downloads all data as CSV files, from any
+    browser, without Python. Needs the same test word as the forced-group test runs."""
+    if "export" not in st.query_params:
+        return False
+    return IS_STUB or (bool(D.test_key()) and st.query_params.get("k") == D.test_key())
+
+
+def _csv(rows: list[list[str]]) -> bytes:
+    buf = io.StringIO()
+    csv.writer(buf).writerows(rows)
+    return buf.getvalue().encode("utf-8-sig")  # -sig: Excel opens Chinese text correctly
+
+
+def page_export() -> None:
+    st.markdown('<div class="pagetitle">Study data download (team only)</div>',
+                unsafe_allow_html=True)
+    if IS_STUB:
+        st.warning("PREVIEW mode: no database is connected, so there is nothing to download.")
+        return
+    st.caption("One CSV file per table, in a zip. Participant data: store it in the shared "
+               "drive 06_data/, never in GitHub.")
+    contacts = st.checkbox("Also include names and emails (`contacts`, lottery only)")
+    if st.button("Read the data now", type="primary"):
+        try:
+            S.export = D.export_tables(include_contacts=contacts)
+            S.export_at = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%SZ")
+        except Exception as e:  # noqa: BLE001
+            st.error(f"Could not read the database: {type(e).__name__}: {e}")
+            return
+    tables = S.get("export")
+    if not tables:
+        return
+    st.table([{"table": t, "rows": max(len(r) - 1, 0)} for t, r in tables.items()])
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for t, rows in tables.items():
+            z.writestr(f"{t}.csv", _csv(rows))
+        z.writestr("README.txt", "Frontier study export " + S.export_at + "\n"
+                   "Analyse with: python study/analysis/quick_check.py <this folder>\n")
+    st.download_button("Download all tables (.zip)", data=buf.getvalue(),
+                       file_name=f"study_export_{S.export_at}.zip", mime="application/zip",
+                       type="primary")
+    resp = tables.get("responses") or []
+    if len(resp) > 1:
+        st.markdown("**Latest 30 case answers**")
+        head = resp[0]
+        keep = ["participant_id", "arm", "lang", "case_id", "case_order", "answer",
+                "confidence", "seconds", "seconds_to_answer", "submitted_at"]
+        st.dataframe([{k: dict(zip(head, r)).get(k, "") for k in keep} for r in resp[1:][-30:]],
+                     hide_index=True)
+
 
 def _safe_restore(pid: str) -> dict | None:
     try:
@@ -574,6 +747,9 @@ def boot() -> None:
         S.stage = "rule"
 
 
+if export_requested():
+    page_export()
+    st.stop()
 boot()
 topbar()
 banners()

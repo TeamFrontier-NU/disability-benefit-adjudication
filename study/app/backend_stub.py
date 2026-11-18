@@ -55,6 +55,11 @@ def write_response(row: dict) -> None:
     _append("responses", {k: row.get(k) for k in RESPONSE_COLUMNS})
 
 
+def write_timing(participant_id, step, seconds, started_at, ended_at, extra=None) -> None:
+    _append("timings", {"participant_id": participant_id, "step": step, "seconds": seconds,
+                        "started_at": started_at, "ended_at": ended_at, "extra": extra or {}})
+
+
 def write_contact(participant_id: str, name: str, email: str) -> None:
     _append("contacts", {"participant_id": participant_id, "name": name, "email": email})
 

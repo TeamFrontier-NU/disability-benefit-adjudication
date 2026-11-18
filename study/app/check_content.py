@@ -20,7 +20,13 @@ for lang in LANGS:
     print(f"\n== {lang} ==")
     still_ph = [f"texts/{k}" for k in TEXT_KEYS if C.text(k, lang)[1]]
     still_ph += [f"training/{t}" for t in ("T1", "Q1", "Q2") if C.training_case(t, lang)[1]]
-    still_ph += [f"cases/{c}" for c in C.CASE_IDS if C.case_pages(c, lang)[1]]
+    still_ph += [f"cases/{c}" for c in C.CASE_IDS
+                 if C.case_pages(c, lang)[1] and C.case_docs(c, lang)[1]]
+    for cid in C.CASE_IDS:  # cases given as PDF documents (cases/<id>.<lang>/*.pdf)
+        docs, ph = C.case_docs(cid, lang)
+        if docs and not ph:
+            print(f"{cid}.{lang}: shown as {len(docs)} PDF document(s): "
+                  + ", ".join(C.doc_title(d) for d in docs))
     still_ph += [f"ai/{c}" for c in C.CASE_IDS if C.ai_output(c, lang)[1]]
     print("placeholder (not delivered yet):", ", ".join(still_ph) or "none")
     for cid in C.CASE_IDS:
