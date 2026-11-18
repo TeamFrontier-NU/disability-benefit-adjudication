@@ -15,22 +15,15 @@
   },
   "documents": [
     {
-      "file": "01_SSA-16.pdf",
-      "kind": "form",
-      "form": "ssa-16"
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
     },
     {
-      "file": "02_SSA-3368-BK.pdf",
-      "kind": "form",
-      "form": "ssa-3368-bk"
-    },
-    {
-      "file": "03_SSA-827.pdf",
-      "kind": "form",
-      "form": "ssa-827"
-    },
-    {
-      "file": "04_North_Point_Neurology_letter.pdf",
+      "file": "02_North_Point_Neurology_letter.pdf",
       "kind": "records",
       "source": "Claimant-submitted",
       "records": [
@@ -38,7 +31,7 @@
       ]
     },
     {
-      "file": "05_Riverbend_Hospital_records.pdf",
+      "file": "03_Riverbend_Hospital_records.pdf",
       "kind": "records",
       "source": "DDS request (ERE)",
       "records": [
@@ -47,12 +40,27 @@
       ]
     },
     {
-      "file": "06_North_Point_Neurology_records_response.pdf",
+      "file": "04_North_Point_Neurology_records_response.pdf",
       "kind": "records",
       "source": "DDS request (fax)",
       "records": [
         "04_northpoint_norecords.rec.md"
       ]
+    },
+    {
+      "file": "05_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
+    },
+    {
+      "file": "06_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "07_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
     }
   ],
   "forms": {

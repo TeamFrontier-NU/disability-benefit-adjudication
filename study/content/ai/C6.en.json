@@ -4,17 +4,17 @@
   "findings": [
     {
       "quote": "METASTATIC SMALL CELL CARCINOMA.",
-      "doc": "05_Mercy_Valley_Hospital_records.pdf",
+      "doc": "02_Mercy_Valley_Hospital_records.pdf",
       "page": 2
     },
     {
       "quote": "consistent with metastasis from a primary small cell lung carcinoma",
-      "doc": "05_Mercy_Valley_Hospital_records.pdf",
+      "doc": "02_Mercy_Valley_Hospital_records.pdf",
       "page": 2
     },
     {
       "quote": "Extensive-stage small cell lung cancer",
-      "doc": "06_Central_Oncology_Center_records.pdf",
+      "doc": "03_Central_Oncology_Center_records.pdf",
       "page": 1
     }
   ]

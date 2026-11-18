@@ -15,19 +15,29 @@
   },
   "documents": [
     {
-      "file": "01_SSA-16.pdf",
-      "kind": "form",
-      "form": "ssa-16"
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
     },
     {
-      "file": "02_SSA-3368-BK.pdf",
-      "kind": "form",
-      "form": "ssa-3368-bk"
+      "file": "02_Mercy_Valley_Hospital_records.pdf",
+      "kind": "records",
+      "source": "DDS request (Health IT)",
+      "records": [
+        "01_mvh_ct.rec.md",
+        "02_mvh_path.rec.md"
+      ]
     },
     {
-      "file": "03_SSA-827.pdf",
-      "kind": "form",
-      "form": "ssa-827"
+      "file": "03_Central_Oncology_Center_records.pdf",
+      "kind": "records",
+      "source": "DDS request (ERE)",
+      "records": [
+        "03_coc_note.rec.md"
+      ]
     },
     {
       "file": "04_Patient_portal_printout_claimant.pdf",
@@ -38,21 +48,19 @@
       ]
     },
     {
-      "file": "05_Mercy_Valley_Hospital_records.pdf",
-      "kind": "records",
-      "source": "DDS request (Health IT)",
-      "records": [
-        "01_mvh_ct.rec.md",
-        "02_mvh_path.rec.md"
-      ]
+      "file": "05_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
     },
     {
-      "file": "06_Central_Oncology_Center_records.pdf",
-      "kind": "records",
-      "source": "DDS request (ERE)",
-      "records": [
-        "03_coc_note.rec.md"
-      ]
+      "file": "06_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "07_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
     }
   ],
   "forms": {
