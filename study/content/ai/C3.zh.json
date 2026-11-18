@@ -1,14 +1,26 @@
 {
   "recommendation": "yes",
-  "summary": "建议进入快车道。医院病历显示，双腿功能已连续完全丧失超过三个月。使用轮椅更独立不代表双腿功能恢复。",
+  "summary": "建议进入快车道。机构从创伤医院和康复医院直接调取的病历显示，T10 完全性脊髓损伤（AIS A），自 2026-01-08 至 2026-06-18 复诊时双腿均无任何运动功能，连续超过 3 个月。自 5 月起轮椅活动更独立，并不代表腿部功能恢复。",
   "findings": [
     {
-      "quote": "1 月 8 日的车祸造成完全性脊髓损伤，导致双腿功能完全丧失。",
-      "page": 2
+      "quote": "AIS A, complete.",
+      "doc": "04_Lakeport_Memorial_Hospital_records.pdf",
+      "page": 1
     },
     {
-      "quote": "自 1 月 8 日受伤以来，双腿均未恢复任何功能。",
-      "page": 2
+      "quote": "ASIA Impairment Scale A, unchanged from admission",
+      "doc": "05_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 3
+    },
+    {
+      "quote": "No motor function in any lower extremity muscle group bilaterally.",
+      "doc": "05_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 6
+    },
+    {
+      "quote": "5+ months post injury (01/08/2026)",
+      "doc": "05_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 6
     }
   ]
 }

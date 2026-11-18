@@ -1,14 +1,26 @@
 {
   "recommendation": "yes",
-  "summary": "Se recomienda la revisión acelerada. Los registros del hospital muestran una pérdida total de la función de ambas piernas durante más de tres meses. Desplazarse con más independencia en silla de ruedas no significa que las piernas hayan recuperado su función.",
+  "summary": "Se recomienda la revisión acelerada. Los registros que la agencia obtuvo del hospital de trauma y del hospital de rehabilitación muestran una lesión completa de la médula espinal (AIS A, T10) sin movimiento en ninguna de las dos piernas desde el 01/08/2026 hasta la consulta del 06/18/2026, más de 3 meses continuos. La mejor movilidad en silla de ruedas desde mayo no es una recuperación de la función de las piernas.",
   "findings": [
     {
-      "quote": "El accidente del 8 de enero causó una lesión completa de la médula espinal y la pérdida total de la función de ambas piernas.",
-      "page": 2
+      "quote": "AIS A, complete.",
+      "doc": "04_Lakeport_Memorial_Hospital_records.pdf",
+      "page": 1
     },
     {
-      "quote": "Ninguna de las dos piernas ha recuperado función desde la lesión del 8 de enero.",
-      "page": 2
+      "quote": "ASIA Impairment Scale A, unchanged from admission",
+      "doc": "05_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 3
+    },
+    {
+      "quote": "No motor function in any lower extremity muscle group bilaterally.",
+      "doc": "05_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 6
+    },
+    {
+      "quote": "5+ months post injury (01/08/2026)",
+      "doc": "05_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 6
     }
   ]
 }

@@ -1,10 +1,21 @@
 {
   "recommendation": "yes",
-  "summary": "Se recomienda la revisión acelerada. El registro obtenido directamente del centro de oncología confirma el cáncer de pulmón de células pequeñas, que no exige esperar tres meses según las reglas del estudio.",
+  "summary": "Se recomienda la revisión acelerada. El informe de patología que la agencia obtuvo del Mercy Valley Hospital confirma un carcinoma de células pequeñas metastásico compatible con un origen pulmonar de células pequeñas, y el registro de oncología confirma cáncer de pulmón de células pequeñas en estadio extenso. Para esta afección no se exige esperar 3 meses.",
   "findings": [
     {
-      "quote": "Sarah Kim tiene un diagnóstico confirmado de cáncer de pulmón de células pequeñas que se ha extendido al hígado.",
+      "quote": "METASTATIC SMALL CELL CARCINOMA.",
+      "doc": "05_Mercy_Valley_Hospital_records.pdf",
       "page": 2
+    },
+    {
+      "quote": "consistent with metastasis from a primary small cell lung carcinoma",
+      "doc": "05_Mercy_Valley_Hospital_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "Extensive-stage small cell lung cancer",
+      "doc": "06_Central_Oncology_Center_records.pdf",
+      "page": 1
     }
   ]
 }

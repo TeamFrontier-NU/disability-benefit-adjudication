@@ -3,7 +3,7 @@
     case.json            claimant, claim, document list, form field values
     records/*.rec.md     medical records (see render_records.py for the format)
 
-into a folder the study app reads, e.g. study/content/cases/C3.en/:
+into a folder the study app reads, e.g. study/content/cases/C3/ (all languages):
 
     01_SSA-16.pdf  02_SSA-3368-BK.pdf  03_SSA-827.pdf  04_<Provider>_records.pdf ...
 
@@ -11,7 +11,7 @@ Each records document is the provider's pages in the order listed in case.json (
 source, like an exhibit in the electronic claim folder).
 
 Usage:
-    python study/materials/build_case.py C3                 # -> study/content/cases/C3.en/
+    python study/materials/build_case.py C3                 # -> study/content/cases/C3/ (shared by en/es/zh)
     python study/materials/build_case.py C3 --out some/dir
     python study/materials/build_case.py --all
 """
@@ -38,7 +38,7 @@ APP_CASES = HERE.parent / "content" / "cases"
 def build(cid: str, out: Path | None = None) -> Path:
     src = CASES / cid
     case = json.loads((src / "case.json").read_text(encoding="utf-8"))
-    out = out or APP_CASES / f"{cid}.en"
+    out = out or APP_CASES / cid  # one English set for every language (team decision 2026-11-18)
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*.pdf"):
         old.unlink()

@@ -7,7 +7,7 @@ labs, letters), each stamped with how it reached the agency. No summaries.
 
 ```
 study/materials/
-  build_case.py            case.json + records -> study/content/cases/<ID>.en/*.pdf
+  build_case.py            case.json + records -> study/content/cases/<ID>/*.pdf (one English set shown in every language)
   render_records.py        one .rec.md record -> PDF in the provider's own layout
   forms/
     templates/             blank SSA-16 (11-2022), SSA-3368-BK (06-2024), SSA-827 (06-2024), SSA-3373-BK (10-2026) from ssa.gov
