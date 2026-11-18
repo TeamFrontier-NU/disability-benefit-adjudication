@@ -1,3 +1,5 @@
+**Tu tarea.** Los formularios de solicitud (SSA-16, SSA-3368, SSA-827) ya fueron evaluados por el filtro automático QDD/CAL de la SSA, y todos los casos aquí fueron marcados por él. Una marca refleja solo lo que escribió la persona solicitante. Tu tarea es el paso siguiente: revisar los registros médicos. Los formularios están al final del expediente como referencia opcional; no es necesario leerlos.
+
 **Criterios (de la tarjeta de reglas).** Vía rápida solo si se cumplen los tres: 1) los registros confirman la pérdida completa de función en ambas piernas por una lesión de la médula espinal, o un cáncer de pulmón de células pequeñas; 2) ese hallazgo está en registros que la agencia obtuvo de un hospital o clínica; 3) en la lesión de la médula espinal, la pérdida ha durado al menos 3 meses continuos.
 
 | Término | Significado |
@@ -17,4 +19,5 @@
 | Sospechoso de, R/O (descartar), probable | Palabras para una posibilidad aún no confirmada. |
 | HPI, Evaluación / Impresión | Relato del propio paciente / conclusión del médico. |
 | bilat, LE, ED, PCP | Ambos lados, piernas, servicio de urgencias, médico de atención primaria. |
+| QDD, CAL | Filtros automáticos de la SSA sobre los formularios (Determinación Rápida de Discapacidad, Aprobación Compasiva). |
 | HIT, ERE | Vías electrónicas por las que la agencia recibe los registros. |
