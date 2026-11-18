@@ -3,18 +3,18 @@
   "summary": "No se recomienda la revisión acelerada. La única afirmación de una lesión completa de la médula espinal es una carta que presentó el propio solicitante. Los registros que la agencia obtuvo del Riverbend Hospital muestran fuerza normal en ambas piernas y marcha independiente, y North Point Neurology no encontró registros de este solicitante.",
   "findings": [
     {
-      "quote": "Strength 5/5 bilateral hip flexion, knee ext/flex, ankle DF/PF, EHL.",
-      "doc": "03_Riverbend_Hospital_records.pdf",
+      "quote": "Fuerza 5/5 bilateral en flexión de cadera, extensión/flexión de rodilla, dorsiflexión/flexión plantar del tobillo, EHL.",
+      "doc": "03_Registros_de_Riverbend_Hospital.pdf",
       "page": 1
     },
     {
-      "quote": "ambulates independently in department without assistive device",
-      "doc": "03_Riverbend_Hospital_records.pdf",
+      "quote": "camina de forma independiente en el servicio sin dispositivo de ayuda",
+      "doc": "03_Registros_de_Riverbend_Hospital.pdf",
       "page": 1
     },
     {
-      "quote": "No records found for the dates of service requested.",
-      "doc": "04_North_Point_Neurology_records_response.pdf",
+      "quote": "No se encontraron registros para las fechas de atención solicitadas.",
+      "doc": "04_Respuesta_de_North_Point_Neurology_a_la_solicitud.pdf",
       "page": 1
     }
   ]

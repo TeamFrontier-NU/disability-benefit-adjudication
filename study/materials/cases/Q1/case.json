@@ -167,5 +167,61 @@
         "date": "08/2026"
       }
     }
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Cáncer de pulmón (el especialista dijo de células pequeñas)",
+        "Tos, pérdida de peso"
+      ],
+      "cal": "COINCIDENCIA - alegación 1",
+      "qdd": "No seleccionado",
+      "exhibits": [
+        [
+          "1F",
+          "Lakeview Clinic",
+          "09/05/2026",
+          "1",
+          "09/09/2026",
+          "Fax (solicitud de DDS)"
+        ],
+        [
+          "2F",
+          "Bayside Cancer Specialists (carta)",
+          "09/01/2026",
+          "1",
+          "09/02/2026",
+          "Subido por la persona solicitante"
+        ]
+      ],
+      "pending": []
+    },
+    "zh": {
+      "allegations": [
+        "肺癌（专科医生说是小细胞）",
+        "咳嗽，体重下降"
+      ],
+      "cal": "匹配——申报病情 1",
+      "qdd": "未选中",
+      "exhibits": [
+        [
+          "1F",
+          "Lakeview Clinic",
+          "09/05/2026",
+          "1",
+          "09/09/2026",
+          "传真（DDS 调取）"
+        ],
+        [
+          "2F",
+          "Bayside Cancer Specialists（信函）",
+          "09/01/2026",
+          "1",
+          "09/02/2026",
+          "申请人上传"
+        ]
+      ],
+      "pending": []
+    }
   }
 }

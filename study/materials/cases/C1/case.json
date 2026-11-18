@@ -198,5 +198,63 @@
       }
     },
     "remarks": "Section 3: The ER said the ligaments are torn. I am wearing a brace. I may need surgery if it doesn't heal.\nI was told to apply for disability by my sister because I can't do my job right now."
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Lesión de la pierna derecha - ligamentos rotos, no puedo estar de pie ni caminar",
+        "Diabetes",
+        "Presión arterial alta",
+        "Dolor en ambas rodillas"
+      ],
+      "cal": "Sin coincidencia",
+      "qdd": "Seleccionado (puntuación por encima del umbral)",
+      "exhibits": [
+        [
+          "1F",
+          "Green Valley Medical Center (Urgencias y Ortopedia)",
+          "10/20/2026 - 11/03/2026",
+          "2",
+          "11/10/2026",
+          "Electronic Records Express (solicitud de DDS)"
+        ]
+      ],
+      "pending": [
+        [
+          "Riverside Community Health (médico de cabecera, nombrado en el SSA-3368)",
+          "11/03/2026",
+          "11/10/2026",
+          "Sin respuesta"
+        ]
+      ]
+    },
+    "zh": {
+      "allegations": [
+        "右腿受伤——韧带撕裂，不能站立或行走",
+        "糖尿病",
+        "高血压",
+        "双膝疼痛"
+      ],
+      "cal": "不匹配",
+      "qdd": "已选中（评分高于阈值）",
+      "exhibits": [
+        [
+          "1F",
+          "Green Valley Medical Center（急诊科及骨科）",
+          "10/20/2026 - 11/03/2026",
+          "2",
+          "11/10/2026",
+          "Electronic Records Express（DDS 调取）"
+        ]
+      ],
+      "pending": [
+        [
+          "Riverside Community Health（初级保健医生，SSA-3368 中列出）",
+          "11/03/2026",
+          "11/10/2026",
+          "无回复"
+        ]
+      ]
+    }
   }
 }

@@ -3,23 +3,23 @@
   "summary": "Se recomienda la revisión acelerada. Los registros que la agencia obtuvo del hospital de trauma y del hospital de rehabilitación muestran una lesión completa de la médula espinal (AIS A, T10) sin movimiento en ninguna de las dos piernas desde el 01/08/2026 hasta la consulta del 06/18/2026, más de 3 meses continuos. La mejor movilidad en silla de ruedas desde mayo no es una recuperación de la función de las piernas.",
   "findings": [
     {
-      "quote": "AIS A, complete.",
-      "doc": "02_Lakeport_Memorial_Hospital_records.pdf",
+      "quote": "AIS A, completa.",
+      "doc": "02_Registros_de_Lakeport_Memorial_Hospital.pdf",
       "page": 1
     },
     {
-      "quote": "ASIA Impairment Scale A, unchanged from admission",
-      "doc": "03_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "quote": "Escala de deficiencia ASIA A, sin cambios desde el ingreso",
+      "doc": "03_Registros_de_Lakeshore_Rehabilitation_Hospital.pdf",
       "page": 3
     },
     {
-      "quote": "No motor function in any lower extremity muscle group bilaterally.",
-      "doc": "03_Lakeshore_Rehabilitation_Hospital_records.pdf",
-      "page": 5
+      "quote": "Sin función motora en ningún grupo muscular de ambas piernas.",
+      "doc": "03_Registros_de_Lakeshore_Rehabilitation_Hospital.pdf",
+      "page": 6
     },
     {
-      "quote": "5+ months post injury (01/08/2026)",
-      "doc": "03_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "quote": "más de 5 meses después de la lesión (01/08/2026)",
+      "doc": "03_Registros_de_Lakeshore_Rehabilitation_Hospital.pdf",
       "page": 6
     }
   ]

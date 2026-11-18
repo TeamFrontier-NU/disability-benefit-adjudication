@@ -3,18 +3,18 @@
   "summary": "Se recomienda la revisión acelerada. El informe de patología que la agencia obtuvo del Mercy Valley Hospital confirma un carcinoma de células pequeñas metastásico compatible con un origen pulmonar de células pequeñas, y el registro de oncología confirma cáncer de pulmón de células pequeñas en estadio extenso. Para esta afección no se exige esperar 3 meses.",
   "findings": [
     {
-      "quote": "METASTATIC SMALL CELL CARCINOMA.",
-      "doc": "02_Mercy_Valley_Hospital_records.pdf",
+      "quote": "CARCINOMA DE CÉLULAS PEQUEÑAS METASTÁSICO.",
+      "doc": "02_Registros_de_Mercy_Valley_Hospital.pdf",
       "page": 2
     },
     {
-      "quote": "consistent with metastasis from a primary small cell lung carcinoma",
-      "doc": "02_Mercy_Valley_Hospital_records.pdf",
+      "quote": "compatible con metástasis de un carcinoma pulmonar de células pequeñas primario",
+      "doc": "02_Registros_de_Mercy_Valley_Hospital.pdf",
       "page": 2
     },
     {
-      "quote": "Extensive-stage small cell lung cancer",
-      "doc": "03_Central_Oncology_Center_records.pdf",
+      "quote": "Cáncer de pulmón de células pequeñas en estadio extendido",
+      "doc": "03_Registros_de_Central_Oncology_Center.pdf",
       "page": 1
     }
   ]

@@ -1,6 +1,6 @@
 # Guía rápida: revisión acelerada del SSDI
 
-En esta simulación, haces la revisión inicial de solicitudes del Seguro por Incapacidad del Seguro Social (SSDI) en una agencia estatal. Los formularios de la solicitud ya pasaron el filtro automático existente (QDD/CAL), que solo mira las afecciones que indicó la persona solicitante. Tu tarea es revisar los **registros médicos** y decidir si recomiendas la revisión acelerada. Los formularios están en el expediente como referencia.
+En esta simulación, haces la revisión inicial de solicitudes del Seguro por Incapacidad del Seguro Social (SSDI) en una agencia estatal. Los formularios de la solicitud ya pasaron el filtro automático existente (QDD/CAL), que solo mira las afecciones que indicó la persona solicitante. Tu tarea es revisar los **registros médicos** y decidir si recomiendas la revisión acelerada. Los registros médicos están traducidos al español; los formularios son los oficiales de la SSA, en inglés, y están en el expediente solo como referencia.
 
 - **Revisión acelerada (Sí):** El expediente está lo suficientemente completo para confirmar que la persona cumple los requisitos según las reglas del estudio. Se da prioridad a la solicitud para revisarla antes.
 - **Revisión regular (No):** El expediente no permite confirmar claramente que la persona cumple los requisitos, o la solicitud no cumple los criterios de revisión acelerada. La solicitud sigue el proceso habitual y se puede pedir más información. Esto no significa que se denieguen los beneficios.

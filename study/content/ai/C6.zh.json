@@ -3,18 +3,18 @@
   "summary": "建议进入快车道。机构从 Mercy Valley Hospital 调取的病理报告确认为转移性小细胞癌，符合肺部小细胞原发灶；肿瘤科病历确认为广泛期小细胞肺癌。此病情无需等待 3 个月。",
   "findings": [
     {
-      "quote": "METASTATIC SMALL CELL CARCINOMA.",
-      "doc": "02_Mercy_Valley_Hospital_records.pdf",
+      "quote": "转移性小细胞癌。",
+      "doc": "02_Mercy_Valley_Hospital_病历.pdf",
       "page": 2
     },
     {
-      "quote": "consistent with metastasis from a primary small cell lung carcinoma",
-      "doc": "02_Mercy_Valley_Hospital_records.pdf",
+      "quote": "符合原发性肺小细胞癌转移",
+      "doc": "02_Mercy_Valley_Hospital_病历.pdf",
       "page": 2
     },
     {
-      "quote": "Extensive-stage small cell lung cancer",
-      "doc": "03_Central_Oncology_Center_records.pdf",
+      "quote": "广泛期小细胞肺癌",
+      "doc": "03_Central_Oncology_Center_病历.pdf",
       "page": 1
     }
   ]

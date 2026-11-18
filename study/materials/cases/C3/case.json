@@ -282,5 +282,137 @@
       "Page1.P1_State_FLD": "IL",
       "Page1.P1_Zip_FLD": "60990"
     }
+  },
+  "screen": {
+    "printed": "11/16/2026",
+    "allegations": [
+      "Spinal cord injury - paralyzed from the waist down",
+      "Broken back (T10) - rods and screws put in",
+      "Bladder and bowel problems (have to use catheter)",
+      "Bad muscle spasms in legs",
+      "Depression"
+    ],
+    "cal": "MATCH - allegation 1 'Spinal cord injury' (study fast-track list: spinal cord injury, complete)",
+    "qdd": "Not selected",
+    "exhibits": [
+      [
+        "1F",
+        "Lakeport Memorial Hospital",
+        "01/08/2026 - 01/12/2026",
+        "3",
+        "10/14/2026",
+        "Health IT (DDS request)"
+      ],
+      [
+        "2F",
+        "Lakeshore Rehabilitation Hospital",
+        "01/12/2026 - 06/18/2026",
+        "6",
+        "10/21/2026",
+        "Electronic Records Express (DDS request)"
+      ]
+    ],
+    "pending": [
+      [
+        "Lakeport Urgent Care",
+        "07/22/2026",
+        "08/05/2026",
+        "No response"
+      ],
+      [
+        "Harbor Home Health (named in SSA-3368 remarks)",
+        "07/22/2026",
+        "08/05/2026",
+        "No response"
+      ]
+    ]
+  },
+  "screen_i18n": {
+    "es": {
+      "allegations": [
+        "Lesión de la médula espinal - paralizado de la cintura para abajo",
+        "Espalda rota (T10) - me pusieron barras y tornillos",
+        "Problemas de vejiga e intestino (tengo que usar sonda)",
+        "Espasmos musculares fuertes en las piernas",
+        "Depresión"
+      ],
+      "cal": "COINCIDENCIA - alegación 1 'Lesión de la médula espinal' (lista de vía rápida del estudio: lesión completa de la médula espinal)",
+      "qdd": "No seleccionado",
+      "exhibits": [
+        [
+          "1F",
+          "Lakeport Memorial Hospital",
+          "01/08/2026 - 01/12/2026",
+          "3",
+          "10/14/2026",
+          "Health IT (solicitud de DDS)"
+        ],
+        [
+          "2F",
+          "Lakeshore Rehabilitation Hospital",
+          "01/12/2026 - 06/18/2026",
+          "6",
+          "10/21/2026",
+          "Electronic Records Express (solicitud de DDS)"
+        ]
+      ],
+      "pending": [
+        [
+          "Lakeport Urgent Care",
+          "07/22/2026",
+          "08/05/2026",
+          "Sin respuesta"
+        ],
+        [
+          "Harbor Home Health (nombrado en las observaciones del SSA-3368)",
+          "07/22/2026",
+          "08/05/2026",
+          "Sin respuesta"
+        ]
+      ]
+    },
+    "zh": {
+      "allegations": [
+        "脊髓损伤——腰部以下瘫痪",
+        "脊柱骨折（T10）——打了钢棒和螺钉",
+        "膀胱和肠道问题（必须用导尿管）",
+        "腿部严重肌肉痉挛",
+        "抑郁"
+      ],
+      "cal": "匹配——申报病情 1“脊髓损伤”（本研究快速通道清单：完全性脊髓损伤）",
+      "qdd": "未选中",
+      "exhibits": [
+        [
+          "1F",
+          "Lakeport Memorial Hospital",
+          "01/08/2026 - 01/12/2026",
+          "3",
+          "10/14/2026",
+          "Health IT（DDS 调取）"
+        ],
+        [
+          "2F",
+          "Lakeshore Rehabilitation Hospital",
+          "01/12/2026 - 06/18/2026",
+          "5",
+          "10/21/2026",
+          "Electronic Records Express（DDS 调取）"
+        ]
+      ],
+      "pending": [
+        [
+          "Lakeport Urgent Care",
+          "07/22/2026",
+          "08/05/2026",
+          "无回复"
+        ],
+        [
+          "Harbor Home Health（SSA-3368 备注中列出）",
+          "07/22/2026",
+          "08/05/2026",
+          "无回复"
+        ]
+      ]
+    }
   }
 }
