@@ -131,6 +131,7 @@ p, li {color: var(--ink); line-height: 1.6;}
 st.markdown(CSS, unsafe_allow_html=True)
 
 S = st.session_state
+BUILD = "2026-11-18b"  # shown on the team TEST RUN badge: tells which code the live app runs
 
 
 # ---------------- helpers ----------------
@@ -319,8 +320,11 @@ def banners() -> None:
         st.markdown('<span class="ph">PREVIEW · nothing is saved to the study Sheet</span>',
                     unsafe_allow_html=True)
     elif S.get("pid", "").startswith("TEST-") or (S.stage in ("lang", "welcome") and S.test_arm):
-        st.markdown('<span class="ph">TEST RUN · team only · rows are marked TEST-</span>',
-                    unsafe_allow_html=True)
+        st.markdown(f'<span class="ph">TEST RUN · team only · rows are marked TEST- · '
+                    f'build {BUILD}</span>', unsafe_allow_html=True)
+        if S.stage == "lang" and st.button("Download study data (team only)", key="open_export"):
+            S.show_export = True  # same page as ?export=1&k=<test_key>
+            st.rerun()
 
 
 # ---------------- pages ----------------
@@ -663,7 +667,7 @@ PAGES = {
 def export_requested() -> bool:
     """`<app URL>/?export=1&k=<test_key>`: the team downloads all data as CSV files, from any
     browser, without Python. Needs the same test word as the forced-group test runs."""
-    if "export" not in st.query_params:
+    if "export" not in st.query_params and not S.get("show_export"):
         return False
     return IS_STUB or (bool(D.test_key()) and st.query_params.get("k") == D.test_key())
 
