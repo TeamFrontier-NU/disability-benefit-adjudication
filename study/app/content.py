@@ -45,6 +45,7 @@ def _read(rel: str) -> tuple[str | None, bool]:
 def clear_cache() -> None:
     _read.cache_clear()
     glossary.cache_clear()
+    _terms.cache_clear()
     ui_strings.cache_clear()
     training_key.cache_clear()
 
@@ -63,6 +64,22 @@ def text(key: str, lang: str) -> tuple[str, bool]:
 def glossary() -> tuple[dict, bool]:
     body, ph = _read("texts/glossary.yaml")
     return (yaml.safe_load(body) or {}) if body else {}, ph
+
+
+@lru_cache(maxsize=None)
+def _terms() -> tuple[dict, dict]:
+    bank, per_case = _read("texts/terms.yaml")[0], _read("texts/case_terms.yaml")[0]
+    return (yaml.safe_load(bank) or {}) if bank else {}, (yaml.safe_load(per_case) or {}) if per_case else {}
+
+
+def case_terms(cid: str, lang: str) -> tuple[str, list[tuple[str, str]]]:
+    """(criteria sentence, [(term, meaning)]) for one case: only the terms that occur in that
+    case's own records (texts/case_terms.yaml, generated from the records, not from the key)."""
+    bank, per_case = _terms()
+    terms = bank.get("terms", {})
+    rows = [tuple(terms[k].get(lang) or terms[k]["en"]) for k in per_case.get(cid, []) if k in terms]
+    crit = bank.get("criteria", {})
+    return crit.get(lang) or crit.get("en", ""), rows
 
 
 @lru_cache(maxsize=None)

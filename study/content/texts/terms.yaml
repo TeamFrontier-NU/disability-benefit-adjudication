@@ -1,0 +1,109 @@
+# Term bank for the "Terms and criteria" page and window.
+# A case shows only the terms whose `match` pattern occurs in that case's own medical records
+# (English sources). The list per case is generated into case_terms.yaml by
+# study/materials/make_case_terms.py, so it depends on what the records say, never on the answer.
+criteria:
+  en: "Fast track only if all three are met: 1) the records confirm complete loss of function in both legs from a spinal cord injury, or small cell lung cancer; 2) that finding is in records the agency obtained from a hospital or clinic; 3) for the spinal cord injury, the loss has lasted at least 3 continuous months."
+  es: "Vía rápida solo si se cumplen los tres: 1) los registros confirman la pérdida completa de función en ambas piernas por una lesión de la médula espinal, o un cáncer de pulmón de células pequeñas; 2) ese hallazgo está en registros que la agencia obtuvo de un hospital o clínica; 3) en la lesión de la médula espinal, la pérdida ha durado al menos 3 meses continuos."
+  zh: "三项全部满足才走快速通道：1）病历确认因脊髓损伤导致双腿功能完全丧失，或确认为小细胞肺癌；2）该结论出自审核机构直接从医院或诊所取得的病历；3）脊髓损伤的功能丧失已连续持续至少 3 个月。"
+terms:
+  levels:
+    match: '\b[CTL]\d{1,2}\b'
+    en: ["C, T, L, S levels", "Parts of the spine: C neck, T chest (T1-T12), L lower back, S bottom."]
+    es: ["Niveles C, T, L, S", "Partes de la columna: C cuello, T tórax (T1-T12), L zona lumbar, S parte final."]
+    zh: ["C、T、L、S 节段", "脊柱的各部分：C 颈部，T 胸部（T1-T12），L 腰部，S 骶部（最下端）。"]
+  sci:
+    match: 'spinal cord injury|\bSCI\b'
+    en: ["Spinal cord injury (SCI)", "Damage to the spinal cord, the nerve bundle inside the spine."]
+    es: ["Lesión de la médula espinal (SCI)", "Daño a la médula espinal, el haz de nervios dentro de la columna."]
+    zh: ["脊髓损伤（SCI）", "脊髓受损；脊髓是脊柱内部的神经束。"]
+  disc:
+    match: 'disc (bulge|extrusion|herniation|protrusion)|\bDDD\b|degenerative disc|radiculopathy'
+    en: ["Disc bulge, extrusion, DDD, radiculopathy", "Problems of the spinal discs or a nerve root."]
+    es: ["Protrusión o extrusión discal, DDD, radiculopatía", "Problemas de los discos de la columna o de una raíz nerviosa."]
+    zh: ["椎间盘膨出或突出、DDD、神经根病", "椎间盘或神经根的问题。"]
+  ais:
+    match: '\bAIS\b|\bASIA\b|ISNCSCI'
+    en: ["AIS grade (ISNCSCI exam)", "A = complete (no movement or feeling below the injury, incl. S4-S5); B = feeling only; C, D = some movement; E = normal."]
+    es: ["Grado AIS (examen ISNCSCI)", "A = completa (sin movimiento ni sensibilidad por debajo de la lesión, incl. S4-S5); B = solo sensibilidad; C, D = algo de movimiento; E = normal."]
+    zh: ["AIS 分级（ISNCSCI 检查）", "A = 完全性（损伤平面以下无运动、无感觉，包括 S4-S5）；B = 仅有感觉；C、D = 有部分运动；E = 正常。"]
+  plegia:
+    match: 'parapleg|parapare'
+    en: ["Paraplegia / paraparesis", "Paralysis / weakness of both legs."]
+    es: ["Paraplejia / paraparesia", "Parálisis / debilidad de ambas piernas."]
+    zh: ["截瘫 / 下肢轻瘫", "双腿瘫痪 / 双腿无力。"]
+  strength:
+    match: '\b[0-5]/5\b'
+    en: ["Strength 0-5", "Muscle strength: 0 none, 5 normal."]
+    es: ["Fuerza 0-5", "Fuerza muscular: 0 nula, 5 normal."]
+    zh: ["肌力 0-5", "肌力：0 为无，5 为正常。"]
+  lems:
+    match: '\bLEMS\b|motor score'
+    en: ["LEMS 0-50", "Lower extremity motor score, the leg muscles of both legs added up: 0 none, 50 normal."]
+    es: ["LEMS 0-50", "Puntuación motora de las extremidades inferiores, suma de los músculos de ambas piernas: 0 nula, 50 normal."]
+    zh: ["LEMS（下肢运动评分）0-50", "双腿肌力总分：0 为无，50 为正常。"]
+  spastic:
+    match: 'spastic|clonus|spasm'
+    en: ["Spasticity, clonus, spasms", "Involuntary muscle stiffness or movement."]
+    es: ["Espasticidad, clonus, espasmos", "Rigidez o movimiento muscular involuntario."]
+    zh: ["痉挛、阵挛、抽搐", "不受意识控制的肌肉僵硬或动作。"]
+  sprain:
+    match: 'sprain'
+    en: ["Sprain, grade I-III", "A stretched or torn ligament: I mild, II partial tear, III complete tear."]
+    es: ["Esguince, grado I-III", "Ligamento estirado o roto: I leve, II rotura parcial, III rotura completa."]
+    zh: ["扭伤，I-III 度", "韧带被拉伤或撕裂：I 度轻微，II 度部分撕裂，III 度完全撕裂。"]
+  ligament:
+    match: '\bATFL\b|\bCFL\b'
+    en: ["ATFL, CFL", "Ligaments on the outer side of the ankle."]
+    es: ["ATFL, CFL", "Ligamentos de la cara externa del tobillo."]
+    zh: ["ATFL、CFL", "踝关节外侧的韧带。"]
+  wbat:
+    match: '\bWBAT\b|weight.bearing'
+    en: ["Weight bearing (WBAT)", "Putting body weight on the leg; WBAT = as much as tolerated."]
+    es: ["Carga de peso (WBAT)", "Apoyar el peso del cuerpo en la pierna; WBAT = según tolerancia."]
+    zh: ["负重（WBAT）", "让腿承受体重；WBAT = 在可耐受范围内负重。"]
+  sclc:
+    match: 'small cell|\bSCLC\b'
+    en: ["Small cell lung cancer", "Also written SCLC, small cell carcinoma, oat cell carcinoma."]
+    es: ["Cáncer de pulmón de células pequeñas", "También escrito SCLC, carcinoma de células pequeñas, carcinoma de células en avena."]
+    zh: ["小细胞肺癌", "也写作 SCLC、小细胞癌、燕麦细胞癌。"]
+  nsclc:
+    match: '\bNSCLC\b|non-small|adenocarcinoma|squamous'
+    en: ["NSCLC", "Non-small cell lung cancer: adenocarcinoma, squamous cell, large cell."]
+    es: ["NSCLC", "Cáncer de pulmón de células no pequeñas: adenocarcinoma, escamoso, de células grandes."]
+    zh: ["NSCLC", "非小细胞肺癌：腺癌、鳞状细胞癌、大细胞癌。"]
+  stage:
+    match: '(limited|extensive)[- ]stage'
+    en: ["Limited / extensive stage", "How far a small cell lung cancer has spread."]
+    es: ["Estadio limitado / extendido", "Hasta dónde se ha extendido un cáncer de pulmón de células pequeñas."]
+    zh: ["局限期 / 广泛期", "小细胞肺癌扩散的范围。"]
+  primary:
+    match: 'metasta'
+    en: ["Primary / metastatic", "Where a cancer started / cancer that has spread to another organ."]
+    es: ["Primario / metastásico", "Donde empezó el cáncer / cáncer que se ha extendido a otro órgano."]
+    zh: ["原发 / 转移性", "癌症起始的器官 / 已扩散到其他器官的癌症。"]
+  path:
+    match: 'patholog|biopsy'
+    en: ["Pathology report", "Lab exam of tissue (biopsy). Its final diagnosis names the cancer type."]
+    es: ["Informe de patología", "Examen de laboratorio de un tejido (biopsia). Su diagnóstico final nombra el tipo de cáncer."]
+    zh: ["病理报告", "对组织（活检）的化验检查。其最终诊断写明癌症类型。"]
+  mass:
+    match: '\bmass\b|nodule|lesion'
+    en: ["Mass, nodule, lesion", "Something seen on a scan (X-ray, CT, MRI, PET)."]
+    es: ["Masa, nódulo, lesión", "Algo que se ve en una imagen (radiografía, TC, RM, PET)."]
+    zh: ["肿块、结节、病灶", "影像（X 光、CT、MRI、PET）上看到的异常。"]
+  suspicious:
+    match: 'suspicious|concerning for|\bR/O\b|rule out|cannot exclude'
+    en: ["Suspicious for, R/O, likely", "Words for a possibility that is not yet confirmed."]
+    es: ["Sospechoso de, R/O (descartar), probable", "Palabras para una posibilidad aún no confirmada."]
+    zh: ["可疑、R/O（待排除）、可能", "表示尚未确认的可能性。"]
+  sections:
+    match: '\bHPI\b|ASSESSMENT|IMPRESSION'
+    en: ["HPI, Assessment / Impression", "Patient's own account / the clinician's conclusion."]
+    es: ["HPI, Evaluación / Impresión", "Relato del propio paciente / conclusión del médico."]
+    zh: ["HPI、评估 / 印象", "患者自述 / 医生的结论。"]
+  abbr:
+    match: '\bbilat\b|\bLE\b'
+    en: ["bilat, LE", "Both sides, legs."]
+    es: ["bilat, LE", "Ambos lados, piernas."]
+    zh: ["bilat、LE", "双侧、下肢。"]
