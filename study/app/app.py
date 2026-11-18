@@ -198,7 +198,8 @@ def doc_seconds(cid: str, final: bool = False) -> dict:
     acc = dict(v["acc"])
     if final and v["cur"] is not None:
         acc[v["cur"]] = round(acc.get(v["cur"], 0) + time.time() - v["t"], 1)
-    return {"seconds": acc, "order_opened": v["opens"]}
+    return {"seconds": acc, "order_opened": v["opens"],
+            "guide_opens": S.get("guide_opens", {}).get(cid, 0)}
 
 
 def show_case_file(cid: str, docs: list, ph: bool) -> None:
@@ -208,8 +209,14 @@ def show_case_file(cid: str, docs: list, ph: bool) -> None:
         ph_badge(f"content/cases/{cid}.{S.lang}/")
     titles = {d.name: C.doc_title(d) for d in docs}
     with st.container(border=True):
-        st.markdown(f"**{html.escape(C.ui('case_file', S.lang))}** · "
-                    f"{html.escape(C.ui('case_file_note', S.lang).format(n=len(docs)))}")
+        head, btn = st.columns([4, 1.4], vertical_alignment="center")
+        head.markdown(f"**{html.escape(C.ui('case_file', S.lang))}** · "
+                      f"{html.escape(C.ui('case_file_note', S.lang).format(n=len(docs)))}")
+        if btn.button(C.ui("guide_button", S.lang), icon=":material/menu_book:",
+                      key=f"guide_{cid}", width="stretch"):
+            opens = S.setdefault("guide_opens", {})
+            opens[cid] = opens.get(cid, 0) + 1
+            reading_guide()
         picked = st.radio(C.ui("case_file", S.lang), list(titles), index=0, horizontal=True,
                           format_func=titles.get, key=f"doc_{cid}",
                           label_visibility="collapsed")
@@ -222,6 +229,14 @@ def show_case_file(cid: str, docs: list, ph: bool) -> None:
         st.info(C.ui("pdf_viewer_failed", S.lang))
     st.download_button(C.ui("download_pdf", S.lang), data=data, file_name=path.name,
                        mime="application/pdf", key=f"dl_{cid}_{picked}")
+
+
+def reading_guide() -> None:
+    """Short terms-and-criteria window, the same for every case and both groups. Definitions
+    only: it never points to a document or page. Opens are counted in docs_json."""
+    def body() -> None:
+        show_text("reading_guide")
+    st.dialog(C.ui("guide_title", S.lang), width="large")(body)()
 
 
 def rule_card(expanded: bool) -> None:
