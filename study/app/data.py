@@ -279,6 +279,9 @@ EXPORT_TABS = ["responses", "participants", "training", "survey", "timings", "as
 def export_tables(include_contacts: bool = False) -> dict[str, list[list[str]]]:
     """Every data tab as rows (header first), for the in-app download."""
     tabs = EXPORT_TABS + (["contacts"] if include_contacts else [])
+    book = _retry(_book)
+    if hasattr(book, "read_tabs"):  # Postgres: one connection for everything
+        return _retry(lambda: book.read_tabs(tabs), tries=2)
     return {t: _retry(lambda t=t: ws(t).get_all_values()) for t in tabs}
 
 
