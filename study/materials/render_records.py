@@ -61,7 +61,9 @@ def parse(path: Path) -> tuple[dict, str]:
     m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
     if not m:
         raise ValueError(f"{path}: missing front matter")
-    return yaml.safe_load(m.group(1)) or {}, m.group(2)
+    # keys like "Case #:" or "Acc #:" would start a YAML comment: quote them
+    head = re.sub(r'^(\s+)([^"\n:]*#[^"\n:]*):', r'\1"\2":', m.group(1), flags=re.M)
+    return yaml.safe_load(head) or {}, m.group(2)
 
 
 def inline(s: str) -> str:

@@ -1,9 +1,20 @@
 {
   "recommendation": "no",
-  "summary": "Do not recommend fast track. The verified record describes mild low-back pain with normal strength and walking.",
+  "summary": "Do not recommend fast track. The clinic records the agency obtained describe low back pain with a disc extrusion on MRI, but normal leg strength, normal walking and no nerve deficit, with improvement expected. This is not a spinal cord injury; low back pain alone does not meet the study's fast-track criteria. The MRI report was submitted by the claimant.",
   "findings": [
     {
-      "quote": "The examination shows mild tenderness, normal leg strength, and a normal walking pattern.",
+      "quote": "Strength 5/5 throughout bilat LE",
+      "doc": "02_Westside_Family_Clinic_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "no radiculopathy on exam",
+      "doc": "02_Westside_Family_Clinic_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "Expected to improve over the next 4-8 weeks.",
+      "doc": "02_Westside_Family_Clinic_records.pdf",
       "page": 2
     }
   ]

@@ -1,13 +1,20 @@
 {
   "recommendation": "no",
-  "summary": "Do not recommend fast track. The verified record describes a mild leg sprain expected to improve soon.",
+  "summary": "Do not recommend fast track. The hospital records the agency obtained show a right ankle sprain with no fracture, improving as expected, with return to full duty expected in about six weeks. A leg sprain does not meet the study's fast-track criteria.",
   "findings": [
     {
-      "quote": "Maria Lopez has a mild right leg sprain.",
+      "quote": "No acute fracture or dislocation.",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
+      "page": 1
+    },
+    {
+      "quote": "Right lateral ankle sprain, grade II, improving as expected.",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
       "page": 2
     },
     {
-      "quote": "The clinician expects the pain and swelling to improve over the next two to four weeks.",
+      "quote": "full duty expected by about 12/01/2026",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
       "page": 2
     }
   ]

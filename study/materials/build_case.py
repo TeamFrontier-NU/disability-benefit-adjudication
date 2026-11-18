@@ -30,6 +30,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "forms"))
 from render_records import render  # noqa: E402
 from fill_forms import fill_one  # noqa: E402
+from claimant_profile import forms_from_profile  # noqa: E402
 
 CASES = HERE / "cases"
 APP_CASES = HERE.parent / "content" / "cases"
@@ -38,6 +39,8 @@ APP_CASES = HERE.parent / "content" / "cases"
 def build(cid: str, out: Path | None = None) -> Path:
     src = CASES / cid
     case = json.loads((src / "case.json").read_text(encoding="utf-8"))
+    if "forms" not in case:  # short profile -> full field values (forms/claimant_profile.py)
+        case["forms"] = forms_from_profile(case["profile"])
     out = out or APP_CASES / cid  # one English set for every language (team decision 2026-11-18)
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*.pdf"):

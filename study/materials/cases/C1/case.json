@@ -1,0 +1,202 @@
+{
+  "case_id": "C1",
+  "title": "Right ankle sprain (grade II) alleged as disabling leg injury; recovering within weeks",
+  "claimant": {
+    "name": "Maria E. Lopez",
+    "ssn": "000-62-4410",
+    "dob": "02/14/1979"
+  },
+  "claim": {
+    "type": "SSDI (Title II)",
+    "filed": "10/28/2026",
+    "alleged_onset": "10/20/2026",
+    "field_office": "Green Valley IL Field Office",
+    "dds_received": "11/02/2026"
+  },
+  "screen": {
+    "allegations": [
+      "Right leg injury - torn ligaments, can't stand or walk",
+      "Diabetes",
+      "High blood pressure",
+      "Knee pain both knees"
+    ],
+    "cal": "No match",
+    "qdd": "Selected (score above threshold)",
+    "exhibits": [
+      [
+        "1F",
+        "Green Valley Medical Center (ED and Orthopedics)",
+        "10/20/2026 - 11/03/2026",
+        "3",
+        "11/10/2026",
+        "Electronic Records Express (DDS request)"
+      ]
+    ],
+    "pending": [
+      [
+        "Riverside Community Health (PCP, named in SSA-3368)",
+        "11/03/2026",
+        "11/10/2026",
+        "No response"
+      ]
+    ]
+  },
+  "documents": [
+    {
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
+    },
+    {
+      "file": "02_Green_Valley_Medical_Center_records.pdf",
+      "kind": "records",
+      "source": "DDS request (ERE)",
+      "records": [
+        "01_gvmc_ed.rec.md",
+        "02_gvmc_ortho.rec.md"
+      ]
+    },
+    {
+      "file": "03_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
+    },
+    {
+      "file": "04_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "05_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
+    }
+  ],
+  "profile": {
+    "name": "Maria E Lopez",
+    "ssn": "000-62-4410",
+    "dob": "02/14/1979",
+    "birthplace": "El Paso, Texas",
+    "onset": "10/20/2026",
+    "filed": "10/28/2026",
+    "phone": "(555) 017-3391",
+    "address": {
+      "street": "88 Pinecrest Ave, Apt 12",
+      "city": "Green Valley",
+      "state": "IL",
+      "zip": "60977",
+      "county": "Orchard"
+    },
+    "field_office": "Green Valley IL Field Office\n410 Main St\nGreen Valley, IL 60977",
+    "earnings_last_year": "31,200",
+    "earnings_this_year": "25,900",
+    "contact": {
+      "name": "Rosa Lopez",
+      "relation": "Sister",
+      "phone": "(555) 017-3307",
+      "address": "14 Elm St, Green Valley IL 60977"
+    },
+    "height": [
+      "5",
+      "3"
+    ],
+    "weight": "212",
+    "stopped_work": "10/20/2026",
+    "education": {
+      "level": "12",
+      "date": "06/1997",
+      "school": "Bowie High School, El Paso TX"
+    },
+    "jobs": [
+      {
+        "employer": "Comfort Keepers Home Care\n200 Commerce Way\nGreen Valley, IL 60977",
+        "title": "Home health aide",
+        "business": "Home care agency",
+        "from": "05/2018",
+        "to": "10/2026",
+        "hours": "8",
+        "days": "5",
+        "pay": "$15.00",
+        "per": "hour"
+      }
+    ],
+    "job_tasks": "Help elderly clients bathe, dress, toilet, move from bed to chair (lift and transfer), cook, clean, shop, drive them to appointments.",
+    "conditions": [
+      "Right leg injury - torn ligaments, can't stand or walk",
+      "Diabetes",
+      "High blood pressure",
+      "Knee pain both knees"
+    ],
+    "how_limits": "I hurt my leg getting off the bus and the ligaments are torn. I can't stand long or lift my clients. My knees hurt and my feet go numb. I'm afraid I will fall with a client.",
+    "meds": [
+      [
+        "Ibuprofen 600",
+        "ER doctor",
+        "Leg pain"
+      ],
+      [
+        "Metformin",
+        "Dr. Patel",
+        "Diabetes"
+      ],
+      [
+        "Amlodipine",
+        "Dr. Patel",
+        "Blood pressure"
+      ]
+    ],
+    "providers": [
+      {
+        "facility": "Green Valley Medical Center (ER)",
+        "doctor": "",
+        "for": "Leg injury, X-rays",
+        "phone": "(555) 017-2000",
+        "first": "10/2026",
+        "last": "10/2026",
+        "street": "600 Orchard Blvd",
+        "city": "Green Valley",
+        "state": "IL"
+      },
+      {
+        "facility": "Green Valley Orthopedics",
+        "doctor": "Dr. Nakamura",
+        "for": "Torn ligaments right ankle",
+        "first": "11/2026",
+        "last": "11/2026",
+        "city": "Green Valley",
+        "state": "IL"
+      },
+      {
+        "facility": "Riverside Community Health",
+        "doctor": "Dr. Anil Patel",
+        "for": "Diabetes, blood pressure, knees",
+        "phone": "(555) 017-4100",
+        "first": "2015",
+        "last": "08/2026",
+        "next": "12/2026",
+        "city": "Green Valley",
+        "state": "IL"
+      }
+    ],
+    "tests": {
+      "xray": {
+        "part": "Right ankle and leg",
+        "where": "Green Valley Medical Center",
+        "date": "10/2026"
+      },
+      "blood": {
+        "where": "Riverside Community Health",
+        "date": "08/2026"
+      },
+      "mri": {
+        "part": "Right ankle (doctor may order)",
+        "where": "",
+        "date": ""
+      }
+    },
+    "remarks": "Section 3: The ER said the ligaments are torn. I am wearing a brace. I may need surgery if it doesn't heal.\nI was told to apply for disability by my sister because I can't do my job right now."
+  }
+}

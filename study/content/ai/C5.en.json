@@ -1,9 +1,20 @@
 {
   "recommendation": "no",
-  "summary": "Do not recommend fast track because the documented complete loss of function began less than three months before this visit.",
+  "summary": "Do not recommend fast track yet. The hospital records confirm a complete spinal cord injury with no function in either leg, but the loss began on 10/05/2026 and the latest record is dated 11/13/2026, less than the required 3 continuous months.",
   "findings": [
     {
-      "quote": "The complete loss of function began on October 5, 2026 and has continued without interruption through this visit.",
+      "quote": "AIS A, unchanged since 10/08/2026.",
+      "doc": "02_East_County_Medical_Center_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "injury date 10/05/2026",
+      "doc": "02_East_County_Medical_Center_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "Date: 11/13/2026",
+      "doc": "02_East_County_Medical_Center_records.pdf",
       "page": 2
     }
   ]
