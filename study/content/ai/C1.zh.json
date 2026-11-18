@@ -1,13 +1,20 @@
 {
   "recommendation": "no",
-  "summary": "不建议进入快车道。经核实的记录显示为轻度腿部扭伤，预计很快改善。",
+  "summary": "不建议进入快车道。机构调取的医院病历显示为右踝扭伤，无骨折，恢复情况符合预期，预计约六周后可完全复工。按本研究规则，腿部扭伤不符合快车道标准。",
   "findings": [
     {
-      "quote": "Maria Lopez 的右腿为轻度扭伤。",
+      "quote": "No acute fracture or dislocation.",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
+      "page": 1
+    },
+    {
+      "quote": "Right lateral ankle sprain, grade II, improving as expected.",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
       "page": 2
     },
     {
-      "quote": "医生预计疼痛和肿胀会在未来两到四周内改善。",
+      "quote": "full duty expected by about 12/01/2026",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
       "page": 2
     }
   ]

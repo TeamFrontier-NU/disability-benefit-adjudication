@@ -1,0 +1,141 @@
+{
+  "case_id": "Q2",
+  "app_folder": "training",
+  "title": "training",
+  "claimant": {
+    "name": "Taylor M. Rivera",
+    "ssn": "000-11-0003",
+    "dob": "06/12/1966"
+  },
+  "claim": {
+    "type": "SSDI (Title II)",
+    "filed": "10/12/2026",
+    "alleged_onset": "10/02/2026",
+    "field_office": "Oakton IL Field Office",
+    "dds_received": "10/14/2026"
+  },
+  "screen": {
+    "printed": "10/20/2026",
+    "allegations": [
+      "Lung cancer - small cell",
+      "Shortness of breath"
+    ],
+    "cal": "MATCH - allegation 1",
+    "qdd": "Not selected",
+    "exhibits": [
+      [
+        "1F",
+        "Cedar Hospital (pathology)",
+        "10/06/2026 - 10/08/2026",
+        "1",
+        "10/19/2026",
+        "Electronic Records Express (DDS request)"
+      ]
+    ],
+    "pending": []
+  },
+  "documents": [
+    {
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
+    },
+    {
+      "file": "02_Cedar_Hospital_records.pdf",
+      "kind": "records",
+      "source": "DDS request",
+      "records": [
+        "01_cedar_path.rec.md"
+      ]
+    },
+    {
+      "file": "03_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
+    },
+    {
+      "file": "04_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "05_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
+    }
+  ],
+  "profile": {
+    "name": "Taylor M Rivera",
+    "ssn": "000-11-0003",
+    "dob": "06/12/1966",
+    "birthplace": "Oakton, Illinois",
+    "onset": "10/02/2026",
+    "filed": "10/12/2026",
+    "phone": "(555) 010-0000",
+    "address": {
+      "street": "100 Main St",
+      "city": "Millford",
+      "state": "IL",
+      "zip": "60975",
+      "county": ""
+    },
+    "field_office": "Oakton IL Field Office",
+    "earnings_last_year": "38,000",
+    "earnings_this_year": "20,000",
+    "contact": {
+      "name": "(none given)",
+      "relation": "",
+      "phone": ""
+    },
+    "height": [
+      "5",
+      "9"
+    ],
+    "weight": "170",
+    "stopped_work": "10/02/2026",
+    "education": {
+      "level": "12",
+      "date": "06/1990",
+      "school": "High school"
+    },
+    "jobs": [
+      {
+        "employer": "FreshWay Market, Oakton IL",
+        "title": "Cashier",
+        "business": "",
+        "from": "01/2015",
+        "to": "10/2026",
+        "hours": "8",
+        "days": "5",
+        "pay": "",
+        "per": ""
+      }
+    ],
+    "conditions": [
+      "Lung cancer - small cell",
+      "Shortness of breath"
+    ],
+    "how_limits": "See conditions.",
+    "providers": [
+      {
+        "facility": "Cedar Hospital",
+        "doctor": "",
+        "for": "Lung biopsy, lung cancer",
+        "first": "10/2026",
+        "last": "10/2026",
+        "city": "Oakton",
+        "state": "IL"
+      }
+    ],
+    "tests": {
+      "biopsy": {
+        "part": "Lung",
+        "where": "Cedar Hospital",
+        "date": "10/2026"
+      }
+    }
+  }
+}

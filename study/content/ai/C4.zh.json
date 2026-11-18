@@ -1,14 +1,21 @@
 {
   "recommendation": "no",
-  "summary": "不建议进入快车道，因为严重病情只出现在申请人自行提交的报告中，州机构调取的病历并不支持。",
+  "summary": "不建议进入快车道。唯一提到完全性脊髓损伤的是申请人自己提交的一封信。机构从 Riverbend Hospital 调取的病历显示双腿肌力正常、可独立行走，North Point Neurology 也回复未找到该申请人的记录。",
   "findings": [
     {
-      "quote": "Daniel Reed 双腿力量正常。",
-      "page": 2
+      "quote": "Strength 5/5 bilateral hip flexion, knee ext/flex, ankle DF/PF, EHL.",
+      "doc": "03_Riverbend_Hospital_records.pdf",
+      "page": 1
     },
     {
-      "quote": "检查未显示脊髓损伤。",
-      "page": 2
+      "quote": "ambulates independently in department without assistive device",
+      "doc": "03_Riverbend_Hospital_records.pdf",
+      "page": 1
+    },
+    {
+      "quote": "No records found for the dates of service requested.",
+      "doc": "04_North_Point_Neurology_records_response.pdf",
+      "page": 1
     }
   ]
 }

@@ -1,6 +1,6 @@
 # SSDI Fast-Track Rule Card
 
-In this simulation, you are an initial reviewer at a state disability determination agency for Social Security Disability Insurance (SSDI). Use the application and medical records to decide whether to recommend the claim for fast-track review.
+In this simulation, you are an initial reviewer at a state disability determination agency for Social Security Disability Insurance (SSDI). The application forms have already passed the existing automated screen (QDD/CAL), which looks only at the conditions the applicant listed. Your job is to check the **medical records** and decide whether to recommend the claim for fast-track review. The forms are in the file for reference.
 
 - **Fast track (Yes):** The file is complete enough to clearly establish eligibility under this study’s rules. The claim gets priority so it can be reviewed sooner.
 - **Regular review (No):** The file does not clearly establish eligibility or the claim does not meet the fast-track criteria. The claim goes through regular review, and more information may be requested. This does not deny benefits.

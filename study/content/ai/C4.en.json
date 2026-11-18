@@ -1,14 +1,21 @@
 {
   "recommendation": "no",
-  "summary": "Do not recommend fast track because the severe finding appears only in an applicant-submitted report and the agency-requested record does not support it.",
+  "summary": "Do not recommend fast track. The only statement of a complete spinal cord injury is a letter the claimant submitted. The records the agency obtained from Riverbend Hospital show full strength in both legs and independent walking, and North Point Neurology found no records for this claimant.",
   "findings": [
     {
-      "quote": "Daniel Reed has normal strength in both legs.",
-      "page": 2
+      "quote": "Strength 5/5 bilateral hip flexion, knee ext/flex, ankle DF/PF, EHL.",
+      "doc": "03_Riverbend_Hospital_records.pdf",
+      "page": 1
     },
     {
-      "quote": "The examination does not show a spinal cord injury.",
-      "page": 2
+      "quote": "ambulates independently in department without assistive device",
+      "doc": "03_Riverbend_Hospital_records.pdf",
+      "page": 1
+    },
+    {
+      "quote": "No records found for the dates of service requested.",
+      "doc": "04_North_Point_Neurology_records_response.pdf",
+      "page": 1
     }
   ]
 }

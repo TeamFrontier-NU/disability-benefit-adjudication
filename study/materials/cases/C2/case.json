@@ -1,0 +1,223 @@
+{
+  "case_id": "C2",
+  "title": "Acute low back strain with L5-S1 extrusion on claimant-obtained MRI; normal neuro exam, improving",
+  "claimant": {
+    "name": "Thomas W. Green",
+    "ssn": "000-34-8817",
+    "dob": "08/09/1971"
+  },
+  "claim": {
+    "type": "SSDI (Title II)",
+    "filed": "10/22/2026",
+    "alleged_onset": "09/30/2026",
+    "field_office": "Ridgemont IL Field Office",
+    "dds_received": "10/27/2026"
+  },
+  "screen": {
+    "allegations": [
+      "Spinal injury - herniated / slipped disc in lower back",
+      "Sciatica - right leg",
+      "Acid reflux"
+    ],
+    "cal": "MATCH - allegation 1 'Spinal injury' (study fast-track list: spinal cord injury, complete)",
+    "qdd": "Not selected",
+    "exhibits": [
+      [
+        "1F",
+        "Westside Family Clinic",
+        "10/02/2026 - 10/14/2026",
+        "2",
+        "11/05/2026",
+        "Fax (DDS request)"
+      ],
+      [
+        "2F",
+        "ClearView Open MRI & Imaging",
+        "10/09/2026",
+        "1",
+        "10/22/2026",
+        "Submitted by claimant at FO"
+      ]
+    ],
+    "pending": [
+      [
+        "QuickCare Urgent Care",
+        "10/28/2026",
+        "11/09/2026",
+        "No response"
+      ]
+    ]
+  },
+  "documents": [
+    {
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
+    },
+    {
+      "file": "02_Westside_Family_Clinic_records.pdf",
+      "kind": "records",
+      "source": "DDS request (fax)",
+      "records": [
+        "01_westside_visit1.rec.md",
+        "03_westside_visit2.rec.md"
+      ]
+    },
+    {
+      "file": "03_ClearView_MRI_report_claimant.pdf",
+      "kind": "records",
+      "source": "Claimant-submitted",
+      "records": [
+        "02_mri.rec.md"
+      ]
+    },
+    {
+      "file": "04_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
+    },
+    {
+      "file": "05_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "06_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
+    }
+  ],
+  "profile": {
+    "name": "Thomas W Green",
+    "ssn": "000-34-8817",
+    "dob": "08/09/1971",
+    "birthplace": "Peoria, Illinois",
+    "onset": "09/30/2026",
+    "filed": "10/22/2026",
+    "phone": "(555) 015-2264",
+    "address": {
+      "street": "731 Hawthorne Ln",
+      "city": "Ridgemont",
+      "state": "IL",
+      "zip": "60976",
+      "county": "Sangamon"
+    },
+    "field_office": "Ridgemont IL Field Office\n90 State St\nRidgemont, IL 60976",
+    "earnings_last_year": "52,400",
+    "earnings_this_year": "40,100",
+    "spouse": {
+      "name": "Linda K Green (Shaw)",
+      "married": "05/20/1995",
+      "where": "Peoria, IL",
+      "dob": "11/03/1973",
+      "ssn": "000-34-9902"
+    },
+    "contact": {
+      "name": "Linda K Green",
+      "relation": "Wife",
+      "phone": "(555) 015-2265"
+    },
+    "height": [
+      "6",
+      "0"
+    ],
+    "weight": "209",
+    "stopped_work": "10/01/2026",
+    "education": {
+      "level": "college1",
+      "date": "05/1990",
+      "school": "Illinois Central College (HVAC certificate)"
+    },
+    "jobs": [
+      {
+        "employer": "Parkview Apartments Management\n500 Park Ave\nRidgemont, IL 60976",
+        "title": "Maintenance supervisor",
+        "business": "Apartment complex",
+        "from": "03/2012",
+        "to": "10/2026",
+        "hours": "8",
+        "days": "5",
+        "pay": "$24.50",
+        "per": "hour"
+      }
+    ],
+    "job_tasks": "Fix plumbing, HVAC, appliances, drywall. Carry water heaters and appliances with a helper. Supervise 2 maintenance techs, schedule work orders, on call weekends.",
+    "conditions": [
+      "Spinal injury - herniated / slipped disc in lower back",
+      "Sciatica - right leg",
+      "Acid reflux"
+    ],
+    "how_limits": "MRI shows a herniated disc pressing on the nerve. I can't bend, lift or carry anything heavy. I can't sit in the truck long. My job is all lifting, ladders and crawling under sinks.",
+    "meds": [
+      [
+        "Naproxen",
+        "S. Okafor NP",
+        "Back pain"
+      ],
+      [
+        "Cyclobenzaprine (stopped)",
+        "S. Okafor NP",
+        "Back spasm"
+      ],
+      [
+        "Atorvastatin",
+        "S. Okafor NP",
+        "Cholesterol"
+      ],
+      [
+        "Omeprazole",
+        "S. Okafor NP",
+        "Reflux"
+      ]
+    ],
+    "providers": [
+      {
+        "facility": "Westside Family Clinic",
+        "doctor": "Sandra Okafor NP",
+        "for": "Back injury, cholesterol",
+        "phone": "(555) 015-8800",
+        "first": "2016",
+        "last": "10/2026",
+        "next": "11/2026",
+        "street": "2290 W Monroe St",
+        "city": "Ridgemont",
+        "state": "IL"
+      },
+      {
+        "facility": "QuickCare Urgent Care",
+        "doctor": "J. Ruiz PA",
+        "for": "Back pain - ordered MRI",
+        "first": "10/2026",
+        "last": "10/2026",
+        "city": "Ridgemont",
+        "state": "IL"
+      },
+      {
+        "facility": "ClearView Open MRI",
+        "doctor": "",
+        "for": "MRI of back",
+        "first": "10/2026",
+        "last": "10/2026",
+        "street": "15 Commerce Ct",
+        "city": "Ridgemont",
+        "state": "IL"
+      }
+    ],
+    "tests": {
+      "mri": {
+        "part": "Lower back",
+        "where": "ClearView Open MRI",
+        "date": "10/2026"
+      },
+      "xray": {
+        "part": "Back",
+        "where": "QuickCare Urgent Care",
+        "date": "10/2026"
+      }
+    },
+    "remarks": "I brought a copy of my MRI report. The urgent care also did X-rays.\nPhysical therapy starts in November."
+  }
+}

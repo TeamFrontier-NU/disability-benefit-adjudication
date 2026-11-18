@@ -1,0 +1,205 @@
+{
+  "case_id": "C5",
+  "title": "Complete T5 spinal cord injury (AIS A) from 10/05/2026; less than 3 months at the latest record",
+  "claimant": {
+    "name": "Kevin M. Brooks",
+    "ssn": "000-27-6153",
+    "dob": "05/30/1983"
+  },
+  "claim": {
+    "type": "SSDI (Title II)",
+    "filed": "10/29/2026",
+    "alleged_onset": "10/05/2026",
+    "field_office": "Westfield IL Field Office",
+    "dds_received": "11/03/2026"
+  },
+  "screen": {
+    "allegations": [
+      "Paralyzed from chest down - spinal cord injury from motorcycle accident",
+      "Broken right wrist (plate)",
+      "Broken ribs, bruised lungs"
+    ],
+    "cal": "MATCH - allegation 1 'Spinal cord injury' (study fast-track list: spinal cord injury, complete)",
+    "qdd": "Selected (score above threshold)",
+    "exhibits": [
+      [
+        "1F",
+        "East County Medical Center (trauma)",
+        "10/05/2026 - 10/16/2026",
+        "1",
+        "11/09/2026",
+        "Health IT (DDS request)"
+      ],
+      [
+        "2F",
+        "East County Medical Center (rehabilitation unit)",
+        "11/13/2026",
+        "1",
+        "11/16/2026",
+        "Health IT (DDS request, update)"
+      ]
+    ],
+    "pending": []
+  },
+  "documents": [
+    {
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
+    },
+    {
+      "file": "02_East_County_Medical_Center_records.pdf",
+      "kind": "records",
+      "source": "DDS request (Health IT)",
+      "records": [
+        "01_ecmc_discharge.rec.md",
+        "02_ecmc_rehab.rec.md"
+      ]
+    },
+    {
+      "file": "03_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
+    },
+    {
+      "file": "04_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "05_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
+    }
+  ],
+  "profile": {
+    "name": "Kevin M Brooks",
+    "ssn": "000-27-6153",
+    "dob": "05/30/1983",
+    "birthplace": "Gary, Indiana",
+    "onset": "10/05/2026",
+    "filed": "10/29/2026",
+    "signature": "Kevin M Brooks by Angela Brooks (wife)",
+    "phone": "(555) 019-7712",
+    "address": {
+      "street": "1904 Prairie View Rd",
+      "city": "Westfield",
+      "state": "IL",
+      "zip": "60979",
+      "county": "East"
+    },
+    "field_office": "Westfield IL Field Office\n33 Lincoln St\nWestfield, IL 60979",
+    "earnings_last_year": "61,800",
+    "earnings_this_year": "49,300",
+    "spouse": {
+      "name": "Angela R Brooks (Dunn)",
+      "married": "08/14/2010",
+      "where": "Westfield, IL",
+      "dob": "01/22/1985",
+      "ssn": "000-27-7740"
+    },
+    "contact": {
+      "name": "Angela R Brooks",
+      "relation": "Wife",
+      "phone": "(555) 019-7713"
+    },
+    "height": [
+      "5",
+      "11"
+    ],
+    "weight": "190",
+    "stopped_work": "09/25/2026",
+    "education": {
+      "level": "12",
+      "date": "06/2001",
+      "school": "Westfield High School"
+    },
+    "jobs": [
+      {
+        "employer": "Midwest Rail Car Services\n7700 Yard Rd\nWestfield, IL 60979",
+        "title": "Welder / fabricator",
+        "business": "Rail car repair",
+        "from": "06/2009",
+        "to": "09/2026",
+        "hours": "10",
+        "days": "4",
+        "pay": "$29.10",
+        "per": "hour"
+      }
+    ],
+    "job_tasks": "Weld and cut steel on rail cars, climb on and under cars, carry steel plate and tools, read work orders.",
+    "conditions": [
+      "Paralyzed from chest down - spinal cord injury from motorcycle accident",
+      "Broken right wrist (plate)",
+      "Broken ribs, bruised lungs"
+    ],
+    "how_limits": "He cannot move or feel anything from the chest down. He is in the hospital rehab learning to use a wheelchair. He can't do any part of his welding job.",
+    "meds": [
+      [
+        "Enoxaparin (shot)",
+        "East County hospital",
+        "Blood clots"
+      ],
+      [
+        "Oxycodone",
+        "East County hospital",
+        "Pain"
+      ],
+      [
+        "Gabapentin",
+        "East County hospital",
+        "Nerve pain"
+      ]
+    ],
+    "providers": [
+      {
+        "facility": "East County Medical Center",
+        "doctor": "Dr. Szabo, Dr. Iyer",
+        "for": "Motorcycle accident - back and neck surgery, wrist surgery",
+        "phone": "(555) 019-5000",
+        "first": "10/2026",
+        "last": "10/2026",
+        "street": "5100 County Line Rd",
+        "city": "Westfield",
+        "state": "IL"
+      },
+      {
+        "facility": "East County Medical Center Rehab (4 West)",
+        "doctor": "Dr. Abara",
+        "for": "Spinal cord injury rehab",
+        "first": "10/2026",
+        "last": "still there",
+        "next": "",
+        "city": "Westfield",
+        "state": "IL"
+      }
+    ],
+    "tests": {
+      "mri": {
+        "part": "Back, head",
+        "where": "East County Medical Center",
+        "date": "10/2026"
+      },
+      "xray": {
+        "part": "Wrist, chest",
+        "where": "East County Medical Center",
+        "date": "10/2026"
+      },
+      "blood": {
+        "where": "East County Medical Center",
+        "date": "10/2026, 11/2026"
+      }
+    },
+    "remarks": "Filled out by his wife Angela because Kevin is still in the hospital.\n4.C: He was on vacation starting 09/26 (last day of work 09/25/2026); the accident happened on 10/05 on the trip home.\nDoctors say he will most likely never walk again.",
+    "completed_by": {
+      "name": "Angela R Brooks",
+      "relation": "Wife",
+      "phone": "(555) 019-7713"
+    },
+    "employer_pay": "2,320.00",
+    "ssa16_remarks": "Item 22(a): Vacation pay for 09/26-10/09/2026, $2,320.00.\nApplication taken by telephone with claimant's wife; claimant hospitalized."
+  }
+}

@@ -1,0 +1,200 @@
+key,page,type,on_value,label
+BodyPage1.RO_Fld,1,Text,,Form SSA-3373-BK (07-2026) U F Use (02-2024) until Stock Is Exhausted Social Security Administration FUNCTION REPORT - ADULT Page 1 of 10 O M B Number 0960-0681 Function Report - Adult - Form SSA-3373-BK READ ALL OF THIS
+BodyPage2.PARO_FLD,2,Text,,"Page 2 of 10 Privacy Act Statements Collection and Use of Personal Information Sections 205(ay), 223(d), and 1631 of the Social Security Act, as amended, allow us to collect this information, which we will use to determi"
+BodyPage2.PRARO_FLD,2,Text,,"Paperwork Reduction Act Statement - This information collection meets the requirements of 44 U.S.C. § 3507, as amended by section 2 of the Paperwork Reduction Act of 1995. You do not need to answer these questions unless"
+BodyPage3.Name_FLD,3,Text,,"Form SSA-3373-BK (10-2026) U F Discontinue Prior Editions Social Security Administration FUNCTION REPORT - ADULT Page 3 of 10 O M B Number 0960-0681 How your illnesses, injuries, or conditions limit your activities For S"
+BodyPage3.SSN_FLD,3,Text,,2. SOCIAL SECURITY NUMBER
+BodyPage3.AreaCode_FLD,3,Text,,"3. YOUR DAYTIME TELEPHONE NUMBER (If there is no telephone number where you can be reached, please give us a daytime number where we can leave a message for you.) Area Code"
+BodyPage3.Phone_FLD,3,Text,,Phone Number
+BodyPage3.N3_CB1,3,CheckBox,1,Your Number
+BodyPage3.N3_CB2,3,CheckBox,1,Message Number
+BodyPage3.N3_CB3,3,CheckBox,1,None
+BodyPage3.N4A_CB1,3,CheckBox,1,4. ay. Where do you live? (Check one.) House
+BodyPage3.N4A_CB2,3,CheckBox,1,Apartment
+BodyPage3.N4A_CB3,3,CheckBox,1,Boarding House
+BodyPage3.N4A_CB4,3,CheckBox,1,Nursing Home
+BodyPage3.N4A_CB5,3,CheckBox,1,Shelter
+BodyPage3.N4A_CB6,3,CheckBox,1,Group Home
+BodyPage3.N4A_CB7,3,CheckBox,1,Other
+BodyPage3.N4ACB7_FLD,3,Text,,If other is checked (What?)
+BodyPage3.N4B_CB1,3,CheckBox,1,4 b. With whom do you live? (Check one.) Alone
+BodyPage3.N4B_CB2,3,CheckBox,1,With Family
+BodyPage3.N4B_CB3,3,CheckBox,1,With Friends
+BodyPage3.N4B_CB4,3,CheckBox,1,Other
+BodyPage3.N4BCB4_FLD,3,Text,,If other is checked (Describe relationship.)
+BodyPage3.N5text,3,Text,,"SECTION B - INFORMATION ABOUT YOUR ILLNESSES, INJURIES, OR CONDITIONS 5. How do your illnesses, injuries, or conditions limit your ability to work? "
+BodyPage4.N6_FLD,4,Text,,Page 4 of 10 SECTION C - INFORMATION ABOUT DAILY ACTIVITIES 6. Describe what you do from the time you wake up until going to bed.
+BodyPage4.N7_CB1,4,CheckBox,1,"7. Do you take care of anyone else such as a wife/husband, children, grandchildren, parents, friend, other? Yes"
+BodyPage4.N7_CB2,4,CheckBox,1,No
+BodyPage4.N7IfYes_FLD,4,Text,,"If ""YES answered in question 7,"" for whom do you care, and what do you do for them?"
+BodyPage4.N8_CB1,4,CheckBox,1,8. Do you take care of pets or other animals? Yes
+BodyPage4.N8_CB2,4,CheckBox,1,No
+BodyPage4.N8IfYes_FLD,4,Text,,"If ""YES answered in question 8,"" what do you do for them?"
+BodyPage4.N9_CB1,4,CheckBox,1,9. Does anyone help you care for other people or animals? Yes
+BodyPage4.N9_CB2,4,CheckBox,1,No
+BodyPage4.N9IfYes_FLD,4,Text,,"If ""YES answered in question 9,"" who helps, and what do they do to help?"
+BodyPage4.N10_FLD,4,Text,,"10. What were you able to do before your illnesses, injuries, or conditions that you can't do now?"
+BodyPage4.N11_CB1,4,CheckBox,1,"11. Do the illnesses, injuries, or conditions affect your sleep? Yes"
+BodyPage4.N11_CB2,4,CheckBox,1,No
+BodyPage4.N11IfYes_FLD,4,Text,,"If ""YES answered in question 11,"" how?"
+BodyPage4.N12_CB1,4,CheckBox,1,12. PERSONAL CARE (Check here if NO PROBLEM with personal care.)
+BodyPage4.N12Dress_FLD,4,Text,,"12. PERSONAL CARE. Ay. Explain how your illnesses, injuries, or conditions affect your ability to: Dress"
+BodyPage4.N12Bathe_FLD,4,Text,,Bathe
+BodyPage4.N12CareForHair_FLD,4,Text,,Care for hair
+BodyPage4.N12Save_FLD,4,Text,,Shave
+BodyPage4.N12FeedSelf_FLD,4,Text,,Feed self
+BodyPage4.N12UseTheToilet_FLD,4,Text,,Use the toilet
+BodyPage4.N12Other_FLD,4,Text,,Other
+BodyPage5.N12B_CB1,5,CheckBox,1,Page 5 of 10 12 b. Do you need any special reminders to take care of personal needs and grooming? Yes
+BodyPage5.N12B_CB2,5,CheckBox,1,No
+BodyPage5.N12BIfYes_FLD,5,Text,,"If ""YES answered in question 12B,"" what type of help or reminders are needed?"
+BodyPage5.N12C_CB1,5,CheckBox,1,12 c. Do you need help or reminders taking medicine? Yes
+BodyPage5.N12C_CB2,5,CheckBox,1,No
+BodyPage5.N12CIfYes_FLD,5,Text,,"If ""YES answered in question 12c,"" what kind of help do you need?"
+BodyPage5.N13A_CB1,5,CheckBox,1,13. MEALS. A. Do you prepare your own meals? Yes
+BodyPage5.N13A_CB2,5,CheckBox,1,No
+BodyPage5.N13AIfYes_FLD,5,Text,,"If ""YES answered in question 13. Ay.,"" what kind of food do you prepare? (For example, sandwiches, frozen dinners, or complete meals with several courses.)"
+BodyPage5.N13AHowOften_FLD,5,Text,,"How often do you prepare food or meals? (For example, daily, weekly, monthly.)"
+BodyPage5.N13AHowLong_FLD,5,Text,,How long does it take you?
+BodyPage5.N13AAnyChngs_FLD,5,Text,,"Any changes in cooking habits since the illness, injuries, or conditions began?"
+BodyPage5.N13BIfNo_FLD,5,Text,,"13 B. If ""NO answered in question 13 Ay,"" explain why you cannot or do not prepare meals."
+BodyPage5.N14A_FLD,5,Text,,"14. HOUSE AND YARD WORK. Ay. List household chores, both indoors and outdoors, that you are able to do. (For example, cleaning, laundry, household repairs, ironing, mowing, etc.)"
+BodyPage5.N14B_FLD,5,Text,,"14 b. How much time does it take you, and how often do you do each of these things?"
+BodyPage5.N14C_CB1,5,CheckBox,1,14 c. Do you need help or encouragement doing these things? Yes
+BodyPage5.N14C_CB2,5,CheckBox,1,No
+BodyPage5.N14CIfYes_FLD,5,Text,,"If ""YES answered in question 14C,"" what help is needed?"
+BodyPage5.N14d_FLD,5,Text,,"d. If you don't do house or yard work, explain why not. "
+BodyPage6.N15A_FLD,6,Text,,Page 6 of 10 15. GETTING AROUND. Ay. How often do you go outside?
+BodyPage6.N15AIf_FLD,6,Text,,"If you don't go out at all, explain why not."
+BodyPage6.N15B_CB1,6,CheckBox,Walk,"15 b. When going out, how do you travel? (Check all that apply.) Walk"
+BodyPage6.N15B_CB2,6,CheckBox,Drive#20a#20car,Drive a car
+BodyPage6.N15B_CB3,6,CheckBox,Ride#20in#20a#20car,Ride in a car
+BodyPage6.N15B_CB4,6,CheckBox,Ride#20a#20bicycle,Ride a bicycle
+BodyPage6.N15B_CB5,6,CheckBox,Use#20public#20transportation,Use public transportation
+BodyPage6.N15B_CB6,6,CheckBox,Other,Other
+BodyPage6.N15BCB6_FLD,6,Text,,If other is checked (Explain)
+BodyPage6.N15C_CB1,6,CheckBox,1,"15 c. When going out, can you go out alone? Yes"
+BodyPage6.N15C_CB2,6,CheckBox,1,No
+BodyPage6.N15CIfNo_FLD,6,Text,,"If ""NO to question 15C,"" explain why you can't go out alone."
+BodyPage6.N15D_CB1,6,CheckBox,1,15 d. Do you drive? Yes
+BodyPage6.N15D_CB2,6,CheckBox,1,No
+BodyPage6.N15DIfYouDontDrive_FD,6,Text,,"If you don't drive, explain why not."
+BodyPage6.N16A_CB1,6,CheckBox,1,"16. SHOPPING. Ay. If you do any shopping, do you shop: (Check all that apply.) In stores"
+BodyPage6.N16A_CB2,6,CheckBox,1,By phone
+BodyPage6.N16A_CB3,6,CheckBox,1,By mail
+BodyPage6.N16A_CB4,6,CheckBox,1,By computer
+BodyPage6.N16A_CB5,6,CheckBox,1,None
+BodyPage6.N16B_FLD,6,Text,,16b. Describe what you shop for.
+BodyPage6.N16C_FLD,6,Text,,16c. How often do you shop and how long does it take?
+BodyPage6.N17APay_CB1,6,CheckBox,1,17. MONEY. Ay. Are you able to: Pay bills Yes
+BodyPage6.N17APay_CB2,6,CheckBox,1,No
+BodyPage6.N17ACount_CB1,6,CheckBox,1,Count change Yes
+BodyPage6.N17ACount_CB2,6,CheckBox,1,No
+BodyPage6.N17AHandle_CB1,6,CheckBox,1,Handle a savings account Yes
+BodyPage6.N17AHandle_CB2,6,CheckBox,1,No
+BodyPage6.N17ACheckbook_CB1,6,CheckBox,1,Use a checkbook/money orders Yes
+BodyPage6.N17ACheckbook_CB2,6,CheckBox,1,No
+BodyPage6.N17AExplainNo_FLD,6,Text,,"Explain all ""NO"" answers. in 17. A."
+BodyPage6.N17B_CB1,6,CheckBox,1,"17 b. Has your ability to handle money changed since the illnesses, injuries, or conditions began? Yes"
+BodyPage6.N17B_CB2,6,CheckBox,1,No
+BodyPage6.N17BIfYes_FLD,6,Text,,"If ""YES in question 17 B,"" explain how the ability to handle money has changed."
+BodyPage7.N18A_FLD,7,Text,,"Page 7 of 10 18. HOBBIES AND INTERESTS. A. What are your hobbies and interests? (For example, reading, watching TV, sewing, playing sports, etc.)"
+BodyPage7.N18B_FLD,7,Text,,18 b. How often and how well do you do these things?
+BodyPage7.N18C_FLD,7,Text,,"18 c. Describe any changes in these activities since the illnesses, injuries, or conditions began."
+BodyPage7.N19A_CB1,7,CheckBox,Walk,19. Social Activities. ay. How do you spend time with others? (Check all that apply.) In person
+BodyPage7.N19A_CB2,7,CheckBox,Drive#20a#20car,On the phone
+BodyPage7.N19A_CB3,7,CheckBox,Ride#20in#20a#20car,Email
+BodyPage7.N19A_CB4,7,CheckBox,Ride#20a#20bicycle,Texting
+BodyPage7.N19A_CB5,7,CheckBox,Use#20public#20transportation,Mail
+BodyPage7.N19A_CB6,7,CheckBox,Drive#20a#20car,Video Chat (for example Skype or Facetime) 
+BodyPage7.N19A_CB7,7,CheckBox,Other,Other
+BodyPage7.N19ACB7_FLD,7,Text,,If other is checked (Explain)
+BodyPage7.N19B_FLD,7,Text,,b. describe the kinds of things you do with others.
+BodyPage7.N19BHowOften_FLD,7,Text,,How often do you do these things?
+BodyPage7.N19C_FLD,7,Text,,"c. List the places you go on a regular basis. (For example, church, community center, sports events, social groups, etc.)"
+BodyPage7.N19CRemindToGo_CB1,7,CheckBox,1,Do you need to be reminded to go places? Yes
+BodyPage7.N19CRemindToGo_CB2,7,CheckBox,1,No
+BodyPage7.N19CHowOften_FLD,7,Text,,How often do you go and how much do you take part?
+BodyPage7.N19CSomeoneToGo_CB1,7,CheckBox,1,Do you need someone to accompany you? Yes
+BodyPage7.N19CSomeoneToGo_CB2,7,CheckBox,1,No
+BodyPage7.N19CSomeoneToGoIfYes_FLD,7,Text,,"If ""Yes,"" explain"
+BodyPage7.N19D_CB1,7,CheckBox,1,"d. Do you have any problems getting along with family, friends, neighbors, or others? Yes"
+BodyPage7.N19D_CB2,7,CheckBox,1,No
+BodyPage7.N19DIfYes_FLD,7,Text,,"If ""Yes"", explain."
+BodyPage7.N19E_FLD,7,Text,,"e. Describe any changes in social activities since the illnesses, injuries, or conditions began."
+BodyPage8.N20A_CB1,8,CheckBox,1,"Page 8 of 10 SECTION D - INFORMATION ABOUT ABILITIES 20. A. Check any of the following items that your illnesses, injuries, or conditions affect: Lifting"
+BodyPage8.N20A_CB2,8,CheckBox,1,Squatting
+BodyPage8.N20A_CB3,8,CheckBox,1,Bending
+BodyPage8.N20A_CB4,8,CheckBox,1,Standing
+BodyPage8.N20A_CB5,8,CheckBox,1,Reaching
+BodyPage8.N20A_CB6,8,CheckBox,1,Walking
+BodyPage8.N20A_CB7,8,CheckBox,1,Sitting
+BodyPage8.N20A_CB8,8,CheckBox,1,Kneeling
+BodyPage8.N20A_CB9,8,CheckBox,1,Talking
+BodyPage8.N20A_CB10,8,CheckBox,1,Hearing
+BodyPage8.N20A_CB11,8,CheckBox,1,Stair Climbing
+BodyPage8.N20A_CB12,8,CheckBox,1,Seeing
+BodyPage8.N20A_CB13,8,CheckBox,1,Memory
+BodyPage8.N20A_CB14,8,CheckBox,1,Completing Tasks
+BodyPage8.N20A_CB15,8,CheckBox,1,Concentration
+BodyPage8.N20A_CB16,8,CheckBox,1,Understanding
+BodyPage8.N20A_CB17,8,CheckBox,1,Following Instructions
+BodyPage8.N20A_CB18,8,CheckBox,1,Using Hands
+BodyPage8.N20A_CB19,8,CheckBox,1,Getting Along With Others
+BodyPage8.N20AExplain_FLD,8,Text,,"Please explain how your illnesses, injuries, or conditions affect each of the items you checked. (For example, you can only lift [how many pounds], or you can only walk [how far])"
+BodyPage8.N20B_CB1,8,CheckBox,1,20 b. Are you: Right handed?
+BodyPage8.N20B_CB2,8,CheckBox,1,Left Handed?
+BodyPage8.N20C_FLD,8,Text,,20 c. How far can you walk before needing to stop and rest?
+BodyPage8.N20CIfYou_FLD,8,Text,,"If you have to rest, how long before you can resume walking?"
+BodyPage8.N20D_FLD,8,Text,,20 d. For how long can you pay attention?
+BodyPage8.N20E_CB1,8,CheckBox,1,"20 e. Do you finish what you start? (For example, a conversation, chores, reading, watching a movie.) Yes"
+BodyPage8.N20E_CB2,8,CheckBox,1,No
+BodyPage8.N20F_FLD,8,Text,," f. How well do you follow written instructions? (For example, a recipe.)"
+BodyPage8.N20G_FLD,8,Text,,20 g. How well do you follow spoken instructions?
+BodyPage8.N20H_FLD,8,Text,,"h. How well do you get along with authority figures? (For example, police, bosses, landlords or teachers.)"
+BodyPage8.N20I_CB1,8,CheckBox,1,20 i. Have you ever been fired or laid off from a job because of problems getting along with other people? Yes
+BodyPage8.N20I_CB2,8,CheckBox,1,No
+BodyPage8.N20IIfYesExplain_FLD,8,Text,,"If ""Yes"" to question 20 i, please explain."
+BodyPage8.N20IIfYesEmployer_FLD,8,Text,,"If ""Yes"" to question 20 i, please give name of employer"
+BodyPage9.N20J_FLD,9,Text,,Page 9 of 10 20 j. How well do you handle stress?
+BodyPage9.N20KHowWell_FLD,9,Text,,20 k. How well do you handle changes in routine?
+BodyPage9.N20L_CB1,9,CheckBox,1,20 l. Have you noticed any unusual behavior or fears? Yes
+BodyPage9.N20L_CB2,9,CheckBox,1,No
+BodyPage9.N20LIfYes_FLD,9,Text,,"If ""Yes"" to question 20 l, please explain."
+BodyPage9.N21_CB1,9,CheckBox,1,21. Do you use any of the following? (Check all that apply.) Crutches
+BodyPage9.N21_CB2,9,CheckBox,1,Cane
+BodyPage9.N21_CB3,9,CheckBox,1,Hearing Aid
+BodyPage9.N21_CB4,9,CheckBox,1,Walker
+BodyPage9.N21_CB5,9,CheckBox,1,Brace/Splint
+BodyPage9.N21_CB6,9,CheckBox,1,Glasses/Contact Lenses
+BodyPage9.N21_CB7,9,CheckBox,1,Wheelchair
+BodyPage9.N21_CB8,9,CheckBox,1,Artificial Limb
+BodyPage9.N21_CB9,9,CheckBox,1,Artificial Voice Box
+BodyPage9.N21_CB10,9,CheckBox,1,Other
+BodyPage9.N21CB10_FLD,9,Text,,"If Other is checked in question 21, explain."
+BodyPage9.N21_CB11,9,CheckBox,1,None
+BodyPage9.N21WhichByDoctor_FLD,9,Text,,Which of these were prescribed by a doctor?
+BodyPage9.N21WhenPrescribed_FLD,9,Text,,When was it prescribed?
+BodyPage9.N21WhenDoYouUseAids_FLD,9,Text,,When do you need to use these aids?
+BodyPage10.N22_CB1,10,CheckBox,1,"Page 10 of 10 22. Do you currently take any medicines for your illnesses, injuries, or conditions? Yes"
+BodyPage10.N22_CB2,10,CheckBox,1,No
+BodyPage10.N22IfYesSideEffects_CB1,10,CheckBox,1,"If ""YES, ""do any of your medicines cause side effects? Yes"
+BodyPage10.N22IfYesSideEffects_CB2,10,CheckBox,1,No
+BodyPage10.N22Med1_FLD,10,Text,,"If ""YES,"" please explain. (Do not list all of the medicines that you take. List only the medicines that cause side effects.) This is a table of 2 Columns and 5 rows. First column is Name of Medicine and Second column is "
+BodyPage10.N22Effects1_FLD,10,Text,,SIDE EFFECTS YOU HAVE for Medicine 1
+BodyPage10.N22Med2_FLD,10,Text,,Row 2 NAME OF MEDICINE 2
+BodyPage10.N22Effects2_FLD,10,Text,,SIDE EFFECTS YOU HAVE for Medicine 2
+BodyPage10.N22Med3_FLD,10,Text,,Row 3 NAME OF MEDICINE 3
+BodyPage10.N22Effects3_FLD,10,Text,,SIDE EFFECTS YOU HAVE for Medicine 3
+BodyPage10.N22Med4_FLD,10,Text,,Row 4 NAME OF MEDICINE 4
+BodyPage10.N22Effects4_FLD,10,Text,,SIDE EFFECTS YOU HAVE for Medicine 4
+BodyPage10.N22Med5_FLD,10,Text,,Row 5 NAME OF MEDICINE 5
+BodyPage10.N22Effects5_FLD,10,Text,,SIDE EFFECTS YOU HAVE for Medicine 5
+BodyPage10.SectionEUseThisSection_FLD,10,Text,,"SECTION E - REMARKS Use this section for any added information you did not show in earlier parts of this form. When you are done with this section (or if you didn't have anything to add), be sure to complete the fields a"
+BodyPage10.Name_FLD,10,Text,,Name of person completing this form (Please print)
+BodyPage10.Date_FLD,10,Text,, Date (MM/DD/Y Y Y Y)
+BodyPage10.Email_FLD,10,Text,,Email address (optional)
+BodyPage10.Address_FLD,10,Text,,Address (Number and Street)
+BodyPage10.City_FLD,10,Text,,City
+BodyPage10.State_FLD,10,Text,,State
+BodyPage10.ZIP,10,Text,,"ZIP Code. This is the end of the form. If you tab, you will be at the beginning of the form."

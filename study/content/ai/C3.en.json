@@ -1,14 +1,26 @@
 {
   "recommendation": "yes",
-  "summary": "Recommend fast track. The hospital records show complete loss of function in both legs for more than three months. Improved mobility with a wheelchair does not mean leg function returned.",
+  "summary": "Recommend fast track. Records the agency obtained from the trauma hospital and the rehabilitation hospital show a complete (AIS A) T10 spinal cord injury with no movement in either leg from 01/08/2026 through the 06/18/2026 visit, more than 3 continuous months. Better wheelchair mobility since May is not a return of leg function.",
   "findings": [
     {
-      "quote": "A complete spinal cord injury from the January 8 crash caused complete loss of function in both legs.",
-      "page": 2
+      "quote": "AIS A, complete.",
+      "doc": "02_Lakeport_Memorial_Hospital_records.pdf",
+      "page": 1
     },
     {
-      "quote": "Neither leg has regained any function since the January 8 injury.",
-      "page": 2
+      "quote": "ASIA Impairment Scale A, unchanged from admission",
+      "doc": "03_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 3
+    },
+    {
+      "quote": "No motor function in any lower extremity muscle group bilaterally.",
+      "doc": "03_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 5
+    },
+    {
+      "quote": "5+ months post injury (01/08/2026)",
+      "doc": "03_Lakeshore_Rehabilitation_Hospital_records.pdf",
+      "page": 6
     }
   ]
 }

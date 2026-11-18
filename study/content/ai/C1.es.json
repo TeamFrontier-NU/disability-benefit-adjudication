@@ -1,13 +1,20 @@
 {
   "recommendation": "no",
-  "summary": "No recomendar la vía rápida. El registro verificado describe un esguince leve de la pierna que se espera que mejore pronto.",
+  "summary": "No se recomienda la revisión acelerada. Los registros del hospital que obtuvo la agencia muestran un esguince de tobillo derecho sin fractura, que mejora como se esperaba, con regreso al trabajo completo previsto en unas seis semanas. Un esguince de pierna no cumple los criterios de revisión acelerada del estudio.",
   "findings": [
     {
-      "quote": "Maria Lopez tiene un esguince leve en la pierna derecha.",
+      "quote": "No acute fracture or dislocation.",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
+      "page": 1
+    },
+    {
+      "quote": "Right lateral ankle sprain, grade II, improving as expected.",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
       "page": 2
     },
     {
-      "quote": "El médico espera que el dolor y la hinchazón mejoren durante las próximas dos a cuatro semanas.",
+      "quote": "full duty expected by about 12/01/2026",
+      "doc": "02_Green_Valley_Medical_Center_records.pdf",
       "page": 2
     }
   ]

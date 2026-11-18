@@ -1,9 +1,20 @@
 {
   "recommendation": "no",
-  "summary": "No recomendar la vía rápida. El registro verificado describe dolor lumbar leve con fuerza y marcha normales.",
+  "summary": "No se recomienda la revisión acelerada. Los registros de la clínica que obtuvo la agencia describen dolor lumbar con una extrusión discal en la resonancia, pero fuerza normal en las piernas, marcha normal y sin déficit nervioso, con mejoría prevista. No es una lesión de la médula espinal; el dolor lumbar por sí solo no cumple los criterios del estudio. El informe de resonancia lo presentó el solicitante.",
   "findings": [
     {
-      "quote": "El examen muestra sensibilidad leve, fuerza normal en las piernas y una forma de caminar normal.",
+      "quote": "Strength 5/5 throughout bilat LE",
+      "doc": "02_Westside_Family_Clinic_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "no radiculopathy on exam",
+      "doc": "02_Westside_Family_Clinic_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "Expected to improve over the next 4-8 weeks.",
+      "doc": "02_Westside_Family_Clinic_records.pdf",
       "page": 2
     }
   ]
