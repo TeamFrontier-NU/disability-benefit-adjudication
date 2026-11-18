@@ -1,0 +1,171 @@
+{
+  "case_id": "Q1",
+  "app_folder": "training",
+  "title": "training",
+  "claimant": {
+    "name": "Jordan K. Lee",
+    "ssn": "000-11-0002",
+    "dob": "03/03/1972"
+  },
+  "claim": {
+    "type": "SSDI (Title II)",
+    "filed": "09/02/2026",
+    "alleged_onset": "08/21/2026",
+    "field_office": "Bayside IL Field Office",
+    "dds_received": "09/04/2026"
+  },
+  "screen": {
+    "printed": "09/10/2026",
+    "allegations": [
+      "Lung cancer (specialist said small cell)",
+      "Cough, weight loss"
+    ],
+    "cal": "MATCH - allegation 1",
+    "qdd": "Not selected",
+    "exhibits": [
+      [
+        "1F",
+        "Lakeview Clinic",
+        "09/05/2026",
+        "1",
+        "09/09/2026",
+        "Fax (DDS request)"
+      ],
+      [
+        "2F",
+        "Bayside Cancer Specialists (letter)",
+        "09/01/2026",
+        "1",
+        "09/02/2026",
+        "Uploaded by claimant"
+      ]
+    ],
+    "pending": []
+  },
+  "documents": [
+    {
+      "file": "01_Fast-track_screen_and_evidence_list.pdf",
+      "kind": "records",
+      "source": "DDS worksheet",
+      "records": [
+        "00_screen.rec.md"
+      ]
+    },
+    {
+      "file": "02_Lakeview_Clinic_records.pdf",
+      "kind": "records",
+      "source": "DDS request",
+      "records": [
+        "01_lakeview.rec.md"
+      ]
+    },
+    {
+      "file": "03_Specialist_letter_claimant.pdf",
+      "kind": "records",
+      "source": "Claimant",
+      "records": [
+        "02_letter.rec.md"
+      ]
+    },
+    {
+      "file": "04_Application_SSA-3368-BK_Disability_Report.pdf",
+      "kind": "form",
+      "form": "ssa-3368-bk"
+    },
+    {
+      "file": "05_Application_SSA-16.pdf",
+      "kind": "form",
+      "form": "ssa-16"
+    },
+    {
+      "file": "06_Authorization_SSA-827.pdf",
+      "kind": "form",
+      "form": "ssa-827"
+    }
+  ],
+  "profile": {
+    "name": "Jordan K Lee",
+    "ssn": "000-11-0002",
+    "dob": "03/03/1972",
+    "birthplace": "Bayside, Illinois",
+    "onset": "08/21/2026",
+    "filed": "09/02/2026",
+    "phone": "(555) 010-0000",
+    "address": {
+      "street": "100 Main St",
+      "city": "Millford",
+      "state": "IL",
+      "zip": "60975",
+      "county": ""
+    },
+    "field_office": "Bayside IL Field Office",
+    "earnings_last_year": "38,000",
+    "earnings_this_year": "20,000",
+    "contact": {
+      "name": "(none given)",
+      "relation": "",
+      "phone": ""
+    },
+    "height": [
+      "5",
+      "9"
+    ],
+    "weight": "170",
+    "stopped_work": "08/21/2026",
+    "education": {
+      "level": "12",
+      "date": "06/1990",
+      "school": "High school"
+    },
+    "jobs": [
+      {
+        "employer": "Bayside Unified School District, Bayside IL",
+        "title": "School office clerk",
+        "business": "",
+        "from": "01/2015",
+        "to": "08/2026",
+        "hours": "8",
+        "days": "5",
+        "pay": "",
+        "per": ""
+      }
+    ],
+    "conditions": [
+      "Lung cancer (specialist said small cell)",
+      "Cough, weight loss"
+    ],
+    "how_limits": "See conditions.",
+    "providers": [
+      {
+        "facility": "Lakeview Clinic",
+        "doctor": "Dr. Osei",
+        "for": "Lung mass",
+        "first": "09/2026",
+        "last": "09/2026",
+        "city": "Bayside",
+        "state": "IL"
+      },
+      {
+        "facility": "Bayside Cancer Specialists",
+        "doctor": "Dr. Haddad",
+        "for": "Lung cancer",
+        "first": "09/2026",
+        "last": "09/2026",
+        "city": "Bayside",
+        "state": "IL"
+      }
+    ],
+    "tests": {
+      "mri": {
+        "part": "CT chest",
+        "where": "Bayside Imaging",
+        "date": "08/2026"
+      },
+      "biopsy": {
+        "part": "Chest lymph node",
+        "where": "University hospital",
+        "date": "08/2026"
+      }
+    }
+  }
+}

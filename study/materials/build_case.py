@@ -41,7 +41,7 @@ def build(cid: str, out: Path | None = None) -> Path:
     case = json.loads((src / "case.json").read_text(encoding="utf-8"))
     if "forms" not in case:  # short profile -> full field values (forms/claimant_profile.py)
         case["forms"] = forms_from_profile(case["profile"])
-    out = out or APP_CASES / cid  # one English set for every language (team decision 2026-11-18)
+    out = out or HERE.parent / "content" / case.get("app_folder", "cases") / cid  # one English set for every language (team decision 2026-11-18); training cases use app_folder "training"
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*.pdf"):
         old.unlink()
