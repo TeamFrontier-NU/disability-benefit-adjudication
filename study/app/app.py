@@ -216,7 +216,7 @@ def show_case_file(cid: str, docs: list, ph: bool) -> None:
                       key=f"guide_{cid}", width="stretch"):
             opens = S.setdefault("guide_opens", {})
             opens[cid] = opens.get(cid, 0) + 1
-            reading_guide()
+            reading_guide(cid)
         picked = st.radio(C.ui("case_file", S.lang), list(titles), index=0, horizontal=True,
                           format_func=titles.get, key=f"doc_{cid}",
                           label_visibility="collapsed")
@@ -231,12 +231,19 @@ def show_case_file(cid: str, docs: list, ph: bool) -> None:
                        mime="application/pdf", key=f"dl_{cid}_{picked}")
 
 
-def reading_guide() -> None:
-    """Short terms-and-criteria window, the same for every case and both groups. Definitions
-    only: it never points to a document or page. Opens are counted in docs_json."""
-    def body() -> None:
-        show_text("reading_guide")
-    st.dialog(C.ui("guide_title", S.lang), width="large")(body)()
+def terms_table(cid: str) -> None:
+    """The study criteria in one sentence and the terms that occur in this case's own records.
+    Same for both groups. Definitions only: it never points to a document or page."""
+    crit, rows = C.case_terms(cid, S.lang)
+    st.markdown(f"**{C.ui('criteria_label', S.lang)}** {crit}")
+    if rows:
+        head = f"| {C.ui('term_col', S.lang)} | {C.ui('meaning_col', S.lang)} |\n| --- | --- |\n"
+        st.markdown(head + "\n".join(f"| {t} | {m} |" for t, m in rows))
+
+
+def reading_guide(cid: str) -> None:
+    """The terms window during a case. Opens are counted in docs_json."""
+    st.dialog(C.ui("guide_title", S.lang), width="large")(lambda: terms_table(cid))()
 
 
 def rule_card(expanded: bool) -> None:
@@ -425,9 +432,6 @@ def page_rule() -> None:
     with mid:
         with st.container(border=True):
             show_text("rule_card")
-        with st.container(border=True):
-            st.markdown(f"### {C.ui('guide_title', S.lang)}")
-            show_text("reading_guide")
         _continue_to_T1()
 
 
@@ -556,7 +560,7 @@ def page_case() -> None:
                 heading(None, C.ui("guide_title", S.lang))
                 st.info(C.ui("brief_note", S.lang))
                 with st.container(border=True):
-                    show_text("reading_guide")
+                    terms_table(cid)
                 if st.button(C.ui("brief_start", S.lang), type="primary", key=f"brief_{cid}"):
                     log_page(step)
                     S.briefed = cid

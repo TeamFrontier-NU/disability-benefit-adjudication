@@ -36,6 +36,9 @@ incorrect:           {en: "Not correct.", zh: "回答错误。", es: "No es corr
 rule_card_title:     {en: "Rule card", zh: "规则卡", es: "Tarjeta de reglas"}
 guide_button:        {en: "Terms and criteria", zh: "术语与标准", es: "Términos y criterios"}
 brief_note:          {en: "Read this before the case opens. The case timer has not started yet; it starts when you click the button below. You can open this information again at any time with the “Terms and criteria” button above the documents.", zh: "请在打开案例前阅读以下内容。案例计时尚未开始，点击下方按钮后才开始。之后可随时点击文件上方的“术语与标准”按钮再次查看。", es: "Lea esto antes de abrir el caso. El tiempo del caso aún no ha empezado; empieza cuando pulse el botón de abajo. Puede volver a ver esta información en cualquier momento con el botón «Términos y criterios» encima de los documentos."}
+criteria_label:      {en: "Criteria.", zh: "判断标准。", es: "Criterios."}
+term_col:            {en: "Term in this case's records", zh: "本案例病历中的术语", es: "Término en los registros de este caso"}
+meaning_col:         {en: "Meaning", zh: "含义", es: "Significado"}
 brief_start:         {en: "Open the case", zh: "打开案例", es: "Abrir el caso"}
 guide_title:         {en: "Medical terms and criteria", zh: "医学术语与判断标准", es: "Términos médicos y criterios"}
 case_progress:       {en: "Case {i} of {n}", zh: "第 {i} / {n} 个案例", es: "Caso {i} de {n}"}
