@@ -34,6 +34,8 @@ no_going_back:       {en: "You cannot go back after submitting.", zh: "提交后
 correct:             {en: "Correct.", zh: "回答正确。", es: "Correcto."}
 incorrect:           {en: "Not correct.", zh: "回答错误。", es: "No es correcto."}
 rule_card_title:     {en: "Rule card", zh: "规则卡", es: "Tarjeta de reglas"}
+guide_button:        {en: "Terms and criteria", zh: "术语与标准", es: "Términos y criterios"}
+guide_title:         {en: "Medical terms and criteria", zh: "医学术语与判断标准", es: "Términos médicos y criterios"}
 case_progress:       {en: "Case {i} of {n}", zh: "第 {i} / {n} 个案例", es: "Caso {i} de {n}"}
 page_of:             {en: "Page {i} of {n}", zh: "第 {i} / {n} 页", es: "Página {i} de {n}"}
 page_n:              {en: "page {n}", zh: "第 {n} 页", es: "página {n}"}

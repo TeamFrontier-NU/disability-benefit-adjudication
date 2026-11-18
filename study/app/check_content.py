@@ -13,7 +13,7 @@ import content as C
 
 LANGS = ("en", "zh", "es")
 AI_WORDS = r"\bAI\b|人工智能|\bIA\b|[Ii]nteligencia artificial"
-TEXT_KEYS = ["welcome", "why_fast_track", "consent", "lottery", "rule_card", "ai_notice",
+TEXT_KEYS = ["welcome", "why_fast_track", "consent", "lottery", "rule_card", "reading_guide", "ai_notice",
              "wrapup_ai", "wrapup_noai", "thanks"]
 problems = 0
 for lang in LANGS:
@@ -40,7 +40,7 @@ for lang in LANGS:
     for f, term in C.missing_terms(lang):
         problems += 1
         print(f"GLOSSARY {f}: [[{term}]] not in glossary.yaml")
-    noai_visible = ["rule_card", "wrapup_noai", "thanks", "welcome", "why_fast_track", "consent", "lottery"]
+    noai_visible = ["rule_card", "reading_guide", "wrapup_noai", "thanks", "welcome", "why_fast_track", "consent", "lottery"]
     for k in noai_visible:
         if re.search(AI_WORDS, C.text(k, lang)[0]):
             problems += 1
