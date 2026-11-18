@@ -75,7 +75,10 @@ class _Book:
     def __init__(self, url: str):
         self.url = url
         with self.connect() as c:
-            c.execute(DDL)
+            # DDL only the first time: `alter table` takes a table lock, so skip it on a
+            # normal app start (faster, and never blocks writes from other sessions)
+            if c.execute("select to_regclass('public.study_rows')").fetchone()[0] is None:
+                c.execute(DDL)
 
     def connect(self):
         # prepare_threshold=None: works through Supabase's pooler

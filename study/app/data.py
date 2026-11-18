@@ -13,6 +13,7 @@ Tabs (created with headers by `sheet_admin.py setup`):
     participants      welcome-page background answers
     training          qualification-test outcome (attempts, passed)
     survey            wrap-up answers as JSON
+    timings           seconds spent on every other page (welcome, rule card, training, wrap-up)
     test_assignments  team test runs (forced group); never uses an allocation slot
 
 Credentials live only in Streamlit Secrets (or .streamlit/secrets.toml, which is gitignored):
@@ -27,12 +28,19 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 import time
 from datetime import datetime, timezone
 
 RESPONSE_COLUMNS = [
     "participant_id", "lang", "arm", "case_id", "case_order", "answer", "confidence",
     "seconds", "started_at", "submitted_at", "training_attempts", "heard_about_study",
+    # added Nov 18 (teacher feedback: time per question). New columns go at the END so rows
+    # written before keep their meaning; the header is extended automatically (ensure_header).
+    "seconds_to_answer",      # case shown -> first Yes/No click
+    "seconds_to_confidence",  # case shown -> first confidence click
+    "answer_changes",         # how often the Yes/No answer was changed before submitting
+    "docs_json",              # {document: seconds open} for cases shown as separate PDFs
 ]
 
 TABS: dict[str, list[str]] = {
@@ -46,6 +54,8 @@ TABS: dict[str, list[str]] = {
     "survey": ["participant_id", "arm", "lang", "answers_json", "written_at"],
     "test_assignments": ["participant_id", "arm", "case_order", "lang", "training_attempts",
                          "assigned_at"],
+    "timings": ["participant_id", "step", "seconds", "started_at", "ended_at", "extra_json",
+                "written_at"],
 }
 
 
@@ -110,10 +120,42 @@ def _book():
     return _BOOK
 
 
+_WS_LOCK = threading.Lock()
+
+
+def _open_tab(name: str):
+    book = _book()
+    try:
+        return book.worksheet(name)
+    except Exception:  # tab added after setup (e.g. `timings`): create it
+        cols = TABS.get(name, [])
+        return book.add_worksheet(title=name, rows=1000, cols=len(cols) + 2)
+
+
 def ws(name: str):
     if name not in _WS:
-        _WS[name] = _retry(lambda: _book().worksheet(name))
+        with _WS_LOCK:  # Streamlit serves sessions in threads: open/fix each tab once
+            if name not in _WS:
+                w = _retry(lambda: _open_tab(name))
+                if name in TABS:
+                    _retry(lambda: ensure_header(w, TABS[name]))
+                _WS[name] = w
     return _WS[name]
+
+
+def ensure_header(w, cols: list[str]) -> None:
+    """Write the header of a new tab, or add columns that were appended to TABS later.
+    Runs once per tab per server process. Never reorders or removes columns."""
+    vals = w.get_all_values()
+    head = vals[0] if vals else []
+    if not head:
+        if vals:  # a first row exists but is empty: leave it to a human
+            return
+        w.append_row(cols)
+        return
+    if len(head) < len(cols) and head == cols[:len(head)]:
+        for i in range(len(head), len(cols)):
+            w.update_cell(1, i + 1, cols[i])
 
 
 def _retry(fn, tries: int = 5):
@@ -155,6 +197,15 @@ def _rows(tab: str) -> list[dict]:
 def write_response(row: dict) -> None:
     """One row per submitted case, written immediately. Keys = HANDOFF 3.5 columns only."""
     _append("responses", {k: row.get(k) for k in RESPONSE_COLUMNS})
+
+
+def write_timing(participant_id: str, step: str, seconds: float, started_at: str,
+                 ended_at: str, extra: dict | None = None) -> None:
+    """Seconds spent on one non-case page (welcome, rule, T1, Q1, Q2, wrapup)."""
+    _append("timings", {"participant_id": participant_id, "step": step, "seconds": seconds,
+                        "started_at": started_at, "ended_at": ended_at,
+                        "extra_json": json.dumps(extra or {}, ensure_ascii=False),
+                        "written_at": now()})
 
 
 def write_contact(participant_id: str, name: str, email: str) -> None:
@@ -217,6 +268,18 @@ def set_assignment_arm(slot: int, arm: str) -> None:
         _retry(lambda: ws("assignments").update_cell(slot + 1, 2, arm), tries=3)
     except SaveError:
         pass  # the allocation table is authoritative; this copy is only for reading ease
+
+
+# ---------------- export (team only) ----------------
+
+EXPORT_TABS = ["responses", "participants", "training", "survey", "timings", "assignments",
+               "test_assignments"]  # `contacts` (names, emails) only when asked for
+
+
+def export_tables(include_contacts: bool = False) -> dict[str, list[list[str]]]:
+    """Every data tab as rows (header first), for the in-app download."""
+    tabs = EXPORT_TABS + (["contacts"] if include_contacts else [])
+    return {t: _retry(lambda t=t: ws(t).get_all_values()) for t in tabs}
 
 
 # ---------------- reads used to resume after a page refresh ----------------

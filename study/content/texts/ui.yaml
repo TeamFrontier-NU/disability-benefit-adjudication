@@ -10,6 +10,9 @@ check_case:          {en: "Check question", zh: "测试案例", es: "Pregunta de
 original_doc:        {en: "View the original document (scanned PDF)", zh: "查看原始文件（扫描版 PDF）", es: "Ver el documento original (PDF escaneado)"}
 original_doc_note:   {en: "Same content as the pages above, in its original layout.", zh: "内容与上方页面相同，为原始版式。", es: "El mismo contenido que las páginas de arriba, en su formato original."}
 download_pdf:        {en: "Download PDF", zh: "下载 PDF", es: "Descargar PDF"}
+case_file:           {en: "Case file", zh: "案卷", es: "Expediente"}
+case_file_note:      {en: "{n} documents. Click a document's name to open it.", zh: "共 {n} 份文件。点击文件名打开。", es: "{n} documentos. Haga clic en el nombre de un documento para abrirlo."}
+pdf_viewer_failed:   {en: "This document cannot be shown here. Use the download button below to open it.", zh: "此文件无法在此显示。请用下方的下载按钮打开。", es: "Este documento no se puede mostrar aquí. Use el botón de descarga de abajo para abrirlo."}
 name:                {en: "Name",  zh: "姓名", es: "Nombre"}
 email:               {en: "Email (only used for the gift-card lottery)", zh: "邮箱（仅用于礼品卡抽奖）", es: "Correo electrónico (solo para el sorteo de tarjetas de regalo)"}
 experience:          {en: "Have you worked in healthcare or social security / disability benefits?", zh: "你是否有医疗或社保 / 残障福利方面的工作经验？", es: "¿Ha trabajado en salud o en seguridad social / beneficios por discapacidad?"}

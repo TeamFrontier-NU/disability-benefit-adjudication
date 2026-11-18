@@ -34,7 +34,7 @@ import data as D  # noqa: E402
 
 N_ROWS = 200
 DATA_TABS = ["responses", "contacts", "assignments", "participants", "training", "survey",
-             "test_assignments"]
+             "test_assignments", "timings"]
 
 
 def _load_secrets() -> None:
@@ -69,10 +69,9 @@ def setup() -> None:
                                cols=len(cols) + 2)
             print(f"created tab {tab}")
         w = book.worksheet(tab)
+        D.ensure_header(w, cols)  # new tab: header; older tab: add columns added since
         head = (w.get_all_values() or [[]])[0]
-        if not head:
-            w.update([cols], "A1")
-        elif head[:len(cols)] != cols:
+        if head[:len(cols)] != cols:
             sys.exit(f"tab {tab} has unexpected headers {head}; fix by hand before continuing")
     alloc = book.worksheet("allocation")
     if len(alloc.get_all_values()) > 1:

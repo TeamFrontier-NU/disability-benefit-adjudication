@@ -1,0 +1,37 @@
+# Keeps the participant study app awake so nobody waits 1-3 minutes for a cold start.
+# A free Streamlit Community Cloud app sleeps after ~12 hours without visitors; this opens it
+# in a real browser every 3 hours (and wakes it if it slept). A red X in the Actions tab means
+# the app did not load or was slow: open it yourself and check Manage app -> logs.
+# Run it by hand: Actions -> "Keep study app awake" -> Run workflow.
+name: Keep study app awake
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours (UTC), at :17 to avoid the busy top of the hour
+  workflow_dispatch:
+    inputs:
+      runs:
+        description: "How many times to open the app (load test)"
+        default: "1"
+
+permissions:
+  contents: read
+
+jobs:
+  open-app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Change here if the app moves (see study/app/README.md "Fast, reliable loading").
+      STUDY_APP_URL: https://frontier-estimation.streamlit.app/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install a browser
+        run: |
+          pip install "playwright==1.55.0"
+          python -m playwright install --with-deps chromium
+      - name: Open the app
+        run: python study/app/keep_awake.py "$STUDY_APP_URL" --runs "${{ github.event.inputs.runs || '1' }}"
