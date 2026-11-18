@@ -213,13 +213,25 @@ def build(meta: dict, body: str, out: Path) -> None:
             ncol = max(len(r) for r in rows)
             data = [[Paragraph(inline(c), CB if (header and r == 0) else C) for c in row + [""] * (ncol - len(row))]
                     for r, row in enumerate(rows)]
-            t = Table(data, repeatRows=1 if header else 0, hAlign="LEFT")
+            # column widths follow the longest text in each column (like a printout); when the
+            # table is too wide, only the long-text columns shrink, never below their longest word
+            avail = 7.3 * inch
+            cw = lambda n: n * (size - 0.5) * 0.6 + 12
+            cols = [[r[c] if c < len(r) else "" for r in rows] for c in range(ncol)]
+            nat = [max(cw(max(len(x) for x in col)), 0.45 * inch) for col in cols]
+            low = [min(cw(max((len(w) for x in col for w in x.split()), default=0)), n)
+                   for col, n in zip(cols, nat)]
+            if sum(nat) > avail:
+                k = max(0.0, (avail - sum(low)) / max(sum(nat) - sum(low), 1))
+                nat = [lo + (n - lo) * k for lo, n in zip(low, nat)]
+            t = Table(data, colWidths=nat, repeatRows=1 if header else 0, hAlign="LEFT")
             ts = [("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 3),
                   ("TOPPADDING", (0, 0), (-1, -1), 1.2), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.2)]
             if header:
                 ts += [("LINEBELOW", (0, 0), (-1, 0), 0.6, colors.black)]
             if style in ("ehr",):
                 ts += [("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#999999"))]
+            t.setStyle(TableStyle(ts))
             story.append(t)
             story.append(Spacer(1, 5))
         elif s.startswith("- "):
