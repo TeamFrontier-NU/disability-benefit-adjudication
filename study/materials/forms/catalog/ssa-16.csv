@@ -1,0 +1,153 @@
+key,page,type,on_value,label
+Page1.TextField1,1,Text,,Form S S A-16 (11-2022) U F. Discontinue prior editions. Social Security Administration. Application For Disability Insurance Benefits. Page 1 of 7. O M B number 0960-0618. I apply for a period of disability and/or all i
+Page1.N1FLD,1,Text,,"1. Print your name First name, middle initial, last name"
+Page1.N2FLD,1,Text,,2. Enter your Social Security Number
+Page1.N4SpeakFLD,1,Text,,"Answer question 3 if English is not your preferred language. Otherwise, go to item 4. 3. Enter the language you prefer to: speak"
+Page1.N4WriteFLD,1,Text,,write
+Page1.N5AFLD,1,Text,,4. (ay) Enter your date of birth
+Page1.N5BFLD,1,Text,,(b) Enter name of city and state or foreign country where you were born.
+Page1.N6ACB,1,CheckBox,Yes,"5. (ay) Are you a U.S. citizen? Yes (If ""Yes,"" go to item 6)"
+Page1.N6ACB#1,1,CheckBox,No,"No (If ""No,"" answer (b))"
+Page1.N6BCB,1,CheckBox,Yes,"(b) Are you an alien lawfully present in the U S? Yes (If ""Yes,"" answer (c))"
+Page1.N6BCB#1,1,CheckBox,No,"No (If ""No,"" go to item 6)"
+Page1.N6CFLD,1,Text,,(c) When were you lawfully admitted to the U S?
+Page1.N7AFLD,1,Text,,6. (ay) Enter your name at birth if different from item (1)
+Page1.N7BCB,1,CheckBox,Yes,"(b) Have you used any other names? Yes (If ""Yes,"" answer (c)"
+Page1.N7BCB#1,1,CheckBox,No,"No (If ""No,"" go to item 7)"
+Page1.N7CFLD,1,Text,,(c) Other name(s) used.
+Page1.N8ACB,1,CheckBox,Yes,7 (ay) Have you used any other Social Security number(s)? Yes (If yes answer B)
+Page1.N8ACB#1,1,CheckBox,No,No. If no go to item 8
+Page1.N8BFLD,1,Text,,(b) Enter Social Security number(s) used.
+Page1.N9FLD,1,Text,,9. When do you believe your condition(s) became severe enough to keep you from working (even if you have never worked)?
+Page1.N12CB,1,CheckBox,Yes,9. Did you or your spouse (or prior spouse) work in the railroad industry for 5 years or more? Yes
+Page1.N12CB#1,1,CheckBox,No,No 
+Page1.N13ACB,1,CheckBox,Yes,"10. (ay) Do you have Social Security credits (for example, based on work or residence) under another country's Social Security System? Yes (If ""Yes,"" answer (b))"
+Page1.N13ACB#1,1,CheckBox,No,"No (If ""No,"" go to item 11)"
+Page1.N13BFLD,1,Text,,(b) List the country(ies):
+Page1.N14ACB,1,CheckBox,Yes,"11. (ay) Are you entitled to, or do you expect to be entitled to, a pension or annuity (or a lump sum in place of a pension or annuity) based on your work after 1956 not covered by Social Security? Yes (If ""Yes,"" answer "
+Page1.N14ACB#1,1,CheckBox,No,"No (If ""No,"" go to item 12)"
+Page1.N14BCB,1,CheckBox,Entitled,"(b) I became entitled, or expect to become entitled"
+Page1.N14BFLD1,1,Text,,beginning month
+Page1.N14BFLD2,1,Text,,year
+Page1.N14CCB,1,CheckBox,Eligible,"(c) I became eligible, or expect to become eligible"
+Page1.N14CFLD1,1,Text,,beginning month
+Page1.N14CFLD2,1,Text,,year
+Page2.N15ACB,2,CheckBox,Yes,"I AGREE TO PROMPTLY NOTIFY the Social Security Administration if I become entitled to a pension or annuity based on my employment not covered by Social Security, or if such pension or annuity stops. Page 2 of 7 12. (ay) "
+Page2.N15ACB#1,2,CheckBox,No,"No (If ""No,"" go to item 13)"
+Page2.N15BFLD1,2,Text,,"(b) Give the following information about your current marriage. If not currently married, write ""None."" Blank line (If ""None,"" go on to item 12(c)). Enter None if needed"
+Page2.N15BFLD2,2,Text,,Spouse's name (including maiden name)
+Page2.N15BFLD3,2,Text,,"When (Month, day, year)"
+Page2.N15BFLD4,2,Text,,Where (Name of City and State)
+Page2.N15BCB,2,CheckBox,Clergymen,Marriage performed by: Clergyman or public official check box
+Page2.N15BCB#1,2,CheckBox,Other,Other check box (Explain in Remarks) 
+Page2.N15BFLD5,2,Text,,Spouse's date of birth (or age)
+Page2.N15BFLD6,2,Text,,"Spouse's Social Security Number (If none or unknown, so indicate)"
+Page2.N15CFLD2,2,Text,,Spouse's name (including maiden name)
+Page2.N15CFLD3,2,Text,,"When (Month, day, year)"
+Page2.N15CFLD4,2,Text,,Where (Name of City and State)
+Page2.N15CFLD5,2,Text,,How marriage ended
+Page2.N15CFLD6,2,Text,,"When (Month, day, year)"
+Page2.N15CFLD7,2,Text,,Where (Name of City and State)
+Page2.N15CCB,2,CheckBox,Clergy,Marriage performed by: Clergyman or public official 
+Page2.N15CCB#1,2,CheckBox,Other,Other if other (Explain in Remarks) 
+Page2.N15CFLD8,2,Text,,Spouse's date of birth (or age)
+Page2.N15CFLD9,2,Text,,Date of spouse's death
+Page2.N15CFLD10,2,Text,,"Spouse's Social Security Number (If none or unknown, so indicate)"
+Page2.N15DFLD1,2,Text,, (d) Enter information about any marriage if you: Bullet Have a child(ren) who is under age 16 or disabled or handicapped (age 16 or over and disability began before age 22); and Bullet Were married for less than 10 year
+Page2.N15DFLD2,2,Text,,Spouse's name (including maiden name)
+Page2.N15DFLD3,2,Text,,"When (Month, day, year)"
+Page2.N15DFLD4,2,Text,,Where (Name of City and State)
+Page2.N15DFLD5,2,Text,,"Date of divorce (Month, day, year)"
+Page2.N15DFLD6,2,Text,,Where (Name of City and State)
+Page2.N15DCB,2,CheckBox,clergy,Marriage performed by: Clergyman or public official 
+Page2.N15DCB#1,2,CheckBox,Other,Other (Explain in Remarks)
+Page2.N15DFLD7,2,Text,,Spouse's date of birth (or age)
+Page2.N15DFLD8,2,Text,,Date of spouse's death
+Page2.N15DFLD9,2,Text,,"Spouse's Social Security Number (If none or unknown, so indicate)"
+Page2.N16FLD,2,Text,,"Use the ""REMARKS"" space on page 5 for marriage continuation or explanation. 13. If your claim for disability benefits is approved, your children (including adopted children, and stepchildren) or dependent grandchildren ("
+Page2.N15CFLD1,2,Text,,"(c) Enter information about any other marriage if you: Bullet Had a marriage that lasted at least 10 years; or Bullet Had a marriage that ended due to the death of your spouse, regardless of duration; or • Were divorced,"
+Page3.N17ACB,3,CheckBox,Yes,"Page 3 of 7. 14. (ay) Did you have wages or self-employment income covered under Social Security in all years from 1978 through last year? Yes (If ""Yes,"" go to item 15)"
+Page3.N17ACB#1,3,CheckBox,No,"No (If ""No,"" answer (b))"
+Page3.N17BFLD,3,Text,,(b) List the years from 1978 through last year in which you did not have wages or self-employment income covered under Social Security.
+Page3.N18TableR1C1,3,Text,,"15. Enter below the names and addresses of all the persons, companies, or Government agencies for whom you have worked this year and last year. IF NONE, WRITE ""NONE"" BELOW AND GO TO ITEM 16. (If you need more space, use "
+Page3.N18TableR1C2,3,Text,,Work Began Month
+Page3.N18TableR1C3,3,Text,,Year
+Page3.N18TableR1C4,3,Text,,"Work Ended (If still working show"" Not Ended"") Month"
+Page3.N18TableR1C5,3,Text,,Year
+Page3.N18TableR2C1,3,Text,,Row 2 name and Address of Employer
+Page3.N18TableR2C2,3,Text,,Work Began Month
+Page3.N18TableR2C3,3,Text,,Year
+Page3.N18TableR2C4,3,Text,,"Work Ended (If still working show"" Not Ended"") Month"
+Page3.N18TableR2C5,3,Text,,Year
+Page3.N18TableR3C1,3,Text,,Row 3 Name and address of Employer
+Page3.N18TableR3C2,3,Text,,Work Began Month
+Page3.N18TableR3C3,3,Text,,Year
+Page3.N18TableR3C4,3,Text,,"Work Ended (If still working show"" Not Ended"") Month"
+Page3.N18TableR3C5,3,Text,,Year
+Page3.N20ACB,3,CheckBox,Yes,"16. (Complete item 16 even if you were an employee. (ay) Were you self-employed this year or last year? Yes (If ""Yes,"" answer (b))"
+Page3.N20ACB#1,3,CheckBox,No,"No (If ""No,"" go to item 17)"
+Page3.N20BCB1,3,CheckBox,This#20Year,(b) Check the year (or years) you were self-employed. this year
+Page3.N20BFLD1,3,Text,,"In what type of trade/business were you self-employed? this year (For example, storekeeper, farmer, physician)"
+Page3.N20BCB2,3,CheckBox,Last#20Year,Were you self employed. Last year 
+Page3.N20BFLD2,3,Text,,In What type of trade/business were you self employed? last year
+Page3.N20BLastYearCB,3,CheckBox,Yes,Were your net earnings from the trade or business 400 dollars or more last year? Yes
+Page3.N20BLastYearCB#1,3,CheckBox,No, No
+Page3.N21AFLD1,3,Text,,"17. (ay) How much were your total earnings last year? Count both wage and self-employment income. (If none, write ""None."")"
+Page3.N21AFLD2,3,Text,,Amount $
+Page3.N21BFLD1,3,Text,,"(b) How much have you earned so far this year? (If none, write ""None."")"
+Page3.N21BFLD2,3,Text,,Amount $
+Page3.N22ACB,3,CheckBox,Yes,"18. (ay) Are you still unable to work because of your illnesses, injuries, or conditions? yes (If ""Yes,"" go to item 19)"
+Page3.N22ACB#1,3,CheckBox,No,"No (If ""No,"" answer (b))"
+Page3.N22BFLD,3,Text,,"(b) Enter the date you became able to work. Month, Day, Year"
+Page3.QTwentytwo,3,CheckBox,No,No
+Page3.QTwentytwo#1,3,CheckBox,Yes,"19. Are your illnesses, injuries, or conditions related to your work in any way? Yes"
+Page3.Qtwentythree,3,CheckBox,No,No
+Page3.Qtwentythree#1,3,CheckBox,Yes,20. Are you blind or do you have low vision even with glasses or contacts? Yes
+Page4.N24ACB,4,CheckBox,Yes,"Page 4 of 7. 21. (ay) Have you filed, or do you intend to file, for any other public disability benefits (including workers' compensation, Black Lung benefits and SSI)? Yes (If ""Yes,"" answer (b))"
+Page4.N24ACB#1,4,CheckBox,No,"No (If ""No,"" go to item 22)"
+Page4.N24BCB1,4,CheckBox,Veterans,(b) The other public disability benefit(s) you have filed (or intend to file) for is (Check as many as apply): Veterans Administration Benefits 
+Page4.N24BCB2,4,CheckBox,Suppemental,Supplemental Security Income
+Page4.N24BCB3,4,CheckBox,Welfare,Welfare
+Page4.N24BCB4,4,CheckBox,Other,"Other if other (If ""Other,"" complete a Workers' Compensation/Public Disability Benefit Questionnaire)"
+Page4.N25ACB,4,CheckBox,Yes,"22. (ay) Did you receive any money from an employer(s) on or after the date in item 8 when you became unable to work because of your illnesses, injuries, or conditions? If ""Yes"", give the amounts and explain in ""Remarks"""
+Page4.N25ACB#1,4,CheckBox,No, No
+Page4.N25AFLD,4,Text,,Amount $
+Page4.N25BCB,4,CheckBox,Yes,"(b) Do you expect to receive any additional money from an employer, such as sick pay, vacation pay, other special pay? If ""Yes,"" please give amounts and explain in ""Remarks"". yes "
+Page4.N25BCB#1,4,CheckBox,No, No
+Page4.N25BFLD,4,Text,,Amount $
+Page4.N26CB,4,CheckBox,Yes,"23. Do you, or did you, have a child under age 3 (your own or your spouse's) living with you in one or more calendar years when you had no earnings? Yes "
+Page4.N26CB#1,4,CheckBox,No,No
+Page4.N27CB,4,CheckBox,Yes,"24. Do you have a dependent parent who was receiving at least one-half support from you when you became unable to work because of your disability? If ""Yes,"" enter the parent's name and address and Social Security number,"
+Page4.N27CB#1,4,CheckBox,No,No
+Page4.N28CB,4,CheckBox,Yes,"25. If you were unable to work before age 22 because of an illness, injury or condition, do you have a parent (including adoptive or stepparent) or grandparent who is receiving social security retirement or disability be"
+Page4.N28CB#1,4,CheckBox,No,No
+Page4.N28CB#2,4,CheckBox,Unknown,Unknown
+Page5.RemarksFLD,5,Text,,"Page 5 of 7 REMARKS (You may use this space for any explanation. If you need more space, attach a separate sheet.)"
+Page5.SignatureFLD,5,Text,,"I declare under penalty of perjury that I have examined all the information on this form, and on any accompanying statements or forms, and it is true and correct to the best of my knowledge. I understand that anyone who "
+Page5.DateFLD,5,Text,,"Date (Month, Day, Year)"
+Page5.TelephoneFLD,5,Text,,Telephone Number(s) at which you may be contacted during the day. (Include the area code)
+Page5.RoutingFLD,5,Text,,DIRECT DEPOSIT PAYMENT INFORMATION (FINANCIAL INSTITUTION) Routing Transit Number
+Page5.AccountNumberFLD,5,Text,,Account Number
+Page5.BankAccountCB,5,CheckBox,checking,Checking
+Page5.BankAccountCB#1,5,CheckBox,savings,Savings
+Page5.DirectDepositCB,5,CheckBox,Direct#20Express,Enroll in Direct Express
+Page5.DirectDepositCB#1,5,CheckBox,Deposit,Direct Deposit Refused
+Page5.ApplicantsAddressFLD,5,Text,,"Applicant's Mailing Address (Number and street, Apartment Number, P.O. Box, or Rural Route) (Enter Residence Address in ""Remarks,"" if different.)"
+Page5.CityFLD,5,Text,,City and State
+Page5.ZIPFLD,5,Text,,ZIP Code
+Page5.CountyFLD,5,Text,,County (if any) in which you now live
+Page5.Witness1SignFLD,5,Text,,"Witnesses are required ONLY if this application has been signed by mark (X) above. If signed by mark (X), two witnesses to the signing who know the applicant must sign below, giving their full addresses. Also, print the "
+Page5.Witness1AddressFLD,5,Text,,"Address (Number and street, City, State, and ZIP Code)"
+Page5.Witness2SignFLD,5,Text,,2. Signature of Witness. Ay wet signature is required. Complete the form print and sign
+Page5.Witness2AddressFLD,5,Text,,"Address (Number and street, City, State and ZIP Code)"
+Page6.PrivacyActPRA,6,Text,,"Page 6 of 7. FOR YOUR INFORMATION, An agency in your State that works with us in administering the Social Security disability program is responsible for making the disability decision on your claim. In some cases, it is "
+Page6.TextField1,6,Text,,"Paperwork Reduction Act Statement. This information collection meets the requirements of 44 U.S.C. § 3507, as amended by section 2 of the Paperwork Reduction Act of 1995 . You do not need to answer these questions unless"
+Page7.ContactFLD,7,Text,,Page 7 of 7 RECEIPT FOR YOUR CLAIM FOR SOCIAL SECURITY DISABILITY INSURANCE BENEFITS Person to Contact About Your Claim
+Page7.ContactPhoneFLD,7,Text,,Telephone Number (Include Area Code)
+Page7.SSAOfficeFLD,7,Text,,SSA Office
+Page7.DateRecdFLD,7,Text,,Date Claim Received
+Page7.WithinDaysFLD,7,Text,,Your application for Social Security disability benefits has been received and will be processed as quickly as possible. You should hear from us within blank line days after you have given us all the information we reque
+Page7.ClaimantFLD,7,Text,,"In the meantime, if you change your address, or if there is some other change that may affect your claim, you - or someone for you - should report the change. The changes to be reported are listed below. Always give us y"
+Page7.SSClaimNumberFLD,7,Text,,Social Security Claim Number
+Page7.TextField1,7,Text,,CHANGES TO BE REPORTED AND HOW TO REPORT FAILURE TO REPORT MAY RESULT IN OVERPAYMENTS THAT MUST BE REPAID. • You change your mailing address for checks or residence. To avoid delay in receipt of checks you should ALSO fi
+Page7.ReadOnlyEOF,7,Text,,"You have reached the end of the form. If you tab again, you will be at the beginning of the form."

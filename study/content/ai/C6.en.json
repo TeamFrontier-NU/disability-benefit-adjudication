@@ -1,10 +1,21 @@
 {
   "recommendation": "yes",
-  "summary": "Recommend fast track. The oncology record obtained directly from the center confirms small cell lung cancer, which does not require a three-month wait under the study rules.",
+  "summary": "Recommend fast track. The pathology report the agency obtained from Mercy Valley Hospital confirms metastatic small cell carcinoma consistent with a small cell lung primary, and the oncology record confirms extensive-stage small cell lung cancer. No 3-month wait applies to this condition.",
   "findings": [
     {
-      "quote": "Sarah Kim has confirmed small cell lung cancer that has spread to the liver.",
+      "quote": "METASTATIC SMALL CELL CARCINOMA.",
+      "doc": "05_Mercy_Valley_Hospital_records.pdf",
       "page": 2
+    },
+    {
+      "quote": "consistent with metastasis from a primary small cell lung carcinoma",
+      "doc": "05_Mercy_Valley_Hospital_records.pdf",
+      "page": 2
+    },
+    {
+      "quote": "Extensive-stage small cell lung cancer",
+      "doc": "06_Central_Oncology_Center_records.pdf",
+      "page": 1
     }
   ]
 }
