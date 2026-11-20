@@ -32,6 +32,9 @@ What it reports (DESIGN.md "Analysis", updated for A-group handoff v4)
      "the effect of a wrong suggestion": the cases themselves differ.
   5. All six cases together (the same two regressions), interpreted as performance on this
      fixed case set with these pre-recorded suggestions.
+Design since Nov 18: each person sees 3 of the 6 cases (1 fast-track + 2 regular), so a
+participant is complete after --cases-per-person (default 3) answers. Since Nov 15 no AI
+suggestion is deliberately wrong: leave `ai_wrong` out (or all 0) and sections 2 and 5 match.
 Nothing is chosen after seeing the data: all of the above is always printed.
 """
 from __future__ import annotations
@@ -45,10 +48,10 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 MARGIN = 0.10  # H3 non-inferiority margin (10 percentage points)
-N_CASES = 6
 
 
-def load(responses: str, key: str, stress_arg: str | None, min_seconds: float):
+def load(responses: str, key: str, stress_arg: str | None, min_seconds: float,
+         n_cases: int = 3):
     r = pd.read_csv(responses, dtype={"participant_id": str})
     k = pd.read_csv(key, dtype=str)
     k.columns = [c.strip().lower() for c in k.columns]
@@ -75,9 +78,9 @@ def load(responses: str, key: str, stress_arg: str | None, min_seconds: float):
 
     r = r.drop_duplicates(["participant_id", "case_id"], keep="first")
     done = r.groupby("participant_id")["case_id"].nunique()
-    incomplete = done[done < N_CASES].index
+    incomplete = done[done < n_cases].index
     r = r[~r["participant_id"].isin(incomplete)]
-    log.append(f"incomplete (fewer than {N_CASES} cases): {len(incomplete)} participant(s)")
+    log.append(f"incomplete (fewer than {n_cases} cases): {len(incomplete)} participant(s)")
 
     if min_seconds > 0:
         fast = r["seconds"] < min_seconds
@@ -203,9 +206,11 @@ def main() -> None:
     ap.add_argument("--key", required=True)
     ap.add_argument("--stress-cases", help="comma-separated case ids; overrides the key's ai_wrong column")
     ap.add_argument("--min-seconds", type=float, default=0, help="drop case answers faster than this")
+    ap.add_argument("--cases-per-person", type=int, default=3,
+                    help="cases each participant is assigned (3 since Nov 18)")
     ap.add_argument("--out", help="also write the report to this markdown file")
     a = ap.parse_args()
-    r, stress, log = load(a.responses, a.key, a.stress_cases, a.min_seconds)
+    r, stress, log = load(a.responses, a.key, a.stress_cases, a.min_seconds, a.cases_per_person)
     text = report(r, stress, log)
     print(text)
     if a.out:

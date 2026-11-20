@@ -1,6 +1,6 @@
 """Fake study data for testing the analysis script (Group C, ZXH -> WYX). NOT real data.
 
-    python study/analysis/fake_data.py                    # 30 people x 6 cases
+    python study/analysis/fake_data.py                    # 30 people x 3 of the 6 cases
     python study/analysis/fake_data.py --n 40 --seed 7 --out fake_responses.csv
 
 Writes `responses` rows in the exact HANDOFF.md 3.5 columns (what the app writes to the
@@ -29,6 +29,8 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=425)
     ap.add_argument("--out", default="fake_responses.csv")
     ap.add_argument("--key-out", default="fake_key.csv")
+    ap.add_argument("--cases-per-person", type=int, default=3,
+                    help="cases each person sees (3 since Nov 18; 6 = old design)")
     a = ap.parse_args()
     rng = random.Random(a.seed)
 
@@ -52,8 +54,7 @@ def main() -> None:
         attempts = 1 if rng.random() < 0.8 else 2
         heard = rng.choice(["", "class", "friend", "flyer"])
         skill = rng.gauss(0, 0.6)
-        order = CASES[:]
-        rng.shuffle(order)
+        order = rng.sample(CASES, a.cases_per_person)
         t += timedelta(minutes=rng.randint(5, 60))
         clock = t
         for pos, cid in enumerate(order, 1):
