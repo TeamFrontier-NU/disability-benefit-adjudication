@@ -12,9 +12,9 @@ Gracias por participar en nuestro proyecto del curso SEL_POL 425 sobre la revisi
 
 **Por qué no te lo dijimos antes.** Saber de antemano que había dos grupos o cómo se prepararon las sugerencias podría haber cambiado la forma de tomar las decisiones.
 
-**Tus datos.** Todos los expedientes eran inventados; no se usaron personas ni registros reales. Tus respuestas se usan solo para este proyecto del curso y se analizan sin tu nombre. Tu nombre y tu correo se guardaron por separado de tus respuestas y se usan solo para el sorteo; se eliminarán después del sorteo. Si quieres que eliminemos tus respuestas, responde a este correo y las borraremos.
+**Tus datos.** Todos los expedientes eran inventados; no se usaron personas ni registros reales. Tus respuestas se usan solo para este proyecto del curso y se analizan sin tu nombre. Tu nombre y tu correo se guardaron por separado de tus respuestas y se usan solo para contactar a las personas ganadoras; se eliminarán una vez enviadas las tarjetas. Si quieres que eliminemos tus respuestas, responde a este correo y las borraremos.
 
-**Sorteo.** Sujeto a la aprobación de los fondos del curso, el equipo planea sortear tres tarjetas de regalo de $20 cada una hacia el final del curso, alrededor del 4 de diciembre de 2026 (fecha estimada). Avisaremos a las personas ganadoras en el correo que indicaron.
+**Tarjetas de regalo.** Seis tarjetas de regalo de $10 se entregan a las tres mejores puntuaciones por precisión de cada grupo, entre quienes completaron todo el estudio; los empates se resuelven por sorteo. Se enviarán hacia el final del curso, alrededor del 4 de diciembre de 2026 (fecha estimada). Avisaremos a las personas ganadoras en el correo que indicaron.
 
 Si tienes alguna pregunta, responde a este correo.
 

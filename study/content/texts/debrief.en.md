@@ -12,9 +12,9 @@ Thank you for taking part in our SEL_POL 425 course project on early screening o
 
 **Why we did not tell you earlier.** Knowing about the two groups or how the suggestions were prepared could have changed how people made their decisions.
 
-**Your data.** All the case files were made up; no real people or real records were used. Your answers are used only for this course project and are analyzed without your name. Your name and email were stored separately from your answers and are used only for the lottery; they will be deleted after the draw. If you would like your answers removed, reply to this email and we will delete them.
+**Your data.** All the case files were made up; no real people or real records were used. Your answers are used only for this course project and are analyzed without your name. Your name and email were stored separately from your answers and are used only to contact gift-card winners; they will be deleted once the gift cards are sent. If you would like your answers removed, reply to this email and we will delete them.
 
-**Lottery.** Subject to approval of the course funds, the team plans to draw three $20 gift cards around the end of the course, by about December 4, 2026 (an estimated date). Winners will be notified at the email address they gave.
+**Gift cards.** Six $10 gift cards go to the top three scorers by accuracy in each group, among participants who completed the full study; ties are broken by lottery. They will be sent around the end of the course, by about December 4, 2026 (an estimated date). Winners will be notified at the email address they gave.
 
 If you have any questions, reply to this email.
 
