@@ -26,10 +26,13 @@ all six cases together · descriptives. All sections are always printed.
 
 `winners.py` picks the top 3 scorers by accuracy in each group (complete participants only, ties by a
 seeded draw) and writes `winners.csv` with names and emails. Keep that file in the shared drive.
+Team members are not eligible: `--exclude` is required and takes their participant IDs (comma-separated
+or a file with one per line, kept in the shared drive, not here), or `none`.
 
 ```bash
 python study/analysis/winners.py --responses <06_data>/responses.csv --key <03_answer_key>/final.csv \
-    --contacts <06_data>/contacts.csv --seed <number fixed before the draw> --out winners.csv
+    --contacts <06_data>/contacts.csv --seed <number fixed before the draw> \
+    --exclude <06_data>/team_ids.txt --out winners.csv
 ```
 
 Since Nov 18 each participant sees 3 of the 6 cases; both scripts take `--cases-per-person` (default 3).
